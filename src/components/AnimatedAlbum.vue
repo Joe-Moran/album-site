@@ -1,21 +1,24 @@
-// TODO: animate through list of images if mobile and tapping
 <template>
-  <div class="hello">
-    {{ mouseY}}
+  <div>
     <div v-for="(image, index) in images" :key="index">
-      <MeImage v-show="index == section" :image-source="image" />
+      <MeImage
+        v-show="!isMobile && index === section || isMobile && index === gyroSection"
+        :image-source="image"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import MeImage from "./MeImage";
-const imageCount = 17;
+import { isMobile } from "mobile-device-detect";
+import { imageCollection } from "./image-collection";
 
 export default {
   name: "HelloWorld",
   components: {
-    MeImage
+    MeImage,
+    isMobile
   },
   data() {
     return {
@@ -24,28 +27,16 @@ export default {
       docElem: document.documentElement,
       body: document.getElementsByTagName("body")[0],
       mouseY: 0,
-      images: [
-        "album-art-0.png",
-        "album-art-1.png",
-        "album-art-2.png",
-        "album-art-3.png",
-        "album-art-4.png",
-        "album-art-5.png",
-        "album-art-6.png",
-        "album-art-7.png",
-        "album-art-8.png",
-        "album-art-9.png",
-        "album-art-10.png",
-        "album-art-11.png",
-        "album-art-12.png",
-        "album-art-13.png",
-        "album-art-14.png",
-        "album-art-15.png",
-        "album-art-16.png"
-      ]
+      gyroY: null,
+      mod: 0,
+      isMobile: isMobile,
+      images: imageCollection.images
     };
   },
   computed: {
+    screenDividerCount: function() {
+      return this.images.length - 1;
+    },
     x: function() {
       return (
         this.win.innerWidth || this.docElem.clientWidth || this.body.clientWidth
@@ -59,19 +50,37 @@ export default {
       );
     },
     sectionHeight: function() {
-      return this.y / imageCount;
+      return this.y / this.screenDividerCount;
     },
     section: function() {
       return Math.floor(this.mouseY / this.sectionHeight);
+    },
+    gyroSection: function() {
+      let calc = Math.abs(
+        (Math.pow(this.gyroY - this.mod, 2) * 100) /
+          90 /
+          this.screenDividerCount
+      );
+
+      return calc > this.screenDividerCount
+        ? this.screenDividerCount
+        : Math.floor(calc);
     }
   },
   methods: {
     mouseIsMoving(e) {
       this.mouseY = e.pageY;
+    },
+    handleOrientation: function(event) {
+      if (this.gyroY == null) {
+        this.mod = event.beta;
+      }
+      this.gyroY = event.beta;
     }
   },
   mounted() {
     window.addEventListener("mousemove", this.mouseIsMoving);
+    window.addEventListener("deviceorientation", this.handleOrientation, true);
   }
 };
 </script>

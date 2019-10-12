@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <SocialLinks />
+    <AnimatedAlbum />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import AnimatedAlbum from "./components/AnimatedAlbum.vue";
+import SocialLinks from "./components/SocialLinks";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    AnimatedAlbum,
+    SocialLinks
   }
 };
 </script>
@@ -23,5 +26,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background-color: black;
+}
+
+html {
+  background-color: black;
+  overflow-y: hidden;
 }
 </style>
