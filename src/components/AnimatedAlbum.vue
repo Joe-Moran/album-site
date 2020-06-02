@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="album-art">
     <div v-for="(image, index) in images" :key="index">
       <MeImage
         v-show="!isMobile && index === section || isMobile && index === gyroSection"
@@ -87,6 +87,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#album-art {
+  z-index: 4;
+  position: relative;
+  top: 0;
+  transition: top 1s ease-in;
+}
 h3 {
   margin: 40px 0 0;
 }

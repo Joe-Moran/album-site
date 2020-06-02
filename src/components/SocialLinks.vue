@@ -18,10 +18,39 @@ export default {};
 
 <style scoped>
 span {
-  /* position: absolute; */
-  /* right: 0; */
-  /* margin-right: 25px; */
-  /* top: 15px; */
+  position: absolute;
+  right: 10%;
+  top: -64px;
+  height: 64px;
+  background: #9f012c9e;
+  padding: 10px;
+  bottom: -40px;
+  z-index: 100;
+  transition: top 500ms ease-in-out;
+}
+
+span:hover {
+  top: 0;
+}
+
+span::after {
+  content: " ";
+  height: 10px;
+  bottom: 10px;
+  top: 15px;
+  background: white;
+  position: absolute;
+}
+a {
+  position: relative;
+  padding: 5px;
+  top: 13px;
+}
+
+@media (max-width: 450px) {
+  span {
+    position: relative;
+  }
 }
 
 a {
@@ -30,15 +59,14 @@ a {
 img {
   min-width: 35px;
   max-width: 50px;
-  filter: blur(1px);
-  opacity: 0.7;
+  opacity: 0.8;
+  transition: all 1s ease-in-out;
 }
 
 img:hover {
   filter: blur(0.5px);
-  transform: scale(1.1);
-  transition: scale 0.5s;
-  opacity: 0.8;
+  opacity: 1;
+  transform: rotate(-34deg);
 }
 
 #bandcamp img {

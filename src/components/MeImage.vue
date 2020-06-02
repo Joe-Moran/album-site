@@ -16,6 +16,10 @@ export default {
 </script>
 
 <style>
+figure {
+  margin: 0;
+  padding: 0;
+}
 @media only screen and (max-width: 924px) {
   img {
     width: 100%;
