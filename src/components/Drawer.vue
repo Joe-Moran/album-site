@@ -38,11 +38,11 @@ export default {
 #bar {
   display: none;
   width: 100%;
-  height: 10px;
+  height: 26px;
   background: $red-primary;
 }
 
-#sdrawer {
+#drawer {
   position: absolute;
   top: 0;
   width: 100%;

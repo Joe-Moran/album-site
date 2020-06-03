@@ -12,9 +12,22 @@ export const actionsData = {
     onClose: action('onClose')
 }
 
-export const drawerData = {
-    [{
-        href: "href",
-        label: "link one"
-    }]
-}
+export const drawerData = [{
+    href: "href",
+    label: "link one"
+}];
+
+const drawerTemplate = "<drawer :links='drawerData' @openDrawer='onOpen' @closeDrawer='onClose'></drawer>"
+
+export const Default = () => ({
+    components: {
+        Drawer
+    },
+    template: drawerTemplate,
+    props: {
+        links: {
+            default: () => drawerData
+        }
+    },
+    methods: actionsData
+})

@@ -81,8 +81,6 @@ body {
   color: #2c3e50;
   height: 100%;
   background: black;
-  width: 70%;
-  margin: auto;
   display: block;
   position: relative;
 }
