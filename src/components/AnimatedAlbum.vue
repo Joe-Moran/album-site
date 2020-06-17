@@ -89,8 +89,6 @@ export default {
 <style scoped>
 #album-art {
   z-index: 4;
-  position: relative;
-  top: 0;
   transition: top 1s ease-in;
 }
 h3 {

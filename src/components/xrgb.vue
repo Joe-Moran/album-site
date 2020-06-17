@@ -138,7 +138,7 @@
 </template>
 
 <script>
-export default {};
+export default { name: "xrgb" };
 </script>
 
 <style lang="scss" scoped>
@@ -153,6 +153,10 @@ export default {};
 #xrgb {
   width: 100%;
   position: relative;
+  margin: auto;
+  top: 90px;
+  max-width: 500px;
+  transition: top 200ms ease-in-out;
 }
 #xrgb-container {
   width: 100%;
@@ -224,7 +228,7 @@ export default {};
 
 @media (min-width: $md) {
   #xrgb-container {
-    width: 60%;
+    width: 85%;
     margin: auto;
   }
 }

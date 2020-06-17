@@ -1,71 +1,152 @@
 <template>
   <div id="app">
-    <Drawer />
-    <AnimatedAlbum :class="{'hide': !showHidden}" id="album" />
-    <div id="container" :class="{'hide': showHidden}">
+    <header :class="{scrolling: isScrolling}">
+      <Drawer
+        :isOpen="isDrawerOpen"
+        :isScrolling="isScrolling"
+        :links="[]"
+        @click="isDrawerOpen = !isDrawerOpen"
+      >
+        <template v-slot:anchor>
+          <SocialLinks :links="socialLinks" class="social" />
+        </template>
+      </Drawer>
+      <SocialLinks
+        :links="socialLinks"
+        class="social"
+        id="desktop-social"
+        v-show="showDesktopSocialLinks"
+      />
       <xrgb></xrgb>
-      <Date @click="clickHandler" />
+    </header>
+
+    <div id="container" :class="{'hide': showHidden}">
+      <Sidebar :links="sections" :currentSelection="visibleContent" id="sidebar" />
+
+      <section id="content">
+        <Content
+          :scroll-position="scrollPosition"
+          name="latest"
+          :displayName="false"
+          @visible="contentVisible"
+        >
+          <Latest></Latest>
+        </Content>
+        <Content name="singles" :scroll-position="scrollPosition" @visible="contentVisible">
+          <Releases :releases="singles"></Releases>
+        </Content>
+        <Content name="albums" :scroll-position="scrollPosition" @visible="contentVisible">
+          <Releases :releases="albums"></Releases>
+        </Content>
+      </section>
     </div>
   </div>
 </template>
 
 <script>
-import AnimatedAlbum from "./components/AnimatedAlbum.vue";
 import Drawer from "./components/Drawer";
-import Date from "./components/Date";
 import xrgb from "./components/xrgb";
+import SocialLinks from "./components/SocialLinks";
+import xrgbSocialLinks from "./xrgbSocialLinks";
+import siteSections from "./site-sections";
+import Latest from "./components/Latest";
+import Sidebar from "./components/Sidebar";
+import globals from "./globals";
+import Content from "./components/Content";
+import Releases from "./components/Releases";
+import { debounce } from "debounce";
+import releasesData from "./releases-data.js";
 
 export default {
   name: "app",
   components: {
-    AnimatedAlbum,
-    Date,
+    Latest,
     Drawer,
-    xrgb
+    xrgb,
+    SocialLinks,
+    Sidebar,
+    Content,
+    Releases
   },
   data() {
     return {
-      showHidden: false
+      showHidden: false,
+      isDrawerOpen: false,
+      socialLinks: xrgbSocialLinks,
+      sections: siteSections,
+      isScrolling: false,
+      scrollPosition: 0,
+      visibleContent: null,
+      albums: releasesData.albums,
+      singles: releasesData.singles
     };
   },
   methods: {
     clickHandler() {
       this.showHidden = !this.showHidden;
+    },
+    contentVisible(contentName) {
+      this.visibleContent = contentName;
+    },
+    scrollListener() {
+      if (window.scrollY > 38) {
+        this.isScrolling = true;
+      } else {
+        this.isScrolling = false;
+      }
+
+      this.scrollPosition = window.scrollY;
     }
+  },
+  computed: {
+    showDesktopSocialLinks() {
+      return document.body.clientWidth >= globals.md;
+    }
+  },
+  mounted() {
+    window.addEventListener("scroll", debounce(this.scrollListener, 10));
   }
 };
 </script>
 
 
-<style lang="scss">
+<style lang="scss" >
 @import "./sass/_global.scss";
 @import url("https://fonts.googleapis.com/css?family=Knewave|Raleway:900&display=swap");
 
+$scrolling-transition: all 100ms ease-in-out;
+
+#sidebar {
+  width: 17%;
+  position: fixed;
+  top: 325px;
+  left: 10%;
+}
+
+#content {
+  width: 77%;
+  position: absolute;
+  right: 0;
+}
+
+header {
+  height: 200px;
+  margin-bottom: 100px;
+  transition: all 100ms ease-in-out;
+}
+
 #container {
   position: absolute;
-  top: 200px;
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 80%;
   z-index: 1;
+  margin: 0 10% 0 10%;
 }
 
 .hide {
   opacity: 0;
-}
-
-#album {
-  position: relative;
-  top: 100px;
-}
-
-#artsy {
-  &.show-text {
-    top: 160px;
-    letter-spacing: 32px;
-  }
-}
-
-html {
-  overflow: hidden;
 }
 
 body {
@@ -77,7 +158,6 @@ body {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   height: 100%;
   background: black;
@@ -85,13 +165,44 @@ body {
   position: relative;
 }
 
+#desktop-social {
+  position: absolute;
+  top: 35px;
+  right: 40px;
+  z-index: 1000;
+}
+
+.scrolling {
+  #desktop-social {
+    top: 0px;
+    position: fixed;
+  }
+
+  #xrgb {
+    position: fixed;
+    top: 0;
+    padding-top: 3px;
+    z-index: 1000;
+    transform: scale(0.3);
+    transform: translateX(-50%);
+    left: 50%;
+    transform-origin: top;
+    filter: grayscale(100%);
+
+    svg {
+      height: 35px;
+      margin: auto;
+      display: block;
+    }
+  }
+}
+
 html {
   background-color: black;
-  overflow-y: hidden;
   height: 100%;
 }
 
-@media (max-width: $sm) {
+@media (max-width: $md) {
   span {
     position: relative;
   }
@@ -103,19 +214,16 @@ html {
   #app {
     width: 100%;
   }
+
+  #container {
+    width: 100%;
+    left: 0;
+  }
 }
 
 @media (min-width: $md) and (max-width: $lg) {
   #app {
     width: 80%;
-  }
-}
-
-@media (min-width: $md) {
-  #album {
-    width: 100%;
-    position: absolute;
-    top: 32px;
   }
 }
 </style>
