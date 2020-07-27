@@ -1,9 +1,14 @@
 <template>
-  <a :href="link" target="_blank">
-    <div class="img-container">
+  <a :href="link" target="_blank" @mouseover="hoverHandler" @mouseleave="hoverHandler">
+    <div class="img-container streaming-icon">
       <img v-if="icon" :src="require(`../assets/streaming/${icon}`)" />
     </div>
     {{title}}
+    <div class="img-container go-arrow" @mouseover="arrowHoverHandler">
+      <transition name="fade" mode="out-in">
+        <img :src="arrowImage" :key="arrowImage" />
+      </transition>
+    </div>
   </a>
 </template>
 
@@ -14,6 +19,26 @@ export default {
     icon: { type: String, required: false },
     title: { type: String, required: true },
     link: { type: String, required: true }
+  },
+  data() {
+    return {
+      isHovering: false
+    };
+  },
+  methods: {
+    hoverHandler() {
+      this.isHovering = !this.isHovering;
+    },
+    arrowHoverHandler(event) {
+      this.isHovering = true;
+    }
+  },
+  computed: {
+    arrowImage() {
+      return require(`../assets/${
+        this.isHovering ? "arrow-right-circle.svg" : "arrow-right.svg"
+      }`);
+    }
   }
 };
 </script>
@@ -34,6 +59,7 @@ a {
   border-radius: 5px;
   box-shadow: -10px 10px 0px #0000000f;
   transition: all 250ms ease-in-out;
+  position: relative;
 
   &:hover {
     box-shadow: -12px 10px 0px #0000004d;
@@ -51,6 +77,20 @@ a {
 img {
   width: 100%;
   height: auto;
+}
+
+.go-arrow {
+  right: 0;
+  position: absolute;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 80ms;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 
 @media (max-width: $lg) {

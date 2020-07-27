@@ -1,24 +1,22 @@
 <template>
   <div>
-    <section id="content">
-      <Content
-        :scroll-position="scrollPosition"
-        name="latest"
-        :displayName="false"
-        @visible="contentVisible"
-      >
-        <Latest></Latest>
-      </Content>
-      <Content name="singles" :scroll-position="scrollPosition" @visible="contentVisible">
-        <Releases :releases="singles"></Releases>
-      </Content>
-      <Content name="albums" :scroll-position="scrollPosition" @visible="contentVisible">
-        <Releases :releases="albums"></Releases>
-      </Content>
-      <Content name="about" :scroll-position="scrollPosition" @visible="contentVisible">
-        <About />
-      </Content>
-    </section>
+    <Content
+      :scroll-position="scrollPosition"
+      name="latest"
+      :displayName="false"
+      @visible="contentVisible"
+    >
+      <Latest></Latest>
+    </Content>
+    <Content name="singles" :scroll-position="scrollPosition" @visible="contentVisible">
+      <Releases :releases="singles"></Releases>
+    </Content>
+    <Content name="albums" :scroll-position="scrollPosition" @visible="contentVisible">
+      <Releases :releases="albums"></Releases>
+    </Content>
+    <Content name="about" :scroll-position="scrollPosition" @visible="contentVisible">
+      <About />
+    </Content>
   </div>
 </template>
 

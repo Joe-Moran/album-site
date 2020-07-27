@@ -18,10 +18,9 @@
 
     <div id="container" :class="{'hide': showHidden}">
       <Sidebar :links="sections" :currentSelection="visibleContent" id="sidebar" />
-      <router-view>
-        <home :scroll-position="scrollPosition" @newContent="newContentHandler" />
-        <!-- TODO params -> vuex store -->
-      </router-view>
+      <section id="content">
+        <router-view :scroll-position="scrollPosition" @newContent="newContentHandler"></router-view>
+      </section>
     </div>
   </div>
 </template>

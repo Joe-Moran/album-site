@@ -27,7 +27,8 @@ export default {
             ), createStreamObject(streamingSources.soundcloud,
                 "https://soundcloud.com/xrgbmusic/sets/refraction"
             )
-        ]
+        ],
+        feature: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/BysmYm124VM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     }, ],
     singles: [{
         title: "August 19",

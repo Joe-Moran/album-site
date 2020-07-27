@@ -1,6 +1,8 @@
 <template>
   <div class="stream-links" :class="{ overlay: overlay}">
-    <button @click="$emit('close')" v-if="!overlay">X</button>
+    <div v-if="showFeature" id="feature">
+      <slot></slot>
+    </div>
     <ul>
       <li v-for="link in links" :key="link.link">
         <StreamLink :link="link.link" :icon="link.icon" :title="link.title" />
@@ -18,7 +20,8 @@ export default {
   },
   props: {
     links: { type: Array, required: true },
-    overlay: { type: Boolean, required: false, default: true }
+    overlay: { type: Boolean, required: false, default: true },
+    showFeature: { type: Boolean, required: false, default: false }
   },
   computed: {
     linksToDisplay() {
@@ -36,6 +39,11 @@ export default {
 
 <style lang="scss" scoped>
 @import "../sass/_global.scss";
+
+#feature div {
+  height: 400px;
+  width: 100%;
+}
 .stream-links {
   background: transparent;
   padding: 20px;
@@ -45,9 +53,10 @@ export default {
   transition: all 250ms cubic-bezier(0.45, 0.05, 0.55, 0.95);
 
   &:not(.overlay) {
-    max-width: 540px;
     background: #d1d1d1;
     box-shadow: -10px 10px 0px $red-primary;
+    opacity: 1;
+    padding-top: 30px;
   }
 
   //   &:after {
