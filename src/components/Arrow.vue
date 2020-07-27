@@ -1,5 +1,11 @@
 <template>
-  <svg id="arrow" width="50.405514" height="10.720881" viewBox="0 0 50.405514 10.72088">
+  <svg
+    id="arrow"
+    width="50.405514"
+    height="10.720881"
+    viewBox="0 0 50.405514 10.72088"
+    :class="{up: up}"
+  >
     <g id="layer1" transform="translate(0.20025753,-11.399707)">
       <path
         style="fill:none;fill-opacity:1;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -14,7 +20,7 @@
 <script>
 export default {
   name: "Arrow",
-  props: { color: String },
+  props: { color: String, up: { type: Boolean, default: false } },
   data() {
     return {};
   },
@@ -26,5 +32,9 @@ export default {
 @import "../sass/_global.scss";
 #arrow-path {
   stroke: $red-primary;
+}
+
+.up#arrow {
+  transform: scaleY(-1);
 }
 </style>

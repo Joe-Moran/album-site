@@ -1,17 +1,21 @@
 <template>
   <section id="drawer" :class="{open :isOpen, scrolling: isScrolling}" @click="drawerClick">
-    <div id="bar" :style="{color: color}"></div>
+    <div id="bar" :style="{color: color}">
+      <button id="menu-btn">
+        <img :src="require('../assets/menu.png')" />
+      </button>
+    </div>
     <div id="drop-container" :style="{color: color}" v-show="isOpen">
       <div id="anchor">
         <slot name="anchor"></slot>
       </div>
       <ul id="drawer-content">
         <li v-for="(link, index) in links" :key="index">
-          <a :href="link.href">{{link.label}}</a>
+          <a :href="'#' + link.path">{{link.label}}</a>
         </li>
       </ul>
+      <Arrow :color="arrowColor" :up="isOpen" />
     </div>
-    <Arrow :color="arrowColor" />
   </section>
 </template>
 
@@ -30,7 +34,8 @@ export default {
   },
   data() {
     return {
-      socialLinks: xrgbSocialLinks
+      socialLinks: xrgbSocialLinks,
+      clientWidth: 1900
     };
   },
   computed: {
@@ -38,7 +43,15 @@ export default {
       return this.isOpen ? "black" : globals.redPrimary;
     },
     isInteractive() {
-      return document.body.clientWidth < globals.md;
+      return this.clientWidth <= globals.md;
+    }
+  },
+
+  watch: {
+    isInteractive(newValue) {
+      if (!newValue) {
+        this.$emit("close");
+      }
     }
   },
   methods: {
@@ -46,13 +59,35 @@ export default {
       if (this.isInteractive) {
         this.$emit("click", this.isOpen);
       }
+    },
+    resizeHandler() {
+      this.clientWidth = document.body.clientWidth;
     }
+  },
+  mounted() {
+    this.resizeHandler();
+    window.addEventListener("resize", this.resizeHandler);
   }
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../sass/_global.scss";
+
+#menu-btn {
+  background: transparent;
+  border: none;
+  opacity: 0.8;
+  padding: 15px;
+  right: 0;
+  position: absolute;
+  display: none;
+  transition: all 200ms ease-in-out;
+  z-index: 4000;
+  &:hover {
+    cursor: pointer;
+  }
+}
 
 #bar {
   display: block;
@@ -66,7 +101,11 @@ export default {
 }
 
 .scrolling #bar {
-  height: 40px !important;
+  height: 40px;
+}
+
+#arrow {
+  margin-top: 30px;
 }
 
 #drawer {
@@ -80,41 +119,31 @@ export default {
 }
 
 #drop-container {
-  transform: scaleY(0);
+  position: fixed;
+  width: 100%;
   background: $red-primary;
   padding: 0;
-  transition: transform 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
   transform-origin: top;
+  transform: scaleY(0);
 }
 
 #anchor {
   padding-bottom: 24px;
   margin: auto;
-}
-
-#arrow {
-  position: relative;
-  top: 5px;
-  left: 0;
-  padding: 10px;
-  transition: all 200ms ease-in;
-
-  &:hover {
-    cursor: pointer;
-  }
+  padding-top: 10px;
 }
 
 .open {
-  #arrow {
-    top: -60px;
-    transform: scaleY(-1);
-  }
-
   #drop-container {
     box-shadow: #29110c 0px 6px 0px;
-    padding: 0 20px 70px 20px;
+    padding-bottom: 40px;
     transform: scaleY(1);
-    transition: transform 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+  }
+
+  &#drawer {
+    z-index: 3000;
   }
 
   a {
@@ -142,6 +171,20 @@ ul {
   margin-top: 0;
   list-style: none;
   padding: 0;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+@media (max-width: $md) {
+  #menu-btn {
+    display: block;
+  }
+
+  #bar {
+    height: 50px !important;
+  }
 }
 
 @media (min-width: $md) {

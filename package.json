@@ -6,8 +6,8 @@
     "serve": "vue-cli-service serve --host 0.0.0.0",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006",
     "test": "jest"
   },
   "dependencies": {
@@ -25,6 +25,7 @@
     "vue": "^2.6.10",
     "vue-jest": "^3.0.5",
     "vue-loader": "^15.9.2",
+    "vue-router": "^3.3.4",
     "webpack": "^4.43.0"
   },
   "devDependencies": {

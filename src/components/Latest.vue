@@ -6,23 +6,23 @@
       scrolling="no"
       frameborder="no"
       allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/836040574%3Fsecret_token%3Ds-h0ornZ5onFW&color=%23040404&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/621321513&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
     ></iframe>
     <div
       style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"
     >
       <a
-        href="https://soundcloud.com/xrgb"
+        href="https://soundcloud.com/xrgbmusic"
         title="xRGB"
         target="_blank"
         style="color: #cccccc; text-decoration: none;"
       >xRGB</a> ·
       <a
-        href="https://soundcloud.com/xrgb/joint-pain-1/s-h0ornZ5onFW"
-        title="Joint Pain"
+        href="https://soundcloud.com/xrgbmusic/sets/refraction"
+        title="Refraction"
         target="_blank"
         style="color: #cccccc; text-decoration: none;"
-      >Joint Pain</a>
+      >Refraction</a>
     </div>
   </div>
 </template>
@@ -41,8 +41,24 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 73%;
+  width: 78%;
   margin: auto;
-  box-shadow: -10px 10px 0px $red-primary;
+  @extend %retro-shadow;
+}
+
+@media (max-width: $lg) {
+  iframe {
+    height: 250px;
+  }
+}
+
+@media (max-width: $sm) {
+  iframe {
+    height: 160px;
+  }
+
+  .latest {
+    width: 100%;
+  }
 }
 </style>

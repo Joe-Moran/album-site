@@ -11,3 +11,17 @@ $sm: 600px;
 $md: 960px;
 $lg: 1264px;
 $xl: 1904px;
+
+%retro-shadow {
+    box-shadow: -10px 10px $red-primary;
+    transition: 240ms ease-in;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: -14px 14px $red-primary;
+    }
+
+    border: 2px solid #ffffff38;
+
+
+}

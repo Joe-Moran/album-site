@@ -1,6 +1,8 @@
 <template>
   <a :href="link" target="_blank">
-    <img v-if="icon" :src="require(`../assets/streaming/${icon}`)" />
+    <div class="img-container">
+      <img v-if="icon" :src="require(`../assets/streaming/${icon}`)" />
+    </div>
     {{title}}
   </a>
 </template>
@@ -25,9 +27,9 @@ a {
   color: black;
   font-family: "Arial Narrow", Arial;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
   background: white;
-  padding: 16px 20px 16px 20px;
+  padding: 11px 20px;
   width: 100%;
   border-radius: 5px;
   box-shadow: -10px 10px 0px #0000000f;
@@ -40,9 +42,25 @@ a {
   }
 }
 
-img {
-  height: 35px;
-  width: 35px;
+.img-container {
+  height: 30px;
+  width: 30px;
   margin-right: 12px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: $lg) {
+  a {
+    font-size: 18px;
+  }
+
+  .img-container {
+    height: 24px;
+    width: 24px;
+  }
 }
 </style>

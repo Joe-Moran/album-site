@@ -151,7 +151,6 @@ export default { name: "xrgb" };
   fill: #d11d66;
 }
 #xrgb {
-  width: 100%;
   position: relative;
   margin: auto;
   top: 90px;

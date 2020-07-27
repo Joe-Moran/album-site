@@ -45,6 +45,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../sass/_global.scss";
 .user-content {
   width: 100%;
   margin-bottom: 90px;
@@ -57,7 +58,7 @@ h2 {
   text-align: center;
   font-weight: 100;
   font-size: 20px;
-  margin-bottom: 43px;
+  margin-bottom: 60px;
   &:before,
   &:after {
     content: "";
@@ -69,6 +70,19 @@ h2 {
     margin-left: 20px;
     vertical-align: middle;
     background: white;
+  }
+}
+
+@media (max-width: $sm) {
+  h2:before,
+  h2:after {
+    width: 50px;
+  }
+
+  .user-content {
+    width: 77%;
+    margin: auto;
+    margin-bottom: 60px;
   }
 }
 </style>

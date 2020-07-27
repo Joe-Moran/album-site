@@ -1,6 +1,6 @@
 export default [{
     path: "latest",
-    label: "The Latest"
+    label: "Latest"
 }, {
     path: "singles",
     label: "Singles"
@@ -10,7 +10,4 @@ export default [{
 }, {
     path: "about",
     label: "About"
-}, {
-    path: "playlists",
-    label: "Playlists"
 }]

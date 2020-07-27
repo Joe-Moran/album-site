@@ -1,6 +1,6 @@
 <template>
-  <div class="stream-links" :class="{open: open, overlay: overlay}">
-    <button @click="$emit('close')">X</button>
+  <div class="stream-links" :class="{ overlay: overlay}">
+    <button @click="$emit('close')" v-if="!overlay">X</button>
     <ul>
       <li v-for="link in links" :key="link.link">
         <StreamLink :link="link.link" :icon="link.icon" :title="link.title" />
@@ -18,7 +18,6 @@ export default {
   },
   props: {
     links: { type: Array, required: true },
-    open: { type: Boolean, required: false, default: false },
     overlay: { type: Boolean, required: false, default: true }
   },
   computed: {
@@ -43,16 +42,12 @@ export default {
   position: relative;
   padding-top: 60px;
   opacity: 0;
-  transition: all 250ms ease-in-out;
+  transition: all 250ms cubic-bezier(0.45, 0.05, 0.55, 0.95);
 
   &:not(.overlay) {
     max-width: 540px;
     background: #d1d1d1;
     box-shadow: -10px 10px 0px $red-primary;
-  }
-
-  &.open {
-    opacity: 1;
   }
 
   //   &:after {

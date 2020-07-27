@@ -4,41 +4,24 @@
       <Drawer
         :isOpen="isDrawerOpen"
         :isScrolling="isScrolling"
-        :links="[]"
+        :links="sections"
         @click="isDrawerOpen = !isDrawerOpen"
+        @close="isDrawerOpen = false"
       >
         <template v-slot:anchor>
           <SocialLinks :links="socialLinks" class="social" />
         </template>
       </Drawer>
-      <SocialLinks
-        :links="socialLinks"
-        class="social"
-        id="desktop-social"
-        v-show="showDesktopSocialLinks"
-      />
+      <SocialLinks :links="socialLinks" class="social" id="desktop-social" />
       <xrgb></xrgb>
     </header>
 
     <div id="container" :class="{'hide': showHidden}">
       <Sidebar :links="sections" :currentSelection="visibleContent" id="sidebar" />
-
-      <section id="content">
-        <Content
-          :scroll-position="scrollPosition"
-          name="latest"
-          :displayName="false"
-          @visible="contentVisible"
-        >
-          <Latest></Latest>
-        </Content>
-        <Content name="singles" :scroll-position="scrollPosition" @visible="contentVisible">
-          <Releases :releases="singles"></Releases>
-        </Content>
-        <Content name="albums" :scroll-position="scrollPosition" @visible="contentVisible">
-          <Releases :releases="albums"></Releases>
-        </Content>
-      </section>
+      <router-view>
+        <home :scroll-position="scrollPosition" @newContent="newContentHandler" />
+        <!-- TODO params -> vuex store -->
+      </router-view>
     </div>
   </div>
 </template>
@@ -48,25 +31,19 @@ import Drawer from "./components/Drawer";
 import xrgb from "./components/xrgb";
 import SocialLinks from "./components/SocialLinks";
 import xrgbSocialLinks from "./xrgbSocialLinks";
-import siteSections from "./site-sections";
-import Latest from "./components/Latest";
-import Sidebar from "./components/Sidebar";
-import globals from "./globals";
-import Content from "./components/Content";
-import Releases from "./components/Releases";
 import { debounce } from "debounce";
-import releasesData from "./releases-data.js";
+import home from "./views/Home";
+import siteSections from "./site-sections";
+import Sidebar from "./components/Sidebar";
 
 export default {
   name: "app",
   components: {
-    Latest,
     Drawer,
     xrgb,
     SocialLinks,
     Sidebar,
-    Content,
-    Releases
+    home
   },
   data() {
     return {
@@ -76,17 +53,15 @@ export default {
       sections: siteSections,
       isScrolling: false,
       scrollPosition: 0,
-      visibleContent: null,
-      albums: releasesData.albums,
-      singles: releasesData.singles
+      visibleContent: null
     };
   },
   methods: {
     clickHandler() {
       this.showHidden = !this.showHidden;
     },
-    contentVisible(contentName) {
-      this.visibleContent = contentName;
+    newContentHandler(newContent) {
+      this.visibleContent = newContent;
     },
     scrollListener() {
       if (window.scrollY > 38) {
@@ -98,11 +73,7 @@ export default {
       this.scrollPosition = window.scrollY;
     }
   },
-  computed: {
-    showDesktopSocialLinks() {
-      return document.body.clientWidth >= globals.md;
-    }
-  },
+  computed: {},
   mounted() {
     window.addEventListener("scroll", debounce(this.scrollListener, 10));
   }
@@ -131,7 +102,7 @@ $scrolling-transition: all 100ms ease-in-out;
 
 header {
   height: 200px;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
   transition: all 100ms ease-in-out;
 }
 
@@ -202,7 +173,25 @@ html {
   height: 100%;
 }
 
+@media (max-width: $sm) {
+  header {
+    margin-bottom: 50px;
+  }
+
+  section {
+    margin-bottom: 65px;
+  }
+
+  #xrgb {
+    padding-top: 8px;
+  }
+}
+
 @media (max-width: $md) {
+  #sidebar {
+    display: none;
+  }
+
   span {
     position: relative;
   }
@@ -215,15 +204,24 @@ html {
     width: 100%;
   }
 
+  #content {
+    width: 100%;
+  }
+
   #container {
     width: 100%;
     left: 0;
+    margin: 0;
+  }
+
+  #desktop-social {
+    display: none;
   }
 }
 
-@media (min-width: $md) and (max-width: $lg) {
-  #app {
-    width: 80%;
+@media (min-width: $md) {
+  #container {
+    width: 90%;
   }
 }
 </style>

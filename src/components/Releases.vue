@@ -33,25 +33,37 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 37px;
 }
 
 li {
   width: 100%;
-  margin-bottom: 40px;
   list-style: none;
+}
+
+@media (max-width: $sm) {
+  ul {
+    margin-left: -35px;
+  }
 }
 
 @media (min-width: $sm) {
   // display two
   li {
-    width: 50%;
+    width: 45%;
+    margin: 2.5%;
+  }
+
+  ul {
+    padding-bottom: 0px;
   }
 }
 
 @media (min-width: $md) {
   li {
     width: 33%;
+    margin-bottom: 40px;
+  }
+  ul {
   }
 }
 </style>

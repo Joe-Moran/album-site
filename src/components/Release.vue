@@ -1,16 +1,15 @@
 <template>
-  <div class="release" :class="{loading: loading}">
-    <div class="cover">
+  <div class="release">
+    <div class="cover" @click="clickHandler">
       <StreamLinks
-        :open="showStreaming"
         :links="streaming"
-        :overlay="!isMobile"
-        class="release-stream-links"
-        :class="{'overlay-release': !isMobile}"
-        @close="showStreaming = false"
+        overlay
+        class="release-stream-links overlay-release"
+        @click="listenClick = false"
+        v-if="showStreaming"
       />
+      <div class="loading"></div>
       <img :src="require('../assets/' + releasePath + '/' + coverPath)" @load="$emit('load', true)" />
-      <button @click="showStreaming = true" v-if="isMobile">Listen</button>
     </div>
     <h3>{{title}}</h3>
   </div>
@@ -34,7 +33,8 @@ export default {
   },
   data() {
     return {
-      showStreaming: false
+      listenClick: false,
+      clientWidth: 1900
     };
   },
   computed: {
@@ -42,8 +42,25 @@ export default {
       return this.type === "album" ? "albums" : "singles";
     },
     isMobile() {
-      return document.body.clientWidth < globals.md;
+      return this.clientWidth < globals.md;
+    },
+    showStreaming() {
+      return (this.listenClick && this.isMobile) || !this.isMobile;
     }
+  },
+  methods: {
+    resizeHandler() {
+      this.clientWidth = document.body.clientWidth;
+    },
+    clickHandler() {
+      if (this.isMobile) {
+        this.listenClick = true;
+      }
+    }
+  },
+  mounted() {
+    this.resizeHandler();
+    window.addEventListener("resize", this.resizeHandler);
   }
 };
 </script>
@@ -56,8 +73,24 @@ export default {
   max-width: 700px;
   height: 100%;
   border: 2px solid #ffffff38;
-  box-shadow: -10px 10px $red-primary;
   position: relative;
+  @extend %retro-shadow;
+}
+
+@media (max-width: $md) {
+  .cover {
+    animation: nudge-user infinite 3s;
+  }
+}
+
+@keyframes nudge-user {
+  0% {
+    box-shadow: -10px 10px $red-primary;
+  }
+
+  50% {
+    box-shadow: -15px 14px $red-primary;
+  }
 }
 
 img {
@@ -66,6 +99,7 @@ img {
 }
 
 .release-stream-links {
+  opacity: 0;
   position: absolute;
   bottom: 107%;
   left: 0;
@@ -102,18 +136,24 @@ button {
   }
 }
 
+.loading {
+  background: $red-primary;
+  opacity: 0.5;
+  animation: blink infinite 1.2s ease-in-out;
+  // width: 350px;
+  // height: 350px;
+  width: 100%;
+  height: 100%;
+}
+
 .release {
   max-width: 700px;
 
-  &.loading {
-    background: $red-primary;
-    opacity: 0.5;
-    animation: blink infinite 1.2s ease-in-out;
-    width: 350px;
-    height: 350px;
+  &:hover button {
+    opacity: 1;
   }
 
-  &:hover button {
+  &:hover .overlay-release {
     opacity: 1;
   }
 }
