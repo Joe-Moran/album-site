@@ -1,5 +1,6 @@
 <template>
-  <a :href="link" target="_blank" @mouseover="hoverHandler" @mouseleave="hoverHandler">
+<!-- TODO: refactor and rename this to something more generic -->
+  <div class="stream-link"  @mouseover="hoverHandler" @mouseleave="hoverHandler">
     <div class="img-container streaming-icon">
       <img v-if="icon" :src="require(`../assets/streaming/${icon}`)" />
     </div>
@@ -9,7 +10,7 @@
         <img :src="arrowImage" :key="arrowImage" />
       </transition>
     </div>
-  </a>
+  </div>
 </template>
 
 <script>
@@ -17,8 +18,7 @@ export default {
   name: "StreamLink",
   props: {
     icon: { type: String, required: false },
-    title: { type: String, required: true },
-    link: { type: String, required: true }
+    title: { type: String, required: true }
   },
   data() {
     return {
@@ -45,10 +45,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "../sass/_global.scss";
-a {
+.stream-link {
   display: flex;
   align-content: space-around;
-  text-decoration: none;
+
   color: black;
   font-family: "Arial Narrow", Arial;
   font-weight: bold;

@@ -1,28 +1,28 @@
 <template>
   <div>
-    <Content
+    <UserContent
       :scroll-position="scrollPosition"
       name="latest"
       :displayName="false"
       @visible="contentVisible"
     >
       <Latest></Latest>
-    </Content>
-    <Content name="singles" :scroll-position="scrollPosition" @visible="contentVisible">
+    </UserContent>
+    <UserContent name="singles" :scroll-position="scrollPosition" @visible="contentVisible">
       <Releases :releases="singles"></Releases>
-    </Content>
-    <Content name="albums" :scroll-position="scrollPosition" @visible="contentVisible">
+    </UserContent>
+    <UserContent name="albums" :scroll-position="scrollPosition" @visible="contentVisible">
       <Releases :releases="albums"></Releases>
-    </Content>
-    <Content name="about" :scroll-position="scrollPosition" @visible="contentVisible">
+    </UserContent>
+    <UserContent name="about" :scroll-position="scrollPosition" @visible="contentVisible">
       <About />
-    </Content>
+    </UserContent>
   </div>
 </template>
 
 <script>
 import About from "../components/About";
-import Content from "../components/Content";
+import UserContent from "../components/Content";
 import Releases from "../components/Releases";
 import Latest from "../components/Latest";
 import view from "../mixins/view";
@@ -31,7 +31,7 @@ import releasesData from "../releases-data.js";
 export default {
   name: "home",
   components: {
-    Content,
+    UserContent,
     Releases,
     About,
     Latest

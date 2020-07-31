@@ -7,9 +7,11 @@
         class="release-stream-links overlay-release"
         @click="listenClick = false"
         v-if="showStreaming"
+        :release-path="releasePath"
+        reduce
       />
       <div class="loading"></div>
-      <img :src="require('../assets/' + releasePath + '/' + coverPath)" @load="$emit('load', true)" />
+      <img :src="require('../assets/' + releaseAssetsPath + '/' + coverPath)" @load="$emit('load', true)" />
     </div>
     <h3>{{title}}</h3>
   </div>
@@ -29,7 +31,8 @@ export default {
     title: { type: String, required: true },
     coverPath: { type: String, required: true },
     streaming: { type: Array, required: false },
-    type: { type: String, required: true }
+    type: { type: String, required: true },
+    releasePath: {type: String, required: false}
   },
   data() {
     return {
@@ -38,7 +41,7 @@ export default {
     };
   },
   computed: {
-    releasePath() {
+    releaseAssetsPath() {
       return this.type === "album" ? "albums" : "singles";
     },
     isMobile() {

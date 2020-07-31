@@ -4,9 +4,12 @@
       <slot></slot>
     </div>
     <ul>
-      <li v-for="link in links" :key="link.link">
-        <StreamLink :link="link.link" :icon="link.icon" :title="link.title" />
+      <li v-for="link in linksToDisplay" :key="link.link">
+      <a :href="link.link" target="_blank">
+        <StreamLink  :icon="link.icon" :title="link.title" />
+        </a>
       </li>
+      <li v-if="releasePath"> <router-link :to="releasePath" append><StreamLink icon="plus.png" title="More Info"/></router-link></li>
     </ul>
   </div>
 </template>
@@ -21,17 +24,14 @@ export default {
   props: {
     links: { type: Array, required: true },
     overlay: { type: Boolean, required: false, default: true },
-    showFeature: { type: Boolean, required: false, default: false }
+    showFeature: { type: Boolean, required: false, default: false },
+    releasePath: {type: String, required: false},
+    reduce: {type: Boolean, required: false, default: false}
   },
   computed: {
+  
     linksToDisplay() {
-      if (this.links && this.links.length) {
-        return this.expanded ? this.links : this.links.slice(0, 3);
-      }
-      return [];
-    },
-    allowExpasion() {
-      return this.links && this.links.length > 3;
+      return this.links && this.links.length > 3 && this.reduce ? this.links.slice(0, 3) : this.links;
     }
   }
 };
@@ -39,10 +39,17 @@ export default {
 
 <style lang="scss" scoped>
 @import "../sass/_global.scss";
+a {
+  text-decoration: none;
+}
 
 #feature div {
   height: 400px;
-  width: 100%;
+  width: 102%;
+  box-shadow: #c5c5c5 -10px 10px 0px;
+  border: 4px solid #d1d1d1;
+  border-radius: 5px;
+  margin-bottom: 30px;
 }
 .stream-links {
   background: transparent;

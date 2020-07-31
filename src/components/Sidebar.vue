@@ -10,11 +10,11 @@
 
 <script>
 import Link from "./Link";
+import nav from "../mixins/nav.js";
 export default {
   name: "Sidebar",
   props: {
-    links: { type: Array, required: false },
-    currentSelection: { type: String, required: true }
+    currentSelection: { type: String, required: true, default: null }
   },
   components: {
     Link
@@ -23,7 +23,8 @@ export default {
     isCurrentSection(section) {
       return this.currentSelection && section.path === this.currentSelection;
     }
-  }
+  },
+  mixins: [nav]
 };
 </script>
 

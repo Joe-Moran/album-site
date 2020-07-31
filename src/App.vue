@@ -2,9 +2,9 @@
   <div id="app">
     <header :class="{scrolling: isScrolling}">
       <Drawer
+        :links='[...sections, {path: "/", label: "Home"}]'
         :isOpen="isDrawerOpen"
         :isScrolling="isScrolling"
-        :links="sections"
         @click="isDrawerOpen = !isDrawerOpen"
         @close="isDrawerOpen = false"
       >
@@ -17,39 +17,47 @@
     </header>
 
     <div id="container" :class="{'hide': showHidden}">
-      <Sidebar :links="sections" :currentSelection="visibleContent" id="sidebar" />
+      <transition name="fade">
+        <router-view name="homenav" id="home-nav"></router-view>
+      </transition>
+      <section id="sidebar">
+        <transition name="fade">
+          <Sidebar  :currentSelection="visibleContent" :links="sections"/>
+        </transition>
+      </section>
+
       <section id="content">
-        <router-view :scroll-position="scrollPosition" @newContent="newContentHandler"></router-view>
+        <transition name="fade">
+          <router-view :scroll-position="scrollPosition" @newContent="newContentHandler"></router-view>
+        </transition>
       </section>
     </div>
   </div>
 </template>
 
 <script>
-import Drawer from "./components/Drawer";
 import xrgb from "./components/xrgb";
 import SocialLinks from "./components/SocialLinks";
 import xrgbSocialLinks from "./xrgbSocialLinks";
 import { debounce } from "debounce";
-import home from "./views/Home";
 import siteSections from "./site-sections";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/Sidebar"
+import Drawer from "./components/Drawer"
 
 export default {
   name: "app",
   components: {
-    Drawer,
+    Sidebar,
     xrgb,
     SocialLinks,
-    Sidebar,
-    home
+    Drawer
   },
   data() {
     return {
       showHidden: false,
       isDrawerOpen: false,
       socialLinks: xrgbSocialLinks,
-      sections: siteSections,
+      sections: siteSections.default,
       isScrolling: false,
       scrollPosition: 0,
       visibleContent: null
@@ -60,7 +68,7 @@ export default {
       this.showHidden = !this.showHidden;
     },
     newContentHandler(newContent) {
-      this.visibleContent = newContent;
+      this.visibleContent = newContent ? newContent : null;
     },
     scrollListener() {
       if (window.scrollY > 38) {
@@ -75,7 +83,16 @@ export default {
   computed: {},
   mounted() {
     window.addEventListener("scroll", debounce(this.scrollListener, 10));
+    this.$router.afterEach((to,from,next) => {
+      
+      if(to.path === "/") {
+        this.sections = siteSections.default;
+      } else if(to.path.indexOf("/release") > -1) {
+        this.sections = siteSections.release;
+      }
+    });
   }
+  
 };
 </script>
 
@@ -86,6 +103,8 @@ export default {
 
 $scrolling-transition: all 100ms ease-in-out;
 
+
+
 #sidebar {
   width: 17%;
   position: fixed;
@@ -94,9 +113,9 @@ $scrolling-transition: all 100ms ease-in-out;
 }
 
 #content {
-  width: 77%;
+  width: 72%;
   position: absolute;
-  right: 0;
+  right: 9%;
 }
 
 header {
@@ -172,6 +191,14 @@ html {
   height: 100%;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to, .fade-leave-active /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 @media (max-width: $sm) {
   header {
     margin-bottom: 50px;
@@ -184,6 +211,8 @@ html {
   #xrgb {
     padding-top: 8px;
   }
+
+  
 }
 
 @media (max-width: $md) {
@@ -205,6 +234,7 @@ html {
 
   #content {
     width: 100%;
+    right: unset;
   }
 
   #container {
@@ -215,6 +245,10 @@ html {
 
   #desktop-social {
     display: none;
+  }
+
+  #home-nav {
+  display: none;
   }
 }
 

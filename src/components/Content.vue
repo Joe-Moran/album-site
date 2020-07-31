@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "content",
+  name: "UserContent",
   props: {
     name: { type: String, required: true },
     scrollPosition: { type: Number, default: 0 },

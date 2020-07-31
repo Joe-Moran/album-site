@@ -1,6 +1,6 @@
 <template>
   <div :class="{selected: selected}">
-    <a :href="'#' + link.path">{{link.label}}</a>
+    <router-link :to="'#' + link.path" append>{{link.label}}</router-link>
   </div>
 </template>
 

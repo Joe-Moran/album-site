@@ -1,43 +1,74 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import ReleaseLinks from './views/ReleaseLinks.vue'
+import ReleaseView from './views/ReleaseView.vue'
 import releaseData from "./releases-data";
+import HomeNav from "./components/HomeNav";
+import Sidebar from "./components/Sidebar"
+import Drawer from "./components/Drawer"
+import siteSections from "./site-sections";
+
 
 const symbolPattern = /[^\w]/g;
 
+let releaseSiteLinks = siteSections.release;
+let defaultSiteLinks = siteSections.default;
+
 let routesObject = {
   routes: [{
-      path: '/',
-      name: 'home',
-      component: Home
+    path: '/',
+    name: 'home',
+    components: {
+      default: Home,
+      sidebar: Sidebar,
+      drawer: Drawer
     },
-    {
-      path: '/release',
-      name: 'release links',
-      component: ReleaseLinks
+    props: {
+      sidebar: {
+        links: defaultSiteLinks
+      },
+      drawer: {
+        links: defaultSiteLinks
+      }
     }
-  ]
+  }],
+  scrollBehavior: function (to) {
+    if (to.hash) {
+      return {
+        selector: to.hash
+      }
+    }
+  }
 }
 
 Vue.use(Router)
 
-function routify(title) {
-  return title.replace(symbolPattern, "-").toLowerCase();
-}
-
-function releaseRouteBuilder(releases) {
+function buildReleaseRoute(releases) {
   releases.forEach(release => {
     routesObject.routes.push({
-      path: '/release/' + routify(release.title),
-      component: ReleaseLinks,
+      path: '/release' + release.path,
+      components: {
+        default: ReleaseView,
+        sidebar: Sidebar,
+        homenav: HomeNav,
+        drawer: Drawer
+      },
       props: {
-        release: release
+        default: {
+          release: release
+        },
+        sidebar: {
+          links: releaseSiteLinks
+        },
+        drawer: {
+          links: [...releaseSiteLinks,{path: "/", label: "Home"}]
+        }
       }
+
     })
   })
 }
 
-releaseRouteBuilder(releaseData.albums);
+buildReleaseRoute(releaseData.albums);
 
 export default new Router(routesObject)

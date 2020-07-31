@@ -23,9 +23,12 @@
 import Arrow from "./Arrow";
 import globals from "../globals";
 import xrgbSocialLinks from "../xrgbSocialLinks";
+import nav from "../mixins/nav.js";
+
 export default {
   name: "Drawer",
   components: { Arrow },
+  mixins: [nav],
   props: {
     links: { type: Array, required: true },
     isOpen: { type: Boolean, required: false, default: false },
