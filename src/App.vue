@@ -83,8 +83,8 @@ export default {
   computed: {},
   mounted() {
     window.addEventListener("scroll", debounce(this.scrollListener, 10));
+    this.sections = this.$router.path && this.$router.path.indexOf("/release") > -1 ? siteSections.release : siteSections.default;
     this.$router.afterEach((to,from,next) => {
-      
       if(to.path === "/") {
         this.sections = siteSections.default;
       } else if(to.path.indexOf("/release") > -1) {

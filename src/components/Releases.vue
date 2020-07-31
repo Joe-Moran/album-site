@@ -7,7 +7,7 @@
         :coverPath="release.coverPath"
         :streaming="release.streaming"
         :type="release.type"
-        :release-path="'release' + release.path"
+        :release-path="release.path ? 'release' + release.path : null"
         @load="release.loading = false"
       ></release>
     </li>
