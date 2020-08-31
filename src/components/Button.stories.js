@@ -2,7 +2,7 @@ import {
     action
 } from '@storybook/addon-actions'
 
-import StreamLinks from "./Button.vue";
+import Button from "./Button.vue";
 
 import {
     INITIAL_VIEWPORTS
@@ -11,11 +11,10 @@ import {
 
 
 export default {
-    title: 'Button',
-    excludeStories: /.*Data$/
+    title: 'Button'
 }
 
-const template = "<Button> </Button>"
+const template = "<Button>Default</Button>"
 
 export const Default = () => ({
     components: {
