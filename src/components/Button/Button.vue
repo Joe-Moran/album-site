@@ -9,15 +9,15 @@
 export default {
   name: "Button",
   props: {
-    "prependIcon": { type: String, required: false, validator: },
-    "appendIcon": { type: String, required: false },
+    prependIcon: { type: String, required: false},
+    appendIcon: { type: String, required: false },
     prependColor: {type: String, required: false},
     appendColor: {type: String, required: false}
 
   },
   computed: {
       prependIconSource() {
-          return require('../assets/icons/' + this.prependIcon);
+          return require(this.prependIcon);
       }
   }
 };
