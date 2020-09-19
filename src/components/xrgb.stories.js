@@ -1,6 +1,4 @@
-import {
-    xrgb
-} from "./xrgb"
+import xrgb from "./xrgb.vue"
 
 export default {
     title: 'xRGB Logo',

@@ -4,11 +4,7 @@ import {
 
 import Link from "./Link.vue"
 
-import siteSections from "../site-sections"
 
-import {
-    INITIAL_VIEWPORTS
-} from '@storybook/addon-viewport';
 
 export default {
     title: 'Link',
