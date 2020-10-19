@@ -1,15 +1,12 @@
 <template>
-  <svg class="icon">
-    <use :xlink:href="`#${icon}`" />
-  </svg>
+  <svg :color="color" :src="iconPath" />
 </template>
 
 <script>
 export default {
   name: "SVGIcon",
   props: {
-    icon: { type: String, required: true },
-    color: { type: String, required: false, default: "white" },
+    iconPath: { type: String, required: true },
   },
 };
 </script>
