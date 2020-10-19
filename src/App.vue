@@ -1,14 +1,15 @@
 <template>
   <div id="app">
+    <svg-sprite />
     <header :class="{scrolling: isScrolling}">
       <Drawer
-        :links='[...sections, {path: "/", label: "Home"}]'
+        :links="[...sections, {path: "/", label: "Home"}]"
         :isOpen="isDrawerOpen"
         :isScrolling="isScrolling"
         @click="isDrawerOpen = !isDrawerOpen"
         @close="isDrawerOpen = false"
       >
-        <template v-slot:anchor>
+        <template slot:anchor>
           <SocialLinks :links="socialLinks" class="social" />
         </template>
       </Drawer>
@@ -22,7 +23,7 @@
       </transition>
       <section id="sidebar">
         <transition name="fade">
-          <Sidebar  :currentSelection="visibleContent" :links="sections"/>
+          <Sidebar :currentSelection="visibleContent" :links="sections" />
         </transition>
       </section>
 
@@ -41,8 +42,9 @@ import SocialLinks from "./components/SocialLinks";
 import xrgbSocialLinks from "./xrgbSocialLinks";
 import { debounce } from "debounce";
 import siteSections from "./site-sections";
-import Sidebar from "./components/Sidebar"
-import Drawer from "./components/Drawer"
+import Sidebar from "./components/Sidebar";
+import Drawer from "./components/Drawer";
+import SvgSprite from "./components/icons/SvgSprite";
 
 export default {
   name: "app",
@@ -50,7 +52,8 @@ export default {
     Sidebar,
     xrgb,
     SocialLinks,
-    Drawer
+    Drawer,
+    SvgSprite,
   },
   data() {
     return {
@@ -60,7 +63,7 @@ export default {
       sections: siteSections.default,
       isScrolling: false,
       scrollPosition: 0,
-      visibleContent: null
+      visibleContent: null,
     };
   },
   methods: {
@@ -78,21 +81,23 @@ export default {
       }
 
       this.scrollPosition = window.scrollY;
-    }
+    },
   },
   computed: {},
   mounted() {
     window.addEventListener("scroll", debounce(this.scrollListener, 10));
-    this.sections = this.$router.path && this.$router.path.indexOf("/release") > -1 ? siteSections.release : siteSections.default;
-    this.$router.afterEach((to,from,next) => {
-      if(to.path === "/") {
+    this.sections =
+      this.$router.path && this.$router.path.indexOf("/release") > -1
+        ? siteSections.release
+        : siteSections.default;
+    this.$router.afterEach((to, from, next) => {
+      if (to.path === "/") {
         this.sections = siteSections.default;
-      } else if(to.path.indexOf("/release") > -1) {
+      } else if (to.path.indexOf("/release") > -1) {
         this.sections = siteSections.release;
       }
     });
-  }
-  
+  },
 };
 </script>
 
@@ -102,8 +107,6 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Knewave|Raleway:900&display=swap");
 
 $scrolling-transition: all 100ms ease-in-out;
-
-
 
 #sidebar {
   width: 17%;
@@ -211,8 +214,6 @@ html {
   #xrgb {
     padding-top: 8px;
   }
-
-  
 }
 
 @media (max-width: $md) {
@@ -248,7 +249,7 @@ html {
   }
 
   #home-nav {
-  display: none;
+    display: none;
   }
 }
 

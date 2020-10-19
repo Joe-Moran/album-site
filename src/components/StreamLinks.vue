@@ -5,11 +5,15 @@
     </div>
     <ul>
       <li v-for="link in linksToDisplay" :key="link.link">
-      <a :href="link.link" target="_blank">
-        <StreamLink  :icon="link.icon" :title="link.title" />
+        <a :href="link.link" target="_blank">
+          <StreamLink :icon="link.icon" :title="link.title" />
         </a>
       </li>
-      <li v-if="releasePath"> <router-link :to="releasePath" append><StreamLink icon="plus.png" title="More Info"/></router-link></li>
+      <li v-if="releasePath">
+        <router-link :to="releasePath" append>
+          <StreamLink icon="plus.png" title="More Info" />
+        </router-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -19,21 +23,22 @@ import StreamLink from "./StreamLink";
 export default {
   name: "StreamLinks",
   components: {
-    StreamLink
+    StreamLink,
   },
   props: {
     links: { type: Array, required: true },
     overlay: { type: Boolean, required: false, default: true },
     showFeature: { type: Boolean, required: false, default: false },
-    releasePath: {type: String, required: false},
-    reduce: {type: Boolean, required: false, default: false}
+    releasePath: { type: String, required: false },
+    reduce: { type: Boolean, required: false, default: false },
   },
   computed: {
-  
     linksToDisplay() {
-      return this.links && this.links.length > 3 && this.reduce ? this.links.slice(0, 3) : this.links;
-    }
-  }
+      return this.links && this.links.length > 3 && this.reduce
+        ? this.links.slice(0, 3)
+        : this.links;
+    },
+  },
 };
 </script>
 
