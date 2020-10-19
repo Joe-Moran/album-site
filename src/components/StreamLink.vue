@@ -1,28 +1,32 @@
 <template>
-<!-- TODO: refactor and rename this to something more generic -->
-  <div class="stream-link"  @mouseover="hoverHandler" @mouseleave="hoverHandler">
+  <!-- TODO: refactor and rename this to something more generic -->
+  <div class="stream-link" @mouseover="hoverHandler" @mouseleave="hoverHandler">
     <div class="img-container streaming-icon">
       <img v-if="icon" :src="require(`../assets/streaming/${icon}`)" />
     </div>
     {{title}}
     <div class="img-container go-arrow" @mouseover="arrowHoverHandler">
       <transition name="fade" mode="out-in">
-        <img :src="arrowImage" :key="arrowImage" />
+        <svg-icon :icon="arrowImage" :key="arrowImage" />
       </transition>
     </div>
   </div>
 </template>
 
 <script>
+import SvgIcon from "./icons/SVGIcon";
 export default {
   name: "StreamLink",
+  components: {
+    SvgIcon,
+  },
   props: {
     icon: { type: String, required: false },
-    title: { type: String, required: true }
+    title: { type: String, required: true },
   },
   data() {
     return {
-      isHovering: false
+      isHovering: false,
     };
   },
   methods: {
@@ -31,15 +35,15 @@ export default {
     },
     arrowHoverHandler(event) {
       this.isHovering = true;
-    }
+    },
   },
   computed: {
     arrowImage() {
       return require(`../assets/${
-        this.isHovering ? "arrow-right-circle.svg" : "arrow-right.svg"
+        this.isHovering ? "arrow-right-circle" : "arrow-right"
       }`);
-    }
-  }
+    },
+  },
 };
 </script>
 
