@@ -1,5 +1,8 @@
 # album-site
 
+## Design
+[Adobe XD Link](https://xd.adobe.com/view/0e787db3-6af5-470d-8e4a-934b20734087-5b2b/)
+
 ## Project setup
 ```
 yarn install
