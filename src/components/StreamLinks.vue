@@ -1,5 +1,5 @@
 <template>
-  <div class="stream-links" :class="{ overlay: overlay}">
+  <div class="stream-links" :class="{ overlay: overlay }">
     <div v-if="showFeature" id="feature">
       <slot></slot>
     </div>
@@ -17,7 +17,6 @@
     </ul>
   </div>
 </template>
-
 <script>
 import StreamLink from "./StreamLink";
 export default {

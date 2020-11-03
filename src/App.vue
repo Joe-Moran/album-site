@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <svg-sprite />
-    <header :class="{scrolling: isScrolling}">
+    <header :class="{ scrolling: isScrolling }">
       <Drawer
-        :links="[...sections, {path: "/", label: "Home"}]"
+        :links="[...sections, { path: '/', label: 'Home' }]"
         :isOpen="isDrawerOpen"
         :isScrolling="isScrolling"
         @click="isDrawerOpen = !isDrawerOpen"
@@ -17,7 +17,7 @@
       <xrgb></xrgb>
     </header>
 
-    <div id="container" :class="{'hide': showHidden}">
+    <div id="container" :class="{ hide: showHidden }">
       <transition name="fade">
         <router-view name="homenav" id="home-nav"></router-view>
       </transition>
@@ -29,7 +29,10 @@
 
       <section id="content">
         <transition name="fade">
-          <router-view :scroll-position="scrollPosition" @newContent="newContentHandler"></router-view>
+          <router-view
+            :scroll-position="scrollPosition"
+            @newContent="newContentHandler"
+          ></router-view>
         </transition>
       </section>
     </div>
@@ -90,7 +93,7 @@ export default {
       this.$router.path && this.$router.path.indexOf("/release") > -1
         ? siteSections.release
         : siteSections.default;
-    this.$router.afterEach((to, from, next) => {
+    this.$router.afterEach((to) => {
       if (to.path === "/") {
         this.sections = siteSections.default;
       } else if (to.path.indexOf("/release") > -1) {

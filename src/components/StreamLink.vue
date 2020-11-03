@@ -4,7 +4,7 @@
     <div class="img-container streaming-icon">
       <img v-if="icon" :src="require(`../assets/streaming/${icon}`)" />
     </div>
-    {{title}}
+    {{ title }}
     <div class="img-container go-arrow" @mouseover="arrowHoverHandler">
       <transition name="fade" mode="out-in">
         <svg-icon :icon="arrowImage" :key="arrowImage" />
@@ -33,7 +33,7 @@ export default {
     hoverHandler() {
       this.isHovering = !this.isHovering;
     },
-    arrowHoverHandler(event) {
+    arrowHoverHandler() {
       this.isHovering = true;
     },
   },

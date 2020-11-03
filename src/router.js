@@ -8,9 +8,6 @@ import Sidebar from "./components/Sidebar"
 import Drawer from "./components/Drawer"
 import siteSections from "./site-sections";
 
-
-const symbolPattern = /[^\w]/g;
-
 let releaseSiteLinks = siteSections.release;
 let defaultSiteLinks = siteSections.default;
 
