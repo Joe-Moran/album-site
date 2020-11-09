@@ -37,7 +37,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "src/sass/_global.scss";
+// @import "src/sass/_global.scss";
+@import "xRGB-Site-DSP/dist/styledictionary/scss/variables.scss";
 
 button {
   &:hover {

@@ -1,0 +1,52 @@
+{
+  "font": {
+    "Arial — 32pt": {
+      "family": {
+        "value": "Arial"
+      },
+      "weight": {
+        "value": "Narrow Bold"
+      }
+    },
+    "Arial — 82pt": {
+      "family": {
+        "value": "Arial"
+      },
+      "weight": {
+        "value": "Bold Italic"
+      }
+    },
+    "Consolas — 29pt": {
+      "family": {
+        "value": "Consolas"
+      },
+      "weight": {
+        "value": "Regular"
+      }
+    },
+    "Arial — 49pt": {
+      "family": {
+        "value": "Arial"
+      },
+      "weight": {
+        "value": "Bold Italic"
+      }
+    }
+  },
+  "size": {
+    "font": {
+      "Arial — 32pt": {
+        "value": "32"
+      },
+      "Arial — 82pt": {
+        "value": "82"
+      },
+      "Consolas — 29pt": {
+        "value": "29"
+      },
+      "Arial — 49pt": {
+        "value": "49"
+      }
+    }
+  }
+}

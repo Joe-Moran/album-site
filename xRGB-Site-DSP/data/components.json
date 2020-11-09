@@ -1,0 +1,61 @@
+{
+  "dsp_spec_version": "0.0.1",
+  "last_updated_by": "",
+  "last_updated": "2020-11-09T17:07:17.269Z",
+  "entities": [
+    {
+      "class": "component",
+      "type": "page",
+      "tags": [],
+      "id": "58b82cb4-8719-454d-bb7b-6c00365d9c51",
+      "related_entity_ids": [],
+      "snippets": {
+        "trigger": "",
+        "languages": {}
+      },
+      "name": "Basic Button",
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/defb6c90-a0be-4cb6-5e76-1303002c53d0",
+        "id": "6f95569f-65d3-4895-9302-6c634d7b5a50",
+        "last_sync": "2020-11-09T17:08:19.554Z",
+        "sync": true
+      }
+    },
+    {
+      "class": "component",
+      "type": "page",
+      "tags": [],
+      "id": "cab684cc-9e65-4160-9858-1151fead3632",
+      "related_entity_ids": [],
+      "snippets": {
+        "trigger": "",
+        "languages": {}
+      },
+      "name": "Drawer",
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/defb6c90-a0be-4cb6-5e76-1303002c53d0",
+        "id": "146eb2a3-f494-4005-9aee-fbe038b1e979",
+        "last_sync": "2020-11-09T17:08:19.554Z",
+        "sync": true
+      }
+    },
+    {
+      "class": "component",
+      "type": "page",
+      "tags": [],
+      "id": "8e51ef6c-fc6e-4f04-ab26-b88085708e58",
+      "related_entity_ids": [],
+      "snippets": {
+        "trigger": "",
+        "languages": {}
+      },
+      "name": "Letters",
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/defb6c90-a0be-4cb6-5e76-1303002c53d0",
+        "id": "7ce78154-77b9-4c3c-8b78-9e6d16795ada",
+        "last_sync": "2020-11-09T17:08:19.555Z",
+        "sync": true
+      }
+    }
+  ]
+}
