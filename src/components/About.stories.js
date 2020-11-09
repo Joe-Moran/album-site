@@ -1,33 +1,20 @@
-import {
-    action
-} from '@storybook/addon-actions'
 
 
-import {
-    INITIAL_VIEWPORTS
-} from '@storybook/addon-viewport';
+import About from "./About.vue";
 
 export default {
-    title: 'About',
+    title: 'Sections/About',
     excludeStories: /.*Data$/
 }
 
 
 
+const Template = (args, { argTypes }) => ({
+    components: { About },
+    props: Object.keys(argTypes),
+    template: '<About />',
+  });
+  
+  export const Primary = Template.bind({});
+ 
 
-
-const template = "<about :links='links' @click='onClick'></about>"
-
-
-export const Default = () => ({
-    components: {
-        About
-    },
-    template: template,
-    props: {
-        links: {
-            default: () => drawerData
-        }
-    },
-    methods: actionsData
-})

@@ -4,6 +4,7 @@ const scss = {
   test: /\.scss$/,
   use: [
     'vue-style-loader',
+    'style-loader',
     'css-loader',
     'sass-loader'
   ],
@@ -11,7 +12,7 @@ const scss = {
 
 module.exports = {
   stories: ['../src/components/**/*.stories.@(js)', ],
-  addons: ['@storybook/addon-actions', '@storybook/addon-links', '@storybook/addon-docs', '@storybook/addon-viewport/register'],
+  addons: ['@storybook/addon-essentials', '@storybook/addon-docs',],
 
   webpackFinal: async (config, {
     configType
