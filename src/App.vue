@@ -119,9 +119,8 @@ $scrolling-transition: all 100ms ease-in-out;
 }
 
 #content {
-  width: 72%;
-  position: absolute;
-  right: 9%;
+  width: 60%;
+  margin: auto;
 }
 
 header {

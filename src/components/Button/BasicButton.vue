@@ -4,6 +4,7 @@
       :icon="prependIcon"
       :height="$options.iconDimension"
       :width="$options.iconDimension"
+      :color="prependColor"
       v-if="prependIcon"
       class="icon"
     />
@@ -12,6 +13,7 @@
       :icon="appendIcon"
       :height="$options.iconDimension"
       :width="$options.iconDimension"
+      :color="appendColor"
       v-if="appendIcon"
       class="icon"
     />
@@ -37,15 +39,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import "src/sass/_global.scss";
 @import "xRGB-Site-DSP/dist/styledictionary/scss/variables.scss";
+$icon-margin: 15px;
 
 button {
   &:hover {
     cursor: pointer;
     box-shadow: -10px 10px 0px $blue-tertiary;
   }
-  display: block;
+  display: flex;
   transition: box-shadow ease-in-out 400ms;
   border-radius: 5px;
   background: transparent;
@@ -60,6 +62,12 @@ button {
 }
 
 .icon {
-  vertical-align: middle;
+  &:first-child {
+    margin-right: $icon-margin;
+  }
+
+  &:last-child {
+    margin-left: $icon-margin;
+  }
 }
 </style>

@@ -10,7 +10,7 @@ export default
     logoPath: "Icon awesome-soundcloud@2x.png"
 }, {
     label: "instagram",
-    href: "https://www.instagram.com/xrgbmusic",
+    href: "https://www.instagram.com/xrgb_music",
     logoPath: "Icon simple-instagram.png"
 }, {
     label: "bandcamp",
