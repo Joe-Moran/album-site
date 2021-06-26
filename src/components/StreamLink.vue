@@ -2,12 +2,12 @@
   <!-- TODO: refactor and rename this to something more generic -->
   <div class="stream-link" @mouseover="hoverHandler" @mouseleave="hoverHandler">
     <div class="img-container streaming-icon">
-      <img v-if="icon" :src="require(`../assets/streaming/${icon}`)" />
+      <!-- <img v-if="icon" :src="require(`../assets/streaming/${icon}`)" /> -->
     </div>
     {{ title }}
     <div class="img-container go-arrow" @mouseover="arrowHoverHandler">
       <transition name="fade" mode="out-in">
-        <svg-icon :icon="arrowImage" :key="arrowImage" />
+        <!-- <svg-icon :icon="arrowImage" :key="arrowImage" /> -->
       </transition>
     </div>
   </div>
@@ -38,11 +38,11 @@ export default {
     },
   },
   computed: {
-    arrowImage() {
-      return require(`../assets/icons/${
-        this.isHovering ? "arrow-right-circle.svg" : "arrow-right.svg"
-      }`);
-    },
+    // arrowImage() {
+    //   return require(`../assets/icons/${
+    //     this.isHovering ? "arrow-right-circle.svg" : "arrow-right.svg"
+    //   }`);
+    // },
   },
 };
 </script>

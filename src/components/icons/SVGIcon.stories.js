@@ -14,7 +14,7 @@ const Template = (args, { argTypes }) => ({
   });
   
   export const Primary = Template.bind({});
-  Primary.args = {icon: "arrow-right"}
+//   Primary.args = {icon: "arrow-right"}
 
-  export const CustomSize = Template.bind({});
-  CustomSize.args = {icon: "arrow-right", height: 32, width: 32}
+//   export const CustomSize = Template.bind({});
+//   CustomSize.args = {icon: "arrow-right", height: 32, width: 32}
