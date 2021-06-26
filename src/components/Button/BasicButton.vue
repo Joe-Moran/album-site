@@ -1,26 +1,24 @@
 <template>
   <button>
-    <SVGIcon
+    <!-- <SVGIcon
       :icon="prependIcon"
       :height="$options.ICON_SQUARE_DIMENSION"
       :width="$options.ICON_SQUARE_DIMENSION"
       v-if="prependIcon"
       class="icon"
-    />
+    /> -->
     <span id="basic-button-text"><slot></slot></span>
-    <SVGIcon
+    <!-- <SVGIcon
       :icon="appendIcon"
       :height="$options.ICON_SQUARE_DIMENSION"
       :width="$options.ICON_SQUARE_DIMENSION"
       v-if="appendIcon"
       class="icon"
-    />
+    /> -->
   </button>
 </template>
 
 <script>
-import SVGIcon from "../icons/SVGIcon.vue";
-
 /**
  * The value to use for the square dimensions of the container of the button icon.
  */
@@ -31,9 +29,7 @@ const ICON_SQUARE_DIMENSION = 32;
  */
 export default {
   name: "BasicButton",
-  components: {
-    SVGIcon,
-  },
+  components: {},
   props: {
     /**
      * The path of the icon to prepend the button label text, if desired.

@@ -47,7 +47,6 @@ import { debounce } from "debounce";
 import siteSections from "./site-sections";
 import Sidebar from "./components/Sidebar";
 import Drawer from "./components/Drawer";
-import SvgSprite from "./components/icons/SvgSprite";
 
 export default {
   name: "app",
@@ -56,7 +55,6 @@ export default {
     xrgb,
     SocialLinks,
     Drawer,
-    SvgSprite,
   },
   data() {
     return {

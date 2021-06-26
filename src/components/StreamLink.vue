@@ -14,12 +14,9 @@
 </template>
 
 <script>
-import SvgIcon from "./icons/SVGIcon";
 export default {
   name: "StreamLink",
-  components: {
-    SvgIcon,
-  },
+  components: {},
   props: {
     icon: { type: String, required: false },
     title: { type: String, required: true },
