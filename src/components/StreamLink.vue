@@ -39,8 +39,8 @@ export default {
   },
   computed: {
     arrowImage() {
-      return require(`../assets/${
-        this.isHovering ? "arrow-right-circle" : "arrow-right"
+      return require(`../assets/icons/${
+        this.isHovering ? "arrow-right-circle.svg" : "arrow-right.svg"
       }`);
     },
   },
@@ -52,18 +52,20 @@ export default {
 .stream-link {
   display: flex;
   align-content: space-around;
+  position: relative;
+
+  padding: 11px 20px;
+  width: 100%;
 
   color: black;
   font-family: "Arial Narrow", Arial;
   font-weight: bold;
   font-size: 25px;
+
   background: white;
-  padding: 11px 20px;
-  width: 100%;
   border-radius: 5px;
   box-shadow: -10px 10px 0px #0000000f;
   transition: all 250ms ease-in-out;
-  position: relative;
 
   &:hover {
     box-shadow: -12px 10px 0px #0000004d;
