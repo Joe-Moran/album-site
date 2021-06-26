@@ -2517,7 +2517,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-actions@npm:6.4.0-alpha.3, @storybook/addon-actions@npm:^6.4.0-alpha.3":
+"@storybook/addon-actions@npm:6.4.0-alpha.3":
   version: 6.4.0-alpha.3
   resolution: "@storybook/addon-actions@npm:6.4.0-alpha.3"
   dependencies:
@@ -2736,34 +2736,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-links@npm:^6.4.0-alpha.3":
-  version: 6.4.0-alpha.3
-  resolution: "@storybook/addon-links@npm:6.4.0-alpha.3"
-  dependencies:
-    "@storybook/addons": 6.4.0-alpha.3
-    "@storybook/client-logger": 6.4.0-alpha.3
-    "@storybook/core-events": 6.4.0-alpha.3
-    "@storybook/csf": 0.0.1
-    "@storybook/router": 6.4.0-alpha.3
-    "@types/qs": ^6.9.5
-    core-js: ^3.8.2
-    global: ^4.4.0
-    prop-types: ^15.7.2
-    qs: ^6.10.0
-    regenerator-runtime: ^0.13.7
-    ts-dedent: ^2.0.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0
-    react-dom: ^16.8.0 || ^17.0.0
-  peerDependenciesMeta:
-    react:
-      optional: true
-    react-dom:
-      optional: true
-  checksum: 454e67d3c73e7f6ea679f2a3f13fc3078958abb8e96877401ef168b8fc6dd105125f6991ba848ea0330a11e64ddaf5e20652cc19356f90c8dc9ed831ff450327
-  languageName: node
-  linkType: hard
-
 "@storybook/addon-measure@npm:^1.3.1":
   version: 1.3.1
   resolution: "@storybook/addon-measure@npm:1.3.1"
@@ -2820,7 +2792,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-viewport@npm:6.4.0-alpha.3, @storybook/addon-viewport@npm:^6.4.0-alpha.3":
+"@storybook/addon-viewport@npm:6.4.0-alpha.3":
   version: 6.4.0-alpha.3
   resolution: "@storybook/addon-viewport@npm:6.4.0-alpha.3"
   dependencies:
@@ -2847,7 +2819,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addons@npm:6.4.0-alpha.3, @storybook/addons@npm:^6.4.0-alpha.3":
+"@storybook/addons@npm:6.4.0-alpha.3":
   version: 6.4.0-alpha.3
   resolution: "@storybook/addons@npm:6.4.0-alpha.3"
   dependencies:
@@ -5658,13 +5630,9 @@ __metadata:
     "@babel/core": ^7.14.6
     "@babel/preset-env": ^7.14.7
     "@popperjs/core": ^2.9.2
-    "@storybook/addon-actions": ^6.4.0-alpha.3
     "@storybook/addon-docs": ^6.4.0-alpha.3
     "@storybook/addon-essentials": ^6.4.0-alpha.3
-    "@storybook/addon-links": ^6.4.0-alpha.3
     "@storybook/addon-postcss": ^2.0.0
-    "@storybook/addon-viewport": ^6.4.0-alpha.3
-    "@storybook/addons": ^6.4.0-alpha.3
     "@storybook/builder-webpack5": next
     "@storybook/manager-webpack5": next
     "@storybook/preset-scss": ^1.0.3
@@ -5696,7 +5664,6 @@ __metadata:
     sass-loader: ^12.1.0
     style-dictionary: ^3.0.1
     style-loader: ^3.0.0
-    svg-inline-loader: ^0.8.2
     ts-loader: ^9.2.3
     typescript: ^4.3.4
     vue: ^2.6.14
@@ -19737,13 +19704,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"simple-html-tokenizer@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "simple-html-tokenizer@npm:0.1.1"
-  checksum: 46969af412ee26ae4b549888ce67b868059607855ad2696f8c81e11fde37301c7d9b4346071d12136b8b8c2038f384cba5ff242bfc943119b05e72ea24203cc2
-  languageName: node
-  linkType: hard
-
 "sirv@npm:^1.0.7":
   version: 1.0.12
   resolution: "sirv@npm:1.0.12"
@@ -20681,17 +20641,6 @@ fsevents@^1.2.7:
     has-flag: ^4.0.0
     supports-color: ^7.0.0
   checksum: 91af5f206c55fe38c5acacafca8e13bee8ddf59f817178d3cb83388bd85d3ec181a59c446439b63aafa0375e579a7e8d8ec044a0ed1143137ba12f303eb76c6a
-  languageName: node
-  linkType: hard
-
-"svg-inline-loader@npm:^0.8.2":
-  version: 0.8.2
-  resolution: "svg-inline-loader@npm:0.8.2"
-  dependencies:
-    loader-utils: ^1.1.0
-    object-assign: ^4.0.1
-    simple-html-tokenizer: ^0.1.1
-  checksum: 8ead7f04e354c02aab7563ebeeecc4cfa2fea0c4efd04475f2b1731a5a576f46c7d596e2cb3f456ce01d9739ed537d779baba0045c96c1213027a68d5ce58e0e
   languageName: node
   linkType: hard
 

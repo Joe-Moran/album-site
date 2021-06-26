@@ -1,6 +1,3 @@
-import {
-    action
-} from '@storybook/addon-actions'
 
 import Content from "./Content.vue";
 
