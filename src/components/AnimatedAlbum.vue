@@ -2,7 +2,10 @@
   <div id="album-art">
     <div v-for="(image, index) in images" :key="index">
       <MeImage
-        v-show="!isMobile && index === section || isMobile && index === gyroSection"
+        v-show="
+          (!isMobile && index === section) ||
+          (isMobile && index === gyroSection)
+        "
         :image-source="image"
       />
     </div>
@@ -10,79 +13,78 @@
 </template>
 
 <script>
-import MeImage from "./MeImage";
-import { isMobile } from "mobile-device-detect";
-import { imageCollection } from "./image-collection";
+import MeImage from './MeImage'
+import { isMobile } from 'mobile-device-detect'
+import { imageCollection } from './image-collection'
 
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
   components: {
     MeImage,
-    isMobile
   },
   data() {
     return {
       win: window,
       doc: document,
       docElem: document.documentElement,
-      body: document.getElementsByTagName("body")[0],
+      body: document.getElementsByTagName('body')[0],
       mouseY: 0,
       gyroY: null,
       mod: 0,
       isMobile: isMobile,
-      images: imageCollection.images
-    };
+      images: imageCollection.images,
+    }
   },
   computed: {
-    screenDividerCount: function() {
-      return this.images.length - 1;
+    screenDividerCount: function () {
+      return this.images.length - 1
     },
-    x: function() {
+    x: function () {
       return (
         this.win.innerWidth || this.docElem.clientWidth || this.body.clientWidth
-      );
+      )
     },
-    y: function() {
+    y: function () {
       return (
         this.win.innerHeight ||
         this.docElem.clientHeight ||
         this.body.clientHeight
-      );
+      )
     },
-    sectionHeight: function() {
-      return this.y / this.screenDividerCount;
+    sectionHeight: function () {
+      return this.y / this.screenDividerCount
     },
-    section: function() {
-      return Math.floor(this.mouseY / this.sectionHeight);
+    section: function () {
+      return Math.floor(this.mouseY / this.sectionHeight)
     },
-    gyroSection: function() {
-      let calc = Math.abs(
+    gyroSection: function () {
+      const calc = Math.abs(
         (Math.pow(this.gyroY - this.mod, 2) * 100) /
           90 /
           this.screenDividerCount
-      );
+      )
 
       return calc > this.screenDividerCount
         ? this.screenDividerCount
-        : Math.floor(calc);
-    }
+        : Math.floor(calc)
+    },
+  },
+  mounted() {
+    window.addEventListener('mousemove', this.mouseIsMoving)
+    window.addEventListener('deviceorientation', this.handleOrientation, true)
   },
   methods: {
     mouseIsMoving(e) {
-      this.mouseY = e.pageY;
+      this.mouseY = e.pageY
     },
-    handleOrientation: function(event) {
+    handleOrientation: function (event) {
       if (this.gyroY == null) {
-        this.mod = event.beta;
+        this.mod = event.beta
       }
-      this.gyroY = event.beta;
-    }
+      this.gyroY = event.beta
+    },
   },
-  mounted() {
-    window.addEventListener("mousemove", this.mouseIsMoving);
-    window.addEventListener("deviceorientation", this.handleOrientation, true);
-  }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -95,8 +97,8 @@ h3 {
   margin: 40px 0 0;
 }
 ul {
-  list-style-type: none;
   padding: 0;
+  list-style-type: none;
 }
 li {
   display: inline-block;

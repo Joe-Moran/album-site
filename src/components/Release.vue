@@ -2,81 +2,88 @@
   <div class="release">
     <div class="cover" @click="clickHandler">
       <StreamLinks
+        v-if="showStreaming"
         :links="streaming"
         overlay
         class="release-stream-links overlay-release"
-        @click="listenClick = false"
-        v-if="showStreaming"
         :release-path="releasePath"
         reduce
+        @click="listenClick = false"
       />
       <div class="loading"></div>
-      <img :src="require('../assets/' + releaseAssetsPath + '/' + coverPath)" @load="$emit('load', true)" />
+      <img
+        :src="require('../assets/' + releaseAssetsPath + '/' + coverPath)"
+        :alt="coverImageAlt"
+        @load="$emit('load', true)"
+      />
     </div>
-    <h3>{{title}}</h3>
+    <h3>{{ title }}</h3>
   </div>
 </template>
 
 <script>
-import StreamLinks from "./StreamLinks";
-import globals from "../globals";
+import globals from '@/globals'
+import StreamLinks from './StreamLinks'
 
 export default {
-  name: "Release",
+  name: 'Release',
   components: {
-    StreamLinks
+    StreamLinks,
   },
   props: {
-    loading: { type: Boolean, default: true },
+    loading: { type: Boolean, default: false },
     title: { type: String, required: true },
     coverPath: { type: String, required: true },
-    streaming: { type: Array, required: false },
+    streaming: { type: Array, required: true },
     type: { type: String, required: true },
-    releasePath: {type: String, required: false}
+    releasePath: { type: String, required: true },
   },
   data() {
     return {
       listenClick: false,
-      clientWidth: 1900
-    };
+      clientWidth: 1900,
+    }
   },
   computed: {
     releaseAssetsPath() {
-      return this.type === "album" ? "albums" : "singles";
+      return this.type === 'album' ? 'albums' : 'singles'
     },
     isMobile() {
-      return this.clientWidth < globals.md;
+      return this.clientWidth < globals.md
     },
     showStreaming() {
-      return (this.listenClick && this.isMobile) || !this.isMobile;
-    }
+      return (this.listenClick && this.isMobile) || !this.isMobile
+    },
+    coverImageAlt() {
+      return `${this.title} Cover Art`
+    },
+  },
+  mounted() {
+    this.resizeHandler()
+    window.addEventListener('resize', this.resizeHandler)
   },
   methods: {
     resizeHandler() {
-      this.clientWidth = document.body.clientWidth;
+      this.clientWidth = document.body.clientWidth
     },
     clickHandler() {
       if (this.isMobile) {
-        this.listenClick = true;
+        this.listenClick = true
       }
-    }
+    },
   },
-  mounted() {
-    this.resizeHandler();
-    window.addEventListener("resize", this.resizeHandler);
-  }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../sass/_global.scss";
+@import '../sass/_global.scss';
 
 .cover {
+  position: relative;
   width: 100%;
   max-width: 700px;
   height: 100%;
   border: 2px solid #ffffff38;
-  position: relative;
   @extend %retro-shadow;
 }
 
@@ -102,51 +109,51 @@ img {
 }
 
 .release-stream-links {
-  opacity: 0;
   position: absolute;
+  right: 0;
   bottom: 107%;
   left: 0;
-  right: 0;
+  opacity: 0;
   &.overlay-release {
-    bottom: 0;
     top: 0;
+    bottom: 0;
   }
 }
 
 button {
-  font-family: Arial;
-  font-weight: bold;
-  font-size: 1.5vw;
-  padding: 6% 15%;
   position: absolute;
+  top: 40%;
+  left: 10%;
+  width: 80%;
+  height: 20%;
+  padding: 6% 15%;
+  font-family: Arial;
+  font-size: 1.5vw;
+  font-weight: bold;
+  color: white;
+  text-align: center;
   background: #00000082;
   border: 2px solid #fff;
-  color: white;
-  width: 80%;
-  left: 10%;
-  top: 40%;
-  height: 20%;
-  transition: all 200ms ease-in-out;
   opacity: 0;
-  text-align: center;
+  transition: all 200ms ease-in-out;
 
   &:hover {
-    color: #d11d66;
-    background: #00000090;
-    cursor: pointer;
-    width: 85%;
     left: 7.5%;
+    width: 85%;
+    color: #d11d66;
+    cursor: pointer;
+    background: #00000090;
   }
 }
 
 .loading {
-  background: $red-primary;
-  opacity: 0.5;
-  animation: blink infinite 1.2s ease-in-out;
   // width: 350px;
   // height: 350px;
   width: 100%;
   height: 100%;
+  background: $red-primary;
+  opacity: 0.5;
+  animation: blink infinite 1.2s ease-in-out;
 }
 
 .release {

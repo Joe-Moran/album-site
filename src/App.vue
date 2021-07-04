@@ -1,29 +1,27 @@
 <template>
   <div id="app">
-    <svg-sprite />
+    <SvgSprite />
     <header :class="{ scrolling: isScrolling }">
       <Drawer
         :links="[...sections, { path: '/', label: 'Home' }]"
-        :isOpen="isDrawerOpen"
-        :isScrolling="isScrolling"
+        :is-open="isDrawerOpen"
+        :is-scrolling="isScrolling"
         @click="isDrawerOpen = !isDrawerOpen"
         @close="isDrawerOpen = false"
       >
-        <template slot:anchor>
-          <SocialLinks :links="socialLinks" class="social" />
-        </template>
+        <SocialLinks :links="socialLinks" class="social" />
       </Drawer>
-      <SocialLinks :links="socialLinks" class="social" id="desktop-social" />
+      <SocialLinks id="desktop-social" :links="socialLinks" class="social" />
       <xrgb></xrgb>
     </header>
 
     <div id="container" :class="{ hide: showHidden }">
       <transition name="fade">
-        <router-view name="homenav" id="home-nav"></router-view>
+        <router-view id="home-nav" name="homenav"></router-view>
       </transition>
       <section id="sidebar">
         <transition name="fade">
-          <Sidebar :currentSelection="visibleContent" :links="sections" />
+          <Sidebar :current-selection="visibleContent" :links="sections" />
         </transition>
       </section>
 
@@ -40,17 +38,17 @@
 </template>
 
 <script>
-import xrgb from "./components/xrgb";
-import SocialLinks from "./components/SocialLinks";
-import xrgbSocialLinks from "./xrgbSocialLinks";
-import { debounce } from "debounce";
-import siteSections from "./site-sections";
-import Sidebar from "./components/Sidebar";
-import Drawer from "./components/Drawer";
-import SvgSprite from "./components/icons/SvgSprite";
+import { debounce } from 'debounce'
+import xrgb from './components/xrgb'
+import SocialLinks from './components/SocialLinks'
+import xrgbSocialLinks from './xrgbSocialLinks'
+import siteSections from './site-sections'
+import Sidebar from './components/Sidebar'
+import Drawer from './components/Drawer'
+import SvgSprite from './components/icons/SvgSprite'
 
 export default {
-  name: "app",
+  name: 'App',
   components: {
     Sidebar,
     xrgb,
@@ -67,55 +65,54 @@ export default {
       isScrolling: false,
       scrollPosition: 0,
       visibleContent: null,
-    };
-  },
-  methods: {
-    clickHandler() {
-      this.showHidden = !this.showHidden;
-    },
-    newContentHandler(newContent) {
-      this.visibleContent = newContent ? newContent : null;
-    },
-    scrollListener() {
-      if (window.scrollY > 38) {
-        this.isScrolling = true;
-      } else {
-        this.isScrolling = false;
-      }
-
-      this.scrollPosition = window.scrollY;
-    },
+    }
   },
   computed: {},
   mounted() {
-    window.addEventListener("scroll", debounce(this.scrollListener, 10));
+    window.addEventListener('scroll', debounce(this.scrollListener, 10))
     this.sections =
-      this.$router.path && this.$router.path.indexOf("/release") > -1
+      this.$router.path && this.$router.path.indexOf('/release') > -1
         ? siteSections.release
-        : siteSections.default;
+        : siteSections.default
     this.$router.afterEach((to) => {
-      if (to.path === "/") {
-        this.sections = siteSections.default;
-      } else if (to.path.indexOf("/release") > -1) {
-        this.sections = siteSections.release;
+      if (to.path === '/') {
+        this.sections = siteSections.default
+      } else if (to.path.indexOf('/release') > -1) {
+        this.sections = siteSections.release
       }
-    });
+    })
   },
-};
+  methods: {
+    clickHandler() {
+      this.showHidden = !this.showHidden
+    },
+    newContentHandler(newContent) {
+      this.visibleContent = newContent || null
+    },
+    scrollListener() {
+      if (window.scrollY > 38) {
+        this.isScrolling = true
+      } else {
+        this.isScrolling = false
+      }
+
+      this.scrollPosition = window.scrollY
+    },
+  },
+}
 </script>
 
-
-<style lang="scss" >
-@import "./sass/_global.scss";
-@import url("https://fonts.googleapis.com/css?family=Knewave|Raleway:900&display=swap");
+<style lang="scss">
+@import './sass/_global.scss';
+@import url('https://fonts.googleapis.com/css?family=Knewave|Raleway:900&display=swap');
 
 $scrolling-transition: all 100ms ease-in-out;
 
 #sidebar {
-  width: 17%;
   position: fixed;
   top: 325px;
   left: 10%;
+  width: 17%;
 }
 
 #content {
@@ -131,11 +128,11 @@ header {
 
 #container {
   position: absolute;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   width: 80%;
-  z-index: 1;
   margin: 0 10% 0 10%;
 }
 
@@ -144,19 +141,19 @@ header {
 }
 
 body {
-  margin: 0;
   height: 100%;
+  margin: 0;
 }
 
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  position: relative;
+  display: block;
+  height: 100%;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  color: #2c3e50;
+  background: black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  height: 100%;
-  background: black;
-  display: block;
-  position: relative;
 }
 
 #desktop-social {
@@ -168,32 +165,32 @@ body {
 
 .scrolling {
   #desktop-social {
-    top: 0px;
     position: fixed;
+    top: 0;
   }
 
   #xrgb {
     position: fixed;
     top: 0;
-    padding-top: 3px;
+    left: 50%;
     z-index: 1000;
+    padding-top: 3px;
+    filter: grayscale(100%);
     transform: scale(0.3);
     transform: translateX(-50%);
-    left: 50%;
     transform-origin: top;
-    filter: grayscale(100%);
 
     svg {
+      display: block;
       height: 35px;
       margin: auto;
-      display: block;
     }
   }
 }
 
 html {
-  background-color: black;
   height: 100%;
+  background-color: black;
 }
 
 .fade-enter-active,
@@ -236,13 +233,13 @@ html {
   }
 
   #content {
-    width: 100%;
     right: unset;
+    width: 100%;
   }
 
   #container {
-    width: 100%;
     left: 0;
+    width: 100%;
     margin: 0;
   }
 

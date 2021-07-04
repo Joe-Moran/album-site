@@ -1,30 +1,30 @@
 <template>
-  <div :class="{selected: selected}">
-    <router-link :to="'#' + link.path" append>{{link.label}}</router-link>
+  <div :class="{ selected: selected }">
+    <router-link :to="'#' + link.path" append>{{ link.label }}</router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Link",
+  name: 'Link',
   props: {
     link: { type: Object, required: true },
-    selected: { type: Boolean, required: false }
-  }
-};
+    selected: { type: Boolean, required: false },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../sass/_global.scss";
+@import '../sass/_global.scss';
 
 $max: 240px;
 
 a {
+  position: relative;
+  font-family: 'Consolas';
+  font-size: 22px;
   color: white;
   text-decoration: none;
-  font-family: "Consolas";
-  font-size: 22px;
-  position: relative;
   transition: color 350ms ease-in-out;
 
   &:hover {
@@ -33,15 +33,15 @@ a {
 }
 
 .selected a::before {
-  content: " ";
-  background: #0631a2c7;
-  display: block;
-  height: 20pt;
-  width: 132%;
+  position: absolute;
   top: 10px;
   left: -10px;
-  position: absolute;
   z-index: -1;
+  display: block;
+  width: 132%;
+  height: 20pt;
+  content: ' ';
+  background: #0631a2c7;
   animation: fade 200ms ease-in-out;
 }
 
@@ -56,8 +56,8 @@ a {
 }
 
 div {
-  max-width: $max;
-  padding: 0px 10px 0px 10px;
   position: relative;
+  max-width: $max;
+  padding: 0 10px 0 10px;
 }
 </style>

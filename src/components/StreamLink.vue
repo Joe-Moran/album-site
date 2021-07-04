@@ -2,79 +2,82 @@
   <!-- TODO: refactor and rename this to something more generic -->
   <div class="stream-link" @mouseover="hoverHandler" @mouseleave="hoverHandler">
     <div class="img-container streaming-icon">
-      <img v-if="icon" :src="require(`../assets/streaming/${icon}`)" />
+      <img
+        v-if="icon"
+        :src="require(`../assets/streaming/${icon}`)"
+        alt="title"
+      />
     </div>
     {{ title }}
     <div class="img-container go-arrow" @mouseover="arrowHoverHandler">
       <transition name="fade" mode="out-in">
-        <svg-icon :icon="arrowImage" :key="arrowImage" />
+        <SvgIcon :key="arrowImage" :icon="arrowImage" />
       </transition>
     </div>
   </div>
 </template>
 
 <script>
-import SvgIcon from "./icons/SVGIcon";
+import SvgIcon from './icons/SVGIcon'
 export default {
-  name: "StreamLink",
+  name: 'StreamLink',
   components: {
     SvgIcon,
   },
   props: {
-    icon: { type: String, required: false },
+    icon: { type: String, required: true },
     title: { type: String, required: true },
   },
   data() {
     return {
       isHovering: false,
-    };
-  },
-  methods: {
-    hoverHandler() {
-      this.isHovering = !this.isHovering;
-    },
-    arrowHoverHandler() {
-      this.isHovering = true;
-    },
+    }
   },
   computed: {
     arrowImage() {
       return require(`../assets/${
-        this.isHovering ? "arrow-right-circle" : "arrow-right"
-      }`);
+        this.isHovering ? 'arrow-right-circle' : 'arrow-right'
+      }`)
     },
   },
-};
+  methods: {
+    hoverHandler() {
+      this.isHovering = !this.isHovering
+    },
+    arrowHoverHandler() {
+      this.isHovering = true
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../sass/_global.scss";
+@import '../sass/_global.scss';
 .stream-link {
+  position: relative;
   display: flex;
   align-content: space-around;
-
-  color: black;
-  font-family: "Arial Narrow", Arial;
-  font-weight: bold;
-  font-size: 25px;
-  background: white;
-  padding: 11px 20px;
   width: 100%;
+  padding: 11px 20px;
+  font-family: 'Arial Narrow', Arial;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+  background: white;
   border-radius: 5px;
-  box-shadow: -10px 10px 0px #0000000f;
+  box-shadow: -10px 10px 0 #0000000f;
   transition: all 250ms ease-in-out;
-  position: relative;
 
   &:hover {
-    box-shadow: -12px 10px 0px #0000004d;
     width: 101%;
     margin-left: 2px;
+    box-shadow: -12px 10px 0 #0000004d;
   }
 }
 
 .img-container {
-  height: 30px;
   width: 30px;
+  height: 30px;
   margin-right: 12px;
 }
 
@@ -84,8 +87,8 @@ img {
 }
 
 .go-arrow {
-  right: 0;
   position: absolute;
+  right: 0;
 }
 
 .fade-enter-active,
@@ -103,8 +106,8 @@ img {
   }
 
   .img-container {
-    height: 24px;
     width: 24px;
+    height: 24px;
   }
 }
 </style>

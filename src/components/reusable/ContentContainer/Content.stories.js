@@ -1,12 +1,7 @@
-import {
-    action
-} from '@storybook/addon-actions'
+
 
 import Content from "./Content.vue";
 
-import {
-    INITIAL_VIEWPORTS
-} from '@storybook/addon-viewport';
 
 
 export default {

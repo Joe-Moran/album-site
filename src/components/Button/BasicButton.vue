@@ -1,64 +1,65 @@
 <template>
   <button>
     <SVGIcon
+      v-if="prependIcon"
       :icon="prependIcon"
       :height="$options.iconDimension"
       :width="$options.iconDimension"
       :color="prependColor"
-      v-if="prependIcon"
       class="icon"
     />
     <span id="basic-button-text"><slot></slot></span>
     <SVGIcon
+      v-if="appendIcon"
       :icon="appendIcon"
       :height="$options.iconDimension"
       :width="$options.iconDimension"
       :color="appendColor"
-      v-if="appendIcon"
       class="icon"
     />
   </button>
 </template>
 
 <script>
-import SVGIcon from "../icons/SVGIcon.vue";
+import SVGIcon from '../icons/SVGIcon.vue'
 
 export default {
-  name: "BasicButton",
+  name: 'BasicButton',
   components: {
     SVGIcon,
   },
   props: {
-    prependIcon: { type: String, required: false },
-    appendIcon: { type: String, required: false },
-    prependColor: { type: String, required: false },
-    appendColor: { type: String, required: false },
+    prependIcon: { type: String, default: '' },
+    appendIcon: { type: String, default: '' },
+    prependColor: { type: String, default: 'orange' },
+    appendColor: { type: String, default: 'orange' },
   },
   iconDimension: 32,
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "xRGB-Site-DSP/dist/styledictionary/scss/variables.scss";
+@import 'xRGB-Site-DSP/dist/styledictionary/scss/variables.scss';
 $icon-margin: 15px;
 
 button {
   &:hover {
     cursor: pointer;
-    box-shadow: -10px 10px 0px $blue-tertiary;
+    box-shadow: -10px 10px 0 $blue-tertiary;
   }
+
   display: flex;
-  transition: box-shadow ease-in-out 400ms;
-  border-radius: 5px;
+  padding: 14px;
+  font-family: Consolas;
+  font-size: 25px;
+  font-weight: bold;
+  color: #d11d66;
+  text-transform: uppercase;
+  letter-spacing: 13px;
   background: transparent;
   border: 3px solid #d11d66;
-  color: #d11d66;
-  padding: 14px;
-  font-size: 25px;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family: Consolas;
-  letter-spacing: 13px;
+  border-radius: 5px;
+  transition: box-shadow ease-in-out 400ms;
 }
 
 .icon {

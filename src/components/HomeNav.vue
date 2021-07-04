@@ -1,48 +1,48 @@
 <template>
-  <button @click="$router.push({path: '/'})">
-    <img :src="require('../assets/arrow-left.png')" />Home
+  <button @click="$router.push({ path: '/' })">
+    <img :src="require('../assets/arrow-left.png')" alt="" />Home
   </button>
 </template>
 
 <script>
 export default {
-  name: "HomeNav",
+  name: 'HomeNav',
   data() {
-    return {};
-  }
-};
+    return {}
+  },
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../sass/_global.scss";
+@import '../sass/_global.scss';
 
 img {
-  height: 18px;
-  width: auto;
-  justify-self: center;
-  padding: 0px 24px 0px 14px;
   align-self: center;
+  justify-self: center;
+  width: auto;
+  height: 18px;
+  padding: 0 24px 0 14px;
 }
 
 button {
   &:hover {
     cursor: pointer;
-    box-shadow: -10px 10px 0px $blue-tertiary;
+    box-shadow: -10px 10px 0 $blue-tertiary;
   }
 
-  transition: box-shadow ease-in-out 400ms;
-  display: flex;
-  border-radius: 5px;
-  background: transparent;
-  border: 3px solid #d11d66;
   position: fixed;
   top: 60px;
-  color: #d11d66;
+  display: flex;
   padding: 14px;
-  font-size: 25px;
-  text-transform: uppercase;
-  font-weight: bold;
   font-family: Consolas;
+  font-size: 25px;
+  font-weight: bold;
+  color: #d11d66;
+  text-transform: uppercase;
   letter-spacing: 13px;
+  background: transparent;
+  border: 3px solid #d11d66;
+  border-radius: 5px;
+  transition: box-shadow ease-in-out 400ms;
 }
 </style>

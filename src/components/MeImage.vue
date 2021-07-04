@@ -6,19 +6,20 @@
 
 <script>
 export default {
-  name: "MeImage",
+  name: 'MeImage',
   props: {
     imageSource: {
-      type: String
-    }
-  }
-};
+      type: String,
+      required: true,
+    },
+  },
+}
 </script>
 
 <style>
 figure {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 @media only screen and (max-width: 924px) {
   img {

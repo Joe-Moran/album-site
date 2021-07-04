@@ -1,34 +1,34 @@
 <template>
   <ul>
     <li v-for="release in releases" :key="release.name">
-      <release
+      <Release
         :loading="release.loading"
         :title="release.title"
-        :coverPath="release.coverPath"
+        :cover-path="release.coverPath"
         :streaming="release.streaming"
         :type="release.type"
         :release-path="release.path ? 'release' + release.path : null"
         @load="release.loading = false"
-      ></release>
+      />
     </li>
   </ul>
 </template>
 
 <script>
-import Release from "./Release";
+import Release from './Release'
 export default {
-  name: "Releases",
-  props: {
-    releases: { type: Array, required: true }
-  },
+  name: 'Releases',
   components: {
-    Release
-  }
-};
+    Release,
+  },
+  props: {
+    releases: { type: Array, required: true },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../sass/_global.scss";
+@import '../sass/_global.scss';
 
 ul {
   display: flex;
@@ -55,7 +55,7 @@ li {
   }
 
   ul {
-    padding-bottom: 0px;
+    padding-bottom: 0;
   }
 }
 

@@ -9,23 +9,23 @@
 </template>
 
 <script>
-import Link from "./Link";
-import nav from "../mixins/nav.js";
+import nav from '@/mixins/nav.js'
+import Link from './Link'
 export default {
-  name: "Sidebar",
-  props: {
-    currentSelection: { type: String, required: true, default: null }
-  },
+  name: 'Sidebar',
   components: {
-    Link
+    Link,
+  },
+  mixins: [nav],
+  props: {
+    currentSelection: { type: String, required: true, default: null },
   },
   methods: {
     isCurrentSection(section) {
-      return this.currentSelection && section.path === this.currentSelection;
-    }
+      return this.currentSelection && section.path === this.currentSelection
+    },
   },
-  mixins: [nav]
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -40,12 +40,12 @@ li {
   padding-bottom: $li-margin;
   list-style: none;
   &:not(:first-child) {
-    padding: $li-margin 0px $li-margin 0px;
+    padding: $li-margin 0 $li-margin 0;
   }
 }
 
 ul {
-  list-style: none;
   padding: 0;
+  list-style: none;
 }
 </style>

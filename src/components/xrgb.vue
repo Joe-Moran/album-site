@@ -2,12 +2,12 @@
   <section id="xrgb">
     <div id="xrgb-container">
       <svg
-        version="1.1"
         id="Layer_1"
+        version="1.1"
         x="0px"
         y="0px"
         viewBox="0 0 624 202.8"
-        style="enable-background:new 0 0 624 202.8;"
+        style="enable-background: new 0 0 624 202.8"
         xml:space="preserve"
       >
         <g>
@@ -138,11 +138,11 @@
 </template>
 
 <script>
-export default { name: "xrgb" };
+export default { name: 'Xrgb' }
 </script>
 
 <style lang="scss" scoped>
-@import "../sass/_global.scss";
+@import '../sass/_global.scss';
 
 .st0 {
   fill: #00aeef;
@@ -152,9 +152,9 @@ export default { name: "xrgb" };
 }
 #xrgb {
   position: relative;
-  margin: auto;
   top: 90px;
   max-width: 500px;
+  margin: auto;
   transition: top 200ms ease-in-out;
 }
 #xrgb-container {

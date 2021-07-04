@@ -1,50 +1,64 @@
 <template>
   <div>
-    <UserContent
+    <ContentContainer
       :scroll-position="scrollPosition"
       name="latest"
-      :displayName="false"
+      :display-name="false"
       @visible="contentVisible"
     >
       <Latest></Latest>
-    </UserContent>
-    <UserContent name="singles" :scroll-position="scrollPosition" @visible="contentVisible">
+    </ContentContainer>
+    <ContentContainer
+      name="singles"
+      :scroll-position="scrollPosition"
+      @visible="contentVisible"
+    >
       <Releases :releases="singles"></Releases>
-    </UserContent>
-    <UserContent name="albums" :scroll-position="scrollPosition" @visible="contentVisible">
+    </ContentContainer>
+    <ContentContainer
+      name="albums"
+      :scroll-position="scrollPosition"
+      @visible="contentVisible"
+    >
       <Releases :releases="albums"></Releases>
-    </UserContent>
-    <UserContent name="about" :scroll-position="scrollPosition" @visible="contentVisible">
+    </ContentContainer>
+    <ContentContainer
+      name="about"
+      :scroll-position="scrollPosition"
+      @visible="contentVisible"
+    >
       <About />
-    </UserContent>
+    </ContentContainer>
   </div>
 </template>
 
 <script>
-import About from "../components/About";
-import UserContent from "../components/Content";
-import Releases from "../components/Releases";
-import Latest from "../components/Latest";
-import view from "../mixins/view";
-import releasesData from "../releases-data.js";
+import ContentContainer from '@/components/reusable/ContentContainer/Content.vue'
+import view from '@/mixins/view'
+import releasesData from '@/releases-data.js'
+import About from '../components/About'
+import Releases from '../components/Releases'
+import Latest from '../components/Latest'
 
+/**
+ * The home page view.
+ */
 export default {
-  name: "home",
+  name: 'Home',
   components: {
-    UserContent,
+    ContentContainer,
     Releases,
     About,
-    Latest
+    Latest,
   },
   mixins: [view],
   data() {
     return {
       albums: releasesData.albums,
-      singles: releasesData.singles
-    };
-  }
-};
+      singles: releasesData.singles,
+    }
+  },
+}
 </script>
 
-<style>
-</style>
+<style></style>
