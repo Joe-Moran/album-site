@@ -9,5 +9,6 @@ module.exports = {
         config.resolve.alias.set("@", path.resolve(__dirname, 'src/'));
         config.resolve.extensions.add(".vue");
         config.resolve.extensions.add(".scss");
-    }
+    },
+
 }

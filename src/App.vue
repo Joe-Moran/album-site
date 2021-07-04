@@ -12,12 +12,12 @@
         <SocialLinks :links="socialLinks" class="social" />
       </Drawer>
       <SocialLinks id="desktop-social" :links="socialLinks" class="social" />
-      <xrgb></xrgb>
+      <xrgb />
     </header>
 
     <div id="container" :class="{ hide: showHidden }">
       <transition name="fade">
-        <router-view id="home-nav" name="homenav"></router-view>
+        <router-view id="home-nav" name="homenav" />
       </transition>
       <section id="sidebar">
         <transition name="fade">
@@ -30,7 +30,7 @@
           <router-view
             :scroll-position="scrollPosition"
             @newContent="newContentHandler"
-          ></router-view>
+          />
         </transition>
       </section>
     </div>
@@ -54,7 +54,6 @@ export default {
     xrgb,
     SocialLinks,
     Drawer,
-    SvgSprite,
   },
   data() {
     return {
@@ -148,6 +147,11 @@ body {
 #app {
   position: relative;
   display: block;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: $font-size;
+  color: #2c3e50;
   height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   color: #2c3e50;

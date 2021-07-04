@@ -19,9 +19,9 @@ const Template = (args, { argTypes }) => ({
   export const Primary = Template.bind({});
   Primary.args = {text: "Button"}
 
-  export const Prepend = Template.bind({});
-  Prepend.args = {text: "Prepend", prependIcon: "arrow-right"};
+//   export const Prepend = Template.bind({});
+//   Prepend.args = {text: "Prepend", prependIcon: "arrow-right"};
 
-  export const AppendIcon = Template.bind({});
-  AppendIcon.args = {text: "AppendIcon", appendIcon: "arrow-right"}
+//   export const AppendIcon = Template.bind({});
+//   AppendIcon.args = {text: "AppendIcon", appendIcon: "arrow-right"}
 

@@ -1,19 +1,15 @@
-
-
-import Content from "./Content.vue";
-
-
+import Content from './Content.vue'
 
 export default {
-    title: 'Content',
-    excludeStories: /.*Data$/
+  title: 'Content',
+  excludeStories: /.*Data$/,
 }
 
 const template = "<Content title='title'>hi </Content>"
 
 export const Default = () => ({
-    components: {
-        Content
-    },
-    template: template
-});
+  components: {
+    Content,
+  },
+  template: template,
+})

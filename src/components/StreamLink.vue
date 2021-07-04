@@ -2,28 +2,21 @@
   <!-- TODO: refactor and rename this to something more generic -->
   <div class="stream-link" @mouseover="hoverHandler" @mouseleave="hoverHandler">
     <div class="img-container streaming-icon">
-      <img
-        v-if="icon"
-        :src="require(`../assets/streaming/${icon}`)"
-        alt="title"
-      />
+      <!-- <img v-if="icon" :src="require(`../assets/streaming/${icon}`)" /> -->
     </div>
     {{ title }}
     <div class="img-container go-arrow" @mouseover="arrowHoverHandler">
       <transition name="fade" mode="out-in">
-        <SvgIcon :key="arrowImage" :icon="arrowImage" />
+        <!-- <svg-icon :icon="arrowImage" :key="arrowImage" /> -->
       </transition>
     </div>
   </div>
 </template>
 
 <script>
-import SvgIcon from './icons/SVGIcon'
 export default {
   name: 'StreamLink',
-  components: {
-    SvgIcon,
-  },
+  components: {},
   props: {
     icon: { type: String, required: true },
     title: { type: String, required: true },
@@ -39,6 +32,13 @@ export default {
         this.isHovering ? 'arrow-right-circle' : 'arrow-right'
       }`)
     },
+  },
+  computed: {
+    // arrowImage() {
+    //   return require(`../assets/icons/${
+    //     this.isHovering ? "arrow-right-circle.svg" : "arrow-right.svg"
+    //   }`);
+    // },
   },
   methods: {
     hoverHandler() {
@@ -63,6 +63,16 @@ export default {
   font-size: 25px;
   font-weight: bold;
   color: black;
+  position: relative;
+
+  padding: 11px 20px;
+  width: 100%;
+
+  color: black;
+  font-family: 'Arial Narrow', Arial;
+  font-weight: bold;
+  font-size: 25px;
+
   background: white;
   border-radius: 5px;
   box-shadow: -10px 10px 0 #0000000f;
