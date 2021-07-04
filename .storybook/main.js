@@ -1,4 +1,4 @@
-// const path = require('path');
+const path = require('path')
 
 // const scss = {
 //   test: /\.scss$/,
@@ -11,21 +11,17 @@
 // };
 
 module.exports = {
-  stories: ['../src/components/**/*.stories.@(js)', ],
-  addons: ['@storybook/addon-essentials',  '@storybook/addon-postcss',],
+  stories: ['../src/components/**/*.stories.@(js)'],
+  addons: ['@storybook/addon-essentials', '@storybook/preset-scss'],
   core: {
-    builder: "webpack5",
+    builder: 'webpack5',
   },
 
+  webpackFinal: async (config, { configType }) => {
+    //   config.module.rules.push(scss);
 
-  // webpackFinal: async (config, {
-  //   configType
-  // }) => {
-
-  //   config.module.rules.push(scss);
-
-  //   return config;
-  // },
+    //   return config;
+    // },
 
     // findSVG(
     //   config
@@ -35,6 +31,11 @@ module.exports = {
     //   test: /\.svg$/,
     //   use: ['vue-svg-loader'],
     // })
-    // return config
+
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.join(__dirname, '../src/'),
+    }
+    return config
   },
 }
