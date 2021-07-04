@@ -3,11 +3,12 @@
 </template>
 
 <script>
-import iconStore from '@/icon-store'
+// import iconStore from '@/icon-store'
 
-const icons = iconStore.icons
+// const icons = iconStore.icons
 export default {
   name: 'SvgSprite',
-  svgSprite: icons.join('\n'), // concatenate all symbols into $options.svgSprite
+  svgSprite: null,
+  // icons.join('\n'), // concatenate all symbols into $options.svgSprite
 }
 </script>
