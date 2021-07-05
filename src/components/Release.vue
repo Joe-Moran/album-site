@@ -1,6 +1,9 @@
 <template>
   <div class="release">
-    <div class="cover" @click="clickHandler">
+    <div
+      class="cover"
+      @click="clickHandler"
+    >
       <StreamLinks
         v-if="showStreaming"
         :links="streaming"
@@ -10,12 +13,12 @@
         reduce
         @click="listenClick = false"
       />
-      <div class="loading"></div>
+      <div class="loading" />
       <img
         :src="require('../assets/' + releaseAssetsPath + '/' + coverPath)"
         :alt="coverImageAlt"
         @load="$emit('load', true)"
-      />
+      >
     </div>
     <h3>{{ title }}</h3>
   </div>

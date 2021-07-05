@@ -3,39 +3,24 @@ module.exports = {
   parserOptions: {
     sourceType: 'script',
   },
+  env: {
+    es6: true,
+    node: true,
+    jest: true,
+  },
   extends: [
-    // https://github.com/vuejs/eslint-plugin-vue#bulb-rules
     'plugin:vue/recommended',
-    // https://github.com/prettier/eslint-config-prettier
-    // 'prettier',
-    // 'prettier/standard',
-    // 'prettier/vue',
-    // 'plugin:jest-dom/recommended',
+    'prettier',
+    'plugin:jest-dom/recommended',
   ],
   overrides: [
     {
-      files: ['src/**/*', 'tests/test/**/*', 'tests/e2e/**/*'],
-      parserOptions: {
-        parser: 'babel-eslint',
-        sourceType: 'module',
-      },
+      files: [
+        '**/__tests__/*.{j,t}s?(x)',
+        '**/tests/unit/**/*.spec.{j,t}s?(x)',
+      ],
       env: {
-        browser: true,
-      },
-    },
-    {
-      files: ['**/*.test.js'],
-      parserOptions: {
-        parser: 'babel-eslint',
-        sourceType: 'module',
-      },
-      env: { jest: true },
-      globals: {
-        mount: false,
-        shallowMount: false,
-        shallowMountView: false,
-        createComponentMocks: false,
-        createModuleStore: false,
+        jest: true,
       },
     },
   ],

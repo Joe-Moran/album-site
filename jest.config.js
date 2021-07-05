@@ -1,24 +1,24 @@
 module.exports = {
-  preset: "@vue/cli-plugin-unit-jest",
-  setupFilesAfterEnv: ["<rootDir>/jest-setup.js"],
-  transformIgnorePatterns: ["/node_modules/(?!vuejs-loading-plugin)"],
+  preset: '@vue/cli-plugin-unit-jest',
+  setupFilesAfterEnv: ['<rootDir>/jest-setup.js'],
   collectCoverageFrom: [
-    "src/**/*.{js,vue}",
-    "!**/node_modules/**",
-    "!src/main.js",
-    "!src/app.vue",
-    "!src/.storybook",
-    "!src/preview.js",
-    "!src/api/**",
+    'src/**/*.{js,vue}',
+    '!**/node_modules/**',
+    '!src/main.js',
+    '!src/app.vue',
+    '!src/.storybook',
+    '!src/preview.js',
+    '!src/api/**',
   ],
-  coveragePathIgnorePatterns: [".stories.js"],
-  moduleFileExtensions: ["js", "json", "vue"],
+  coveragePathIgnorePatterns: ['.stories.js'],
   transform: {
-    ".*\\.(vue)$": "vue-jest",
-    "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+    '^.+\\.jsx?$': 'babel-jest',
+    '.*\\.(vue)$': '<rootDir>/node_modules/jest-vue-preprocessor',
   },
+  transformIgnorePatterns: ['/node_modules/(?!(@storybook/.*\\.vue$))'],
+  moduleFileExtensions: ['vue', 'js', 'jsx', 'json', 'node'],
   globals: {
-    "vue-jest": {
+    'vue-jest': {
       // Compilation errors in the <style> tags of Vue components will
       // already result in failing builds, so compiling CSS during unit
       // tests doesn't protect us from anything. It only complicates
@@ -26,4 +26,4 @@ module.exports = {
       experimentalCSSCompile: false,
     },
   },
-};
+}

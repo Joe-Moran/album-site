@@ -1,8 +1,14 @@
 <template>
   <nav>
     <ul>
-      <li v-for="linkObj in links" :key="linkObj.path">
-        <Link :link="linkObj" :selected="isCurrentSection(linkObj)" />
+      <li
+        v-for="linkObj in links"
+        :key="linkObj.path"
+      >
+        <Link
+          :link="linkObj"
+          :selected="isCurrentSection(linkObj)"
+        />
       </li>
     </ul>
   </nav>

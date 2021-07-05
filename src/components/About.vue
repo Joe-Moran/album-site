@@ -1,14 +1,17 @@
 <template>
   <div>
     <div id="image-container">
-      <img id="me" :src="require('../assets/me.png')" />
+      <img
+        id="me"
+        :src="require('../assets/me.png')"
+      >
     </div>
     <p>
       Man spends months in a cave alone with his thoughts. Toiling away. Instead of gazing endlessly into fire, or scribing a would-be novel on the walls, he opts to plug in keyboards, pluck a guitar, and pushing some buttons. Self-isolation (hello 2020!) is surreal. It caters to the not-so-subtle nuances of depression and anxiety, but it’s also an invitation to purge creativity. Our cave man, in the face of solitude, decides to painstakingly craft a monolith from years of creative unrest. Out of darkness, comes an ode to a life of love, and, psychedelic experiences.
-      <br />
-      <br />xRGB is our lead character, and a MI-based multi-instrumentalist. Refraction is his debut album, and the result of years of adequate agonizing. 11 sonic journal entries without the crutch of vocals. We’re dealing with the tug-and-pull of a mind that won’t remain idle. Setting the tone, is an intro track full of vintage samples, skipping through channels on a dusty transistor radio. We’re then thrown into a world of hookless, wandering compositions. Boom-thwap beats akin to celery breaking. A restless mixtape from a bedroom humanoid aching to get on a stage. Yes…HUMAN. More playing. Less spacebar. More strumming. Less laptop. There’s room to breathe here. The guitars chime. The keys are vibrant. The vibes are ready to sample, but never feels safe enough to loop.
-      <br />
-      <br />So… where do we go from here? Warm head nods during an opening slot for Tycho?…Ratatat?…El Ten Eleven? Light vs. dark nods to 70s film soundtracks a la Goblin? Yes please. Reference points in bio achieved! In the words of the artist himself…”I hope I'm ashamed by this album in a few years compared to whatever I'll be working on then.” Now that xRGB has scratched and clawed his way into immortality via Refraction, let’s book the lad and be a part of his evolution.
+      <br>
+      <br>xRGB is our lead character, and a MI-based multi-instrumentalist. Refraction is his debut album, and the result of years of adequate agonizing. 11 sonic journal entries without the crutch of vocals. We’re dealing with the tug-and-pull of a mind that won’t remain idle. Setting the tone, is an intro track full of vintage samples, skipping through channels on a dusty transistor radio. We’re then thrown into a world of hookless, wandering compositions. Boom-thwap beats akin to celery breaking. A restless mixtape from a bedroom humanoid aching to get on a stage. Yes…HUMAN. More playing. Less spacebar. More strumming. Less laptop. There’s room to breathe here. The guitars chime. The keys are vibrant. The vibes are ready to sample, but never feels safe enough to loop.
+      <br>
+      <br>So… where do we go from here? Warm head nods during an opening slot for Tycho?…Ratatat?…El Ten Eleven? Light vs. dark nods to 70s film soundtracks a la Goblin? Yes please. Reference points in bio achieved! In the words of the artist himself…”I hope I'm ashamed by this album in a few years compared to whatever I'll be working on then.” Now that xRGB has scratched and clawed his way into immortality via Refraction, let’s book the lad and be a part of his evolution.
     </p>
   </div>
 </template>

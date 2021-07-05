@@ -1,7 +1,11 @@
 <template>
-  <article :id="name" ref="userContent" class="content-container">
+  <article
+    :id="name"
+    ref="userContent"
+    class="content-container"
+  >
     <h2>{{ name }}</h2>
-    <slot></slot>
+    <slot />
   </article>
 </template>
 

@@ -1,6 +1,9 @@
 <template>
   <ul>
-    <li v-for="release in releases" :key="release.name">
+    <li
+      v-for="release in releases"
+      :key="release.name"
+    >
       <Release
         :loading="release.loading"
         :title="release.title"

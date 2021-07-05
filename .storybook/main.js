@@ -12,7 +12,11 @@ const path = require('path')
 
 module.exports = {
   stories: ['../src/components/**/*.stories.@(js)'],
-  addons: ['@storybook/addon-essentials', '@storybook/preset-scss'],
+  addons: [
+    '@storybook/addon-essentials',
+    '@storybook/preset-scss',
+    '@storybook/addon-a11y',
+  ],
   core: {
     builder: 'webpack5',
   },

@@ -6,7 +6,10 @@
     viewBox="0 0 50.405514 10.72088"
     :class="{ up: up }"
   >
-    <g id="layer1" transform="translate(0.20025753,-11.399707)">
+    <g
+      id="layer1"
+      transform="translate(0.20025753,-11.399707)"
+    >
       <path
         id="arrow-path"
         style="

@@ -1,6 +1,11 @@
 <template>
   <div :class="{ selected: selected }">
-    <router-link :to="'#' + link.path" append>{{ link.label }}</router-link>
+    <router-link
+      :to="'#' + link.path"
+      append
+    >
+      {{ link.label }}
+    </router-link>
   </div>
 </template>
 

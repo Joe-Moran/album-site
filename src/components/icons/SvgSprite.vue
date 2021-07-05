@@ -1,5 +1,8 @@
 <template>
-  <svg width="0" height="0">{{ $options.svgSprite }}</svg>
+  <svg
+    width="0"
+    height="0"
+  >{{ $options.svgSprite }}</svg>
 </template>
 
 <script>
