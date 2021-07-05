@@ -4,21 +4,37 @@
     :class="{ open: isOpen, scrolling: isScrolling }"
     @click="drawerClick"
   >
-    <div id="bar" :style="{ color: color }">
+    <div
+      id="bar"
+      :style="{ color: color }"
+    >
       <button id="menu-btn">
-        <img :src="require('../assets/menu.png')" alt="menu" />
+        <img
+          :src="require('../assets/menu.png')"
+          alt="menu"
+        >
       </button>
     </div>
-    <div v-show="isOpen" id="drop-container" :style="{ color: color }">
+    <div
+      v-show="isOpen"
+      id="drop-container"
+      :style="{ color: color }"
+    >
       <div id="anchor">
-        <slot></slot>
+        <slot />
       </div>
       <ul id="drawer-content">
-        <li v-for="(link, index) in links" :key="index">
+        <li
+          v-for="(link, index) in links"
+          :key="index"
+        >
           <a :href="'#' + link.path">{{ link.label }}</a>
         </li>
       </ul>
-      <Arrow :color="arrowColor" :up="isOpen" />
+      <Arrow
+        :color="arrowColor"
+        :up="isOpen"
+      />
     </div>
   </section>
 </template>

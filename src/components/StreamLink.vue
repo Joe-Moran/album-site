@@ -1,12 +1,22 @@
 <template>
   <!-- TODO: refactor and rename this to something more generic -->
-  <div class="stream-link" @mouseover="hoverHandler" @mouseleave="hoverHandler">
+  <div
+    class="stream-link"
+    @mouseover="hoverHandler"
+    @mouseleave="hoverHandler"
+  >
     <div class="img-container streaming-icon">
       <!-- <img v-if="icon" :src="require(`../assets/streaming/${icon}`)" /> -->
     </div>
     {{ title }}
-    <div class="img-container go-arrow" @mouseover="arrowHoverHandler">
-      <transition name="fade" mode="out-in">
+    <div
+      class="img-container go-arrow"
+      @mouseover="arrowHoverHandler"
+    >
+      <transition
+        name="fade"
+        mode="out-in"
+      >
         <!-- <svg-icon :icon="arrowImage" :key="arrowImage" /> -->
       </transition>
     </div>

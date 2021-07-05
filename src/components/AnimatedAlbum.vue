@@ -1,10 +1,13 @@
 <template>
   <div id="album-art">
-    <div v-for="(image, index) in images" :key="index">
+    <div
+      v-for="(image, index) in images"
+      :key="index"
+    >
       <MeImage
         v-show="
           (!isMobile && index === section) ||
-          (isMobile && index === gyroSection)
+            (isMobile && index === gyroSection)
         "
         :image-source="image"
       />

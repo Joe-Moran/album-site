@@ -1,6 +1,13 @@
 <template>
-  <svg class="icon" :height="height" :width="width">
-    <use ref="use" :xlink:href="`#${icon}`" />
+  <svg
+    class="icon"
+    :height="height"
+    :width="width"
+  >
+    <use
+      ref="use"
+      :xlink:href="`#${icon}`"
+    />
   </svg>
 </template>
 

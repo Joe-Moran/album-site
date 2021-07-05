@@ -1,7 +1,11 @@
 <template>
   <section id="date">
-    <div id="date-container" :class="{'selected': isClicked}" @click="clickHandler">
-      <img :src="require('../assets/06 02 2020.svg')" />
+    <div
+      id="date-container"
+      :class="{'selected': isClicked}"
+      @click="clickHandler"
+    >
+      <img :src="require('../assets/06 02 2020.svg')">
     </div>
   </section>
 </template>

@@ -1,17 +1,40 @@
 <template>
-  <div class="stream-links" :class="{ overlay: overlay }">
-    <div v-if="showFeature" id="feature">
+  <div
+    class="stream-links"
+    :class="{ overlay: overlay }"
+  >
+    <div
+      v-if="showFeature"
+      id="feature"
+    >
       <slot />
     </div>
     <ul>
-      <li v-for="link in linksToDisplay" :key="link.link">
-        <a :href="link.link" target="_blank" :aria-label="link.title">
-          <StreamLink :id="title" :icon="link.icon" :title="link.title" />
+      <li
+        v-for="link in linksToDisplay"
+        :key="link.link"
+      >
+        <a
+          :href="link.link"
+          target="_blank"
+          :aria-label="link.title"
+        >
+          <StreamLink
+            :id="title"
+            :icon="link.icon"
+            :title="link.title"
+          />
         </a>
       </li>
       <li v-if="releasePath">
-        <router-link :to="releasePath" append>
-          <StreamLink icon="plus.png" title="More Info" />
+        <router-link
+          :to="releasePath"
+          append
+        >
+          <StreamLink
+            icon="plus.png"
+            title="More Info"
+          />
         </router-link>
       </li>
     </ul>

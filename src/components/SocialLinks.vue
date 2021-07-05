@@ -10,7 +10,7 @@
       <img
         :src="require(`../assets/social-media/${link.logoPath}`)"
         :alt="link.label"
-      />
+      >
     </a>
   </span>
 </template>

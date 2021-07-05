@@ -1,6 +1,6 @@
 <template>
   <figure>
-    <img :src="require('../assets/' + imageSource)" />
+    <img :src="require('../assets/' + imageSource)">
   </figure>
 </template>
 

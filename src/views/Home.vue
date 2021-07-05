@@ -6,21 +6,21 @@
       :display-name="false"
       @visible="contentVisible"
     >
-      <Latest></Latest>
+      <Latest />
     </ContentContainer>
     <ContentContainer
       name="singles"
       :scroll-position="scrollPosition"
       @visible="contentVisible"
     >
-      <Releases :releases="singles"></Releases>
+      <Releases :releases="singles" />
     </ContentContainer>
     <ContentContainer
       name="albums"
       :scroll-position="scrollPosition"
       @visible="contentVisible"
     >
-      <Releases :releases="albums"></Releases>
+      <Releases :releases="albums" />
     </ContentContainer>
     <ContentContainer
       name="about"

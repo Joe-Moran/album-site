@@ -9,19 +9,35 @@
         @click="isDrawerOpen = !isDrawerOpen"
         @close="isDrawerOpen = false"
       >
-        <SocialLinks :links="socialLinks" class="social" />
+        <SocialLinks
+          :links="socialLinks"
+          class="social"
+        />
       </Drawer>
-      <SocialLinks id="desktop-social" :links="socialLinks" class="social" />
+      <SocialLinks
+        id="desktop-social"
+        :links="socialLinks"
+        class="social"
+      />
       <xrgb />
     </header>
 
-    <div id="container" :class="{ hide: showHidden }">
+    <div
+      id="container"
+      :class="{ hide: showHidden }"
+    >
       <transition name="fade">
-        <router-view id="home-nav" name="homenav" />
+        <router-view
+          id="home-nav"
+          name="homenav"
+        />
       </transition>
       <section id="sidebar">
         <transition name="fade">
-          <Sidebar :current-selection="visibleContent" :links="sections" />
+          <Sidebar
+            :current-selection="visibleContent"
+            :links="sections"
+          />
         </transition>
       </section>
 
