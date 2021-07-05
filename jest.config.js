@@ -15,7 +15,10 @@ module.exports = {
     '^.+\\.jsx?$': 'babel-jest',
     '.*\\.(vue)$': '<rootDir>/node_modules/jest-vue-preprocessor',
   },
-  transformIgnorePatterns: ['/node_modules/(?!(@storybook/.*\\.vue$))'],
+  transformIgnorePatterns: [
+    '/node_modules/(?!(@storybook/.*\\.vue$))',
+    '/node_modules/(?!vuejs-loading-plugin)',
+  ],
   moduleFileExtensions: ['vue', 'js', 'jsx', 'json', 'node'],
   globals: {
     'vue-jest': {

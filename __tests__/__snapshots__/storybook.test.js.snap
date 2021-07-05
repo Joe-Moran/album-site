@@ -1361,6 +1361,227 @@ exports[`Storyshots Release Loading 1`] = `
 </div>
 `;
 
+exports[`Storyshots Releases Default 1`] = `
+<ul>
+  <li>
+    <div
+      class="release"
+    >
+      <div
+        class="cover"
+      >
+        <div
+          class="stream-links release-stream-links overlay-release overlay"
+        >
+          <!---->
+           
+          <ul>
+            <li>
+              <a
+                target="_blank"
+              >
+                <div
+                  class="stream-link"
+                >
+                  <div
+                    class="img-container streaming-icon"
+                  />
+                  
+  
+  
+                  <div
+                    class="img-container go-arrow"
+                  >
+                    <!---->
+                  </div>
+                </div>
+              </a>
+            </li>
+             
+            <!---->
+          </ul>
+        </div>
+         
+        <div
+          class="loading"
+        />
+         
+        <img
+          alt="Refraction Cover Art"
+          src=""
+        />
+      </div>
+       
+      <h3>
+        Refraction
+      </h3>
+    </div>
+  </li>
+  <li>
+    <div
+      class="release"
+    >
+      <div
+        class="cover"
+      >
+        <div
+          class="stream-links release-stream-links overlay-release overlay"
+        >
+          <!---->
+           
+          <ul>
+            <li>
+              <a
+                target="_blank"
+              >
+                <div
+                  class="stream-link"
+                >
+                  <div
+                    class="img-container streaming-icon"
+                  />
+                  
+  
+  
+                  <div
+                    class="img-container go-arrow"
+                  >
+                    <!---->
+                  </div>
+                </div>
+              </a>
+            </li>
+             
+            <!---->
+          </ul>
+        </div>
+         
+        <div
+          class="loading"
+        />
+         
+        <img
+          alt="Refraction Cover Art"
+          src=""
+        />
+      </div>
+       
+      <h3>
+        Refraction
+      </h3>
+    </div>
+  </li>
+  <li>
+    <div
+      class="release"
+    >
+      <div
+        class="cover"
+      >
+        <div
+          class="stream-links release-stream-links overlay-release overlay"
+        >
+          <!---->
+           
+          <ul>
+            <li>
+              <a
+                target="_blank"
+              >
+                <div
+                  class="stream-link"
+                >
+                  <div
+                    class="img-container streaming-icon"
+                  />
+                  
+  
+  
+                  <div
+                    class="img-container go-arrow"
+                  >
+                    <!---->
+                  </div>
+                </div>
+              </a>
+            </li>
+             
+            <!---->
+          </ul>
+        </div>
+         
+        <div
+          class="loading"
+        />
+         
+        <img
+          alt="Refraction Cover Art"
+          src=""
+        />
+      </div>
+       
+      <h3>
+        Refraction
+      </h3>
+    </div>
+  </li>
+  <li>
+    <div
+      class="release"
+    >
+      <div
+        class="cover"
+      >
+        <div
+          class="stream-links release-stream-links overlay-release overlay"
+        >
+          <!---->
+           
+          <ul>
+            <li>
+              <a
+                target="_blank"
+              >
+                <div
+                  class="stream-link"
+                >
+                  <div
+                    class="img-container streaming-icon"
+                  />
+                  
+  
+  
+                  <div
+                    class="img-container go-arrow"
+                  >
+                    <!---->
+                  </div>
+                </div>
+              </a>
+            </li>
+             
+            <!---->
+          </ul>
+        </div>
+         
+        <div
+          class="loading"
+        />
+         
+        <img
+          alt="Refraction Cover Art"
+          src=""
+        />
+      </div>
+       
+      <h3>
+        Refraction
+      </h3>
+    </div>
+  </li>
+</ul>
+`;
+
 exports[`Storyshots Sections/About Primary 1`] = `
 <div>
   <div

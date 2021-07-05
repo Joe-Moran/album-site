@@ -1,3 +1,5 @@
+import Releases from './Releases.vue'
+
 export default {
   title: 'Releases',
   excludeStories: /.*Data$/,
