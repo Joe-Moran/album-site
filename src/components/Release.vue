@@ -1,9 +1,7 @@
 <template>
   <div class="release">
-    <div
-      class="cover"
-      @click="clickHandler"
-    >
+    <h3>{{ title }}</h3>
+    <div class="cover" @click="clickHandler">
       <StreamLinks
         v-if="showStreaming"
         :links="streaming"
@@ -18,9 +16,8 @@
         :src="require('../assets/' + releaseAssetsPath + '/' + coverPath)"
         :alt="coverImageAlt"
         @load="$emit('load', true)"
-      >
+      />
     </div>
-    <h3>{{ title }}</h3>
   </div>
 </template>
 
@@ -172,10 +169,14 @@ button {
 }
 
 h3 {
-  font-family: consolas;
-  font-weight: 100;
-  color: white;
-  text-align: center;
+  border-bottom: 4px $blue-tertiary dotted;
+
+  font-weight: bold;
+  text-transform: capitalize;
+  font-family: 'Lato', sans-serif;
+  color: #e1e1e1;
+  font-size: 1.5rem;
+  padding: 0.2rem 0;
 }
 
 @keyframes blink {

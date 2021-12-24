@@ -1,8 +1,9 @@
 <template>
-  <ul>
+  <ul class="releases">
     <li
-      v-for="release in releases"
+      v-for="release in $options.releases.albums"
       :key="release.name"
+      class="release-container"
     >
       <Release
         :loading="release.loading"
@@ -19,13 +20,18 @@
 
 <script>
 import Release from './Release'
+import releases from '@/releases-data'
 export default {
   name: 'Releases',
   components: {
     Release,
   },
-  props: {
-    releases: { type: Array, required: true },
+  /**
+   * this.$options.releases
+   */
+  releases,
+  data() {
+    return {}
   },
 }
 </script>
@@ -33,41 +39,18 @@ export default {
 <style lang="scss" scoped>
 @import '../sass/_global.scss';
 
-ul {
+.releases {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 0;
 }
 
 li {
-  width: 100%;
   list-style: none;
 }
 
-@media (max-width: $sm) {
-  ul {
-    margin-left: -35px;
-  }
-}
-
-@media (min-width: $sm) {
-  // display two
-  li {
-    width: 45%;
-    margin: 2.5%;
-  }
-
-  ul {
-    padding-bottom: 0;
-  }
-}
-
-@media (min-width: $md) {
-  li {
-    width: 33%;
-    margin-bottom: 40px;
-  }
-  ul {
-  }
+.release-container {
+  max-width: 30rem;
 }
 </style>

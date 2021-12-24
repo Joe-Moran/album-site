@@ -1,6 +1,6 @@
 // import  from "./Link.vue"
 import Sidebar from './Sidebar.vue'
-import siteSections from '../site-sections'
+import siteSections from '../routing/routes'
 
 export default {
   title: 'Sidebar',
