@@ -1,40 +1,16 @@
 <template>
   <section
     id="drawer"
-    :class="{ open: isOpen, scrolling: isScrolling }"
-    @click="drawerClick"
+    :class="{ open: isOpen, compact: compact }"
+    @click="updateState"
   >
-    <div
-      id="bar"
-      :style="{ color: color }"
-    >
-      <button id="menu-btn">
-        <img
-          :src="require('../assets/menu.png')"
-          alt="menu"
-        >
-      </button>
-    </div>
-    <div
-      v-show="isOpen"
-      id="drop-container"
-      :style="{ color: color }"
-    >
+    <div id="bar" :style="{ color: color }"> </div>
+    <div v-show="isOpen" id="drop-container" :style="{ color: color }">
       <div id="anchor">
         <slot />
       </div>
-      <ul id="drawer-content">
-        <li
-          v-for="(link, index) in links"
-          :key="index"
-        >
-          <a :href="'#' + link.path">{{ link.label }}</a>
-        </li>
-      </ul>
-      <Arrow
-        :color="arrowColor"
-        :up="isOpen"
-      />
+
+      <Arrow :color="arrowColor" :up="isOpen" />
     </div>
   </section>
 </template>
@@ -45,47 +21,49 @@ import xrgbSocialLinks from '@/xrgbSocialLinks'
 import nav from '@/mixins/nav.js'
 import Arrow from './Arrow'
 
+/**
+ * The nav drawer for the top of the site.
+ */
 export default {
   name: 'Drawer',
   components: { Arrow },
   mixins: [nav],
   props: {
+    /**
+     * The links to add to the drawer for navigation purposes.
+     */
     links: { type: Array, required: true },
-    isOpen: { type: Boolean, default: false },
-    color: { type: String, required: true },
-    isScrolling: { type: Boolean },
+
+    /**
+     * Whether to style the bar as compact or small.
+     */
+    compact: { type: Boolean },
   },
   data() {
     return {
       socialLinks: xrgbSocialLinks,
       clientWidth: 1900,
+      isOpen: false,
     }
   },
   computed: {
     arrowColor() {
       return this.isOpen ? 'black' : globals.redPrimary
     },
-    isInteractive() {
+    isMobile() {
       return this.clientWidth <= globals.md
     },
   },
 
-  watch: {
-    isInteractive(newValue) {
-      if (!newValue) {
-        this.$emit('close')
-      }
-    },
-  },
   mounted() {
     this.resizeHandler()
     window.addEventListener('resize', this.resizeHandler)
   },
   methods: {
-    drawerClick() {
-      if (this.isInteractive) {
-        this.$emit('click', this.isOpen)
-      }
+    updateState() {
+      if (this.isMobile) {
+        this.isOpen = !this.isOpen
+      } else this.isOpen = false
     },
     resizeHandler() {
       this.clientWidth = document.body.clientWidth
@@ -123,8 +101,8 @@ export default {
   transition: height 100ms ease-in-out;
 }
 
-.scrolling #bar {
-  height: 40px;
+.compact #bar {
+  height: 2.5rem;
 }
 
 #arrow {
@@ -176,7 +154,7 @@ export default {
 }
 
 a {
-  font-family: Arial;
+  font-family: Consolas;
   font-size: 40pt;
   font-style: italic;
   font-weight: bold;

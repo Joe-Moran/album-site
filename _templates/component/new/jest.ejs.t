@@ -1,9 +1,9 @@
 ---
-to: "src/components/<%= p %>/__tests__/<%= h.changeCase.kebab(name) %>.test.js"
+to: "src/components/<%= path %>/__tests__/<%= h.changeCase.paramCase(name) %>.test.js"
 ---
 
 import { render } from '@testing-library/vue';
-import <%=name%> from '@/components/<%= p %>/<%= name %>.vue';
+import <%=name%> from '@/components/<%= path %>/<%= name %>.vue';
 
 describe('<%= name %>.vue', () => {
   /**

@@ -1,9 +1,6 @@
 <template>
   <button @click="$router.push({ path: '/' })">
-    <img
-      :src="require('../assets/arrow-left.png')"
-      alt=""
-    >Home
+    <img :src="require('../assets/arrow-left.png')" alt="" />Home
   </button>
 </template>
 
@@ -38,7 +35,7 @@ button {
   display: flex;
   padding: 14px;
   font-family: Consolas;
-  font-size: 25px;
+  font-size: 1.5625rem;
   font-weight: bold;
   color: #d11d66;
   text-transform: uppercase;

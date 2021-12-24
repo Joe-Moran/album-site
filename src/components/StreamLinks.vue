@@ -1,41 +1,13 @@
 <template>
-  <div
-    class="stream-links"
-    :class="{ overlay: overlay }"
-  >
-    <div
-      v-if="showFeature"
-      id="feature"
-    >
+  <div class="stream-links" :class="{ overlay: overlay }">
+    <div v-if="showFeature" id="feature">
       <slot />
     </div>
     <ul>
-      <li
-        v-for="link in linksToDisplay"
-        :key="link.link"
-      >
-        <a
-          :href="link.link"
-          target="_blank"
-          :aria-label="link.title"
-        >
-          <StreamLink
-            :id="title"
-            :icon="link.icon"
-            :title="link.title"
-          />
-        </a>
-      </li>
-      <li v-if="releasePath">
-        <router-link
-          :to="releasePath"
-          append
-        >
-          <StreamLink
-            icon="plus.png"
-            title="More Info"
-          />
-        </router-link>
+      <li v-for="link in links" :key="link.link">
+        <StreamLink :id="title" :icon="link.icon" :href="link.link">
+          {{ link.title }}
+        </StreamLink>
       </li>
     </ul>
   </div>
@@ -43,24 +15,24 @@
 
 <script>
 import StreamLink from './StreamLink'
+
+/**
+ * Container for multiple stream links related to a specific release.
+ */
 export default {
   name: 'StreamLinks',
   components: {
     StreamLink,
   },
   props: {
+    /**
+     * The links and respective data for displaying links to streaming sites.
+     */
     links: { type: Array, required: true },
     overlay: { type: Boolean, required: true },
     showFeature: { type: Boolean, default: false },
     releasePath: { type: String, required: true },
     reduce: { type: Boolean, default: false },
-  },
-  computed: {
-    linksToDisplay() {
-      return this.links && this.links.length > 3 && this.reduce
-        ? this.links.slice(0, 3)
-        : this.links
-    },
   },
 }
 </script>

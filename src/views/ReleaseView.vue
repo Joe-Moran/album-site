@@ -1,8 +1,8 @@
 <template>
   <div id="release-view">
-    <Content
+    <ContentContainer
       :scroll-position="scrollPosition"
-      name="links"
+      title="links"
       :display-name="false"
       @visible="contentVisible"
     >
@@ -15,7 +15,7 @@
       >
         <div>{{ release.feature }}</div>
       </StreamLinks>
-    </Content>
+    </ContentContainer>
 
     <!-- <Content :scroll-position="scrollPosition" name="about" @visible="contentVisible">
       <div v-html="release.about"></div>
@@ -25,11 +25,11 @@
 
 <script>
 import view from '@/mixins/view'
-import Content from '@/components/reusable/ContentContainer/Content.vue'
+import ContentContainer from '@/components/ContentContainer/ContentContainer.vue'
 import StreamLinks from '@/components/StreamLinks'
 export default {
   name: 'ReleaseView',
-  components: { StreamLinks, Content },
+  components: { StreamLinks, ContentContainer },
   mixins: [view],
   props: { release: { type: Object, required: true } },
 }

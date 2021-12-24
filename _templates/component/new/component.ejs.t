@@ -1,8 +1,8 @@
 ---
-to: "src/components/<%= p %>/<%= name %>.vue"
+to: "src/components/<%= path %>/<%= name %>.vue"
 ---
 <template>
-  
+
 </template>
 
 <script>

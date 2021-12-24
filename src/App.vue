@@ -1,45 +1,14 @@
 <template>
   <div id="app">
-    <SvgSprite />
-    <header :class="{ scrolling: isScrolling }">
-      <Drawer
-        :links="[...sections, { path: '/', label: 'Home' }]"
-        :is-open="isDrawerOpen"
-        :is-scrolling="isScrolling"
-        @click="isDrawerOpen = !isDrawerOpen"
-        @close="isDrawerOpen = false"
-      >
-        <SocialLinks
-          :links="socialLinks"
-          class="social"
-        />
-      </Drawer>
-      <SocialLinks
-        id="desktop-social"
-        :links="socialLinks"
-        class="social"
-      />
-      <xrgb />
-    </header>
+    <div class="logo-and-links-container">
+      <xrgb class="xrgb-logo" />
+      <SocialLinks id="desktop-social" :links="socialLinks" class="social" />
+    </div>
 
-    <div
-      id="container"
-      :class="{ hide: showHidden }"
-    >
+    <div id="container" :class="{ hide: showHidden }">
       <transition name="fade">
-        <router-view
-          id="home-nav"
-          name="homenav"
-        />
+        <router-view id="home-nav" name="homenav" />
       </transition>
-      <section id="sidebar">
-        <transition name="fade">
-          <Sidebar
-            :current-selection="visibleContent"
-            :links="sections"
-          />
-        </transition>
-      </section>
 
       <section id="content">
         <transition name="fade">
@@ -58,19 +27,16 @@ import { debounce } from 'debounce'
 import xrgb from './components/xrgb'
 import SocialLinks from './components/SocialLinks'
 import xrgbSocialLinks from './xrgbSocialLinks'
-import siteSections from './site-sections'
-import Sidebar from './components/Sidebar'
-import Drawer from './components/Drawer'
-import SvgSprite from './components/icons/SvgSprite'
+import siteSections from './routing/routes'
+import homeSections from '@/views/Home/home-sections'
 
 export default {
   name: 'App',
   components: {
-    Sidebar,
     xrgb,
     SocialLinks,
-    Drawer,
   },
+  homeSections,
   data() {
     return {
       showHidden: false,
@@ -84,18 +50,7 @@ export default {
   },
   computed: {},
   mounted() {
-    window.addEventListener('scroll', debounce(this.scrollListener, 10))
-    this.sections =
-      this.$router.path && this.$router.path.indexOf('/release') > -1
-        ? siteSections.release
-        : siteSections.default
-    this.$router.afterEach((to) => {
-      if (to.path === '/') {
-        this.sections = siteSections.default
-      } else if (to.path.indexOf('/release') > -1) {
-        this.sections = siteSections.release
-      }
-    })
+    // window.addEventListener('scroll', debounce(this.scrollListener, 10))
   },
   methods: {
     clickHandler() {
@@ -119,26 +74,20 @@ export default {
 
 <style lang="scss">
 @import './sass/_global.scss';
-@import url('https://fonts.googleapis.com/css?family=Knewave|Raleway:900&display=swap');
 
 $scrolling-transition: all 100ms ease-in-out;
-
-#sidebar {
-  position: fixed;
-  top: 325px;
-  left: 10%;
-  width: 17%;
-}
 
 #content {
   width: 60%;
   margin: auto;
 }
 
-header {
-  height: 200px;
-  margin-bottom: 150px;
-  transition: all 100ms ease-in-out;
+.logo-and-links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-bottom: 2rem;
 }
 
 #container {
@@ -160,57 +109,29 @@ body {
   margin: 0;
 }
 
+p {
+  max-width: 74ch;
+}
+
 #app {
   position: relative;
   display: block;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: $font-size;
-  color: #2c3e50;
   height: 100%;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: $font-size;
+  line-heeight: 1.3rem;
   color: #2c3e50;
-  background: black;
+  background: $black-primary;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-#desktop-social {
-  position: absolute;
-  top: 35px;
-  right: 40px;
-  z-index: 1000;
-}
-
-.scrolling {
-  #desktop-social {
-    position: fixed;
-    top: 0;
-  }
-
-  #xrgb {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    z-index: 1000;
-    padding-top: 3px;
-    filter: grayscale(100%);
-    transform: scale(0.3);
-    transform: translateX(-50%);
-    transform-origin: top;
-
-    svg {
-      display: block;
-      height: 35px;
-      margin: auto;
-    }
-  }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
   height: 100%;
-  background-color: black;
+  background-color: $black-primary;
 }
 
 .fade-enter-active,
@@ -221,25 +142,18 @@ html {
   opacity: 0;
 }
 
-@media (max-width: $sm) {
-  header {
-    margin-bottom: 50px;
-  }
+.xrgb-logo {
+  padding: 5.625rem 0 1rem;
+  max-width: 31.25rem;
+}
 
+@media (max-width: $sm) {
   section {
     margin-bottom: 65px;
-  }
-
-  #xrgb {
-    padding-top: 8px;
   }
 }
 
 @media (max-width: $md) {
-  #sidebar {
-    display: none;
-  }
-
   span {
     position: relative;
   }
@@ -263,18 +177,8 @@ html {
     margin: 0;
   }
 
-  #desktop-social {
-    display: none;
-  }
-
   #home-nav {
     display: none;
-  }
-}
-
-@media (min-width: $md) {
-  #container {
-    width: 90%;
   }
 }
 </style>

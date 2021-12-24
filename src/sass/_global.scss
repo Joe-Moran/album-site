@@ -1,29 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Source+Sans+Pro:wght@300;400&display=swap');
+
 $red-primary: #d11d66;
 $blue-primary: #00aeef;
-$blue-tertiary: #0631A2C7;
+$blue-tertiary: #0631a2c7;
+$black-primary: #0a0a0a;
 
-/** Drop Values**/
-$drop-x: -4px;
-$drop-y: 4px;
+/** Drop shadow Values**/
+$drop-x: -0.25rem;
+$drop-y: 0.25rem;
 
-$font-size: 16px;
+$font-size: 18px;
 
 /** screen sizes **/
-$sm: 600px;
-$md: 960px;
-$lg: 1264px;
-$xl: 1904px;
+$sm: 37.5rem;
+$md: 60rem;
+$lg: 79rem;
+$xl: 119rem;
+
+$link-font-family: consolas;
 
 %retro-shadow {
-    box-shadow: -10px 10px $red-primary;
-    transition: 240ms ease-in;
+  box-shadow: -0.625rem 0.625rem $red-primary;
+  transition: 240ms ease-in;
 
-    &:hover {
-        cursor: pointer;
-        box-shadow: -14px 14px $red-primary;
-    }
+  &:hover {
+    cursor: pointer;
+    box-shadow: -0.875rem 0.875rem $red-primary;
+  }
 
-    border: 2px solid #ffffff38;
-
-
+  border: 2px solid #ffffff38;
 }

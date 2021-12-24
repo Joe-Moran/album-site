@@ -1,17 +1,17 @@
 ---
-to: "src/components/<%= p %>/<%= name %>.stories.js"
+to: "src/components/<%= path %>/<%= name %>.stories.js"
 ---
 
-import <%= name %> from '@/components/<%= p %>/<%= name %>.vue';
+import <%= name %> from '@/components/<%= path %>/<%= name %>.vue';
 
 /**
  * Setup
  */
 export default {
-  title: '<%= h.storyPathFormat(p, name)%>', 
+  title: '<%= h.storyPathFormat(path, name)%>',
   id: '<%= h.changeCase.paramCase(name) %>',
-  component: <%= name %>, 
-  subcomponents: { }, 
+  component: <%= name %>,
+  subcomponents: { },
   argTypes: {}
 };
 
