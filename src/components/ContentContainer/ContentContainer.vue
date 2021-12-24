@@ -1,22 +1,29 @@
 <template>
-  <article
-    :id="name"
-    ref="userContent"
-    class="content-container"
-  >
-    <h2>{{ name }}</h2>
-    <slot />
+  <article :id="title" ref="userContent" class="content-container">
+    <h2>{{ title }}</h2>
+
+    <!-- @slot slot for content inside container -->
+    <slot name="default" />
   </article>
 </template>
 
 <script>
 /**
- * A styled container for content blocks or chunks.
+ * A styled container for an entire block of content. Use for all releases, streaming embeds, etc.
+ * @example albums, soundcloud embed links.
  */
 export default {
   name: 'ContentContainer',
   props: {
-    name: { type: String, required: true },
+    /**
+     * The title of the content block.
+     * Utilized for the article heading text and aria-attributes.
+     */
+    title: { type: String, required: true },
+
+    /**
+     * The scroll position of the user on the y-axis of the viewport.
+     */
     scrollPosition: { type: Number, default: 0 },
   },
   data() {
@@ -30,13 +37,14 @@ export default {
     },
     isVisible(value) {
       if (value) {
-        this.$emit('visible', this.name)
+        this.$emit('visible', this.title)
       }
     },
   },
   mounted() {
     this.determineIfVisible()
   },
+
   methods: {
     determineIfVisible() {
       // TODO Intersection Observer
@@ -54,41 +62,18 @@ export default {
 <style lang="scss" scoped>
 @import '@/sass/global';
 
-.user-content {
-  width: 100%;
-  margin-bottom: 90px;
-  @media (max-width: $sm) {
-    width: 77%;
-    margin: auto;
-    margin-bottom: 60px;
-  }
+.content-container {
+  margin-bottom: 4rem;
+  padding: 1.2rem;
 }
 
 h2 {
-  margin-bottom: 60px;
-  font-family: consolas, sans-serif;
-  font-size: 20px;
-  font-weight: 100;
-  color: white;
-  text-align: center;
-  text-transform: lowercase;
-  &::before,
-  &::after {
-    display: inline-block;
-    width: 100px;
-    height: 1px;
-    margin-right: 20px;
-    margin-left: 20px;
-    vertical-align: middle;
-    content: '';
-    background: white;
-  }
-}
-
-@media (max-width: $sm) {
-  h2::before,
-  h2::after {
-    width: 50px;
-  }
+  margin-bottom: 3.5rem;
+  font-family: 'Lato', sans-serif;
+  color: #e1e1e1;
+  text-transform: capitalize;
+  font-size: 2rem;
+  border-bottom: $red-primary solid;
+  padding: 0.2rem 0;
 }
 </style>
