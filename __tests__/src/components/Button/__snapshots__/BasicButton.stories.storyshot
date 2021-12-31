@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Basic Button Primary 1`] = `
+<button>
+  <span
+    id="basic-button-text"
+  >
+    Button
+  </span>
+</button>
+`;

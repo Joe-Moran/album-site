@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Stream Links Default 1`] = `
+<div
+  class="stream-links"
+  open="open"
+  style="margin: 20px;"
+>
+  <!---->
+   
+  <ul>
+    <li>
+      <!---->
+    </li>
+    <li>
+      <!---->
+    </li>
+    <li>
+      <!---->
+    </li>
+  </ul>
+</div>
+`;

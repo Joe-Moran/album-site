@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Drawer Default 1`] = `
+<section
+  class=""
+  id="drawer"
+>
+  <div
+    id="bar"
+  />
+   
+  <div
+    id="drop-container"
+    style="display: none;"
+  >
+    <div
+      id="anchor"
+    />
+     
+    <svg
+      class=""
+      height="10.720881"
+      id="arrow"
+      viewBox="0 0 50.405514 10.72088"
+      width="50.405514"
+    >
+      <g
+        id="layer1"
+        transform="translate(0.20025753,-11.399707)"
+      >
+        <path
+          d="M 0.3251131,13.32947 25.002499,20.047794 49.679887,13.32947"
+          id="arrow-path"
+          style="fill: none; fill-opacity: 1; stroke-dasharray: none; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 4; stroke: #d11d66;"
+        />
+      </g>
+    </svg>
+  </div>
+</section>
+`;
+
+exports[`Storyshots Drawer Mobile 1`] = `
+<section
+  class=""
+  id="drawer"
+>
+  <div
+    id="bar"
+  />
+   
+  <div
+    id="drop-container"
+    style="display: none;"
+  >
+    <div
+      id="anchor"
+    />
+     
+    <svg
+      class=""
+      height="10.720881"
+      id="arrow"
+      viewBox="0 0 50.405514 10.72088"
+      width="50.405514"
+    >
+      <g
+        id="layer1"
+        transform="translate(0.20025753,-11.399707)"
+      >
+        <path
+          d="M 0.3251131,13.32947 25.002499,20.047794 49.679887,13.32947"
+          id="arrow-path"
+          style="fill: none; fill-opacity: 1; stroke-dasharray: none; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 4; stroke: #d11d66;"
+        />
+      </g>
+    </svg>
+  </div>
+</section>
+`;
+
+exports[`Storyshots Drawer Mobile Open 1`] = `
+<section
+  class=""
+  id="drawer"
+  isopen=""
+>
+  <div
+    id="bar"
+  />
+   
+  <div
+    id="drop-container"
+    style="display: none;"
+  >
+    <div
+      id="anchor"
+    />
+     
+    <svg
+      class=""
+      height="10.720881"
+      id="arrow"
+      viewBox="0 0 50.405514 10.72088"
+      width="50.405514"
+    >
+      <g
+        id="layer1"
+        transform="translate(0.20025753,-11.399707)"
+      >
+        <path
+          d="M 0.3251131,13.32947 25.002499,20.047794 49.679887,13.32947"
+          id="arrow-path"
+          style="fill: none; fill-opacity: 1; stroke-dasharray: none; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 4; stroke: #d11d66;"
+        />
+      </g>
+    </svg>
+  </div>
+</section>
+`;
+
+exports[`Storyshots Drawer Mobile Open With Anchor 1`] = `
+<section
+  class=""
+  id="drawer"
+  isopen=""
+>
+  <div
+    id="bar"
+  />
+   
+  <div
+    id="drop-container"
+    style="display: none;"
+  >
+    <div
+      id="anchor"
+    />
+     
+    <svg
+      class=""
+      height="10.720881"
+      id="arrow"
+      viewBox="0 0 50.405514 10.72088"
+      width="50.405514"
+    >
+      <g
+        id="layer1"
+        transform="translate(0.20025753,-11.399707)"
+      >
+        <path
+          d="M 0.3251131,13.32947 25.002499,20.047794 49.679887,13.32947"
+          id="arrow-path"
+          style="fill: none; fill-opacity: 1; stroke-dasharray: none; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 4; stroke: #d11d66;"
+        />
+      </g>
+    </svg>
+  </div>
+</section>
+`;
+
+exports[`Storyshots Drawer Scrolling 1`] = `
+<section
+  class=""
+  id="drawer"
+  isscrolling=""
+>
+  <div
+    id="bar"
+  />
+   
+  <div
+    id="drop-container"
+    style="display: none;"
+  >
+    <div
+      id="anchor"
+    />
+     
+    <svg
+      class=""
+      height="10.720881"
+      id="arrow"
+      viewBox="0 0 50.405514 10.72088"
+      width="50.405514"
+    >
+      <g
+        id="layer1"
+        transform="translate(0.20025753,-11.399707)"
+      >
+        <path
+          d="M 0.3251131,13.32947 25.002499,20.047794 49.679887,13.32947"
+          id="arrow-path"
+          style="fill: none; fill-opacity: 1; stroke-dasharray: none; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 4; stroke: #d11d66;"
+        />
+      </g>
+    </svg>
+  </div>
+</section>
+`;

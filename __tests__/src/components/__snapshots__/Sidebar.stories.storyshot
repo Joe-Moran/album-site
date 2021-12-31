@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Sidebar Default 1`] = `
+<nav>
+  <ul>
+    <li>
+      <div
+        class=""
+      >
+        <router-link
+          append=""
+          to="#/"
+        >
+          
+    
+  
+        </router-link>
+      </div>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Storyshots Sidebar With Selected Section 1`] = `
+<nav>
+  <ul>
+    <li>
+      <div
+        class=""
+      >
+        <router-link
+          append=""
+          to="#/"
+        >
+          
+    
+  
+        </router-link>
+      </div>
+    </li>
+  </ul>
+</nav>
+`;

@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Release Default 1`] = `
+<div
+  class="release"
+>
+  <h3>
+    Refraction
+  </h3>
+   
+  <div
+    class="cover"
+  >
+    <div
+      class="stream-links release-stream-links overlay-release overlay"
+    >
+      <!---->
+       
+      <ul>
+        <li>
+          <!---->
+        </li>
+      </ul>
+    </div>
+     
+    <div
+      class="loading"
+    />
+     
+    <img
+      alt="Refraction Cover Art"
+      src=""
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Release Loading 1`] = `
+<div
+  class="release"
+>
+  <h3>
+    Refraction
+  </h3>
+   
+  <div
+    class="cover"
+  >
+    <div
+      class="stream-links release-stream-links overlay-release overlay"
+    >
+      <!---->
+       
+      <ul>
+        <li>
+          <!---->
+        </li>
+      </ul>
+    </div>
+     
+    <div
+      class="loading"
+    />
+     
+    <img
+      alt="Refraction Cover Art"
+      src=""
+    />
+  </div>
+</div>
+`;
