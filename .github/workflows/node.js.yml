@@ -19,14 +19,13 @@ jobs:
     steps:
     - name: checkout current repository
       uses: actions/checkout@v2
-      with:
-        path: dev
+
     - name: Use Node.js 14.x
       uses: actions/setup-node@v2
       with:
         node-version: 14.x
         cache: 'npm'
-    - run: npm i
+    - run: npm ci
     - run: npm run build --if-present
     - run: npm test
     
