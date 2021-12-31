@@ -38,8 +38,7 @@ jobs:
     - name: Checkout GitHub Pages Repository
       uses: actions/checkout@v2
       with:
-        repository: album-site-public
-        path: pages-repo
+        repository: Joe-Moran/album-site-public
         token: ${{ secrets.GH_PAT }} 
 
     - name: Download a Build Artifact
