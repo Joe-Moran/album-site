@@ -21,7 +21,7 @@ export default {
   props: {
     links: { type: Array, required: true },
   },
-}
+};
 </script>
 
 <style scoped lang="scss">

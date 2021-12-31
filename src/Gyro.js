@@ -1,20 +1,19 @@
 // eslint-disable-next-line no-undef
 const gyroscope = new Gyroscope({
   frequency: 60,
-})
-
-;(function () {
+});
+(function () {
   Promise.all([
     navigator.permissions.query({
       name: 'gyroscope',
     }),
   ]).then((results) => {
     if (results.every((result) => result.state === 'granted')) {
-      gyroscope.start()
+      gyroscope.start();
     } else {
-      console.log('No permissions to use Gyroscope.')
+      console.log('No permissions to use Gyroscope.');
     }
-  })
-})()
+  });
+}());
 
-export default gyroscope
+export default gyroscope;

@@ -1,32 +1,17 @@
 ---
-to: "src/components/<%= path %>/__tests__/<%= h.changeCase.paramCase(name) %>.test.js"
+to: "src/<%= path %>/__tests__/<%= h.changeCase.kebab(name) %>.test.js"
 ---
 
 import { render } from '@testing-library/vue';
-import <%=name%> from '@/components/<%= path %>/<%= name %>.vue';
+import { byRole, byText } from 'testing-library-selector';
+import userEvent from '@testing-library/user-event';
+import <%=name%> from '@/<%= path %>/<%= name %>.vue';
 
-describe('<%= name %>.vue', () => {
-  /**
-    * Variables
-    */
-  const defaultProps = {};
-  let wrapper;
-  let <%=h.changeCase.camelCase(name)%>;
 
-  /**
-    * Setup
-    */
-  beforeEach(() => {
-    wrapper = render(<%= name %>, { propsData: defaultProps, slots: {} });
-    <%=h.changeCase.camelCase(name)%> = wrapper.getBy(); // FILL IN HERE
-  });
+ const ui = {
+    // place reusable ui queries here via testing-library-selector
+  }
 
-  afterEach(() => {
-    wrapper.unmount();
-    <%=h.changeCase.camelCase(name)%> = null;
-  });
+it('Does something', () => {
 
-  it('Renders', () => {
-    expect(<%=h.changeCase.camelCase(name)%>).toBeInTheDocument();
-  });
 });

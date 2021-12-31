@@ -1,10 +1,10 @@
 export default {
-    props: {
-        links: {
-            type: Array,
-            required: false
-        },
+  props: {
+    links: {
+      type: Array,
+      required: false,
+    },
 
-    }
+  },
 
-}
+};

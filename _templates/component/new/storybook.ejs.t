@@ -1,8 +1,8 @@
 ---
-to: "src/components/<%= path %>/<%= name %>.stories.js"
+to: "src/<%= path %>/<%= name %>.stories.js"
 ---
 
-import <%= name %> from '@/components/<%= path %>/<%= name %>.vue';
+import <%= name %> from '@/<%= path %>/<%= name %>.vue';
 
 /**
  * Setup

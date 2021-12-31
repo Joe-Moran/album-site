@@ -19,8 +19,9 @@
 </template>
 
 <script>
-import Release from './Release'
-import releases from '@/releases-data'
+import Release from './Release.vue';
+import releases from '@/releases-data';
+
 export default {
   name: 'Releases',
   components: {
@@ -31,9 +32,9 @@ export default {
    */
   releases,
   data() {
-    return {}
+    return {};
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

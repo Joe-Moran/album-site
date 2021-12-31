@@ -1,6 +1,9 @@
 <template>
   <button @click="$router.push({ path: '/' })">
-    <img :src="require('../assets/arrow-left.png')" alt="" />Home
+    <img
+      :src="require('../assets/arrow-left.png')"
+      alt=""
+    >Home
   </button>
 </template>
 
@@ -8,9 +11,9 @@
 export default {
   name: 'HomeNav',
   data() {
-    return {}
+    return {};
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

@@ -14,4 +14,4 @@ export default [
     href: 'https://www.instagram.com/xrgb_music',
     logoPath: 'Icon simple-instagram.png',
   },
-]
+];

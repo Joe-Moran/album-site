@@ -7,6 +7,6 @@ const icons = {
     name: 'arrow-right',
     path: 'arrow-right.svg',
   },
-}
+};
 
-export default icons
+export default icons;

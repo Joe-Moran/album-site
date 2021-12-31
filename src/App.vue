@@ -1,13 +1,23 @@
 <template>
   <div id="app">
     <div class="logo-and-links-container">
-      <xrgb class="xrgb-logo" />
-      <SocialLinks id="desktop-social" :links="socialLinks" class="social" />
+      <AnimatedIcon class="xrgb-logo" />
+      <SocialLinks
+        id="desktop-social"
+        :links="socialLinks"
+        class="social"
+      />
     </div>
 
-    <div id="container" :class="{ hide: showHidden }">
+    <div
+      id="container"
+      :class="{ hide: showHidden }"
+    >
       <transition name="fade">
-        <router-view id="home-nav" name="homenav" />
+        <router-view
+          id="home-nav"
+          name="homenav"
+        />
       </transition>
 
       <section id="content">
@@ -23,17 +33,16 @@
 </template>
 
 <script>
-import { debounce } from 'debounce'
-import xrgb from './components/xrgb'
-import SocialLinks from './components/SocialLinks'
-import xrgbSocialLinks from './xrgbSocialLinks'
-import siteSections from './routing/routes'
-import homeSections from '@/views/Home/home-sections'
+import AnimatedIcon from './components/icons/AnimatedIcon.vue';
+import SocialLinks from './components/SocialLinks.vue';
+import xrgbSocialLinks from './xrgbSocialLinks';
+import siteSections from './routing/routes';
+import homeSections from '@/views/Home/home-sections';
 
 export default {
   name: 'App',
   components: {
-    xrgb,
+    AnimatedIcon,
     SocialLinks,
   },
   homeSections,
@@ -46,30 +55,30 @@ export default {
       isScrolling: false,
       scrollPosition: 0,
       visibleContent: null,
-    }
+    };
   },
   computed: {},
-  mounted() {
-    // window.addEventListener('scroll', debounce(this.scrollListener, 10))
-  },
   methods: {
     clickHandler() {
-      this.showHidden = !this.showHidden
+      this.showHidden = !this.showHidden;
     },
     newContentHandler(newContent) {
-      this.visibleContent = newContent || null
+      this.visibleContent = newContent || null;
     },
     scrollListener() {
       if (window.scrollY > 38) {
-        this.isScrolling = true
+        this.isScrolling = true;
       } else {
-        this.isScrolling = false
+        this.isScrolling = false;
       }
 
-      this.scrollPosition = window.scrollY
+      this.scrollPosition = window.scrollY;
     },
   },
-}
+  mounted() {
+    // window.addEventListener('scroll', debounce(this.scrollListener, 10))
+  },
+};
 </script>
 
 <style lang="scss">

@@ -35,10 +35,10 @@ export default {
     up: { type: Boolean, default: false },
   },
   data() {
-    return {}
+    return {};
   },
   computed: {},
-}
+};
 </script>
 
 <style lang="scss">

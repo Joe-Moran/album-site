@@ -5,13 +5,22 @@
   "scripts": {
     "serve": "vue-cli-service serve --host 0.0.0.0",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit --passWithNoTests",
+    "test": "vue-cli-service test:unit",
+    "test:snapshots": "vue-cli-service test:unit storybook --selectProjects vue",
+    "test:unit": "vue-cli-service test:unit --selectProjects vue",
+    "test:unit:file": "vue-cli-service test:unit --bail --selectProjects vue --findRelatedTests",
+    "test:e2e": " vue-cli-service test:unit --selectProjects e2e --testTimeout=200000",
+    "test:debug": "vue-cli-service test:unit --testTimeout=200000",
+    "snapshots:update": "npm run test storybook -- -u --selectProjects vue",
     "lint": "vue-cli-service lint",
+    "refreshVSToken": "vsts-npm-auth -config .npmrc",
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
-    "gen": "hygen component new",
-    "test": "jest",
-    "test:unit:file": "npm run test:unit -- --bail --findRelatedTests"
+    "gen": "npx hygen component new",
+    "gen:e2e": "npx hygen e2e new",
+    "gen:integration": "npx hygen integration new",
+    "preinstall": "npx npm-force-resolutions",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@babel/preset-env": "^7.14.7",
@@ -20,9 +29,13 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/vue-fontawesome": "^2.0.6",
     "@popperjs/core": "^2.9.2",
+    "@storybook/addon-viewport": "^6.4.9",
     "@vue/cli": "next",
+    "autoprefixer": "^9.8.6",
+    "axios": "^0.21.1",
     "babel-core": "^6.26.3",
     "babel-jest": "^27.0.5",
+    "change-case": "^4.1.2",
     "chokidar": "^3.5.2",
     "core-js": "^3.15.1",
     "debounce": "^1.2.1",
@@ -32,6 +45,7 @@
     "lint-staged": "^11.0.0",
     "mobile-device-detect": "^0.4.3",
     "node-sass": "^6.0.1",
+    "postcss": "^8.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
@@ -45,22 +59,29 @@
     "webpack": "^5.40.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.6",
     "@storybook/addon-a11y": "^6.4.0-alpha.3",
+    "@storybook/addon-actions": "^6.2.2",
     "@storybook/addon-docs": "^6.4.0-alpha.3",
     "@storybook/addon-essentials": "^6.4.0-alpha.3",
+    "@storybook/addon-links": "^6.2.2",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/addon-storyshots": "^6.4.0-alpha.3",
+    "@storybook/addon-storysource": "^6.2.9",
     "@storybook/builder-webpack5": "next",
     "@storybook/manager-webpack5": "next",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/vue": "^6.4.0-alpha.3",
+    "@testing-library/dom": "^8.7.2",
     "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/user-event": "^13.2.1",
     "@testing-library/vue": "^5.6.1",
     "@vue/cli-plugin-babel": "~5.0.0-beta.2",
     "@vue/cli-plugin-eslint": "~5.0.0-beta.2",
+    "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-unit-jest": "~5.0.0-beta.2",
+    "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~5.0.0-beta.2",
+    "@vue/eslint-config-airbnb": "^5.3.0",
     "@vue/eslint-config-prettier": "6.0.x",
     "@vue/eslint-config-standard": "6.0.0",
     "@vue/test-utils": "^1.2.1",
@@ -71,11 +92,25 @@
     "css-loader": "^5.2.6",
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jest-dom": "^3.9.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-vue": "^7.12.1",
+    "husky": "^7.0.0",
     "hygen": "^6.1.0",
+    "jest-puppeteer": "^5.0.4",
+    "lint-staged": "^9.5.0",
+    "moxios": "^0.4.0",
+    "node-sass": "^5.0.0",
+    "npm-force-resolutions": "0.0.10",
+    "pending-xhr-puppeteer": "^2.3.3",
+    "pptr-testing-library": "^0.6.5",
+    "prettier-eslint": "^13.0.0",
+    "puppeteer": "^10.2.0",
+    "react-is": "^16.13.1",
+    "resolve-url-loader": "^4.0.0",
     "sass-loader": "^12.1.0",
+    "storybook-vue-router": "^1.0.7",
     "style-dictionary": "^3.0.1",
     "style-loader": "^3.0.0",
     "stylelint": "^13.13.1",
@@ -83,27 +118,17 @@
     "stylelint-config-recess-order": "^2.4.0",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-scss": "^3.19.0",
+    "testing-library-selector": "^0.2.1",
     "vue-jest": "^4.0.1",
+    "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.14"
   },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
+  "resolutions": {
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ],
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,jsx,vue}": [
-      "npm run lint",
-      "npm run test:unit storybook",
-      "npm run test:unit:file",
-      "git add"
-    ]
-  }
+  ]
 }

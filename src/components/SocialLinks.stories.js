@@ -1,11 +1,11 @@
-import xrgbSocialLinks from '../xrgbSocialLinks'
+import xrgbSocialLinks from '../xrgbSocialLinks';
 
 export default {
   title: 'Social Links',
   excludeStories: /.*Data$/,
-}
+};
 
-const linksTemplate = "<SocialLinks :links='linkData'/>"
+const linksTemplate = "<SocialLinks :links='linkData'/>";
 
 export const Default = () => ({
   components: {
@@ -17,4 +17,4 @@ export const Default = () => ({
       default: () => xrgbSocialLinks,
     },
   },
-})
+});

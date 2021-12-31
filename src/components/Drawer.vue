@@ -4,22 +4,32 @@
     :class="{ open: isOpen, compact: compact }"
     @click="updateState"
   >
-    <div id="bar" :style="{ color: color }"> </div>
-    <div v-show="isOpen" id="drop-container" :style="{ color: color }">
+    <div
+      id="bar"
+      :style="{ color: color }"
+    />
+    <div
+      v-show="isOpen"
+      id="drop-container"
+      :style="{ color: color }"
+    >
       <div id="anchor">
         <slot />
       </div>
 
-      <Arrow :color="arrowColor" :up="isOpen" />
+      <Arrow
+        :color="arrowColor"
+        :up="isOpen"
+      />
     </div>
   </section>
 </template>
 
 <script>
-import globals from '@/globals'
-import xrgbSocialLinks from '@/xrgbSocialLinks'
-import nav from '@/mixins/nav.js'
-import Arrow from './Arrow'
+import globals from '@/globals';
+import xrgbSocialLinks from '@/xrgbSocialLinks';
+import nav from '@/mixins/nav';
+import Arrow from './Arrow.vue';
 
 /**
  * The nav drawer for the top of the site.
@@ -44,32 +54,32 @@ export default {
       socialLinks: xrgbSocialLinks,
       clientWidth: 1900,
       isOpen: false,
-    }
+    };
   },
   computed: {
     arrowColor() {
-      return this.isOpen ? 'black' : globals.redPrimary
+      return this.isOpen ? 'black' : globals.redPrimary;
     },
     isMobile() {
-      return this.clientWidth <= globals.md
+      return this.clientWidth <= globals.md;
     },
-  },
-
-  mounted() {
-    this.resizeHandler()
-    window.addEventListener('resize', this.resizeHandler)
   },
   methods: {
     updateState() {
       if (this.isMobile) {
-        this.isOpen = !this.isOpen
-      } else this.isOpen = false
+        this.isOpen = !this.isOpen;
+      } else this.isOpen = false;
     },
     resizeHandler() {
-      this.clientWidth = document.body.clientWidth
+      this.clientWidth = document.body.clientWidth;
     },
   },
-}
+
+  mounted() {
+    this.resizeHandler();
+    window.addEventListener('resize', this.resizeHandler);
+  },
+};
 </script>
 
 <style lang="scss" scoped>

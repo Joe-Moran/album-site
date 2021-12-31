@@ -1,5 +1,5 @@
 ---
-to: "src/components/<%= path %>/<%= name %>.vue"
+to: "src/<%= path %>/<%= name %>.vue"
 ---
 <template>
 

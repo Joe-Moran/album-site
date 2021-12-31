@@ -1,9 +1,9 @@
-import Releases from './Releases.vue'
+import Releases from './Releases.vue';
 
 export default {
   title: 'Releases',
   excludeStories: /.*Data$/,
-}
+};
 
 export const releasesData = [
   {
@@ -50,18 +50,18 @@ export const releasesData = [
     type: 'album',
     loading: false,
   },
-]
+];
 
-const template = "<Releases :releases='releases' @click='onClick'></Releases>"
+const template = "<Releases :releases='releases' @click='onClick'></Releases>";
 
 export const Default = () => ({
   components: {
     Releases,
   },
-  template: template,
+  template,
   data() {
     return {
       releases: releasesData,
-    }
+    };
   },
-})
+});

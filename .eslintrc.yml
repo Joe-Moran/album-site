@@ -1,0 +1,47 @@
+root: true
+parserOptions:
+  parser: 'babel-eslint'
+env:
+  es6: true
+  node: true
+  jest: true
+rules:
+  'linebreak-style': 0
+  'import/no-extraneous-dependencies':
+    - 'error'
+    - devDependencies:
+        - '**/*.test.js'
+        - '**/integration/**'
+        - '**/e2e/**'
+        - '**/*.e2e.js'
+        - '**/*.integration.js'
+        - '**/*.stories.js'
+        - '**/*.config.js'
+  'vue/order-in-components':
+    - 'error'
+    - order:
+      - 'name'
+      - ["delimiters", "comments"]
+      - ["components", "directives"]
+      - 'extends'
+      - 'mixins'
+      - 'ROUTER_GUARDS'
+      - 'model'
+      - ["props", "propsData"]
+      - 'data'
+      - 'computed'
+      - 'watch'
+      - 'methods'
+      - 'LIFECYCLE_HOOKS'
+      - ["template", "render", "filters"]
+      - 'renderError'
+extends:
+  - 'plugin:vue/recommended'
+  - '@vue/airbnb'
+  - 'plugin:jest-dom/recommended'
+overrides:
+  - files:
+      - '**/__tests__/*.{j,t}s?(x)'
+      - '**/tests/unit/**/*.spec.{j,t}s?(x)'
+    env:
+      jest: true

@@ -1,7 +1,10 @@
 <template>
   <div class="about">
     <div class="image-container">
-      <img id="me" :src="require('../assets/me.png')" />
+      <img
+        id="me"
+        :src="require('../assets/me.png')"
+      >
     </div>
     <p>
       xRGB is a MI-based multi-instrumentalist. Refraction is his debut album,
@@ -14,7 +17,7 @@
 </template>
 
 <script>
-export default { name: 'About' }
+export default { name: 'About' };
 </script>
 
 <style scoped lang="scss">
