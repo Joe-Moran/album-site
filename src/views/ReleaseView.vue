@@ -24,15 +24,16 @@
 </template>
 
 <script>
-import view from '@/mixins/view'
-import ContentContainer from '@/components/ContentContainer/ContentContainer.vue'
-import StreamLinks from '@/components/StreamLinks'
+import view from '@/mixins/view';
+import ContentContainer from '@/components/ContentContainer/ContentContainer.vue';
+import StreamLinks from '@/components/StreamLinks.vue';
+
 export default {
   name: 'ReleaseView',
   components: { StreamLinks, ContentContainer },
   mixins: [view],
   props: { release: { type: Object, required: true } },
-}
+};
 </script>
 
 <style lang="scss" scoped>

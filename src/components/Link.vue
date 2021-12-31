@@ -16,7 +16,7 @@ export default {
     link: { type: Object, required: true },
     selected: { type: Boolean, required: false },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

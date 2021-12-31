@@ -1,7 +1,10 @@
 <template>
   <div class="release">
     <h3>{{ title }}</h3>
-    <div class="cover" @click="clickHandler">
+    <div
+      class="cover"
+      @click="clickHandler"
+    >
       <StreamLinks
         v-if="showStreaming"
         :links="streaming"
@@ -16,14 +19,14 @@
         :src="require('../assets/' + releaseAssetsPath + '/' + coverPath)"
         :alt="coverImageAlt"
         @load="$emit('load', true)"
-      />
+      >
     </div>
   </div>
 </template>
 
 <script>
-import globals from '@/globals'
-import StreamLinks from './StreamLinks'
+import globals from '@/globals';
+import StreamLinks from './StreamLinks.vue';
 
 export default {
   name: 'Release',
@@ -42,37 +45,37 @@ export default {
     return {
       listenClick: false,
       clientWidth: 1900,
-    }
+    };
   },
   computed: {
     releaseAssetsPath() {
-      return this.type === 'album' ? 'albums' : 'singles'
+      return this.type === 'album' ? 'albums' : 'singles';
     },
     isMobile() {
-      return this.clientWidth < globals.md
+      return this.clientWidth < globals.md;
     },
     showStreaming() {
-      return (this.listenClick && this.isMobile) || !this.isMobile
+      return (this.listenClick && this.isMobile) || !this.isMobile;
     },
     coverImageAlt() {
-      return `${this.title} Cover Art`
+      return `${this.title} Cover Art`;
     },
-  },
-  mounted() {
-    this.resizeHandler()
-    window.addEventListener('resize', this.resizeHandler)
   },
   methods: {
     resizeHandler() {
-      this.clientWidth = document.body.clientWidth
+      this.clientWidth = document.body.clientWidth;
     },
     clickHandler() {
       if (this.isMobile) {
-        this.listenClick = true
+        this.listenClick = true;
       }
     },
   },
-}
+  mounted() {
+    this.resizeHandler();
+    window.addEventListener('resize', this.resizeHandler);
+  },
+};
 </script>
 
 <style lang="scss" scoped>

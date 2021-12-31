@@ -1,0 +1,262 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Releases Default 1`] = `
+<ul
+  class="releases"
+  releases="[object Object],[object Object],[object Object],[object Object]"
+>
+  <li
+    class="release-container"
+  >
+    <div
+      class="release"
+    >
+      <h3>
+        Refraction
+      </h3>
+       
+      <div
+        class="cover"
+      >
+        <div
+          class="stream-links release-stream-links overlay-release overlay"
+        >
+          <!---->
+           
+          <ul>
+            <li>
+              <a
+                class="stream-link"
+                href="https://xrgb.bandcamp.com/album/refraction"
+                target="_blank"
+              >
+                <div
+                  class="link-content"
+                >
+                  <div
+                    class="streaming-icon"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                  </div>
+                   
+        Bandcamp
+      
+                </div>
+                 
+                <div
+                  class="icon-container"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="external-link-icon svg-inline--fa fa-external-link-alt fa-w-16"
+                    data-icon="external-link-alt"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class=""
+                      d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                class="stream-link"
+                href="https://open.spotify.com/album/79mhGijQ34QP9qMnd5060T?si=dqX4gOdXRYK_P6V9Uhb02Q"
+                target="_blank"
+              >
+                <div
+                  class="link-content"
+                >
+                  <div
+                    class="streaming-icon"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                  </div>
+                   
+        Spotify
+      
+                </div>
+                 
+                <div
+                  class="icon-container"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="external-link-icon svg-inline--fa fa-external-link-alt fa-w-16"
+                    data-icon="external-link-alt"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class=""
+                      d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                class="stream-link"
+                href="https://music.youtube.com/playlist?list=OLAK5uy_lS7C76SoLN6ZReXH3WkeUFwIQrbmrDLNo&feature=share"
+                target="_blank"
+              >
+                <div
+                  class="link-content"
+                >
+                  <div
+                    class="streaming-icon"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                  </div>
+                   
+        Google Play Music
+      
+                </div>
+                 
+                <div
+                  class="icon-container"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="external-link-icon svg-inline--fa fa-external-link-alt fa-w-16"
+                    data-icon="external-link-alt"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class=""
+                      d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                class="stream-link"
+                href="https://music.apple.com/us/album/refraction/1518269881?uo=4"
+                target="_blank"
+              >
+                <div
+                  class="link-content"
+                >
+                  <div
+                    class="streaming-icon"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                  </div>
+                   
+        Apple Music
+      
+                </div>
+                 
+                <div
+                  class="icon-container"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="external-link-icon svg-inline--fa fa-external-link-alt fa-w-16"
+                    data-icon="external-link-alt"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class=""
+                      d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                class="stream-link"
+                href="https://soundcloud.com/xrgbmusic/sets/refraction"
+                target="_blank"
+              >
+                <div
+                  class="link-content"
+                >
+                  <div
+                    class="streaming-icon"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                  </div>
+                   
+        Soundcloud
+      
+                </div>
+                 
+                <div
+                  class="icon-container"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="external-link-icon svg-inline--fa fa-external-link-alt fa-w-16"
+                    data-icon="external-link-alt"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class=""
+                      d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+         
+        <div
+          class="loading"
+        />
+         
+        <img
+          alt="Refraction Cover Art"
+          src=""
+        />
+      </div>
+    </div>
+  </li>
+</ul>
+`;

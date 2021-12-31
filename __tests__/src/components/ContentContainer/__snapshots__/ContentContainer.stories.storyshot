@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Content Container Content Container 1`] = `
+<article
+  class="content-container"
+  id="Example Title"
+>
+  <h2>
+    Example Title
+  </h2>
+   
+</article>
+`;

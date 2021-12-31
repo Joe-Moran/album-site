@@ -1,3 +1,3 @@
-import { latest, music, about } from '@/routing/view-sections'
+import { latest, music, about } from '@/routing/view-sections';
 
-export default [latest, music, about]
+export default [latest, music, about];

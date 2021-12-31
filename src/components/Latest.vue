@@ -27,16 +27,14 @@
         title="xRGB"
         target="_blank"
         style="color: #cccccc; text-decoration: none"
-        >xRGB</a
-      >
+      >xRGB</a>
       ·
       <a
         href="https://soundcloud.com/xrgbmusic/sets/refraction"
         title="Refraction"
         target="_blank"
         style="color: #cccccc; text-decoration: none"
-        >Refraction</a
-      >
+      >Refraction</a>
     </div>
   </div>
 </template>
@@ -45,7 +43,7 @@
 export default {
   name: 'Latest',
   components: {},
-}
+};
 </script>
 
 <style lang="scss" scoped>

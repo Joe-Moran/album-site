@@ -1,28 +1,10 @@
 <template>
   <button>
-    <!-- <SVGIcon
-      :icon="prependIcon"
-      :height="$options.ICON_SQUARE_DIMENSION"
-      :width="$options.ICON_SQUARE_DIMENSION"
-      v-if="prependIcon"
-      class="icon"
-    /> -->
     <span id="basic-button-text"><slot /></span>
-    <!-- <SVGIcon
-      :icon="appendIcon"
-      :height="$options.ICON_SQUARE_DIMENSION"
-      :width="$options.ICON_SQUARE_DIMENSION"
-      v-if="appendIcon"
-      class="icon"
-    /> -->
   </button>
 </template>
 
 <script>
-/**
- * The value to use for the square dimensions of the container of the button icon.
- */
-const ICON_SQUARE_DIMENSION = 32
 
 /**
  * A very basic button, styled specifically for this site.
@@ -37,7 +19,7 @@ export default {
     appendColor: { type: String, default: 'orange' },
   },
   iconDimension: 32,
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -64,13 +46,4 @@ button {
   transition: box-shadow ease-in-out 400ms;
 }
 
-.icon {
-  &:first-child {
-    margin-right: $icon-margin;
-  }
-
-  &:last-child {
-    margin-left: $icon-margin;
-  }
-}
 </style>

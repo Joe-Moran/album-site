@@ -1,19 +1,18 @@
 // import  from "./Link.vue"
-import Sidebar from './Sidebar.vue'
-import siteSections from '../routing/routes'
+import Sidebar from './Sidebar.vue';
+import siteSections from '../routing/routes';
 
 export default {
   title: 'Sidebar',
   excludeStories: /.*Data$/,
-}
+};
 
 // export const actionsData = {
 //     onClick: action('link click'),
 // }
 
-const sidebarTemplate = "<sidebar :links='linkObj'/>"
-const sidebarWithSectionTemplate =
-  "<sidebar :links='linkObj' :section='linkObj[2]'/>"
+const sidebarTemplate = "<sidebar :links='linkObj'/>";
+const sidebarWithSectionTemplate = "<sidebar :links='linkObj' :section='linkObj[2]'/>";
 
 export const Default = () => ({
   components: {
@@ -26,7 +25,7 @@ export const Default = () => ({
     },
   },
   //   methods: actionsData,
-})
+});
 
 export const WithSelectedSection = () => ({
   components: {
@@ -39,4 +38,4 @@ export const WithSelectedSection = () => ({
     },
   },
   //   methods: actionsData,
-})
+});

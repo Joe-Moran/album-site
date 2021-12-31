@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Link Default 1`] = `
+<div
+  class=""
+>
+  <router-link
+    append=""
+    to="#latest"
+  >
+    
+    The Latest
+  
+  </router-link>
+</div>
+`;
+
+exports[`Storyshots Link Selected 1`] = `
+<div
+  class="selected"
+>
+  <router-link
+    append=""
+    to="#latest"
+  >
+    
+    The Latest
+  
+  </router-link>
+</div>
+`;

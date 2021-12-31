@@ -15,8 +15,9 @@
 </template>
 
 <script>
-import nav from '@/mixins/nav.js'
-import Link from './Link'
+import nav from '@/mixins/nav';
+import Link from './Link.vue';
+
 export default {
   name: 'Sidebar',
   components: {
@@ -28,10 +29,10 @@ export default {
   },
   methods: {
     isCurrentSection(section) {
-      return this.currentSelection && section.path === this.currentSelection
+      return this.currentSelection && section.path === this.currentSelection;
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

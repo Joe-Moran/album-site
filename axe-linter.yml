@@ -1,0 +1,2 @@
+rules:
+  click-events-have-key-events: false # this is broken for vue native buttons, so turning off for now

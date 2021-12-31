@@ -1,8 +1,8 @@
-import homeSections from '@/views/Home/home-sections'
+import homeSections from '@/views/Home/home-sections';
 
-const Home = () => import('@/views/Home/Home.vue')
-const Sidebar = () => import('@/components/Sidebar.vue')
-const Drawer = () => import('@/components/Drawer.vue')
+const Home = () => import('@/views/Home/Home.vue');
+const Sidebar = () => import('@/components/Sidebar.vue');
+const Drawer = () => import('@/components/Drawer.vue');
 
 /**
  * The home page route.
@@ -23,6 +23,6 @@ const home = {
       links: homeSections,
     },
   },
-}
+};
 
-export default [home]
+export default [home];

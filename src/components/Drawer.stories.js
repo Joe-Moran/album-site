@@ -1,129 +1,127 @@
 import {
-    action
-} from '@storybook/addon-actions'
-
-import Drawer from "./Drawer.vue";
-import SocialLinks from "./SocialLinks.vue"
+  action,
+} from '@storybook/addon-actions';
 
 import {
-    INITIAL_VIEWPORTS
+  INITIAL_VIEWPORTS,
 } from '@storybook/addon-viewport';
+import Drawer from './Drawer.vue';
+import SocialLinks from './SocialLinks.vue';
 
-import xrgbSocialLinks from "../xrgbSocialLinks";
+import xrgbSocialLinks from '../xrgbSocialLinks';
+
 export default {
-    title: 'Drawer',
-    excludeStories: /.*Data$/
-}
+  title: 'Drawer',
+  excludeStories: /.*Data$/,
+};
 
 export const actionsData = {
-    onClick: action('drawer click'),
-}
+  onClick: action('drawer click'),
+};
 
 export const drawerData = [{
-    href: "href",
-    label: "link one"
+  href: 'href',
+  label: 'link one',
 }];
 
-const drawerTemplate = "<drawer :links='links' @click='onClick'></drawer>"
-const drawerScrollingTemplate = "<drawer :links='links' @click='onClick' isScrolling></drawer>"
+const drawerTemplate = "<drawer :links='links' @click='onClick'></drawer>";
+const drawerScrollingTemplate = "<drawer :links='links' @click='onClick' isScrolling></drawer>";
 
-const openDrawerTemplate = "<drawer :links='links' @click='onClick' isOpen></drawer>"
-const openDrawerWithAnchorTemplate = "<drawer :links='links' @click='onClick' isOpen><template v-slot:anchor><SocialLinks :links='socialLinks' class='social' /></template></drawer>"
-
-
+const openDrawerTemplate = "<drawer :links='links' @click='onClick' isOpen></drawer>";
+const openDrawerWithAnchorTemplate = "<drawer :links='links' @click='onClick' isOpen><template v-slot:anchor><SocialLinks :links='socialLinks' class='social' /></template></drawer>";
 
 export const Default = () => ({
-    components: {
-        Drawer
+  components: {
+    Drawer,
+  },
+  template: drawerTemplate,
+  props: {
+    links: {
+      default: () => drawerData,
     },
-    template: drawerTemplate,
-    props: {
-        links: {
-            default: () => drawerData
-        }
-    },
-    methods: actionsData
-})
+  },
+  methods: actionsData,
+});
 
 export const Scrolling = () => ({
-    components: {
-        Drawer
+  components: {
+    Drawer,
+  },
+  template: drawerScrollingTemplate,
+  props: {
+    links: {
+      default: () => drawerData,
     },
-    template: drawerScrollingTemplate,
-    props: {
-        links: {
-            default: () => drawerData
-        }
-    },
-    methods: actionsData
-})
+  },
+  methods: actionsData,
+});
 
 export const Mobile = () => ({
-    components: {
-        Drawer
+  components: {
+    Drawer,
+  },
+  template: drawerTemplate,
+  props: {
+    links: {
+      default: () => drawerData,
     },
-    template: drawerTemplate,
-    props: {
-        links: {
-            default: () => drawerData
-        }
-    },
-    methods: actionsData,
+  },
+  methods: actionsData,
 
-})
+});
 
 Mobile.story = {
-    parameters: {
-        viewport: {
-            viewports: INITIAL_VIEWPORTS,
-            defaultViewport: 'iphonex'
-        }
-    }
-}
+  parameters: {
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
+      defaultViewport: 'iphonex',
+    },
+  },
+};
 
 export const MobileOpen = () => ({
-    components: {
-        Drawer
+  components: {
+    Drawer,
+  },
+  template: openDrawerTemplate,
+  props: {
+    links: {
+      default: () => drawerData,
     },
-    template: openDrawerTemplate,
-    props: {
-        links: {
-            default: () => drawerData
-        }
-    },
-    methods: actionsData
-})
+  },
+  methods: actionsData,
+});
 
 MobileOpen.story = {
-    parameters: {
-        viewport: {
-            viewports: INITIAL_VIEWPORTS,
-            defaultViewport: 'iphonex'
-        }
-    }
-}
+  parameters: {
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
+      defaultViewport: 'iphonex',
+    },
+  },
+};
 
 export const MobileOpenWithAnchor = () => ({
-    components: {
-        Drawer,
-        SocialLinks
+  components: {
+    Drawer,
+    SocialLinks,
+  },
+  template: openDrawerWithAnchorTemplate,
+  props: {
+    socialLinks: {
+      default: () => xrgbSocialLinks,
     },
-    template: openDrawerWithAnchorTemplate,
-    props: {
-        socialLinks: {
-            default: () => xrgbSocialLinks
-        },
-        links: {
-            default: () => drawerData
-        }
-    }
-})
+    links: {
+      default: () => drawerData,
+    },
+  },
+});
 
 MobileOpenWithAnchor.story = {
-    parameters: {
-        viewport: {
-            viewports: INITIAL_VIEWPORTS,
-            defaultViewport: 'iphonex'
-        }
-    }
-}
+  parameters: {
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
+      defaultViewport: 'iphonex',
+    },
+  },
+};

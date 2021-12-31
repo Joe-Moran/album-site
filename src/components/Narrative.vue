@@ -11,7 +11,7 @@
 export default {
   name: 'Narrative',
   props: { title: { type: String, required: true } },
-}
+};
 </script>
 
 <style>

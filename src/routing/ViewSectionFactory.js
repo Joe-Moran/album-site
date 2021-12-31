@@ -11,10 +11,10 @@ function ViewSectionFactory() {
      * @returns {ViewSection}
      */
     buildViewSection: (path, label, component) => ({ path, label, component }),
-  }
+  };
 }
 
-export default ViewSectionFactory
+export default ViewSectionFactory;
 
 /**
  * @typedef {object} ViewSection A section of a view. A part of a webpage.

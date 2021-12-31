@@ -1,28 +1,28 @@
-import { action } from '@storybook/addon-actions'
+import { action } from '@storybook/addon-actions';
 
-import App from '../App.vue'
+import App from '../App.vue';
 
 export default {
   title: 'App',
   excludeStories: /.*Data$/,
-}
+};
 
 export const actionsData = {
   onClick: action('link click'),
-}
+};
 
-const template = '<app />'
+const template = '<app />';
 
-const templateScrolling = "<app :isScrolling='true' />"
+const templateScrolling = "<app :isScrolling='true' />";
 
 export const Default = () => ({
   components: {
     App,
   },
-  template: template,
+  template,
   props: {},
   methods: actionsData,
-})
+});
 
 export const Scrolling = () => ({
   components: {
@@ -31,4 +31,4 @@ export const Scrolling = () => ({
   template: templateScrolling,
   props: {},
   methods: actionsData,
-})
+});

@@ -1,18 +1,17 @@
-import StreamLinks from './StreamLinks.vue'
+import StreamLinks from './StreamLinks.vue';
 
 export default {
   title: 'Stream Links',
   excludeStories: /.*Data$/,
-}
+};
 
-const template =
-  "<StreamLinks :links='linkData' style='margin: 20px' open> </StreamLinks>"
+const template = "<StreamLinks :links='linkData' style='margin: 20px' open> </StreamLinks>";
 
 export const Default = () => ({
   components: {
     StreamLinks,
   },
-  template: template,
+  template,
   data() {
     return {
       linkData: [
@@ -32,6 +31,6 @@ export const Default = () => ({
           link: 'joe.com',
         },
       ],
-    }
+    };
   },
-})
+});

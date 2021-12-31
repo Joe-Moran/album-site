@@ -1,5 +1,9 @@
 <template>
-  <article :id="title" ref="userContent" class="content-container">
+  <article
+    :id="title"
+    ref="userContent"
+    class="content-container"
+  >
     <h2>{{ title }}</h2>
 
     <!-- @slot slot for content inside container -->
@@ -29,34 +33,33 @@ export default {
   data() {
     return {
       isVisible: false,
-    }
+    };
   },
   watch: {
     scrollPosition() {
-      this.determineIfVisible()
+      this.determineIfVisible();
     },
     isVisible(value) {
       if (value) {
-        this.$emit('visible', this.title)
+        this.$emit('visible', this.title);
       }
     },
-  },
-  mounted() {
-    this.determineIfVisible()
   },
 
   methods: {
     determineIfVisible() {
       // TODO Intersection Observer
-      const container = this.$refs.userContent.getBoundingClientRect()
-      const windowHeight =
-        window.innerHeight || document.documentElement.clientHeight
-      const top = container.top
-      const bottom = container.bottom
-      this.isVisible = top <= windowHeight / 2 && bottom > windowHeight / 2
+      const container = this.$refs.userContent.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      const { top } = container;
+      const { bottom } = container;
+      this.isVisible = top <= windowHeight / 2 && bottom > windowHeight / 2;
     },
   },
-}
+  mounted() {
+    this.determineIfVisible();
+  },
+};
 </script>
 
 <style lang="scss" scoped>

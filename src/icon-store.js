@@ -47,4 +47,4 @@
 export default {
   // iconIds: getIconIds(),
   // icons: getIconContent(),
-}
+};

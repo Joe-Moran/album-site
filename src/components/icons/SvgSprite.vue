@@ -13,5 +13,5 @@ export default {
   name: 'SvgSprite',
   svgSprite: null,
   // icons.join('\n'), // concatenate all symbols into $options.svgSprite
-}
+};
 </script>

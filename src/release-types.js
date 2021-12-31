@@ -1,4 +1,4 @@
 export default {
-    ALBUM: 'album',
-    SINGLE: 'single'
-}
+  ALBUM: 'album',
+  SINGLE: 'single',
+};

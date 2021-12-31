@@ -1,11 +1,24 @@
 <template>
-  <div class="stream-links" :class="{ overlay: overlay }">
-    <div v-if="showFeature" id="feature">
+  <div
+    class="stream-links"
+    :class="{ overlay: overlay }"
+  >
+    <div
+      v-if="showFeature"
+      id="feature"
+    >
       <slot />
     </div>
     <ul>
-      <li v-for="link in links" :key="link.link">
-        <StreamLink :id="title" :icon="link.icon" :href="link.link">
+      <li
+        v-for="link in links"
+        :key="link.link"
+      >
+        <StreamLink
+          :id="title"
+          :icon="link.icon"
+          :href="link.link"
+        >
           {{ link.title }}
         </StreamLink>
       </li>
@@ -14,7 +27,7 @@
 </template>
 
 <script>
-import StreamLink from './StreamLink'
+import StreamLink from './StreamLink.vue';
 
 /**
  * Container for multiple stream links related to a specific release.
@@ -34,7 +47,7 @@ export default {
     releasePath: { type: String, required: true },
     reduce: { type: Boolean, default: false },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

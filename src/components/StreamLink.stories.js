@@ -1,5 +1,5 @@
-import StreamLink from './StreamLink.vue'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import StreamLink from './StreamLink.vue';
 
 /**
  * Setup
@@ -10,7 +10,7 @@ export default {
   component: StreamLink,
   subcomponents: { FontAwesomeIcon },
   argTypes: {},
-}
+};
 
 /**
  * Template
@@ -19,14 +19,14 @@ const Template = (args, { argTypes }) => ({
   components: { StreamLink },
   props: Object.keys(argTypes),
   template: '<StreamLink> v-bind="$props"></StreamLink>',
-})
+});
 
 /**
  * Stories
  */
-export const streamLink = Template.bind({})
+export const streamLink = Template.bind({});
 streamLink.args = {
   icon: '',
   title: 'Youtube',
   link: 'youtube.com',
-}
+};

@@ -12,19 +12,19 @@
 
 <script>
 export default {
-  name: "Date",
+  name: 'Date',
   data() {
     return {
       isClicked: false,
-      date: "5 26 2020"
+      date: '5 26 2020',
     };
   },
   methods: {
     clickHandler() {
       this.isClicked = !this.isClicked;
-      this.$emit("click", this.isClicked);
-    }
-  }
+      this.$emit('click', this.isClicked);
+    },
+  },
 };
 </script>
 

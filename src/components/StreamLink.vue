@@ -1,11 +1,18 @@
 <template>
-  <a :href="href" target="_blank" class="stream-link">
+  <a
+    :href="href"
+    target="_blank"
+    class="stream-link"
+  >
     <div class="link-content">
       <div class="streaming-icon">
-        <img :src="require(`../assets/streaming/${icon}`)" alt="" />
+        <img
+          :src="require(`../assets/streaming/${icon}`)"
+          alt=""
+        >
       </div>
       <!-- @slot The link text -->
-      <slot></slot>
+      <slot />
     </div>
     <div class="icon-container">
       <FontAwesomeIcon
@@ -17,8 +24,8 @@
 </template>
 
 <script>
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 /**
  * A link to a streaming service.
@@ -43,9 +50,9 @@ export default {
    */
   externalLinkIcon: faExternalLinkAlt,
   data() {
-    return {}
+    return {};
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
