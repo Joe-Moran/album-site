@@ -17,7 +17,7 @@ assignees: Joe-Moran
 ## Slots
 
 ## Dependencies
-- [ ] https://github.com/Joe-Moran/album-site/issues/new?template=vue_component.md
+- [ ] https://github.com/Joe-Moran/album-site/issues/new?template=vue-component.md
 
 ## Testing
 

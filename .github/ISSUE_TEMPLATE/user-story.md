@@ -15,3 +15,6 @@ As a user, when I , I can :
 1. 
 2.
 3.
+
+## Tasks
+- [ ] https://github.com/Joe-Moran/album-site/issues/new?template=vue-component.md
