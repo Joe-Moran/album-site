@@ -1,15 +1,15 @@
 ---
 name: Vue Component
 about: Template for tasks for creating a Vue component
-title: ''
-labels: Vue Component
+title: Create [COMPONENT].vue
+labels: Task, Vue Component
 assignees: Joe-Moran
 
 ---
 
 ## Description
 
-## Art Direction
+## Art 
 [LINK TO COMPONENT OR VIEW](xd link)
 
 ## Props
@@ -20,3 +20,7 @@ assignees: Joe-Moran
 - [ ] https://github.com/Joe-Moran/album-site/issues/new?title=Title+here
 
 ## Testing
+
+### Unit
+
+### Integration
