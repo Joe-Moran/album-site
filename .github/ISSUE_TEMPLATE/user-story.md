@@ -1,7 +1,7 @@
 ---
 name: User Story
 about: Template for creating a user story for project management
-title: ''
+title: "[User can]"
 labels: User Story
 assignees: Joe-Moran
 
@@ -17,4 +17,4 @@ As a user, when I , I can :
 3.
 
 ## Tasks
-- [ ] https://github.com/Joe-Moran/album-site/issues/new?template=vue-component.md
+- [ ] https://github.com/Joe-Moran/album-site/issues/new?template=vue-component.md&labels=Vue+Component,Task
