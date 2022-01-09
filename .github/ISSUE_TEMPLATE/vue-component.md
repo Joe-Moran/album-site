@@ -1,7 +1,7 @@
 ---
 name: Vue Component
 about: Template for tasks for creating a Vue component
-title: "[Create COMPONENT.vue]"
+title: "Create COMPONENT.vue"
 labels: Task, Vue Component
 assignees: Joe-Moran
 
@@ -14,10 +14,19 @@ assignees: Joe-Moran
 
 ## Requirements
 
-## Props
+### Setup
+Generate component, story, and unit test files using:
+
+`npm run gen -- --path path/to/component --name COMPONENT.vue`
+
+
+### Props
 - 
 
-## Slots
+### Slots
+- 
+
+### Events
 - 
 
 ## Dependencies
