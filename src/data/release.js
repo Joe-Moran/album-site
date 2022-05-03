@@ -1,4 +1,4 @@
-import releaseTypes from './release-types';
+import releaseTypes from './release-type';
 import streamingSources from './streaming-sources';
 
 function createStreamObject(streamingSource, link) {

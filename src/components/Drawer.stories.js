@@ -8,7 +8,7 @@ import {
 import Drawer from './Drawer.vue';
 import SocialLinks from './SocialLinks.vue';
 
-import xrgbSocialLinks from '../xrgbSocialLinks';
+import xrgbSocialLinks from '../data/links-social-media';
 
 export default {
   title: 'Drawer',

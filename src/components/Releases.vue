@@ -20,7 +20,7 @@
 
 <script>
 import Release from './Release.vue';
-import releases from '@/releases-data';
+import releases from '@/data/release';
 
 export default {
   name: 'Releases',

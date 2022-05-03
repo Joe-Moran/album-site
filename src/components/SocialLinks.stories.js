@@ -1,4 +1,4 @@
-import xrgbSocialLinks from '../xrgbSocialLinks';
+import xrgbSocialLinks from '../data/links-social-media';
 
 export default {
   title: 'Social Links',

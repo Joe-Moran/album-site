@@ -1,6 +1,5 @@
 import { action } from '@storybook/addon-actions';
-
-import App from '../App.vue';
+import App from '@/App.vue';
 
 export default {
   title: 'App',
@@ -12,7 +11,6 @@ export const actionsData = {
 };
 
 const template = '<app />';
-
 const templateScrolling = "<app :isScrolling='true' />";
 
 export const Default = () => ({

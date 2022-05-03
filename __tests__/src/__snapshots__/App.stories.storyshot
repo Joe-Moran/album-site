@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots App Default 1`] = `
+<div
+  id="app"
+>
+  <div
+    class="logo-and-links-container"
+  >
+    <div
+      class="xrgb-logo"
+      id="xrgb-container"
+    >
+      <!---->
+    </div>
+     
+    <span
+      class="social"
+      id="desktop-social"
+    >
+      <a
+        href="https://xrgb.bandcamp.com/"
+        id="bandcamp"
+        target="_blank"
+      >
+        <img
+          alt="bandcamp"
+          src=""
+        />
+      </a>
+      <a
+        href="https://www.soundcloud.com/xrgbmusic"
+        id="soundcloud"
+        target="_blank"
+      >
+        <img
+          alt="soundcloud"
+          src=""
+        />
+      </a>
+      <a
+        href="https://www.instagram.com/xrgb_music"
+        id="instagram"
+        target="_blank"
+      >
+        <img
+          alt="instagram"
+          src=""
+        />
+      </a>
+    </span>
+  </div>
+   
+  <div
+    class=""
+    id="container"
+  >
+    <router-view
+      id="home-nav"
+      name="homenav"
+    />
+     
+    <section
+      id="content"
+    >
+      <router-view
+        scroll-position="0"
+      />
+    </section>
+  </div>
+</div>
+`;
+
+exports[`Storyshots App Scrolling 1`] = `
+<div
+  id="app"
+  isscrolling="true"
+>
+  <div
+    class="logo-and-links-container"
+  >
+    <div
+      class="xrgb-logo"
+      id="xrgb-container"
+    >
+      <!---->
+    </div>
+     
+    <span
+      class="social"
+      id="desktop-social"
+    >
+      <a
+        href="https://xrgb.bandcamp.com/"
+        id="bandcamp"
+        target="_blank"
+      >
+        <img
+          alt="bandcamp"
+          src=""
+        />
+      </a>
+      <a
+        href="https://www.soundcloud.com/xrgbmusic"
+        id="soundcloud"
+        target="_blank"
+      >
+        <img
+          alt="soundcloud"
+          src=""
+        />
+      </a>
+      <a
+        href="https://www.instagram.com/xrgb_music"
+        id="instagram"
+        target="_blank"
+      >
+        <img
+          alt="instagram"
+          src=""
+        />
+      </a>
+    </span>
+  </div>
+   
+  <div
+    class=""
+    id="container"
+  >
+    <router-view
+      id="home-nav"
+      name="homenav"
+    />
+     
+    <section
+      id="content"
+    >
+      <router-view
+        scroll-position="0"
+      />
+    </section>
+  </div>
+</div>
+`;

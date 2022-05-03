@@ -1,6 +1,6 @@
-import homeSections from '@/views/Home/home-sections';
+import homeSections from '@/data/home/home-section';
 
-const Home = () => import('@/views/Home/Home.vue');
+const Home = () => import('@/views/TheHomeView.vue');
 const Sidebar = () => import('@/components/Sidebar.vue');
 const Drawer = () => import('@/components/Drawer.vue');
 

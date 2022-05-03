@@ -1,4 +1,4 @@
-export default () => ({
+export default {
   /**
    * Builds a PatchCategory
    * @param {string} category The category grouping of patches
@@ -9,7 +9,7 @@ export default () => ({
   build(category, patchCount = 1, description = null) {
     return { category, patchCount, description };
   },
-});
+};
 
 /**
  * @typedef PatchCategory A category, or grouping, of patches with additional details
