@@ -27,7 +27,7 @@
 
 <script>
 import globals from '@/globals';
-import xrgbSocialLinks from '@/xrgbSocialLinks';
+import xrgbSocialLinks from '@/data/links-social-media';
 import nav from '@/mixins/nav';
 import Arrow from './Arrow.vue';
 

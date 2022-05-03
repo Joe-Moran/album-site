@@ -35,9 +35,9 @@
 <script>
 import AnimatedIcon from './components/icons/AnimatedIcon.vue';
 import SocialLinks from './components/SocialLinks.vue';
-import xrgbSocialLinks from './xrgbSocialLinks';
+import xrgbSocialLinks from './data/links-social-media';
 import siteSections from './routing/routes';
-import homeSections from '@/views/Home/home-sections';
+import homeSections from '@/data/home/home-section';
 
 export default {
   name: 'App',
@@ -75,9 +75,7 @@ export default {
       this.scrollPosition = window.scrollY;
     },
   },
-  mounted() {
-    // window.addEventListener('scroll', debounce(this.scrollListener, 10))
-  },
+
 };
 </script>
 
