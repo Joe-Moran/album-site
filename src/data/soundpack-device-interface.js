@@ -1,4 +1,4 @@
-export default () => ({
+export default {
 
   /**
    * Builds a SoundpackDevice.
@@ -10,7 +10,7 @@ export default () => ({
   build(title, patches) {
     return { title, patches };
   },
-});
+};
 
 /**
  * @typedef {object} SoundpackDevice A device (plugin, hardware synthesizer, etc.)
