@@ -12,6 +12,81 @@ exports[`Storyshots views/The soundpacks view The Soundpacks View 1`] = `
     </h1>
      
     <div
+      class="soundpack-introduction"
+    >
+      <div
+        class="soundpack-introduction-cover-image"
+      />
+       
+      <div
+        class="soundpack-introduction-summary-and-links"
+      >
+        <div
+          class="soundpack-introduction-summary"
+        >
+          <p>
+            
+            Synth leads, sounds, and textures designed for my album
+            
+            <i
+              class="italic"
+            >
+              Refraction
+            </i>
+            .
+          
+          </p>
+           
+          <p>
+            
+            Requires 
+            <strong
+              class="bold"
+            >
+              Prophet REV2
+            </strong>
+            ,
+            
+            <strong
+              class="bold"
+            >
+              Omnisphere 2
+            </strong>
+            ,
+            and/or 
+            <strong
+              class="bold"
+            >
+              Ableton Live
+            </strong>
+            .
+          
+          </p>
+        </div>
+         
+        <div
+          class="soundpack-introduction-links"
+        >
+          <button>
+            <span
+              id="basic-button-text"
+            >
+              Download
+            </span>
+          </button>
+           
+          <button>
+            <span
+              id="basic-button-text"
+            >
+              Donate
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+     
+    <div
       class="soundpack-demos"
     >
       <h2>

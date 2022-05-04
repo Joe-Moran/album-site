@@ -6,6 +6,26 @@
       class="soundpack"
     >
       <h1>{{ soundpack.title }}</h1>
+      <div class="soundpack-introduction">
+        <div class="soundpack-introduction-cover-image" />
+        <div class="soundpack-introduction-summary-and-links">
+          <div class="soundpack-introduction-summary">
+            <p>
+              Synth leads, sounds, and textures designed for my album
+              <i class="italic">Refraction</i>.
+            </p>
+            <p>
+              Requires <strong class="bold">Prophet REV2</strong>,
+              <strong class="bold">Omnisphere 2</strong>,
+              and/or <strong class="bold">Ableton Live</strong>.
+            </p>
+          </div>
+          <div class="soundpack-introduction-links">
+            <BasicButton>Download</BasicButton>
+            <BasicButton>Donate</BasicButton>
+          </div>
+        </div>
+      </div>
 
       <div class="soundpack-demos">
         <h2>Demos</h2>
@@ -66,12 +86,13 @@
 
 <script>
 import soundpacks from '@/data/soundpack';
+import BasicButton from '@/components/Button/BasicButton.vue';
 /**
  * The soundpacks view, where users can download soundpacks.
  */
 export default {
   name: 'TheSoundpacksView',
-  components: {},
+  components: { BasicButton },
   props: {},
   /**
    * this.$options.soundpacks
@@ -99,6 +120,32 @@ export default {
 
   h1 {
     color: $red-tertiary;
+  }
+}
+
+.soundpack-introduction {
+  display: flex;
+}
+
+.soundpack-introduction-cover-image {
+  flex: 2;
+height: 400px;
+}
+
+.soundpack-introduction-summary-and-links {
+  flex: 3;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.soundpack-introduction-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  button {
+    justify-content: center;
   }
 }
 
