@@ -66,7 +66,7 @@ export default {
   font-size: 1.1rem;
   font-weight: bold;
   color: black;
-  font-family: $link-font-family;
+  font-family: $font-family-link;
 
   padding: 0.7rem 1.25rem;
   width: 100%;
