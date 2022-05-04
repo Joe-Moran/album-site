@@ -3,5 +3,318 @@
 exports[`Storyshots views/The soundpacks view The Soundpacks View 1`] = `
 <div
   class="the-soundpacks-view"
-/>
+>
+  <div
+    class="soundpack"
+  >
+    <h1>
+      Refraction Soundpack
+    </h1>
+     
+    <div
+      class="soundpack-demos"
+    >
+      <h2>
+        Demos
+      </h2>
+       
+      <iframe
+        allow="autoplay"
+        class="soundpack-demos-embedded-player"
+        frameborder="no"
+        height="450"
+        scrolling="no"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1276519099&color=%237e4395&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+        width="100%"
+      />
+    </div>
+     
+    <div
+      class="soundpack-details"
+    >
+      <h2>
+        Details
+      </h2>
+       
+      <div
+        class="soundpack-devices"
+      >
+        <article
+          class="soundpack-device"
+        >
+          <h3
+            class="soundpack-device-title"
+          >
+            
+            Omnisphere Patches
+          
+          </h3>
+           
+          <ul
+            class="soundpack-device-patches"
+          >
+            <li
+              class="soundpack-device-patch"
+            >
+              <div
+                class="soundpack-device-patch-content"
+              >
+                <p>
+                  
+                  Synth Bass - 1 patch
+                
+                </p>
+                 
+                <!---->
+              </div>
+            </li>
+            <li
+              class="soundpack-device-patch"
+            >
+              <div
+                class="soundpack-device-patch-content"
+              >
+                <p>
+                  
+                  Pads - 3 patches
+                
+                </p>
+                 
+                <!---->
+              </div>
+            </li>
+            <li
+              class="soundpack-device-patch"
+            >
+              <div
+                class="soundpack-device-patch-content"
+              >
+                <p>
+                  
+                  Leads - 2 patches
+                
+                </p>
+                 
+                <!---->
+              </div>
+            </li>
+            <li
+              class="soundpack-device-patch"
+            >
+              <div
+                class="soundpack-device-patch-content"
+              >
+                <p>
+                  
+                  Multi-use - 5 patches
+                
+                </p>
+                 
+                <p
+                  class="soundpack-device-patch-description"
+                >
+                  
+                  Rhythmic, FX, noise, etc.
+                
+                </p>
+              </div>
+            </li>
+          </ul>
+        </article>
+        <article
+          class="soundpack-device"
+        >
+          <h3
+            class="soundpack-device-title"
+          >
+            
+            Prophet REV2 Patches
+          
+          </h3>
+           
+          <ul
+            class="soundpack-device-patches"
+          >
+            <li
+              class="soundpack-device-patch"
+            >
+              <div
+                class="soundpack-device-patch-content"
+              >
+                <p>
+                  
+                  Leads - 2 patches
+                
+                </p>
+                 
+                <!---->
+              </div>
+            </li>
+            <li
+              class="soundpack-device-patch"
+            >
+              <div
+                class="soundpack-device-patch-content"
+              >
+                <p>
+                  
+                  Pads - 2 patches
+                
+                </p>
+                 
+                <!---->
+              </div>
+            </li>
+            <li
+              class="soundpack-device-patch"
+            >
+              <div
+                class="soundpack-device-patch-content"
+              >
+                <p>
+                  
+                  Multi-use - 2 patches
+                
+                </p>
+                 
+                <p
+                  class="soundpack-device-patch-description"
+                >
+                  
+                  FX and some sweet polyphonic shit
+                
+                </p>
+              </div>
+            </li>
+          </ul>
+        </article>
+        <article
+          class="soundpack-device"
+        >
+          <h3
+            class="soundpack-device-title"
+          >
+            
+            Ableton Presets
+          
+          </h3>
+           
+          <ul
+            class="soundpack-device-patches"
+          >
+            <li
+              class="soundpack-device-patch"
+            >
+              <div
+                class="soundpack-device-patch-content"
+              >
+                <p>
+                  
+                  Audio Effects - 4 patches
+                
+                </p>
+                 
+                <!---->
+              </div>
+            </li>
+          </ul>
+        </article>
+        <article
+          class="soundpack-device"
+        >
+          <h3
+            class="soundpack-device-title"
+          >
+            
+            Audio Samples
+          
+          </h3>
+           
+          <ul
+            class="soundpack-device-patches"
+          >
+            <li
+              class="soundpack-device-patch"
+            >
+              <div
+                class="soundpack-device-patch-content"
+              >
+                <p>
+                  
+                  Tunes - 4 patches
+                
+                </p>
+                 
+                <p
+                  class="soundpack-device-patch-description"
+                >
+                  
+                  Music samples from old PSA videos
+                
+                </p>
+              </div>
+            </li>
+            <li
+              class="soundpack-device-patch"
+            >
+              <div
+                class="soundpack-device-patch-content"
+              >
+                <p>
+                  
+                  Voices - 6 patches
+                
+                </p>
+                 
+                <p
+                  class="soundpack-device-patch-description"
+                >
+                  
+                  Voice samples from old PSA videos—mostly regarding drugs
+                
+                </p>
+              </div>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </div>
+     
+    <div
+      class="soundpack-author-note"
+    >
+      <h2>
+        A Note From The Author
+      </h2>
+       
+      <div
+        class="soundpack-author-note-content"
+      >
+        <div>
+          <p>
+            Howdy!
+          </p>
+           
+          <p>
+            Thank you so much for your support and love and whatever else you've been secretly sending me without my knowing. 
+          </p>
+           
+          <p>
+            Sound design is a huge part of my creative process, so I felt I needed to share some of my sounds with you, the artist. I hope you gain inspiration within these files, but if you find the sounds uninspiring, dull, or pointless, then hell yeah! Sometimes it requires a hell of a picky ear to translate or find inspiration for a sound or song, so I'm happy knowing I can help you sound less shitty than some of my worst songs ever. 
+          </p>
+           
+          <p>
+            I hope you are writing some sick fucking jams and have as much fun as I did while writing my album Refraction.
+          </p>
+           
+          <p>
+            Thanks for listening! 
+            <br />
+            Love, xRGB
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
