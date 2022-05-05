@@ -1,4 +1,4 @@
-export default () => ({
+export default {
   /**
    * Builds a soundpack data model.
    *
@@ -13,7 +13,7 @@ export default () => ({
       title, demoPlayerEmbedPath, devices, note,
     };
   },
-});
+};
 
 /**
  * The data for a single soundpack.

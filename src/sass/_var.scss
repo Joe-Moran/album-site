@@ -1,0 +1,32 @@
+$blue-primary: #00aeef;
+$blue-tertiary: #0631a2c7;
+
+$black-primary: #0a0a0a;
+$gray-tertiary: #D1D1D1;
+
+$red-primary: #D11D66;
+$red-tertiary: #FF1E7A;
+
+/** Drop shadow Values**/
+$drop-x: -0.25rem;
+$drop-y: 0.25rem;
+
+$font-size: 18px;
+
+
+/** screen sizes **/
+$sm: 37.5rem;
+$md: 60rem;
+$lg: 79rem;
+$xl: 119rem;
+
+$font-family-link: consolas;
+
+$font-family-heading: lato, sans-serif;
+$font-family-paragraph: "Source Sans Pro", sans-serif;
+$font-family-list: "Source Sans Pro", sans-serif;
+
+$paragraph-line-height: 1.125rem;
+
+$bullet-size: .5rem;
+$bullet-margin-y: ($paragraph-line-height - $bullet-size) / 2;

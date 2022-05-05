@@ -23,8 +23,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'xRGB-Site-DSP/dist/styledictionary/scss/variables.scss';
-$icon-margin: 15px;
+@import '@/sass/global.scss';
+
+$icon-margin: .9375rem;
 
 button {
   &:hover {

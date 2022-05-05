@@ -11,7 +11,7 @@ import soundpackPatchCategory from './soundpack-patch-category';
 export default [
   soundpackInterface.build(
     'Refraction Soundpack',
-    'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1276519099&color=%237e4395&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+    'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1276519099&color=%237e4395&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
     [
       soundpackDeviceInterface.build(
         'Omnisphere Patches',
@@ -39,10 +39,10 @@ export default [
       soundpackDeviceInterface.build(
         'Audio Samples',
         [
-          soundpackPatchCategoryInterface.build(soundpackPatchCategory.AUDIO_SAMPLE, 4),
-          soundpackPatchCategoryInterface.build(soundpackPatchCategory.VOX, 6),
+          soundpackPatchCategoryInterface.build(soundpackPatchCategory.AUDIO_SAMPLE, 4, 'Music samples from old PSA videos'),
+          soundpackPatchCategoryInterface.build(soundpackPatchCategory.VOX, 6, 'Voice samples from old PSA videos—mostly regarding drugs'),
         ],
       ),
     ],
-    '<p>Howdy! <br/><br/>Thank you so much for your support and love and whatever else you’ve been secretly sending me without my knowing. <br/> Sound design is a huge part of my creative process, so I felt I needed to share some of my sounds with you, the artist. I hope you gain inspiration within these files, but if you find the sounds uninspiring, dull, or pointless, then hell yeah! Sometimes it requires a hell of a picky ear to translate or find inspiration for a sound or song, so I’m happy knowing I can help you sound less shitty than some of my worst songs ever. <br/><br/>I hope you are writing some sick fucking jams and have as much fun as I did while writing my album Refraction. <br/><br/>Thanks for listening! <br/>Love, xRGB</p>',
+    '<div><p>Howdy!</p> <p>Thank you so much for your support and love and whatever else you\'ve been secretly sending me without my knowing. </p> <p>Sound design is a huge part of my creative process, so I felt I needed to share some of my sounds with you, the artist. I hope you gain inspiration within these files, but if you find the sounds uninspiring, dull, or pointless, then hell yeah! Sometimes it requires a hell of a picky ear to translate or find inspiration for a sound or song, so I\'m happy knowing I can help you sound less shitty than some of my worst songs ever. </p> <p>I hope you are writing some sick fucking jams and have as much fun as I did while writing my album Refraction.</p> <p>Thanks for listening! <br/>Love, xRGB</p></div>',
   )];
