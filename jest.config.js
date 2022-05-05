@@ -9,9 +9,8 @@ module.exports = {
         '.+\\.(webp)$': 'jest-transform-stub',
       },
       testMatch: [
-        '**/tests/unit/**/*.spec.[jt]s?(x)',
-        '**/__tests__/*.test.[jt]s?(x)',
-        '**/__tests__/integration/**/*.integration.[jt]s?(x)',
+        '**/*.test.[jt]s?(x)',
+        '**/*.integration.[jt]s?(x)',
       ],
       collectCoverageFrom: [
         'src/**/*.{js,vue}',
