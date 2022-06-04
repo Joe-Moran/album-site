@@ -7,7 +7,13 @@
     >
       <h1>{{ soundpack.title }}</h1>
       <div class="soundpack-introduction">
-        <div class="soundpack-introduction-cover-image" />
+        <div class="soundpack-introduction-cover-image">
+          <img
+            :src="require('../assets/refraction sound pack.jpg')"
+            alt="A blurred face, flooded with red and blue hues split down the middle.
+            Text reads Refraction Sound Pack."
+          >
+        </div>
         <div class="soundpack-introduction-summary-and-links">
           <div class="soundpack-introduction-summary">
             <p>
@@ -21,24 +27,17 @@
             </p>
           </div>
           <div class="soundpack-introduction-links">
-            <BasicButton>Download</BasicButton>
-            <BasicButton>Donate</BasicButton>
+            <ButtonLink
+              href="/Refraction Sound Pack.zip"
+              download="/Refraction Sound Pack.zip"
+              class="download-button"
+            >
+              Download
+            </ButtonLink>
           </div>
         </div>
       </div>
 
-      <div class="soundpack-demos">
-        <h2>Demos</h2>
-        <iframe
-          width="100%"
-          height="450"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          class="soundpack-demos-embedded-player"
-          :src="soundpack.demoPlayerEmbedPath"
-        />
-      </div>
       <div class="soundpack-details">
         <h2>Details</h2>
         <div class="soundpack-devices">
@@ -73,6 +72,29 @@
           </article>
         </div>
       </div>
+      <div class="soundpack-demos">
+        <h2>Demos</h2>
+        <h3>Prophet REV 2 Patches</h3>
+        <iframe
+          title="Soundcloud Player for Prophet REV 2 patches"
+          width="100%"
+          height="300"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1436441497&color=%237e4395&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+        />
+        <h3>Omnisphere Patches</h3>
+        <iframe
+          title="Soundcloud Player for Onnisphere patches"
+          width="100%"
+          height="300"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1276519099&color=%237e4395&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+        />
+      </div>
       <div class="soundpack-author-note">
         <h2>A Note From The Author</h2>
         <div
@@ -86,13 +108,13 @@
 
 <script>
 import soundpacks from '@/data/soundpack';
-import BasicButton from '@/components/Button/BasicButton.vue';
+import ButtonLink from '@/components/ButtonLink.vue';
 /**
  * The soundpacks view, where users can download soundpacks.
  */
 export default {
   name: 'TheSoundpacksView',
-  components: { BasicButton },
+  components: { ButtonLink },
   props: {},
   /**
    * this.$options.soundpacks
@@ -112,31 +134,36 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../sass/global.scss';
+@import "@/sass/global";
 
 .the-soundpacks-view {
   color: white;
-  background: black;
 
   h1 {
+    margin-bottom: 3.5rem;
     color: $red-tertiary;
   }
 }
 
 .soundpack-introduction {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .soundpack-introduction-cover-image {
-  flex: 2;
-height: 400px;
+  flex: 1 0 16rem;
+
+  img {
+    width: 100%;
+  }
 }
 
 .soundpack-introduction-summary-and-links {
-  flex: 3;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
+  display: flex;
+  flex: 1 0 250px;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .soundpack-introduction-links {
@@ -149,9 +176,20 @@ justify-content: space-between;
   }
 }
 
+.download-button {
+  color: $black-primary;
+  background: $red-primary;
+  transition: all 250ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: white;
+  }
+}
+
 .soundpack-devices {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(clamp(13rem, 45vw, 18rem), 1fr));
 }
 
 .soundpack-device-title {
@@ -163,18 +201,26 @@ justify-content: space-between;
 }
 
 .soundpack-device-patch-description {
-  color: $gray-tertiary;
   font-style: italic;
+  color: $gray-tertiary;
+}
+
+.soundpack-demos {
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  iframe {
+    margin-bottom: 2rem;
+  }
 }
 
 .soundpack-author-note-content {
-  padding: .875rem 1.5rem;
-  border-radius: .3125rem;
-
-  background: rgba(158, 155, 155, 0.219);
-
   display: flex;
   justify-content: center;
+  padding: 0.875rem 1.5rem;
+  background: #d1d1d146;
+  border-radius: 0.3125rem;
 
   > * {
     max-width: 70ch;
