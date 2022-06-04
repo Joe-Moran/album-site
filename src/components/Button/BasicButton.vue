@@ -23,27 +23,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/sass/global.scss';
+  @import "@/sass/global";
 
-$icon-margin: .9375rem;
+$icon-margin: 0.9375rem;
 
 button {
-  &:hover {
+  &:hover,
+  &:focus {
     cursor: pointer;
-    box-shadow: -10px 10px 0 $blue-tertiary;
+    box-shadow: -0.625rem 0.625rem 0 $blue-tertiary;
   }
 
   display: flex;
-  padding: 14px;
-  font-family: Consolas;
-  font-size: 25px;
+  padding: 0.7813rem;
+  font-family: $font-family-heading;
+  font-size: 1.25rem;
   font-weight: bold;
-  color: #d11d66;
+  line-height: 1.5rem;
+  color: $red-primary;
   text-transform: uppercase;
-  letter-spacing: 13px;
   background: transparent;
-  border: 3px solid #d11d66;
-  border-radius: 5px;
+  border: 0.1875rem solid #d11d66;
+  border-radius: 0.3125rem;
   transition: box-shadow ease-in-out 400ms;
 }
 

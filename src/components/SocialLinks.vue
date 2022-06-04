@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <div class="social-links">
     <a
       v-for="link in links"
       :id="link.label"
@@ -12,7 +12,7 @@
         :alt="link.label"
       >
     </a>
-  </span>
+  </div>
 </template>
 
 <script>
@@ -25,23 +25,20 @@ export default {
 </script>
 
 <style scoped lang="scss">
-span {
-  display: block;
-  height: 35px;
-}
-a {
-  top: 13px;
-  display: inline-block;
-  padding: 5px;
-  vertical-align: middle;
+
+.social-links {
+  display: flex;
+  align-items: center;
 }
 
 a {
-  margin: 0 5px 0 5px;
+  display: block;
+  padding: .3125rem;
+  width: 1.5rem;
 }
+
 img {
-  width: 28px;
-  opacity: 0.8;
+  width: 100%;
   transition: all 1s ease-in-out;
 }
 

@@ -29,13 +29,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../sass/_global.scss";
+@import "../sass/global";
 
 #date-container {
   position: relative;
+  left: calc(50% - 200px);
   z-index: 2000;
   width: 400px;
-  left: calc(50% - 200px);
   text-align: center;
   transition: top 1s ease-in;
 }
@@ -48,8 +48,8 @@ img:nth-child(2) {
 }
 
 img:nth-child(2) {
-  left: -7px;
   top: 7px;
+  left: -7px;
   filter: blur(0.5px);
 }
 
@@ -57,14 +57,14 @@ img:nth-child(2) {
   margin-top: 3%;
 }
 
-@media (min-width: 0px) and (max-width: $sm) {
+@media (min-width: 0) and (max-width: $sm) {
   #date.selected {
     top: 0 !important;
   }
 
   #date-container {
-    width: 60%;
     left: 20%;
+    width: 60%;
   }
 
   #date {
@@ -73,18 +73,18 @@ img:nth-child(2) {
 }
 
 #arrow {
-  content: " ";
-  display: block;
-  opacity: 0;
-  border-top: 10px solid #b3abac;
-  border-left: 15px transparent solid;
-  border-right: 15px transparent solid;
   position: absolute;
   top: 84px;
   left: calc(50% - 15px);
   z-index: 500000;
-  animation: bounce 10s ease-in-out infinite;
+  display: block;
+  content: " ";
+  border-top: 10px solid #b3abac;
+  border-right: 15px transparent solid;
+  border-left: 15px transparent solid;
+  opacity: 0;
   transition: top 1s ease-in, opacity 5s ease-in;
+  animation: bounce 10s ease-in-out infinite;
 }
 
 .selected #arrow {
@@ -106,8 +106,8 @@ img:nth-child(2) {
 }
 
 #arrow:hover {
-  cursor: pointer;
   top: 88px;
+  cursor: pointer;
 }
 
 #date.selected {
@@ -116,12 +116,12 @@ img:nth-child(2) {
 
 h1 {
   display: inline-block;
-  width: 283px;
+  width: 17.6875rem;
+  margin-top: 0;
+  font-size: 3.5rem;
   color: transparent;
-  font-size: 56px;
   text-transform: uppercase;
   opacity: 0.7;
-  margin-top: 0;
   animation: fade 30s;
 
   &:hover {
@@ -131,12 +131,12 @@ h1 {
 
 h1::before,
 h1::after {
-  content: attr(data-text);
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  content: attr(data-text);
 }
 
 h1::after {
@@ -155,10 +155,12 @@ h1::before {
 
 @keyframes glitch-1 {
   $steps: 30;
+
   @for $i from 0 through $steps {
     #{percentage($i/$steps)} {
       $top: random(100);
       $bottom: random(101 - $top);
+
       clip-path: inset(#{percentage($top)} 0 #{percentage($bottom)} 0);
     }
   }
@@ -166,10 +168,12 @@ h1::before {
 
 @keyframes glitch-2 {
   $steps: 30;
+
   @for $i from 0 through $steps {
     #{percentage($i/$steps)} {
       $top: random(100);
       $bottom: random(101 - $top);
+
       clip-path: inset(#{$top}% 0 #{$bottom}% 0);
     }
   }
@@ -179,6 +183,7 @@ h1::before {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 0.7;
   }

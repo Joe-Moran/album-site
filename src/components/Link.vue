@@ -20,14 +20,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../sass/_global.scss';
+@import "../sass/global";
 
 $max: 240px;
 
 a {
   position: relative;
-  font-family: 'Consolas';
-  font-size: 22px;
+  font-family: "Consolas" sans-serif;
+  font-size: 1.375rem;
   color: white;
   text-decoration: none;
   transition: color 350ms ease-in-out;
@@ -45,7 +45,7 @@ a {
   display: block;
   width: 132%;
   height: 20pt;
-  content: ' ';
+  content: " ";
   background: #0631a2c7;
   animation: fade 200ms ease-in-out;
 }
@@ -63,6 +63,6 @@ a {
 div {
   position: relative;
   max-width: $max;
-  padding: 0 10px 0 10px;
+  padding: 0 10px;
 }
 </style>

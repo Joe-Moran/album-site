@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Xrgb from '../../../public/xrgb-logo.svg';
+import Xrgb from '@/assets/xrgb-logo.svg';
 
 export default {
   name: 'AnimatedIcon',
@@ -14,11 +14,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/sass/_global.scss';
+@import "@/sass/_global.scss";
 
 .st0 {
   fill: #00aeef;
 }
+
 .st1 {
   fill: #d11d66;
 }
@@ -43,6 +44,7 @@ export default {
   29% {
     fill-opacity: 1;
   }
+
   30% {
     fill-opacity: 0.5;
   }
@@ -54,15 +56,19 @@ export default {
   48% {
     fill-opacity: 1;
   }
+
   49% {
     fill-opacity: 0.3;
   }
+
   50% {
     fill-opacity: 1;
   }
+
   51% {
     fill-opacity: 0.7;
   }
+
   53% {
     fill-opacity: 1;
   }
@@ -84,17 +90,4 @@ export default {
   }
 }
 
-@media (max-width: $sm) {
-  #xrgb-container {
-    width: 80%;
-    margin: auto;
-  }
-}
-
-@media (min-width: $md) {
-  #xrgb-container {
-    width: 85%;
-    margin: auto;
-  }
-}
 </style>
