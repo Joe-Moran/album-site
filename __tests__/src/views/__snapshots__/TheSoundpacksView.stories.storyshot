@@ -16,7 +16,13 @@ exports[`Storyshots views/The soundpacks view The Soundpacks View 1`] = `
     >
       <div
         class="soundpack-introduction-cover-image"
-      />
+      >
+        <img
+          alt="A blurred face, flooded with red and blue hues split down the middle.
+          Text reads Refraction Sound Pack."
+          src=""
+        />
+      </div>
        
       <div
         class="soundpack-introduction-summary-and-links"
@@ -67,41 +73,22 @@ exports[`Storyshots views/The soundpacks view The Soundpacks View 1`] = `
         <div
           class="soundpack-introduction-links"
         >
-          <button>
+          <a
+            class="download-button"
+            download="/Refraction Sound Pack.zip"
+            href="/Refraction Sound Pack.zip"
+            target="_blank"
+          >
             <span
               id="basic-button-text"
             >
-              Download
+              
+            Download
+          
             </span>
-          </button>
-           
-          <button>
-            <span
-              id="basic-button-text"
-            >
-              Donate
-            </span>
-          </button>
+          </a>
         </div>
       </div>
-    </div>
-     
-    <div
-      class="soundpack-demos"
-    >
-      <h2>
-        Demos
-      </h2>
-       
-      <iframe
-        allow="autoplay"
-        class="soundpack-demos-embedded-player"
-        frameborder="no"
-        height="450"
-        scrolling="no"
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1276519099&color=%237e4395&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-        width="100%"
-      />
     </div>
      
     <div
@@ -353,6 +340,42 @@ exports[`Storyshots views/The soundpacks view The Soundpacks View 1`] = `
           </ul>
         </article>
       </div>
+    </div>
+     
+    <div
+      class="soundpack-demos"
+    >
+      <h2>
+        Demos
+      </h2>
+       
+      <h3>
+        Prophet REV 2 Patches
+      </h3>
+       
+      <iframe
+        allow="autoplay"
+        frameborder="no"
+        height="300"
+        scrolling="no"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1436441497&color=%237e4395&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+        title="Soundcloud Player for Prophet REV 2 patches"
+        width="100%"
+      />
+       
+      <h3>
+        Omnisphere Patches
+      </h3>
+       
+      <iframe
+        allow="autoplay"
+        frameborder="no"
+        height="300"
+        scrolling="no"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1276519099&color=%237e4395&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+        title="Soundcloud Player for Onnisphere patches"
+        width="100%"
+      />
     </div>
      
     <div

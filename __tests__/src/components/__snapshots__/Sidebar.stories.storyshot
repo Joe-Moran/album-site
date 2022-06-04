@@ -9,7 +9,7 @@ exports[`Storyshots Sidebar Default 1`] = `
       >
         <router-link
           append=""
-          to="#/"
+          to="#"
         >
           
     
@@ -44,7 +44,7 @@ exports[`Storyshots Sidebar With Selected Section 1`] = `
       >
         <router-link
           append=""
-          to="#/"
+          to="#"
         >
           
     

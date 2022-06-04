@@ -8,7 +8,7 @@ export default {
   id: 'the-navigation-header',
   component: TheNavigationHeader,
   subcomponents: { },
-  argTypes: {}
+  argTypes: {},
 };
 
 /**

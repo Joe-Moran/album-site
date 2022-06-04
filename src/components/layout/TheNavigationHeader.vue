@@ -11,18 +11,14 @@
                 href="#main"
               >Skip to main content</a>
             </li>
-            <li>
+            <li
+              v-for="{name} in navigationLinks"
+              :key="name"
+            >
               <router-link
-                :to="{name: $options.routes.home.name}"
+                :to="{name}"
               >
-                {{ $options.routes.home.name }}
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                :to="{name: $options.routes.soundpacks.name}"
-              >
-                {{ $options.routes.soundpacks.name }}
+                {{ name }}
               </router-link>
             </li>
           </ul>
@@ -49,11 +45,16 @@ import xrgbSocialLinks from '@/data/links-social-media';
 export default {
   name: 'TheNavigationHeader',
   components: { AnimatedIcon, SocialLinks },
+  props: {
+
+    /**
+     * The links for navigation; populates the nav element.
+     */
+    navigationLinks: { type: Array, default: () => [] },
+  },
   routes,
   xrgbSocialLinks,
-  data() {
-    return {};
-  },
+
 };
 </script>
 

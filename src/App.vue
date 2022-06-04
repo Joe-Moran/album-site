@@ -1,58 +1,26 @@
 <template>
   <div id="app">
-    <TheNavigationHeader class="header" />
+    <TheNavigationHeader
+      class="header"
+      :navigation-links="$options.routes"
+    />
 
     <main id="main">
       <transition name="fade">
-        <router-view
-          :scroll-position="scrollPosition"
-          @newContent="newContentHandler"
-        />
+        <router-view />
       </transition>
     </main>
   </div>
 </template>
 
 <script>
-import siteSections from './routing/routes';
-import homeSections from '@/data/home/home-section';
 import TheNavigationHeader from '@/components/layout/TheNavigationHeader.vue';
+import routes from '@/routing/routes';
 
 export default {
   name: 'App',
-  components: {
-    TheNavigationHeader,
-  },
-  homeSections,
-  data() {
-    return {
-      showHidden: false,
-      isDrawerOpen: false,
-      sections: siteSections.default,
-      isScrolling: false,
-      scrollPosition: 0,
-      visibleContent: null,
-    };
-  },
-  computed: {},
-  methods: {
-    clickHandler() {
-      this.showHidden = !this.showHidden;
-    },
-    newContentHandler(newContent) {
-      this.visibleContent = newContent || null;
-    },
-    scrollListener() {
-      if (window.scrollY > 38) {
-        this.isScrolling = true;
-      } else {
-        this.isScrolling = false;
-      }
-
-      this.scrollPosition = window.scrollY;
-    },
-  },
-
+  components: { TheNavigationHeader },
+  routes: Object.values(routes),
 };
 </script>
 

@@ -1,13 +1,14 @@
 import { render } from '@testing-library/vue';
-import { byRole, byText } from 'testing-library-selector';
-import userEvent from '@testing-library/user-event';
+import { byRole } from 'testing-library-selector';
+
 import TheNavigationHeader from '@/components/layout/TheNavigationHeader.vue';
 
+const ui = {
+  link: (linkName) => byRole('link', { name: linkName }),
+};
+const routes = [{ path: '/test-path', name: 'test-path' }];
 
- const ui = {
-    // place reusable ui queries here via testing-library-selector
-  }
-
-it('Does something', () => {
-
+it('Renders list items with links when passed props.navigationLinks', () => {
+  render(TheNavigationHeader, { props: { navigationLinks: routes }, routes });
+  expect(ui.link('test-path').get()).toBeInTheDocument();
 });
