@@ -64,6 +64,7 @@ export default {
 .site-header {
   position: sticky;
   top: 0;
+  z-index: 100;
   display: flex;
   justify-content: center;
   background: $gray-primary;
