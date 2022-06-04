@@ -51,7 +51,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../sass/_global.scss';
+@import "../sass/global";
+
 a {
   text-decoration: none;
 }
@@ -64,6 +65,7 @@ a {
   border-radius: 5px;
   box-shadow: #c5c5c5 -10px 10px 0;
 }
+
 .stream-links {
   position: relative;
   padding: 20px;
@@ -78,28 +80,18 @@ a {
     box-shadow: -10px 10px 0 $red-primary;
     opacity: 1;
   }
-
-  //   &:after {
-  //     content: " ";
-  //     border-top: 20px solid #d1d1d1;
-
-  //     border-left: 20px solid transparent;
-  //     border-right: 20px solid transparent;
-  //     height: 0;
-  //     width: 0;
-  //     position: absolute;
-  //     top: 100%;
-  //     left: 50%;
-  //     transform: translateX(-50%);
-  //   }
 }
+
 ul {
   padding: 0;
 }
 
 li {
   margin-bottom: 20px;
-  list-style: none;
+
+  &::before {
+    content: unset;
+  }
 }
 
 button {
@@ -114,6 +106,7 @@ button {
   border-radius: 2px;
   box-shadow: -5px 4px 0 #0000000f;
   transition: all 250ms ease-in-out;
+
   &:hover {
     color: $red-primary;
     cursor: pointer;
