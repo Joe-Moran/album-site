@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots App Default 1`] = `
+<div
+  id="app"
+>
+  <header
+    class="site-header header"
+  >
+    <div
+      class="site-header-content-container"
+    >
+      <div
+        class="logo-nav-container"
+      >
+        <div
+          class="xrgb-logo"
+          id="xrgb-container"
+        >
+          <!---->
+        </div>
+         
+        <nav
+          class="nav"
+        >
+          <ul
+            class="the-navigation-header-links"
+          >
+            <li
+              class="skip-link"
+            >
+              <a
+                href="#main"
+              >
+                Skip to main content
+              </a>
+            </li>
+             
+            <li>
+              <router-link
+                to="[object Object]"
+              >
+                
+              home
+            
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                to="[object Object]"
+              >
+                
+              soundpacks
+            
+              </router-link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+       
+      <div
+        class="social-links social"
+        id="desktop-social"
+      >
+        <a
+          href="https://xrgb.bandcamp.com/"
+          id="bandcamp"
+          target="_blank"
+        >
+          <img
+            alt="bandcamp"
+            src=""
+          />
+        </a>
+        <a
+          href="https://www.soundcloud.com/xrgbmusic"
+          id="soundcloud"
+          target="_blank"
+        >
+          <img
+            alt="soundcloud"
+            src=""
+          />
+        </a>
+        <a
+          href="https://www.instagram.com/xrgb_music"
+          id="instagram"
+          target="_blank"
+        >
+          <img
+            alt="instagram"
+            src=""
+          />
+        </a>
+      </div>
+    </div>
+  </header>
+   
+  <main
+    id="main"
+  >
+    <router-view />
+  </main>
+</div>
+`;
+
+exports[`Storyshots App Scrolling 1`] = `
+<div
+  id="app"
+  isscrolling="true"
+>
+  <header
+    class="site-header header"
+  >
+    <div
+      class="site-header-content-container"
+    >
+      <div
+        class="logo-nav-container"
+      >
+        <div
+          class="xrgb-logo"
+          id="xrgb-container"
+        >
+          <!---->
+        </div>
+         
+        <nav
+          class="nav"
+        >
+          <ul
+            class="the-navigation-header-links"
+          >
+            <li
+              class="skip-link"
+            >
+              <a
+                href="#main"
+              >
+                Skip to main content
+              </a>
+            </li>
+             
+            <li>
+              <router-link
+                to="[object Object]"
+              >
+                
+              home
+            
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                to="[object Object]"
+              >
+                
+              soundpacks
+            
+              </router-link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+       
+      <div
+        class="social-links social"
+        id="desktop-social"
+      >
+        <a
+          href="https://xrgb.bandcamp.com/"
+          id="bandcamp"
+          target="_blank"
+        >
+          <img
+            alt="bandcamp"
+            src=""
+          />
+        </a>
+        <a
+          href="https://www.soundcloud.com/xrgbmusic"
+          id="soundcloud"
+          target="_blank"
+        >
+          <img
+            alt="soundcloud"
+            src=""
+          />
+        </a>
+        <a
+          href="https://www.instagram.com/xrgb_music"
+          id="instagram"
+          target="_blank"
+        >
+          <img
+            alt="instagram"
+            src=""
+          />
+        </a>
+      </div>
+    </div>
+  </header>
+   
+  <main
+    id="main"
+  >
+    <router-view />
+  </main>
+</div>
+`;

@@ -1,5 +1,5 @@
 ---
-to: "src/<%= path %>/__tests__/integration/<%= h.changeCase.kebab(component) %>.integration.js"
+to: "src/<%= path %>/<%= component %>.integration.js"
 ---
 
 // testing library imports

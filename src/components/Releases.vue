@@ -20,7 +20,7 @@
 
 <script>
 import Release from './Release.vue';
-import releases from '@/releases-data';
+import releases from '@/data/release';
 
 export default {
   name: 'Releases',
@@ -38,17 +38,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../sass/_global.scss';
+@import "../sass/_global.scss";
 
 .releases {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0;
-}
 
-li {
-  list-style: none;
+  li::before {
+    content: unset;
+  }
 }
 
 .release-container {

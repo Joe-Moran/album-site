@@ -27,7 +27,7 @@
 
 <script>
 import globals from '@/globals';
-import xrgbSocialLinks from '@/xrgbSocialLinks';
+import xrgbSocialLinks from '@/data/links-social-media';
 import nav from '@/mixins/nav';
 import Arrow from './Arrow.vue';
 
@@ -83,7 +83,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../sass/_global.scss';
+@import "../sass/_global.scss";
 
 #menu-btn {
   position: absolute;
@@ -95,6 +95,7 @@ export default {
   border: none;
   opacity: 0.8;
   transition: all 200ms ease-in-out;
+
   &:hover {
     cursor: pointer;
   }
@@ -165,7 +166,7 @@ export default {
 
 a {
   font-family: Consolas;
-  font-size: 40pt;
+  font-size: 2.5rem;
   font-style: italic;
   font-weight: bold;
   color: transparent;

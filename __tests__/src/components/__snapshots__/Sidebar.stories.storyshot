@@ -9,7 +9,21 @@ exports[`Storyshots Sidebar Default 1`] = `
       >
         <router-link
           append=""
-          to="#/"
+          to="#"
+        >
+          
+    
+  
+        </router-link>
+      </div>
+    </li>
+    <li>
+      <div
+        class=""
+      >
+        <router-link
+          append=""
+          to="#/soundpacks"
         >
           
     
@@ -30,7 +44,21 @@ exports[`Storyshots Sidebar With Selected Section 1`] = `
       >
         <router-link
           append=""
-          to="#/"
+          to="#"
+        >
+          
+    
+  
+        </router-link>
+      </div>
+    </li>
+    <li>
+      <div
+        class=""
+      >
+        <router-link
+          append=""
+          to="#/soundpacks"
         >
           
     
