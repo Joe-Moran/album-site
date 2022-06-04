@@ -3,7 +3,7 @@ import Router from 'vue-router';
 import routes from './routes';
 
 const routesObject = {
-  routes,
+  routes: Object.values(routes),
   scrollBehavior(to) {
     if (to.hash) {
       return {

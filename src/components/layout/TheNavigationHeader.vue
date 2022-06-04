@@ -94,6 +94,22 @@ export default {
   align-items: center;
   padding-bottom: 0;
 
+  a {
+    font-family: $font-family-heading;
+    font-size: 1.375rem;
+    font-weight: bold;
+    color: $gray-tertiary;
+    text-decoration: transparent;
+    transition: all 250ms ease-in-out;
+
+    &:hover,
+    &:focus,
+    &.router-link-exact-active {
+      color: $red-tertiary;
+      text-decoration: underline;
+    }
+  }
+
   .skip-link {
     position: absolute;
     top: 0;
@@ -106,22 +122,6 @@ export default {
     a {
       font-size: 1rem;
       font-weight: normal;
-    }
-  }
-
-  a {
-    font-family: $font-family-heading;
-    font-size: 1.375rem;
-    font-weight: bold;
-    color: $gray-tertiary;
-    text-decoration: transparent;
-    transition: all 250ms ease-in-out;
-
-    &:hover,
-    &:focus,
-    &.router-link-active {
-      color: $red-tertiary;
-      text-decoration: underline;
     }
   }
 

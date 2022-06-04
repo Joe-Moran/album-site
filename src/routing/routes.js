@@ -1,12 +1,13 @@
-const Home = () => import('@/views/TheHomeView.vue');
+const TheHomeView = () => import('@/views/TheHomeView.vue');
 const TheSoundpacksView = () => import('@/views/TheSoundpacksView.vue');
+
 /**
  * The home page route.
  */
 const home = {
-  path: '/',
-  name: 'home"',
-  component: Home,
+  path: '',
+  name: 'home',
+  component: TheHomeView,
 };
 
 /**
@@ -21,4 +22,4 @@ const soundpacks = {
 /**
  * All the routes — all of 'em!
  */
-export default [home, soundpacks];
+export default { home, soundpacks };
