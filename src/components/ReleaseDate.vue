@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 @use 'sass:math';
-@import '../sass/global';
+@use '@/sass/global' as *;
 
 #date-container {
   position: relative;

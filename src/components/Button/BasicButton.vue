@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/sass/global';
+@use '@/sass/global' as *;
 
 $icon-margin: 0.9375rem;
 

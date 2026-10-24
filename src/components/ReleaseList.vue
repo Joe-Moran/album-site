@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../sass/_global';
+@use '@/sass/global' as *;
 
 .releases {
   display: flex;

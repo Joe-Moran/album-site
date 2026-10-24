@@ -1,11 +1,21 @@
 <template>
   <div class="about">
     <div class="image-container">
-      <img
-        id="me"
-        :src="$options.mePhoto"
-        alt="xRGB"
-      />
+      <picture>
+        <source
+          v-for="(srcset, format) in $options.mePhoto.sources"
+          :key="format"
+          :type="`image/${format}`"
+          :srcset="srcset"
+          sizes="(max-width: 60rem) 90vw, 614px"
+        />
+        <img
+          id="me"
+          loading="lazy"
+          :src="$options.mePhoto.img.src"
+          alt="xRGB"
+        />
+      </picture>
     </div>
     <p>
       xRGB is a MI-based multi-instrumentalist. Refraction is his debut album, and the result of
@@ -17,13 +27,13 @@
 </template>
 
 <script>
-import mePhoto from '@/assets/me.png'
+import mePhoto from '@/assets/me.png?w=640;1166&format=avif;webp;jpg&as=picture'
 
 export default { name: 'AboutSection', mePhoto }
 </script>
 
 <style scoped lang="scss">
-@import '../sass/_global';
+@use '@/sass/global' as *;
 
 .about {
   display: flex;

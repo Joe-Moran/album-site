@@ -18,18 +18,37 @@
         :aria-expanded="showStreaming"
         @click="toggleStreaming"
       >
+        <picture>
+          <source
+            v-for="(srcset, format) in coverPicture.sources"
+            :key="format"
+            :type="`image/${format}`"
+            :srcset="srcset"
+            sizes="(max-width: 60rem) 90vw, 480px"
+          />
+          <img
+            loading="lazy"
+            :src="coverPicture.img.src"
+            :alt="coverImageAlt"
+            @load="$emit('load', true)"
+          />
+        </picture>
+      </button>
+      <picture v-else>
+        <source
+          v-for="(srcset, format) in coverPicture.sources"
+          :key="format"
+          :type="`image/${format}`"
+          :srcset="srcset"
+          sizes="(max-width: 60rem) 90vw, 480px"
+        />
         <img
-          :src="coverImageSource"
+          loading="lazy"
+          :src="coverPicture.img.src"
           :alt="coverImageAlt"
           @load="$emit('load', true)"
         />
-      </button>
-      <img
-        v-else
-        :src="coverImageSource"
-        :alt="coverImageAlt"
-        @load="$emit('load', true)"
-      />
+      </picture>
     </div>
   </div>
 </template>
@@ -38,6 +57,12 @@
 import StreamLinks from './StreamLinks.vue'
 
 import globals from '@/globals'
+
+const coverPictures = import.meta.glob('../assets/{albums,singles}/*.jpg', {
+  eager: true,
+  import: 'default',
+  query: { w: '480;960', format: 'avif;webp;jpg', as: 'picture' },
+})
 
 export default {
   name: 'ReleaseCard',
@@ -69,8 +94,8 @@ export default {
     showStreaming() {
       return (this.listenClick && this.isMobile) || !this.isMobile
     },
-    coverImageSource() {
-      return new URL(`../assets/${this.releaseAssetsPath}/${this.coverPath}`, import.meta.url).href
+    coverPicture() {
+      return coverPictures[`../assets/${this.releaseAssetsPath}/${this.coverPath}`]
     },
     coverImageAlt() {
       return `${this.title} Cover Art`
@@ -92,7 +117,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../sass/_global';
+@use '@/sass/global' as *;
 
 .cover {
   position: relative;

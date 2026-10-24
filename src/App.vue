@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import './sass/_global';
+@use '@/sass/global' as *;
 
 $scrolling-transition: all 100ms ease-in-out;
 
