@@ -23,20 +23,20 @@
 </template>
 
 <script>
-import view from '@/mixins/view';
-import ContentContainer from '@/components/ContentContainer/ContentContainer.vue';
-import StreamLinks from '@/components/StreamLinks.vue';
+import ContentContainer from '@/components/ContentContainer/ContentContainer.vue'
+import StreamLinks from '@/components/StreamLinks.vue'
+import view from '@/mixins/view'
 
 export default {
   name: 'ReleaseView',
   components: { StreamLinks, ContentContainer },
   mixins: [view],
   props: { release: { type: Object, required: true } },
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import '../sass/global.scss';
+@import '../sass/global';
 
 #release-view {
   width: 70%;

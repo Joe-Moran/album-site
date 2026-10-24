@@ -5,7 +5,7 @@
         v-for="linkObj in links"
         :key="linkObj.path"
       >
-        <Link
+        <SectionLink
           :link="linkObj"
           :selected="isCurrentSection(linkObj)"
         />
@@ -15,24 +15,25 @@
 </template>
 
 <script>
-import nav from '@/mixins/nav';
-import Link from './Link.vue';
+import SectionLink from './SectionLink.vue'
+
+import nav from '@/mixins/nav'
 
 export default {
-  name: 'Sidebar',
+  name: 'SectionSidebar',
   components: {
-    Link,
+    SectionLink,
   },
   mixins: [nav],
   props: {
-    currentSelection: { type: String, required: true, default: null },
+    currentSelection: { type: String, default: null },
   },
   methods: {
     isCurrentSection(section) {
-      return this.currentSelection && section.path === this.currentSelection;
+      return this.currentSelection && section.path === this.currentSelection
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -46,6 +47,7 @@ nav {
 li {
   padding-bottom: $li-margin;
   list-style: none;
+
   &:not(:first-child) {
     padding: $li-margin 0 $li-margin 0;
   }

@@ -16,18 +16,18 @@
 </template>
 
 <script>
-import TheNavigationHeader from '@/components/layout/TheNavigationHeader.vue';
-import routes from '@/routing/routes';
+import TheNavigationHeader from './components/layout/TheNavigationHeader.vue'
+import routes from './routing/routes'
 
 export default {
   name: 'App',
   components: { TheNavigationHeader },
   routes: Object.values(routes),
-};
+}
 </script>
 
 <style lang="scss">
-@import "./sass/_global.scss";
+@import './sass/_global';
 
 $scrolling-transition: all 100ms ease-in-out;
 
@@ -72,5 +72,4 @@ html {
 .fade-leave-to {
   opacity: 0;
 }
-
 </style>

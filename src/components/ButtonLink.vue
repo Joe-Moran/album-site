@@ -8,7 +8,6 @@
 </template>
 
 <script>
-
 /**
  * A link that looks like a button, but slightly different?
  */
@@ -17,11 +16,11 @@ export default {
   components: {},
 
   iconDimension: 32,
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "@/sass/global";
+@import '@/sass/global';
 
 $icon-margin: 0.9375rem;
 
@@ -39,15 +38,14 @@ a {
   font-family: $font-family-heading;
   font-size: 1.25rem;
   font-weight: bold;
-  line-height: 1.5rem;
+  line-height: 1.2;
   color: $red-primary;
+  text-transform: uppercase;
   text-decoration: underline;
   text-decoration-thickness: 0;
-  text-transform: uppercase;
   background: transparent;
   border: 0.1875rem solid #d11d66;
   border-radius: 0.3125rem;
   transition: box-shadow ease-in-out 400ms;
 }
-
 </style>

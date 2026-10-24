@@ -5,7 +5,7 @@
       :key="release.name"
       class="release-container"
     >
-      <Release
+      <ReleaseCard
         :loading="release.loading"
         :title="release.title"
         :cover-path="release.coverPath"
@@ -19,26 +19,27 @@
 </template>
 
 <script>
-import releases from '@/data/release';
-import Release from './Release.vue';
+import ReleaseCard from './ReleaseCard.vue'
+
+import releases from '@/data/release'
 
 export default {
-  name: 'Releases',
+  name: 'ReleaseList',
   components: {
-    Release,
+    ReleaseCard,
   },
   /**
    * this.$options.releases
    */
   releases,
   data() {
-    return {};
+    return {}
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../sass/_global.scss";
+@import '../sass/_global';
 
 .releases {
   display: flex;

@@ -14,10 +14,11 @@
 </template>
 
 <script>
-import ContentContainer from '@/components/ContentContainer/ContentContainer.vue';
-import view from '@/mixins/view';
-import release from '@/data/release';
-import homeSection from '@/data/home/home-section';
+import ContentContainer from '@/components/ContentContainer/ContentContainer.vue'
+import homeSection from '@/data/home/home-section'
+import release from '@/data/release'
+import view from '@/mixins/view'
+
 /**
  * The home page view.
  */
@@ -35,7 +36,7 @@ export default {
     return {
       albums: release.albums,
       singles: release.singles,
-    };
+    }
   },
-};
+}
 </script>

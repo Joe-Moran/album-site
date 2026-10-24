@@ -1,10 +1,7 @@
 <template>
   <div class="release">
     <h3>{{ title }}</h3>
-    <div
-      class="cover"
-      @click="clickHandler"
-    >
+    <div class="cover">
       <StreamLinks
         v-if="showStreaming"
         :links="streaming"
@@ -14,21 +11,36 @@
         reduce
       />
       <div class="loading" />
+      <button
+        v-if="isMobile"
+        type="button"
+        class="cover-toggle"
+        :aria-expanded="showStreaming"
+        @click="toggleStreaming"
+      >
+        <img
+          :src="coverImageSource"
+          :alt="coverImageAlt"
+          @load="$emit('load', true)"
+        />
+      </button>
       <img
+        v-else
         :src="coverImageSource"
         :alt="coverImageAlt"
         @load="$emit('load', true)"
-      >
+      />
     </div>
   </div>
 </template>
 
 <script>
-import globals from '@/globals';
-import StreamLinks from './StreamLinks.vue';
+import StreamLinks from './StreamLinks.vue'
+
+import globals from '@/globals'
 
 export default {
-  name: 'Release',
+  name: 'ReleaseCard',
   components: {
     StreamLinks,
   },
@@ -45,44 +57,42 @@ export default {
     return {
       listenClick: false,
       clientWidth: 1900,
-    };
+    }
   },
   computed: {
     releaseAssetsPath() {
-      return this.type === 'album' ? 'albums' : 'singles';
+      return this.type === 'album' ? 'albums' : 'singles'
     },
     isMobile() {
-      return this.clientWidth < globals.md;
+      return this.clientWidth < globals.md
     },
     showStreaming() {
-      return (this.listenClick && this.isMobile) || !this.isMobile;
+      return (this.listenClick && this.isMobile) || !this.isMobile
     },
     coverImageSource() {
-      return new URL(`../assets/${this.releaseAssetsPath}/${this.coverPath}`, import.meta.url).href;
+      return new URL(`../assets/${this.releaseAssetsPath}/${this.coverPath}`, import.meta.url).href
     },
     coverImageAlt() {
-      return `${this.title} Cover Art`;
-    },
-  },
-  methods: {
-    resizeHandler() {
-      this.clientWidth = document.body.clientWidth;
-    },
-    clickHandler() {
-      if (this.isMobile) {
-        this.listenClick = true;
-      }
+      return `${this.title} Cover Art`
     },
   },
   mounted() {
-    this.resizeHandler();
-    window.addEventListener('resize', this.resizeHandler);
+    this.resizeHandler()
+    window.addEventListener('resize', this.resizeHandler)
   },
-};
+  methods: {
+    resizeHandler() {
+      this.clientWidth = document.body.clientWidth
+    },
+    toggleStreaming() {
+      this.listenClick = !this.listenClick
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
-@import '../sass/_global.scss';
+@import '../sass/_global';
 
 .cover {
   position: relative;
@@ -90,6 +100,7 @@ export default {
   max-width: 700px;
   height: 100%;
   border: 2px solid #ffffff38;
+
   @extend %retro-shadow;
 }
 
@@ -114,41 +125,28 @@ img {
   height: 100%;
 }
 
+.cover-toggle {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
 .release-stream-links {
   position: absolute;
   right: 0;
   bottom: 107%;
   left: 0;
   opacity: 0;
+
   &.overlay-release {
     top: 0;
     bottom: 0;
-  }
-}
-
-button {
-  position: absolute;
-  top: 40%;
-  left: 10%;
-  width: 80%;
-  height: 20%;
-  padding: 6% 15%;
-  font-family: Arial;
-  font-size: 1.5vw;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  background: #00000082;
-  border: 2px solid #fff;
-  opacity: 0;
-  transition: all 200ms ease-in-out;
-
-  &:hover {
-    left: 7.5%;
-    width: 85%;
-    color: #d11d66;
-    cursor: pointer;
-    background: #00000090;
   }
 }
 
@@ -165,24 +163,20 @@ button {
 .release {
   max-width: 700px;
 
-  &:hover button {
-    opacity: 1;
-  }
-
-  &:hover .overlay-release {
+  &:hover .overlay-release,
+  &:focus-within .overlay-release {
     opacity: 1;
   }
 }
 
 h3 {
-  border-bottom: 4px $blue-tertiary dotted;
-
-  font-weight: bold;
-  text-transform: capitalize;
-  font-family: 'Lato', sans-serif;
-  color: #e1e1e1;
-  font-size: 1.5rem;
   padding: 0.2rem 0;
+  font-family: Lato, sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e1e1e1;
+  text-transform: capitalize;
+  border-bottom: 4px $blue-tertiary dotted;
 }
 
 @keyframes blink {

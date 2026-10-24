@@ -9,12 +9,12 @@ export default {
   data() {
     return {
       visibleContent: null,
-    };
+    }
   },
   methods: {
     contentVisible(contentName) {
-      this.visibleContent = contentName;
-      this.$emit('newContent', contentName);
+      this.visibleContent = contentName
+      this.$emit('newContent', contentName)
     },
   },
-};
+}

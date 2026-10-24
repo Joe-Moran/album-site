@@ -9,4 +9,4 @@ export default {
   FX: 'Audio Effects',
   AUDIO_SAMPLE: 'Tunes',
   VOX: 'Voices',
-};
+}

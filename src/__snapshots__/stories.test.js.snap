@@ -176,7 +176,7 @@ exports[`./App.stories.js > Renders the Default story the same as its snapshot 1
                   data-v-38b7e236=""
                   href="#main"
                 >
-                  Skip to main content
+                   Skip to main content 
                 </a>
               </li>
               
@@ -449,7 +449,7 @@ exports[`./App.stories.js > Renders the Scrolling story the same as its snapshot
                   data-v-38b7e236=""
                   href="#main"
                 >
-                  Skip to main content
+                   Skip to main content 
                 </a>
               </li>
               
@@ -545,24 +545,25 @@ exports[`./App.stories.js > Renders the Scrolling story the same as its snapshot
 </div>
 `;
 
-exports[`./components/About.stories.js > Renders the Primary story the same as its snapshot 1`] = `
+exports[`./components/AboutSection.stories.js > Renders the Primary story the same as its snapshot 1`] = `
 <div>
   <div
     class="about"
-    data-v-161b4f7e=""
+    data-v-ba907332=""
   >
     <div
       class="image-container"
-      data-v-161b4f7e=""
+      data-v-ba907332=""
     >
       <img
-        data-v-161b4f7e=""
+        alt="xRGB"
+        data-v-ba907332=""
         id="me"
         src="/src/assets/me.png"
       />
     </div>
     <p
-      data-v-161b4f7e=""
+      data-v-ba907332=""
     >
        xRGB is a MI-based multi-instrumentalist. Refraction is his debut album, and the result of years of adequate agonizing. 11 sonic journal entries without the crutch of vocals. A restless mixtape from a bedroom humanoid aching to get on a stage. Yes…HUMAN. More playing. Less spacebar. More strumming. Less laptop. 
     </p>
@@ -587,7 +588,7 @@ exports[`./components/Button/BasicButton.stories.js > Renders the Primary story 
 </div>
 `;
 
-exports[`./components/ContentContainer/ContentContainer.stories.js > Renders the contentContainer story the same as its snapshot 1`] = `
+exports[`./components/ContentContainer/ContentContainer.stories.js > Renders the Default story the same as its snapshot 1`] = `
 <div>
   <article
     class="content-container"
@@ -606,297 +607,318 @@ exports[`./components/ContentContainer/ContentContainer.stories.js > Renders the
 </div>
 `;
 
-exports[`./components/Drawer.stories.js > Renders the Default story the same as its snapshot 1`] = `
+exports[`./components/NavigationDrawer.stories.js > Renders the Default story the same as its snapshot 1`] = `
 <div>
   <section
     class=""
-    data-v-a874e27e=""
+    data-v-8ee84c59=""
     id="drawer"
   >
-    <div
-      data-v-a874e27e=""
+    <button
+      aria-controls="drop-container"
+      aria-expanded="false"
+      aria-label="Menu"
+      data-v-8ee84c59=""
       id="bar"
+      type="button"
     />
     <div
-      data-v-a874e27e=""
+      data-v-8ee84c59=""
       id="drop-container"
       style="display: none;"
     >
       <div
-        data-v-a874e27e=""
+        data-v-8ee84c59=""
         id="anchor"
       >
         
         
       </div>
-      <svg
-        class=""
-        data-v-a874e27e=""
-        height="10.720881"
-        id="arrow"
-        viewBox="0 0 50.405514 10.72088"
-        width="50.405514"
+      <button
+        aria-label="Close menu"
+        class="close-button"
+        data-v-8ee84c59=""
+        type="button"
       >
-        <g
-          id="layer1"
-          transform="translate(0.20025753,-11.399707)"
+        <svg
+          class=""
+          data-v-8ee84c59=""
+          height="10.720881"
+          id="arrow"
+          viewBox="0 0 50.405514 10.72088"
+          width="50.405514"
         >
-          <path
-            d="M 0.3251131,13.32947 25.002499,20.047794 49.679887,13.32947"
-            id="arrow-path"
-            style="fill: none; fill-opacity: 1; stroke-dasharray: none; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 4; stroke: #d11d66;"
-          />
-        </g>
-      </svg>
+          <g
+            id="layer1"
+            transform="translate(0.20025753,-11.399707)"
+          >
+            <path
+              d="M 0.3251131,13.32947 25.002499,20.047794 49.679887,13.32947"
+              id="arrow-path"
+              style="fill: none; fill-opacity: 1; stroke-opacity: 1; stroke-width: 4; stroke-miterlimit: 4; stroke-dasharray: none; stroke: #d11d66;"
+            />
+          </g>
+        </svg>
+      </button>
     </div>
   </section>
 </div>
 `;
 
-exports[`./components/Drawer.stories.js > Renders the Mobile story the same as its snapshot 1`] = `
+exports[`./components/NavigationDrawer.stories.js > Renders the Mobile story the same as its snapshot 1`] = `
 <div>
   <section
     class=""
-    data-v-a874e27e=""
+    data-v-8ee84c59=""
     id="drawer"
   >
-    <div
-      data-v-a874e27e=""
+    <button
+      aria-controls="drop-container"
+      aria-expanded="false"
+      aria-label="Menu"
+      data-v-8ee84c59=""
       id="bar"
+      type="button"
     />
     <div
-      data-v-a874e27e=""
+      data-v-8ee84c59=""
       id="drop-container"
       style="display: none;"
     >
       <div
-        data-v-a874e27e=""
+        data-v-8ee84c59=""
         id="anchor"
       >
         
         
       </div>
-      <svg
-        class=""
-        data-v-a874e27e=""
-        height="10.720881"
-        id="arrow"
-        viewBox="0 0 50.405514 10.72088"
-        width="50.405514"
+      <button
+        aria-label="Close menu"
+        class="close-button"
+        data-v-8ee84c59=""
+        type="button"
       >
-        <g
-          id="layer1"
-          transform="translate(0.20025753,-11.399707)"
+        <svg
+          class=""
+          data-v-8ee84c59=""
+          height="10.720881"
+          id="arrow"
+          viewBox="0 0 50.405514 10.72088"
+          width="50.405514"
         >
-          <path
-            d="M 0.3251131,13.32947 25.002499,20.047794 49.679887,13.32947"
-            id="arrow-path"
-            style="fill: none; fill-opacity: 1; stroke-dasharray: none; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 4; stroke: #d11d66;"
-          />
-        </g>
-      </svg>
+          <g
+            id="layer1"
+            transform="translate(0.20025753,-11.399707)"
+          >
+            <path
+              d="M 0.3251131,13.32947 25.002499,20.047794 49.679887,13.32947"
+              id="arrow-path"
+              style="fill: none; fill-opacity: 1; stroke-opacity: 1; stroke-width: 4; stroke-miterlimit: 4; stroke-dasharray: none; stroke: #d11d66;"
+            />
+          </g>
+        </svg>
+      </button>
     </div>
   </section>
 </div>
 `;
 
-exports[`./components/Drawer.stories.js > Renders the MobileOpen story the same as its snapshot 1`] = `
+exports[`./components/NavigationDrawer.stories.js > Renders the MobileOpen story the same as its snapshot 1`] = `
 <div>
   <section
     class=""
-    data-v-a874e27e=""
+    data-v-8ee84c59=""
     id="drawer"
     isopen="true"
   >
-    <div
-      data-v-a874e27e=""
+    <button
+      aria-controls="drop-container"
+      aria-expanded="false"
+      aria-label="Menu"
+      data-v-8ee84c59=""
       id="bar"
+      type="button"
     />
     <div
-      data-v-a874e27e=""
+      data-v-8ee84c59=""
       id="drop-container"
       style="display: none;"
     >
       <div
-        data-v-a874e27e=""
+        data-v-8ee84c59=""
         id="anchor"
       >
         
         
       </div>
-      <svg
-        class=""
-        data-v-a874e27e=""
-        height="10.720881"
-        id="arrow"
-        viewBox="0 0 50.405514 10.72088"
-        width="50.405514"
+      <button
+        aria-label="Close menu"
+        class="close-button"
+        data-v-8ee84c59=""
+        type="button"
       >
-        <g
-          id="layer1"
-          transform="translate(0.20025753,-11.399707)"
+        <svg
+          class=""
+          data-v-8ee84c59=""
+          height="10.720881"
+          id="arrow"
+          viewBox="0 0 50.405514 10.72088"
+          width="50.405514"
         >
-          <path
-            d="M 0.3251131,13.32947 25.002499,20.047794 49.679887,13.32947"
-            id="arrow-path"
-            style="fill: none; fill-opacity: 1; stroke-dasharray: none; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 4; stroke: #d11d66;"
-          />
-        </g>
-      </svg>
+          <g
+            id="layer1"
+            transform="translate(0.20025753,-11.399707)"
+          >
+            <path
+              d="M 0.3251131,13.32947 25.002499,20.047794 49.679887,13.32947"
+              id="arrow-path"
+              style="fill: none; fill-opacity: 1; stroke-opacity: 1; stroke-width: 4; stroke-miterlimit: 4; stroke-dasharray: none; stroke: #d11d66;"
+            />
+          </g>
+        </svg>
+      </button>
     </div>
   </section>
 </div>
 `;
 
-exports[`./components/Drawer.stories.js > Renders the MobileOpenWithAnchor story the same as its snapshot 1`] = `
+exports[`./components/NavigationDrawer.stories.js > Renders the MobileOpenWithAnchor story the same as its snapshot 1`] = `
 <div>
   <section
     class=""
-    data-v-a874e27e=""
+    data-v-8ee84c59=""
     id="drawer"
     isopen=""
   >
-    <div
-      data-v-a874e27e=""
+    <button
+      aria-controls="drop-container"
+      aria-expanded="false"
+      aria-label="Menu"
+      data-v-8ee84c59=""
       id="bar"
+      type="button"
     />
     <div
-      data-v-a874e27e=""
+      data-v-8ee84c59=""
       id="drop-container"
       style="display: none;"
     >
       <div
-        data-v-a874e27e=""
+        data-v-8ee84c59=""
         id="anchor"
       >
         
         
       </div>
-      <svg
-        class=""
-        data-v-a874e27e=""
-        height="10.720881"
-        id="arrow"
-        viewBox="0 0 50.405514 10.72088"
-        width="50.405514"
+      <button
+        aria-label="Close menu"
+        class="close-button"
+        data-v-8ee84c59=""
+        type="button"
       >
-        <g
-          id="layer1"
-          transform="translate(0.20025753,-11.399707)"
+        <svg
+          class=""
+          data-v-8ee84c59=""
+          height="10.720881"
+          id="arrow"
+          viewBox="0 0 50.405514 10.72088"
+          width="50.405514"
         >
-          <path
-            d="M 0.3251131,13.32947 25.002499,20.047794 49.679887,13.32947"
-            id="arrow-path"
-            style="fill: none; fill-opacity: 1; stroke-dasharray: none; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 4; stroke: #d11d66;"
-          />
-        </g>
-      </svg>
+          <g
+            id="layer1"
+            transform="translate(0.20025753,-11.399707)"
+          >
+            <path
+              d="M 0.3251131,13.32947 25.002499,20.047794 49.679887,13.32947"
+              id="arrow-path"
+              style="fill: none; fill-opacity: 1; stroke-opacity: 1; stroke-width: 4; stroke-miterlimit: 4; stroke-dasharray: none; stroke: #d11d66;"
+            />
+          </g>
+        </svg>
+      </button>
     </div>
   </section>
 </div>
 `;
 
-exports[`./components/Drawer.stories.js > Renders the Scrolling story the same as its snapshot 1`] = `
+exports[`./components/NavigationDrawer.stories.js > Renders the Scrolling story the same as its snapshot 1`] = `
 <div>
   <section
     class=""
-    data-v-a874e27e=""
+    data-v-8ee84c59=""
     id="drawer"
     isscrolling="true"
   >
-    <div
-      data-v-a874e27e=""
+    <button
+      aria-controls="drop-container"
+      aria-expanded="false"
+      aria-label="Menu"
+      data-v-8ee84c59=""
       id="bar"
+      type="button"
     />
     <div
-      data-v-a874e27e=""
+      data-v-8ee84c59=""
       id="drop-container"
       style="display: none;"
     >
       <div
-        data-v-a874e27e=""
+        data-v-8ee84c59=""
         id="anchor"
       >
         
         
       </div>
-      <svg
-        class=""
-        data-v-a874e27e=""
-        height="10.720881"
-        id="arrow"
-        viewBox="0 0 50.405514 10.72088"
-        width="50.405514"
+      <button
+        aria-label="Close menu"
+        class="close-button"
+        data-v-8ee84c59=""
+        type="button"
       >
-        <g
-          id="layer1"
-          transform="translate(0.20025753,-11.399707)"
+        <svg
+          class=""
+          data-v-8ee84c59=""
+          height="10.720881"
+          id="arrow"
+          viewBox="0 0 50.405514 10.72088"
+          width="50.405514"
         >
-          <path
-            d="M 0.3251131,13.32947 25.002499,20.047794 49.679887,13.32947"
-            id="arrow-path"
-            style="fill: none; fill-opacity: 1; stroke-dasharray: none; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 4; stroke: #d11d66;"
-          />
-        </g>
-      </svg>
+          <g
+            id="layer1"
+            transform="translate(0.20025753,-11.399707)"
+          >
+            <path
+              d="M 0.3251131,13.32947 25.002499,20.047794 49.679887,13.32947"
+              id="arrow-path"
+              style="fill: none; fill-opacity: 1; stroke-opacity: 1; stroke-width: 4; stroke-miterlimit: 4; stroke-dasharray: none; stroke: #d11d66;"
+            />
+          </g>
+        </svg>
+      </button>
     </div>
   </section>
 </div>
 `;
 
-exports[`./components/Link.stories.js > Renders the Default story the same as its snapshot 1`] = `
-<div>
-  <div
-    class=""
-    data-v-e871e9d7=""
-  >
-    <a
-      class=""
-      data-v-e871e9d7=""
-      href="/#latest"
-    >
-      The Latest
-    </a>
-  </div>
-</div>
-`;
-
-exports[`./components/Link.stories.js > Renders the Selected story the same as its snapshot 1`] = `
-<div>
-  <div
-    class="selected"
-    data-v-e871e9d7=""
-  >
-    <a
-      class=""
-      data-v-e871e9d7=""
-      href="/#latest"
-    >
-      The Latest
-    </a>
-  </div>
-</div>
-`;
-
-exports[`./components/Release.stories.js > Renders the Default story the same as its snapshot 1`] = `
+exports[`./components/ReleaseCard.stories.js > Renders the Default story the same as its snapshot 1`] = `
 <div>
   <div
     class="release"
-    data-v-2a4ac56b=""
+    data-v-b79048ce=""
   >
     <h3
-      data-v-2a4ac56b=""
+      data-v-b79048ce=""
     >
       Refraction
     </h3>
     <div
       class="cover"
-      data-v-2a4ac56b=""
+      data-v-b79048ce=""
     >
       <div
         class="stream-links overlay release-stream-links overlay-release"
         data-v-1f3db36c=""
-        data-v-2a4ac56b=""
+        data-v-b79048ce=""
       >
         <!--v-if-->
         <ul
@@ -960,11 +982,11 @@ exports[`./components/Release.stories.js > Renders the Default story the same as
       </div>
       <div
         class="loading"
-        data-v-2a4ac56b=""
+        data-v-b79048ce=""
       />
       <img
         alt="Refraction Cover Art"
-        data-v-2a4ac56b=""
+        data-v-b79048ce=""
         src="file:///src/assets/albums/Refraction.jpg"
       />
     </div>
@@ -972,25 +994,25 @@ exports[`./components/Release.stories.js > Renders the Default story the same as
 </div>
 `;
 
-exports[`./components/Release.stories.js > Renders the Loading story the same as its snapshot 1`] = `
+exports[`./components/ReleaseCard.stories.js > Renders the Loading story the same as its snapshot 1`] = `
 <div>
   <div
     class="release"
-    data-v-2a4ac56b=""
+    data-v-b79048ce=""
   >
     <h3
-      data-v-2a4ac56b=""
+      data-v-b79048ce=""
     >
       Refraction
     </h3>
     <div
       class="cover"
-      data-v-2a4ac56b=""
+      data-v-b79048ce=""
     >
       <div
         class="stream-links overlay release-stream-links overlay-release"
         data-v-1f3db36c=""
-        data-v-2a4ac56b=""
+        data-v-b79048ce=""
       >
         <!--v-if-->
         <ul
@@ -1054,11 +1076,11 @@ exports[`./components/Release.stories.js > Renders the Loading story the same as
       </div>
       <div
         class="loading"
-        data-v-2a4ac56b=""
+        data-v-b79048ce=""
       />
       <img
         alt="Refraction Cover Art"
-        data-v-2a4ac56b=""
+        data-v-b79048ce=""
         src="file:///src/assets/albums/Refraction.jpg"
       />
     </div>
@@ -1066,35 +1088,35 @@ exports[`./components/Release.stories.js > Renders the Loading story the same as
 </div>
 `;
 
-exports[`./components/Releases.stories.js > Renders the Default story the same as its snapshot 1`] = `
+exports[`./components/ReleaseList.stories.js > Renders the Default story the same as its snapshot 1`] = `
 <div>
   <ul
     class="releases"
-    data-v-1d796d41=""
+    data-v-9ac27ab3=""
   >
     
     <li
       class="release-container"
-      data-v-1d796d41=""
+      data-v-9ac27ab3=""
     >
       <div
         class="release"
-        data-v-1d796d41=""
-        data-v-2a4ac56b=""
+        data-v-9ac27ab3=""
+        data-v-b79048ce=""
       >
         <h3
-          data-v-2a4ac56b=""
+          data-v-b79048ce=""
         >
           Refraction
         </h3>
         <div
           class="cover"
-          data-v-2a4ac56b=""
+          data-v-b79048ce=""
         >
           <div
             class="stream-links overlay release-stream-links overlay-release"
             data-v-1f3db36c=""
-            data-v-2a4ac56b=""
+            data-v-b79048ce=""
           >
             <!--v-if-->
             <ul
@@ -1366,11 +1388,11 @@ exports[`./components/Releases.stories.js > Renders the Default story the same a
           </div>
           <div
             class="loading"
-            data-v-2a4ac56b=""
+            data-v-b79048ce=""
           />
           <img
             alt="Refraction Cover Art"
-            data-v-2a4ac56b=""
+            data-v-b79048ce=""
             src="file:///src/assets/albums/Refraction.jpg"
           />
         </div>
@@ -1381,26 +1403,60 @@ exports[`./components/Releases.stories.js > Renders the Default story the same a
 </div>
 `;
 
-exports[`./components/Sidebar.stories.js > Renders the Default story the same as its snapshot 1`] = `
+exports[`./components/SectionLink.stories.js > Renders the Default story the same as its snapshot 1`] = `
+<div>
+  <div
+    class=""
+    data-v-e639cd2e=""
+  >
+    <a
+      class=""
+      data-v-e639cd2e=""
+      href="/#latest"
+    >
+      The Latest
+    </a>
+  </div>
+</div>
+`;
+
+exports[`./components/SectionLink.stories.js > Renders the Selected story the same as its snapshot 1`] = `
+<div>
+  <div
+    class="selected"
+    data-v-e639cd2e=""
+  >
+    <a
+      class=""
+      data-v-e639cd2e=""
+      href="/#latest"
+    >
+      The Latest
+    </a>
+  </div>
+</div>
+`;
+
+exports[`./components/SectionSidebar.stories.js > Renders the Default story the same as its snapshot 1`] = `
 <div>
   <nav
-    data-v-6dec5f19=""
+    data-v-85665349=""
   >
     <ul
-      data-v-6dec5f19=""
+      data-v-85665349=""
     >
       
       <li
-        data-v-6dec5f19=""
+        data-v-85665349=""
       >
         <div
           class="selected"
-          data-v-6dec5f19=""
-          data-v-e871e9d7=""
+          data-v-85665349=""
+          data-v-e639cd2e=""
         >
           <a
             class=""
-            data-v-e871e9d7=""
+            data-v-e639cd2e=""
             href="/#/"
           >
             
@@ -1408,16 +1464,16 @@ exports[`./components/Sidebar.stories.js > Renders the Default story the same as
         </div>
       </li>
       <li
-        data-v-6dec5f19=""
+        data-v-85665349=""
       >
         <div
           class="selected"
-          data-v-6dec5f19=""
-          data-v-e871e9d7=""
+          data-v-85665349=""
+          data-v-e639cd2e=""
         >
           <a
             class=""
-            data-v-e871e9d7=""
+            data-v-e639cd2e=""
             href="/#/soundpacks"
           >
             
@@ -1430,26 +1486,26 @@ exports[`./components/Sidebar.stories.js > Renders the Default story the same as
 </div>
 `;
 
-exports[`./components/Sidebar.stories.js > Renders the WithSelectedSection story the same as its snapshot 1`] = `
+exports[`./components/SectionSidebar.stories.js > Renders the WithSelectedSection story the same as its snapshot 1`] = `
 <div>
   <nav
-    data-v-6dec5f19=""
+    data-v-85665349=""
   >
     <ul
-      data-v-6dec5f19=""
+      data-v-85665349=""
     >
       
       <li
-        data-v-6dec5f19=""
+        data-v-85665349=""
       >
         <div
           class=""
-          data-v-6dec5f19=""
-          data-v-e871e9d7=""
+          data-v-85665349=""
+          data-v-e639cd2e=""
         >
           <a
             class=""
-            data-v-e871e9d7=""
+            data-v-e639cd2e=""
             href="/#/"
           >
             
@@ -1457,16 +1513,16 @@ exports[`./components/Sidebar.stories.js > Renders the WithSelectedSection story
         </div>
       </li>
       <li
-        data-v-6dec5f19=""
+        data-v-85665349=""
       >
         <div
           class="selected"
-          data-v-6dec5f19=""
-          data-v-e871e9d7=""
+          data-v-85665349=""
+          data-v-e639cd2e=""
         >
           <a
             class=""
-            data-v-e871e9d7=""
+            data-v-e639cd2e=""
             href="/#/soundpacks"
           >
             
@@ -1530,7 +1586,7 @@ exports[`./components/SocialLinks.stories.js > Renders the Default story the sam
 </div>
 `;
 
-exports[`./components/StreamLink.stories.js > Renders the streamLink story the same as its snapshot 1`] = `
+exports[`./components/StreamLink.stories.js > Renders the Default story the same as its snapshot 1`] = `
 <div>
   <a
     class="stream-link"
@@ -1902,7 +1958,7 @@ exports[`./components/icons/AnimatedIcon.stories.js > Renders the Default story 
 </div>
 `;
 
-exports[`./components/layout/TheNavigationHeader.stories.js > Renders the theNavigationHeader story the same as its snapshot 1`] = `
+exports[`./components/layout/TheNavigationHeader.stories.js > Renders the Default story the same as its snapshot 1`] = `
 <div>
   <header
     class="site-header"
@@ -2075,7 +2131,7 @@ exports[`./components/layout/TheNavigationHeader.stories.js > Renders the theNav
                 data-v-38b7e236=""
                 href="#main"
               >
-                Skip to main content
+                 Skip to main content 
               </a>
             </li>
             
@@ -2136,7 +2192,7 @@ exports[`./components/layout/TheNavigationHeader.stories.js > Renders the theNav
 </div>
 `;
 
-exports[`./views/TheSoundpacksView.stories.js > Renders the theSoundpacksView story the same as its snapshot 1`] = `
+exports[`./views/TheSoundpacksView.stories.js > Renders the Default story the same as its snapshot 1`] = `
 <div>
   <div
     class="the-soundpacks-view"
@@ -2175,6 +2231,7 @@ exports[`./views/TheSoundpacksView.stories.js > Renders the theSoundpacksView st
             class="soundpack-introduction-summary"
             data-v-d291a6fe=""
           >
+            <!-- prettier-ignore -->
             <p
               data-v-d291a6fe=""
             >
@@ -2187,6 +2244,7 @@ exports[`./views/TheSoundpacksView.stories.js > Renders the theSoundpacksView st
               </i>
               . 
             </p>
+            <!-- prettier-ignore -->
             <p
               data-v-d291a6fe=""
             >

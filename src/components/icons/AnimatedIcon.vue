@@ -5,35 +5,29 @@
 </template>
 
 <script>
-import Xrgb from '@/assets/xrgb-logo.svg';
+import Xrgb from '@/assets/xrgb-logo.svg'
 
 export default {
   name: 'AnimatedIcon',
   components: { Xrgb },
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "@/sass/_global.scss";
+@import '@/sass/_global';
 
 :deep(.st0) {
   fill: #00aeef;
+  animation: flicker 10s infinite;
 }
 
 :deep(.st1) {
   fill: #d11d66;
+  animation: flicker 5s 3s infinite;
 }
 
 #xrgb-container {
   width: 100%;
-}
-
-:deep(.st1) {
-  animation: flicker 5s 3s infinite;
-}
-
-:deep(.st0) {
-  animation: flicker 10s infinite;
 }
 
 @keyframes flicker {
@@ -89,5 +83,4 @@ export default {
     fill-opacity: 1;
   }
 }
-
 </style>

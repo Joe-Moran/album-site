@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import StreamLink from './StreamLink.vue';
+import StreamLink from './StreamLink.vue'
 
 /**
  * Container for multiple stream links related to a specific release.
@@ -47,11 +47,11 @@ export default {
     releasePath: { type: String, required: true },
     reduce: { type: Boolean, default: false },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../sass/global";
+@import '../sass/global';
 
 a {
   text-decoration: none;
@@ -100,7 +100,7 @@ button {
   right: -11px;
   width: 36px;
   height: 36px;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   font-weight: bold;
   border: none;
   border-radius: 2px;
@@ -111,7 +111,7 @@ button {
     color: $red-primary;
     cursor: pointer;
     background: 1px solid $red-primary;
-    background: lightgray;
+    background: #d3d3d3;
   }
 }
 </style>

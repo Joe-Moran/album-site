@@ -9,15 +9,15 @@
               <a
                 ref="skipLink"
                 href="#main"
-              >Skip to main content</a>
+              >
+                Skip to main content
+              </a>
             </li>
             <li
               v-for="{ name } in navigationLinks"
               :key="name"
             >
-              <router-link
-                :to="{ name }"
-              >
+              <router-link :to="{ name }">
                 {{ name }}
               </router-link>
             </li>
@@ -34,10 +34,10 @@
 </template>
 
 <script>
-import routes from '@/routing/routes';
-import AnimatedIcon from '@/components/icons/AnimatedIcon.vue';
-import SocialLinks from '@/components/SocialLinks.vue';
-import xrgbSocialLinks from '@/data/links-social-media';
+import SocialLinks from '@/components/SocialLinks.vue'
+import AnimatedIcon from '@/components/icons/AnimatedIcon.vue'
+import xrgbSocialLinks from '@/data/links-social-media'
+import routes from '@/routing/routes'
 
 /**
  * The main navigations header for the site.
@@ -46,7 +46,6 @@ export default {
   name: 'TheNavigationHeader',
   components: { AnimatedIcon, SocialLinks },
   props: {
-
     /**
      * The links for navigation; populates the nav element.
      */
@@ -54,12 +53,11 @@ export default {
   },
   routes,
   xrgbSocialLinks,
-
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "@/sass/global";
+@import '@/sass/global';
 
 .site-header {
   position: sticky;
@@ -136,5 +134,4 @@ export default {
     }
   }
 }
-
 </style>

@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "cipchk.cssrem",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "mrmlnc.vscode-scss",
+    "vunguyentuan.vscode-css-variables",
+    "vitest.explorer",
+    "Vue.volar",
+    "dbaeumer.vscode-eslint"
+  ]
+}

@@ -10,7 +10,7 @@
         <img
           :src="iconSource"
           alt=""
-        >
+        />
       </div>
       <!-- @slot The link text -->
       <slot />
@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /**
  * A link to a streaming service.
@@ -51,33 +51,31 @@ export default {
    */
   externalLinkIcon: faExternalLinkAlt,
   data() {
-    return {};
+    return {}
   },
   computed: {
     iconSource() {
-      return new URL(`../assets/streaming/${this.icon}`, import.meta.url).href;
+      return new URL(`../assets/streaming/${this.icon}`, import.meta.url).href
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import '../sass/_global.scss';
+@import '../sass/_global';
+
 .stream-link {
   position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.7rem 1.25rem;
+  font-family: $font-family-link;
   font-size: 1.1rem;
   font-weight: bold;
-  color: black;
-  font-family: $font-family-link;
-
-  padding: 0.7rem 1.25rem;
-  width: 100%;
-
-  background: white;
+  color: #000;
+  background: #fff;
   border-radius: 5px;
   box-shadow: -0.625rem 0.625rem 0 #0000000f;
   transition: all 250ms ease-in-out;

@@ -9,21 +9,23 @@
 
 <script>
 export default {
-  name: 'Narrative',
+  name: 'NarrativeArticle',
   props: { title: { type: String, required: true } },
-};
+}
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Oxygen&display=swap');
+@import 'https://fonts.googleapis.com/css?family=Fjalla+One|Oxygen&display=swap';
 
 .narrative-text {
-  font-family: Oxygen;
-  color: white;
+  padding: 10px;
+  font-family: Oxygen, sans-serif;
+  color: #8f1203;
+  text-indent: 27px;
 }
 
 h2 {
-  font-family: Fjalla One;
+  font-family: 'Fjalla One', sans-serif;
   color: #8f1203;
   text-transform: uppercase;
 
@@ -31,12 +33,6 @@ h2 {
   border-bottom: solid;
 
   /* margin-bottom: -2px; */
-}
-
-.narrative-text {
-  padding: 10px;
-  color: #8f1203;
-  text-indent: 27px;
 }
 
 .narrative-text * {
@@ -51,7 +47,7 @@ article {
   width: 321px;
   padding: 15px;
   text-align: left;
-  border: 3px solid white;
+  border: 3px solid #fff;
   border-radius: 1px;
 }
 </style>

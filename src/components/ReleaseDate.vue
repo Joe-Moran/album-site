@@ -1,46 +1,59 @@
 <template>
   <section id="date">
-    <div
+    <button
       id="date-container"
+      type="button"
       :class="{ selected: isClicked }"
+      :aria-pressed="isClicked"
       @click="clickHandler"
     >
-      <img :src="$options.dateImage">
-    </div>
+      <img
+        :src="$options.dateImage"
+        alt="06 02 2020"
+      />
+    </button>
   </section>
 </template>
 
 <script>
-import dateImage from '../assets/06 02 2020.svg?url';
+import dateImage from '@/assets/06 02 2020.svg?url'
 
 export default {
-  name: 'Date',
+  name: 'ReleaseDate',
   dateImage,
   emits: ['click'],
   data() {
     return {
       isClicked: false,
       date: '5 26 2020',
-    };
+    }
   },
   methods: {
     clickHandler() {
-      this.isClicked = !this.isClicked;
-      this.$emit('click', this.isClicked);
+      this.isClicked = !this.isClicked
+      this.$emit('click', this.isClicked)
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../sass/global";
+@use 'sass:math';
+@import '../sass/global';
 
 #date-container {
   position: relative;
   left: calc(50% - 200px);
   z-index: 2000;
+  display: block;
   width: 400px;
+  padding: 0;
+  font: inherit;
+  color: inherit;
   text-align: center;
+  cursor: pointer;
+  background: none;
+  border: 0;
   transition: top 1s ease-in;
 }
 
@@ -61,7 +74,7 @@ img:nth-child(2) {
   margin-top: 3%;
 }
 
-@media (min-width: 0) and (max-width: $sm) {
+@media (width >= 0) and (max-width: $sm) {
   #date.selected {
     top: 0 !important;
   }
@@ -82,12 +95,14 @@ img:nth-child(2) {
   left: calc(50% - 15px);
   z-index: 500000;
   display: block;
-  content: " ";
+  content: ' ';
   border-top: 10px solid #b3abac;
   border-right: 15px transparent solid;
   border-left: 15px transparent solid;
   opacity: 0;
-  transition: top 1s ease-in, opacity 5s ease-in;
+  transition:
+    top 1s ease-in,
+    opacity 5s ease-in;
   animation: bounce 10s ease-in-out infinite;
 }
 
@@ -145,15 +160,15 @@ h1::after {
 
 h1::after {
   left: 5px !important;
-  text-shadow: -1px 0 red !important;
-  background: black !important;
+  text-shadow: -1px 0 #f00 !important;
+  background: #000 !important;
   animation: glitch-1 2s infinite linear alternate-reverse !important;
 }
 
 h1::before {
   left: -5px !important;
-  text-shadow: -1px 0 blue !important;
-  background: black !important;
+  text-shadow: -1px 0 #00f !important;
+  background: #000 !important;
   animation: glitch-2 30s infinite linear alternate-reverse !important;
 }
 
@@ -161,11 +176,11 @@ h1::before {
   $steps: 30;
 
   @for $i from 0 through $steps {
-    #{percentage($i/$steps)} {
-      $top: random(100);
-      $bottom: random(101 - $top);
+    #{math.percentage(math.div($i, $steps))} {
+      $top: math.random(100);
+      $bottom: math.random(101 - $top);
 
-      clip-path: inset(#{percentage($top)} 0 #{percentage($bottom)} 0);
+      clip-path: inset(#{math.percentage($top)} 0 #{math.percentage($bottom)} 0);
     }
   }
 }
@@ -174,9 +189,9 @@ h1::before {
   $steps: 30;
 
   @for $i from 0 through $steps {
-    #{percentage($i/$steps)} {
-      $top: random(100);
-      $bottom: random(101 - $top);
+    #{math.percentage(math.div($i, $steps))} {
+      $top: math.random(100);
+      $bottom: math.random(101 - $top);
 
       clip-path: inset(#{$top}% 0 #{$bottom}% 0);
     }

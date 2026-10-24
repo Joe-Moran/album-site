@@ -1,9 +1,10 @@
-import { fn } from 'storybook/test';
-import Release from './Release.vue';
+import { fn } from 'storybook/test'
+
+import ReleaseCard from './ReleaseCard.vue'
 
 export default {
   title: 'Release',
-  component: Release,
+  component: ReleaseCard,
   args: {
     title: 'Refraction',
     coverPath: 'Refraction.jpg',
@@ -14,10 +15,10 @@ export default {
     onClick: fn(),
     onLoad: fn(),
   },
-};
+}
 
-export const Default = {};
+export const Default = {}
 
 export const Loading = {
   args: { loading: true },
-};
+}

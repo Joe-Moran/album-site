@@ -19,4 +19,4 @@ export default {
     icon: 'googleplay.png',
     title: 'Google Play Music',
   },
-};
+}

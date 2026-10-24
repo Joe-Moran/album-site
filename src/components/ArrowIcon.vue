@@ -15,10 +15,10 @@
         style="
           fill: none;
           fill-opacity: 1;
-          stroke-dasharray: none;
-          stroke-miterlimit: 4;
           stroke-opacity: 1;
           stroke-width: 4;
+          stroke-miterlimit: 4;
+          stroke-dasharray: none;
         "
         :style="{ stroke: color }"
         d="M 0.3251131,13.32947 25.002499,20.047794 49.679887,13.32947"
@@ -29,20 +29,21 @@
 
 <script>
 export default {
-  name: 'Arrow',
+  name: 'ArrowIcon',
   props: {
     color: { type: String, required: true },
     up: { type: Boolean, default: false },
   },
   data() {
-    return {};
+    return {}
   },
   computed: {},
-};
+}
 </script>
 
 <style lang="scss">
-@import '../sass/_global.scss';
+@import '../sass/_global';
+
 #arrow-path {
   stroke: $red-primary;
 }

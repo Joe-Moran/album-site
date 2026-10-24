@@ -2,11 +2,15 @@
   <section
     id="drawer"
     :class="{ open: isOpen, compact }"
-    @click="updateState"
   >
-    <div
+    <button
       id="bar"
+      type="button"
+      aria-label="Menu"
+      aria-controls="drop-container"
+      :aria-expanded="isOpen"
       :style="{ color }"
+      @click="updateState"
     />
     <div
       v-show="isOpen"
@@ -17,26 +21,34 @@
         <slot />
       </div>
 
-      <Arrow
-        :color="arrowColor"
-        :up="isOpen"
-      />
+      <button
+        type="button"
+        class="close-button"
+        aria-label="Close menu"
+        @click="updateState"
+      >
+        <ArrowIcon
+          :color="arrowColor"
+          :up="isOpen"
+        />
+      </button>
     </div>
   </section>
 </template>
 
 <script>
-import globals from '@/globals';
-import xrgbSocialLinks from '@/data/links-social-media';
-import nav from '@/mixins/nav';
-import Arrow from './Arrow.vue';
+import ArrowIcon from './ArrowIcon.vue'
+
+import xrgbSocialLinks from '@/data/links-social-media'
+import globals from '@/globals'
+import nav from '@/mixins/nav'
 
 /**
  * The nav drawer for the top of the site.
  */
 export default {
-  name: 'Drawer',
-  components: { Arrow },
+  name: 'NavigationDrawer',
+  components: { ArrowIcon },
   mixins: [nav],
   props: {
     /**
@@ -54,36 +66,36 @@ export default {
       socialLinks: xrgbSocialLinks,
       clientWidth: 1900,
       isOpen: false,
-    };
+    }
   },
   computed: {
     arrowColor() {
-      return this.isOpen ? 'black' : globals.redPrimary;
+      return this.isOpen ? 'black' : globals.redPrimary
     },
     isMobile() {
-      return this.clientWidth <= globals.md;
-    },
-  },
-  methods: {
-    updateState() {
-      if (this.isMobile) {
-        this.isOpen = !this.isOpen;
-      } else this.isOpen = false;
-    },
-    resizeHandler() {
-      this.clientWidth = document.body.clientWidth;
+      return this.clientWidth <= globals.md
     },
   },
 
   mounted() {
-    this.resizeHandler();
-    window.addEventListener('resize', this.resizeHandler);
+    this.resizeHandler()
+    window.addEventListener('resize', this.resizeHandler)
   },
-};
+  methods: {
+    updateState() {
+      if (this.isMobile) {
+        this.isOpen = !this.isOpen
+      } else this.isOpen = false
+    },
+    resizeHandler() {
+      this.clientWidth = document.body.clientWidth
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../sass/_global.scss";
+@import '../sass/_global';
 
 #menu-btn {
   position: absolute;
@@ -106,9 +118,11 @@ export default {
   display: block;
   width: 100%;
   height: 26px;
+  padding: 0;
   cursor: pointer;
   background: $red-primary;
-  border-bottom: 7px solid black;
+  border: 0;
+  border-bottom: 7px solid #000;
   transition: height 100ms ease-in-out;
 }
 
@@ -118,6 +132,13 @@ export default {
 
 #arrow {
   margin-top: 30px;
+}
+
+.close-button {
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  border: 0;
 }
 
 #drawer {
@@ -135,9 +156,9 @@ export default {
   width: 100%;
   padding: 0;
   background: $red-primary;
-  transition: all 500ms ease-in-out;
   transform: scaleY(0);
   transform-origin: top;
+  transition: all 500ms ease-in-out;
 }
 
 #anchor {
@@ -150,22 +171,17 @@ export default {
   #drop-container {
     padding-bottom: 40px;
     box-shadow: #29110c 0 6px 0;
-    transition: all 500ms ease-in-out;
     transform: scaleY(1);
+    transition: all 500ms ease-in-out;
   }
 
   &#drawer {
     z-index: 3000;
   }
-
-  a {
-    color: black;
-    transition: color 250ms ease-in;
-  }
 }
 
 a {
-  font-family: Consolas;
+  font-family: Consolas, monospace;
   font-size: 2.5rem;
   font-style: italic;
   font-weight: bold;
@@ -173,10 +189,15 @@ a {
   text-align: center;
   text-decoration: none;
   transition: color 250ms ease-in;
+}
 
-  &:hover {
-    color: white;
-  }
+.open a {
+  color: #000;
+  transition: color 250ms ease-in;
+}
+
+a:hover {
+  color: #fff;
 }
 
 ul {

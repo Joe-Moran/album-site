@@ -1,4 +1,4 @@
-import StreamLink from './StreamLink.vue';
+import StreamLink from './StreamLink.vue'
 
 export default {
   title: 'Links/StreamLink',
@@ -7,15 +7,15 @@ export default {
   render: (args) => ({
     components: { StreamLink },
     setup() {
-      return { args };
+      return { args }
     },
     template: '<StreamLink v-bind="args">Spotify</StreamLink>',
   }),
-};
+}
 
-export const streamLink = {
+export const Default = {
   args: {
     icon: 'spotify.png',
     href: 'https://open.spotify.com',
   },
-};
+}

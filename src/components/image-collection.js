@@ -18,4 +18,4 @@ export default {
     'lq-album-art-15.png',
     'lq-album-art-16.png',
   ],
-};
+}

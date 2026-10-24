@@ -4,7 +4,5 @@ export default {
       type: Array,
       required: false,
     },
-
   },
-
-};
+}

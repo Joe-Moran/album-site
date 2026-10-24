@@ -1,6 +1,9 @@
 <template>
   <figure>
-    <img :src="imageUrl">
+    <img
+      :src="imageUrl"
+      alt=""
+    />
   </figure>
 </template>
 
@@ -15,10 +18,10 @@ export default {
   },
   computed: {
     imageUrl() {
-      return new URL(`../assets/${this.imageSource}`, import.meta.url).href;
+      return new URL(`../assets/${this.imageSource}`, import.meta.url).href
     },
   },
-};
+}
 </script>
 
 <style>
@@ -26,31 +29,32 @@ figure {
   padding: 0;
   margin: 0;
 }
-@media only screen and (max-width: 924px) {
+
+@media only screen and (width <= 924px) {
   img {
     width: 100%;
   }
 }
 
-@media only screen and (min-width: 925px) and (max-width: 1079px) {
+@media only screen and (width >= 925px) and (width <= 1079px) {
   img {
     width: 80%;
   }
 }
 
-@media only screen and (min-width: 1080px) and (max-width: 1449px) {
+@media only screen and (width >= 1080px) and (width <= 1449px) {
   img {
     width: 60%;
   }
 }
 
-@media only screen and (min-width: 1450px) and (max-width: 1599px) {
+@media only screen and (width >= 1450px) and (width <= 1599px) {
   img {
     width: 50%;
   }
 }
 
-@media only screen and (min-width: 1600px) {
+@media only screen and (width >= 1600px) {
   img {
     width: 45%;
   }
