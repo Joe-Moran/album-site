@@ -42,7 +42,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../sass/_global';
+@use '@/sass/global' as *;
 
 #arrow-path {
   stroke: $red-primary;

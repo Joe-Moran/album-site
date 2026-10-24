@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../sass/global';
+@use '@/sass/global' as *;
 
 $max: 240px;
 

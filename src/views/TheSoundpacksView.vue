@@ -8,11 +8,20 @@
       <h1>{{ soundpack.title }}</h1>
       <div class="soundpack-introduction">
         <div class="soundpack-introduction-cover-image">
-          <img
-            :src="$options.soundpackCoverImage"
-            alt="A blurred face, flooded with red and blue hues split down the middle.
+          <picture>
+            <source
+              v-for="(srcset, format) in $options.soundpackCoverImage.sources"
+              :key="format"
+              :type="`image/${format}`"
+              :srcset="srcset"
+              sizes="(max-width: 37.5rem) 90vw, 321px"
+            />
+            <img
+              :src="$options.soundpackCoverImage.img.src"
+              alt="A blurred face, flooded with red and blue hues split down the middle.
             Text reads Refraction Sound Pack."
-          />
+            />
+          </picture>
         </div>
         <div class="soundpack-introduction-summary-and-links">
           <div class="soundpack-introduction-summary">
@@ -107,7 +116,7 @@
 </template>
 
 <script>
-import soundpackCoverImage from '@/assets/refraction sound pack.jpg'
+import soundpackCoverImage from '@/assets/refraction sound pack.jpg?w=400;800&format=avif;webp;jpg&as=picture'
 import ButtonLink from '@/components/ButtonLink.vue'
 import soundpacks from '@/data/soundpack'
 
@@ -135,7 +144,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/sass/global';
+@use '@/sass/global' as *;
 
 .the-soundpacks-view {
   color: #fff;

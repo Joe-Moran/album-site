@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/sass/global';
+@use '@/sass/global' as *;
 
 .site-header {
   position: sticky;
