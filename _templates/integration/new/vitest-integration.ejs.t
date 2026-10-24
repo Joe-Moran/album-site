@@ -23,6 +23,6 @@ import <%=component%> from '@/<%= path %>/<%= component %>.vue';
 
 
   it('Does Something', () => {
-        render(<%= component %>, { propsData: defaultProps, slots: {} });
+        render(<%= component %>, { props: defaultProps, slots: {} });
 
   });

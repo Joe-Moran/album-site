@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Storyshots Social Links Default 1`] = `
-<sociallinks
-  links="[object Object],[object Object],[object Object]"
-/>
-`;

@@ -30,6 +30,7 @@ export default {
      */
     scrollPosition: { type: Number, default: 0 },
   },
+  emits: ['visible'],
   data() {
     return {
       isVisible: false,

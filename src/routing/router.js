@@ -1,19 +1,13 @@
-import Vue from 'vue';
-import Router from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import routes from './routes';
 
-const routesObject = {
+export default createRouter({
+  history: createWebHashHistory(),
   routes: Object.values(routes),
   scrollBehavior(to) {
     if (to.hash) {
-      return {
-        selector: to.hash,
-      };
+      return { el: to.hash };
     }
-    return { x: 0, y: 0 };
+    return { top: 0 };
   },
-};
-
-Vue.use(Router);
-
-export default new Router(routesObject);
+});

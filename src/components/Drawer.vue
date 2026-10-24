@@ -1,17 +1,17 @@
 <template>
   <section
     id="drawer"
-    :class="{ open: isOpen, compact: compact }"
+    :class="{ open: isOpen, compact }"
     @click="updateState"
   >
     <div
       id="bar"
-      :style="{ color: color }"
+      :style="{ color }"
     />
     <div
       v-show="isOpen"
       id="drop-container"
-      :style="{ color: color }"
+      :style="{ color }"
     >
       <div id="anchor">
         <slot />

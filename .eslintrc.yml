@@ -1,12 +1,21 @@
 root: true
-parserOptions:
-  parser: 'babel-eslint'
 env:
   es6: true
   node: true
   jest: true
+globals:
+  vi: readonly
 rules:
   'linebreak-style': 0
+  'vue/multi-word-component-names': 'warn'
+  'vue/no-reserved-component-names': 'warn'
+  'vue/html-button-has-type': 'warn'
+  'vuejs-accessibility/alt-text': 'warn'
+  'vuejs-accessibility/click-events-have-key-events': 'warn'
+  'vuejs-accessibility/iframe-has-title': 'warn'
+  'import/no-unresolved':
+    - 'error'
+    - ignore: ['^@?storybook', '^@vitejs/', '\?url$']
   'import/no-extraneous-dependencies':
     - 'error'
     - devDependencies:
@@ -17,6 +26,9 @@ rules:
         - '**/*.integration.js'
         - '**/*.stories.js'
         - '**/*.config.js'
+        - '**/*.config.mjs'
+        - '.storybook/**'
+        - 'vitest.setup.js'
   'vue/order-in-components':
     - 'error'
     - order:
@@ -36,7 +48,7 @@ rules:
       - ["template", "render", "filters"]
       - 'renderError'
 extends:
-  - 'plugin:vue/recommended'
+  - 'plugin:vue/vue3-recommended'
   - '@vue/airbnb'
   - 'plugin:jest-dom/recommended'
 overrides:
@@ -45,3 +57,10 @@ overrides:
       - '**/tests/unit/**/*.spec.{j,t}s?(x)'
     env:
       jest: true
+settings:
+  import/resolver:
+    node: {}
+    custom-alias:
+      alias:
+        '@': './src'
+      extensions: ['.mjs', '.js', '.vue', '.json']

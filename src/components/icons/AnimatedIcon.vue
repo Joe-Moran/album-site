@@ -16,11 +16,11 @@ export default {
 <style lang="scss" scoped>
 @import "@/sass/_global.scss";
 
-.st0 {
+:deep(.st0) {
   fill: #00aeef;
 }
 
-.st1 {
+:deep(.st1) {
   fill: #d11d66;
 }
 
@@ -28,11 +28,11 @@ export default {
   width: 100%;
 }
 
-.st1 {
+:deep(.st1) {
   animation: flicker 5s 3s infinite;
 }
 
-.st0 {
+:deep(.st0) {
   animation: flicker 10s infinite;
 }
 

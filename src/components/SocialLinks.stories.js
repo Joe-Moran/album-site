@@ -1,20 +1,11 @@
+import SocialLinks from './SocialLinks.vue';
 import xrgbSocialLinks from '../data/links-social-media';
 
 export default {
   title: 'Social Links',
-  excludeStories: /.*Data$/,
+  component: SocialLinks,
 };
 
-const linksTemplate = "<SocialLinks :links='linkData'/>";
-
-export const Default = () => ({
-  components: {
-    xrgbSocialLinks,
-  },
-  template: linksTemplate,
-  props: {
-    linkData: {
-      default: () => xrgbSocialLinks,
-    },
-  },
-});
+export const Default = {
+  args: { links: xrgbSocialLinks },
+};

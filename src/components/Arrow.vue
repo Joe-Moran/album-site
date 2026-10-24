@@ -4,7 +4,7 @@
     width="50.405514"
     height="10.720881"
     viewBox="0 0 50.405514 10.72088"
-    :class="{ up: up }"
+    :class="{ up }"
   >
     <g
       id="layer1"

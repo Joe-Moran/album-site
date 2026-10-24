@@ -1,41 +1,16 @@
-// import  from "./Link.vue"
 import Sidebar from './Sidebar.vue';
 import siteSections from '../routing/routes';
 
+const links = Object.values(siteSections);
+
 export default {
   title: 'Sidebar',
-  excludeStories: /.*Data$/,
+  component: Sidebar,
+  args: { links, currentSelection: '' },
 };
 
-// export const actionsData = {
-//     onClick: action('link click'),
-// }
+export const Default = {};
 
-const sidebarTemplate = "<sidebar :links='linkObj'/>";
-const sidebarWithSectionTemplate = "<sidebar :links='linkObj' :section='linkObj[2]'/>";
-
-export const Default = () => ({
-  components: {
-    Sidebar,
-  },
-  template: sidebarTemplate,
-  props: {
-    linkObj: {
-      default: () => siteSections,
-    },
-  },
-  //   methods: actionsData,
-});
-
-export const WithSelectedSection = () => ({
-  components: {
-    Sidebar,
-  },
-  template: sidebarWithSectionTemplate,
-  props: {
-    linkObj: {
-      default: () => siteSections,
-    },
-  },
-  //   methods: actionsData,
-});
+export const WithSelectedSection = {
+  args: { currentSelection: links[1].path },
+};

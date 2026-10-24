@@ -12,6 +12,9 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+permissions:
+  contents: read
+
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -21,30 +24,30 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: checkout current repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     
-    - name: Use Node.js 14.x
-      uses: actions/setup-node@v2
+    - name: Use Node.js 22.x
+      uses: actions/setup-node@v4
       with:
-        node-version: 14.x
+        node-version: 22.x
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
     
     - name: Upload Build Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: release-artifact
         path: dist
     
     - name: Checkout GitHub Pages Repository
-      uses: actions/checkout@v2.4.2
+      uses: actions/checkout@v4
       with:
         repository: Joe-Moran/album-site-public
         token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
     - name: Download a Build Artifact
-      uses: actions/download-artifact@v2.1.0
+      uses: actions/download-artifact@v4
     - run: |
           rsync -a release-artifact/* ./
           rm -r release-artifact

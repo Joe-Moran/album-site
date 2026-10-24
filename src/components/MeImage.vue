@@ -1,6 +1,6 @@
 <template>
   <figure>
-    <img :src="require('../assets/' + imageSource)">
+    <img :src="imageUrl">
   </figure>
 </template>
 
@@ -11,6 +11,11 @@ export default {
     imageSource: {
       type: String,
       required: true,
+    },
+  },
+  computed: {
+    imageUrl() {
+      return new URL(`../assets/${this.imageSource}`, import.meta.url).href;
     },
   },
 };

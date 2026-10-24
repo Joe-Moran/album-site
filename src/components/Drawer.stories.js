@@ -1,127 +1,47 @@
-import {
-  action,
-} from '@storybook/addon-actions';
-
-import {
-  INITIAL_VIEWPORTS,
-} from '@storybook/addon-viewport';
+import { fn } from 'storybook/test';
+import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 import Drawer from './Drawer.vue';
 import SocialLinks from './SocialLinks.vue';
-
 import xrgbSocialLinks from '../data/links-social-media';
+
+const mobileViewport = {
+  parameters: { viewport: { options: INITIAL_VIEWPORTS } },
+  globals: { viewport: { value: 'iphonex', isRotated: false } },
+};
 
 export default {
   title: 'Drawer',
-  excludeStories: /.*Data$/,
-};
-
-export const actionsData = {
-  onClick: action('drawer click'),
-};
-
-export const drawerData = [{
-  href: 'href',
-  label: 'link one',
-}];
-
-const drawerTemplate = "<drawer :links='links' @click='onClick'></drawer>";
-const drawerScrollingTemplate = "<drawer :links='links' @click='onClick' isScrolling></drawer>";
-
-const openDrawerTemplate = "<drawer :links='links' @click='onClick' isOpen></drawer>";
-const openDrawerWithAnchorTemplate = "<drawer :links='links' @click='onClick' isOpen><template v-slot:anchor><SocialLinks :links='socialLinks' class='social' /></template></drawer>";
-
-export const Default = () => ({
-  components: {
-    Drawer,
-  },
-  template: drawerTemplate,
-  props: {
-    links: {
-      default: () => drawerData,
-    },
-  },
-  methods: actionsData,
-});
-
-export const Scrolling = () => ({
-  components: {
-    Drawer,
-  },
-  template: drawerScrollingTemplate,
-  props: {
-    links: {
-      default: () => drawerData,
-    },
-  },
-  methods: actionsData,
-});
-
-export const Mobile = () => ({
-  components: {
-    Drawer,
-  },
-  template: drawerTemplate,
-  props: {
-    links: {
-      default: () => drawerData,
-    },
-  },
-  methods: actionsData,
-
-});
-
-Mobile.story = {
-  parameters: {
-    viewport: {
-      viewports: INITIAL_VIEWPORTS,
-      defaultViewport: 'iphonex',
-    },
+  component: Drawer,
+  args: {
+    links: [{ href: 'href', label: 'link one' }],
+    onClick: fn(),
   },
 };
 
-export const MobileOpen = () => ({
-  components: {
-    Drawer,
-  },
-  template: openDrawerTemplate,
-  props: {
-    links: {
-      default: () => drawerData,
-    },
-  },
-  methods: actionsData,
-});
+export const Default = {};
 
-MobileOpen.story = {
-  parameters: {
-    viewport: {
-      viewports: INITIAL_VIEWPORTS,
-      defaultViewport: 'iphonex',
-    },
-  },
+export const Scrolling = {
+  args: { isScrolling: true },
 };
 
-export const MobileOpenWithAnchor = () => ({
-  components: {
-    Drawer,
-    SocialLinks,
-  },
-  template: openDrawerWithAnchorTemplate,
-  props: {
-    socialLinks: {
-      default: () => xrgbSocialLinks,
-    },
-    links: {
-      default: () => drawerData,
-    },
-  },
-});
+export const Mobile = { ...mobileViewport };
 
-MobileOpenWithAnchor.story = {
-  parameters: {
-    viewport: {
-      viewports: INITIAL_VIEWPORTS,
-      defaultViewport: 'iphonex',
+export const MobileOpen = {
+  ...mobileViewport,
+  args: { isOpen: true },
+};
+
+export const MobileOpenWithAnchor = {
+  ...mobileViewport,
+  render: (args) => ({
+    components: { Drawer, SocialLinks },
+    setup() {
+      return { args, socialLinks: xrgbSocialLinks };
     },
-  },
+    template: `
+      <Drawer v-bind="args" isOpen>
+        <template #anchor><SocialLinks :links="socialLinks" class="social" /></template>
+      </Drawer>
+    `,
+  }),
 };

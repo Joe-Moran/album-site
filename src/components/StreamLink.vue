@@ -2,12 +2,13 @@
   <a
     :href="href"
     target="_blank"
+    rel="noopener noreferrer"
     class="stream-link"
   >
     <div class="link-content">
       <div class="streaming-icon">
         <img
-          :src="require(`../assets/streaming/${icon}`)"
+          :src="iconSource"
           alt=""
         >
       </div>
@@ -51,6 +52,11 @@ export default {
   externalLinkIcon: faExternalLinkAlt,
   data() {
     return {};
+  },
+  computed: {
+    iconSource() {
+      return new URL(`../assets/streaming/${this.icon}`, import.meta.url).href;
+    },
   },
 };
 </script>

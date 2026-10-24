@@ -2,14 +2,7 @@ import AnimatedIcon from './AnimatedIcon.vue';
 
 export default {
   title: 'Animated Icon',
-  excludeStories: /.*Data$/,
+  component: AnimatedIcon,
 };
 
-const template = '<AnimatedIcon/>';
-
-export const Default = () => ({
-  components: {
-    AnimatedIcon,
-  },
-  template,
-});
+export const Default = {};

@@ -9,7 +9,7 @@
       <div class="soundpack-introduction">
         <div class="soundpack-introduction-cover-image">
           <img
-            :src="require('../assets/refraction sound pack.jpg')"
+            :src="$options.soundpackCoverImage"
             alt="A blurred face, flooded with red and blue hues split down the middle.
             Text reads Refraction Sound Pack."
           >
@@ -58,7 +58,7 @@
               >
                 <div class="soundpack-device-patch-content">
                   <p>
-                    {{ patch.category }} - {{ patch.patchCount | patchCount }}
+                    {{ patch.category }} - {{ formatPatchCount(patch.patchCount) }}
                   </p>
                   <p
                     v-if="patch.description"
@@ -109,6 +109,8 @@
 <script>
 import soundpacks from '@/data/soundpack';
 import ButtonLink from '@/components/ButtonLink.vue';
+import soundpackCoverImage from '@/assets/refraction sound pack.jpg';
+
 /**
  * The soundpacks view, where users can download soundpacks.
  */
@@ -120,13 +122,14 @@ export default {
    * this.$options.soundpacks
    */
   soundpacks,
+  soundpackCoverImage,
   data() {
     return {
 
     };
   },
-  filters: {
-    patchCount(count) {
+  methods: {
+    formatPatchCount(count) {
       return `${count} ${count > 1 ? 'patches' : 'patch'}`;
     },
   },

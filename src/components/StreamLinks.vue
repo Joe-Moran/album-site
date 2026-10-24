@@ -1,7 +1,7 @@
 <template>
   <div
     class="stream-links"
-    :class="{ overlay: overlay }"
+    :class="{ overlay }"
   >
     <div
       v-if="showFeature"

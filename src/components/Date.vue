@@ -2,17 +2,21 @@
   <section id="date">
     <div
       id="date-container"
-      :class="{'selected': isClicked}"
+      :class="{ selected: isClicked }"
       @click="clickHandler"
     >
-      <img :src="require('../assets/06 02 2020.svg')">
+      <img :src="$options.dateImage">
     </div>
   </section>
 </template>
 
 <script>
+import dateImage from '../assets/06 02 2020.svg?url';
+
 export default {
   name: 'Date',
+  dateImage,
+  emits: ['click'],
   data() {
     return {
       isClicked: false,

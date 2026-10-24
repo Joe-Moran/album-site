@@ -1,5 +1,8 @@
 <template>
-  <a target="_blank">
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     <span id="basic-button-text"><slot /></span>
   </a>
 </template>

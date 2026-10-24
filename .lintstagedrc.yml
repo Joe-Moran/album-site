@@ -1,4 +1,3 @@
-"*.{js,jsx,vue, html}":
-  - "npm run lint --fix"
-  - "npm run test:snapshots"
-  - "npm run test:unit:file"
+"*.{js,jsx,vue,html}":
+  - "eslint --fix"
+  - "vitest related --run"
