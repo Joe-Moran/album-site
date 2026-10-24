@@ -17,7 +17,6 @@
     "gen": "npx hygen component new",
     "gen:integration": "npx hygen integration new",
     "prepare": "husky",
-    "refreshVSToken": "vsts-npm-auth -config .npmrc",
     "format:prettier": "prettier src/ --write",
     "format:prettier:file": "prettier --write",
     "format:prettier:ci": "prettier src/ --check",
@@ -33,7 +32,6 @@
     "@fortawesome/fontawesome-svg-core": "^7.3.1",
     "@fortawesome/free-solid-svg-icons": "^7.3.1",
     "@fortawesome/vue-fontawesome": "^3.3.3",
-    "mobile-device-detect": "^0.4.3",
     "vue": "^3.5.44",
     "vue-router": "^4.6.0"
   },

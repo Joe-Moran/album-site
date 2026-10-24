@@ -29,9 +29,4 @@ const about = viewSectionInterface.buildViewSection(
   defineAsyncComponent(() => import('@/components/AboutSection.vue'))
 )
 
-/**
- * The links to share regarding the view content.
- */
-const links = viewSectionInterface.buildViewSection('links', 'Links')
-
-export { latest, music, about, links }
+export { latest, music, about }
