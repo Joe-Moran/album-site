@@ -6,12 +6,7 @@
         <nav class="nav">
           <ul class="the-navigation-header-links">
             <li class="skip-link">
-              <a
-                ref="skipLink"
-                href="#main"
-              >
-                Skip to main content
-              </a>
+              <a href="#main">Skip to main content</a>
             </li>
             <li
               v-for="{ name } in navigationLinks"
@@ -26,34 +21,22 @@
       </div>
       <SocialLinks
         id="desktop-social"
-        :links="$options.xrgbSocialLinks"
+        :links="socialLinks"
         class="social"
       />
     </div>
   </header>
 </template>
 
-<script>
+<script setup>
 import SocialLinks from '@/components/SocialLinks.vue'
 import AnimatedIcon from '@/components/icons/AnimatedIcon.vue'
-import xrgbSocialLinks from '@/data/links-social-media'
-import routes from '@/routing/routes'
 
-/**
- * The main navigations header for the site.
- */
-export default {
-  name: 'TheNavigationHeader',
-  components: { AnimatedIcon, SocialLinks },
-  props: {
-    /**
-     * The links for navigation; populates the nav element.
-     */
-    navigationLinks: { type: Array, default: () => [] },
-  },
-  routes,
-  xrgbSocialLinks,
-}
+defineProps({
+  /** Routes to show as links in the nav element. */
+  navigationLinks: { type: Array, default: () => [] },
+  socialLinks: { type: Array, default: () => [] },
+})
 </script>
 
 <style lang="scss" scoped>
@@ -84,7 +67,12 @@ export default {
     display: flex;
 
     :deep(svg) {
-      max-height: 1.875rem;
+      width: auto;
+      height: 1.875rem;
+    }
+
+    @media (width < 30rem) {
+      display: none;
     }
   }
 }

@@ -2,41 +2,24 @@
   <div class="home">
     <!-- TODO: aria-labeledby=side nav link text -->
     <ContentContainer
-      v-for="section in $options.homeSection"
+      v-for="section in homeSections"
       :key="section.path"
-      :scroll-position="scrollPosition"
       :title="section.label"
-      @visible="contentVisible"
     >
-      <component :is="section.component" />
+      <component
+        :is="section.component"
+        v-bind="sectionProps[section.path]"
+      />
     </ContentContainer>
   </div>
 </template>
 
-<script>
+<script setup>
 import ContentContainer from '@/components/ContentContainer/ContentContainer.vue'
-import homeSection from '@/data/home/home-section'
-import release from '@/data/release'
-import view from '@/mixins/view'
+import homeSections from '@/data/home/home-section'
+import releases from '@/data/release'
 
-/**
- * The home page view.
- */
-export default {
-  name: 'TheHomeView',
-  components: {
-    ContentContainer,
-  },
-  mixins: [view],
-  /**
-   * $options.homeSection
-   */
-  homeSection,
-  data() {
-    return {
-      albums: release.albums,
-      singles: release.singles,
-    }
-  },
+const sectionProps = {
+  music: { releases: releases.albums },
 }
 </script>

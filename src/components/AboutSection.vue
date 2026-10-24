@@ -3,7 +3,7 @@
     <div class="image-container">
       <picture>
         <source
-          v-for="(srcset, format) in $options.mePhoto.sources"
+          v-for="(srcset, format) in mePhoto.sources"
           :key="format"
           :type="`image/${format}`"
           :srcset="srcset"
@@ -12,7 +12,7 @@
         <img
           id="me"
           loading="lazy"
-          :src="$options.mePhoto.img.src"
+          :src="mePhoto.img.src"
           alt="xRGB"
         />
       </picture>
@@ -26,10 +26,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import mePhoto from '@/assets/me.png?w=640;1166&format=avif;webp;jpg&as=picture'
-
-export default { name: 'AboutSection', mePhoto }
 </script>
 
 <style scoped lang="scss">

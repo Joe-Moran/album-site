@@ -17,48 +17,27 @@
     </div>
     <div class="icon-container">
       <FontAwesomeIcon
-        :icon="$options.externalLinkIcon"
+        :icon="faExternalLinkAlt"
         class="external-link-icon"
       />
     </div>
   </a>
 </template>
 
-<script>
+<script setup>
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { computed } from 'vue'
 
-/**
- * A link to a streaming service.
- * Mostly styling with frequent components.
- */
-export default {
-  name: 'StreamLink',
-  components: { FontAwesomeIcon },
-  props: {
-    /**
-     * The icon of the link.
-     */
-    icon: { type: String, required: true },
+const props = defineProps({
+  /** File name of the icon in assets/streaming. */
+  icon: { type: String, required: true },
+  href: { type: String, required: true },
+})
 
-    /**
-     * The href for the link.
-     */
-    href: { type: String, required: true },
-  },
-  /**
-   * this.$options.externalLinkIcons
-   */
-  externalLinkIcon: faExternalLinkAlt,
-  data() {
-    return {}
-  },
-  computed: {
-    iconSource() {
-      return new URL(`../assets/streaming/${this.icon}`, import.meta.url).href
-    },
-  },
-}
+const iconSource = computed(
+  () => new URL(`../assets/streaming/${props.icon}`, import.meta.url).href
+)
 </script>
 
 <style lang="scss" scoped>

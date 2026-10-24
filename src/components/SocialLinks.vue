@@ -16,17 +16,13 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'SocialLinks',
-  props: {
-    links: { type: Array, required: true },
-  },
-  methods: {
-    logoSource(logoPath) {
-      return new URL(`../assets/social-media/${logoPath}`, import.meta.url).href
-    },
-  },
+<script setup>
+defineProps({
+  links: { type: Array, required: true },
+})
+
+function logoSource(logoPath) {
+  return new URL(`../assets/social-media/${logoPath}`, import.meta.url).href
 }
 </script>
 

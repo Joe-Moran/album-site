@@ -1,41 +1,26 @@
 <template>
   <ul class="releases">
     <li
-      v-for="release in $options.releases.albums"
-      :key="release.name"
+      v-for="release in releases"
+      :key="release.title"
       class="release-container"
     >
       <ReleaseCard
-        :loading="release.loading"
         :title="release.title"
         :cover-path="release.coverPath"
         :streaming="release.streaming"
         :type="release.type"
-        :release-path="release.path ? `release${release.path}` : null"
-        @load="release.loading = false"
       />
     </li>
   </ul>
 </template>
 
-<script>
+<script setup>
 import ReleaseCard from './ReleaseCard.vue'
 
-import releases from '@/data/release'
-
-export default {
-  name: 'ReleaseList',
-  components: {
-    ReleaseCard,
-  },
-  /**
-   * this.$options.releases
-   */
-  releases,
-  data() {
-    return {}
-  },
-}
+defineProps({
+  releases: { type: Array, required: true },
+})
 </script>
 
 <style lang="scss" scoped>
