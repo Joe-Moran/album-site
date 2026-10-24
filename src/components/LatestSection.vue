@@ -11,13 +11,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'LatestSection',
-  components: {},
-}
-</script>
-
 <style lang="scss" scoped>
 @use '@/sass/global' as *;
 

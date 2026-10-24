@@ -2,7 +2,8 @@
   <div id="app">
     <TheNavigationHeader
       class="header"
-      :navigation-links="$options.routes"
+      :navigation-links="navigationLinks"
+      :social-links="xrgbSocialLinks"
     />
 
     <main id="main">
@@ -15,15 +16,12 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import TheNavigationHeader from './components/layout/TheNavigationHeader.vue'
+import xrgbSocialLinks from './data/links-social-media'
 import routes from './routing/routes'
 
-export default {
-  name: 'App',
-  components: { TheNavigationHeader },
-  routes: Object.values(routes),
-}
+const navigationLinks = Object.values(routes)
 </script>
 
 <style lang="scss">

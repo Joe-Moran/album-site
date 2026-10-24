@@ -15,7 +15,6 @@
         :key="link.link"
       >
         <StreamLink
-          :id="title"
           :icon="link.icon"
           :href="link.link"
         >
@@ -26,28 +25,15 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import StreamLink from './StreamLink.vue'
 
-/**
- * Container for multiple stream links related to a specific release.
- */
-export default {
-  name: 'StreamLinks',
-  components: {
-    StreamLink,
-  },
-  props: {
-    /**
-     * The links and respective data for displaying links to streaming sites.
-     */
-    links: { type: Array, required: true },
-    overlay: { type: Boolean, required: true },
-    showFeature: { type: Boolean, default: false },
-    releasePath: { type: String, required: true },
-    reduce: { type: Boolean, default: false },
-  },
-}
+defineProps({
+  /** The streaming sites to link to, each with an icon, title, and link. */
+  links: { type: Array, required: true },
+  overlay: { type: Boolean, required: true },
+  showFeature: { type: Boolean, default: false },
+})
 </script>
 
 <style lang="scss" scoped>

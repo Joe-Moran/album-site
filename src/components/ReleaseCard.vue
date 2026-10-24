@@ -7,10 +7,7 @@
         :links="streaming"
         overlay
         class="release-stream-links overlay-release"
-        :release-path="releasePath"
-        reduce
       />
-      <div class="loading" />
       <button
         v-if="isMobile"
         type="button"
@@ -30,7 +27,6 @@
             loading="lazy"
             :src="coverPicture.img.src"
             :alt="coverImageAlt"
-            @load="$emit('load', true)"
           />
         </picture>
       </button>
@@ -46,16 +42,18 @@
           loading="lazy"
           :src="coverPicture.img.src"
           :alt="coverImageAlt"
-          @load="$emit('load', true)"
         />
       </picture>
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
+import { computed, ref } from 'vue'
+
 import StreamLinks from './StreamLinks.vue'
 
+import { useMediaQuery } from '@/composables/useMediaQuery'
 import globals from '@/globals'
 
 const coverPictures = import.meta.glob('../assets/{albums,singles}/*.jpg', {
@@ -64,55 +62,26 @@ const coverPictures = import.meta.glob('../assets/{albums,singles}/*.jpg', {
   query: { w: '480;960', format: 'avif;webp;jpg', as: 'picture' },
 })
 
-export default {
-  name: 'ReleaseCard',
-  components: {
-    StreamLinks,
-  },
-  props: {
-    loading: { type: Boolean, default: false },
-    title: { type: String, required: true },
-    coverPath: { type: String, required: true },
-    streaming: { type: Array, required: true },
-    type: { type: String, required: true },
-    releasePath: { type: String, required: true },
-  },
-  emits: ['load'],
-  data() {
-    return {
-      listenClick: false,
-      clientWidth: 1900,
-    }
-  },
-  computed: {
-    releaseAssetsPath() {
-      return this.type === 'album' ? 'albums' : 'singles'
-    },
-    isMobile() {
-      return this.clientWidth < globals.md
-    },
-    showStreaming() {
-      return (this.listenClick && this.isMobile) || !this.isMobile
-    },
-    coverPicture() {
-      return coverPictures[`../assets/${this.releaseAssetsPath}/${this.coverPath}`]
-    },
-    coverImageAlt() {
-      return `${this.title} Cover Art`
-    },
-  },
-  mounted() {
-    this.resizeHandler()
-    window.addEventListener('resize', this.resizeHandler)
-  },
-  methods: {
-    resizeHandler() {
-      this.clientWidth = document.body.clientWidth
-    },
-    toggleStreaming() {
-      this.listenClick = !this.listenClick
-    },
-  },
+const props = defineProps({
+  title: { type: String, required: true },
+  coverPath: { type: String, required: true },
+  streaming: { type: Array, required: true },
+  type: { type: String, required: true },
+})
+
+const isMobile = useMediaQuery(`(width < ${globals.md}px)`)
+const isStreamingRequested = ref(false)
+
+const showStreaming = computed(() => !isMobile.value || isStreamingRequested.value)
+const coverPicture = computed(() => {
+  const assetDirectory = props.type === 'album' ? 'albums' : 'singles'
+
+  return coverPictures[`../assets/${assetDirectory}/${props.coverPath}`]
+})
+const coverImageAlt = computed(() => `${props.title} Cover Art`)
+
+function toggleStreaming() {
+  isStreamingRequested.value = !isStreamingRequested.value
 }
 </script>
 
@@ -175,16 +144,6 @@ img {
   }
 }
 
-.loading {
-  // width: 350px;
-  // height: 350px;
-  width: 100%;
-  height: 100%;
-  background: $red-primary;
-  opacity: 0.5;
-  animation: blink infinite 1.2s ease-in-out;
-}
-
 .release {
   max-width: 700px;
 
@@ -202,19 +161,5 @@ h3 {
   color: #e1e1e1;
   text-transform: capitalize;
   border-bottom: 4px $blue-tertiary dotted;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 0.5;
-  }
-
-  50% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0.5;
-  }
 }
 </style>

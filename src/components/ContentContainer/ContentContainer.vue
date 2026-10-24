@@ -1,66 +1,19 @@
 <template>
   <article
     :id="title"
-    ref="userContent"
     class="content-container"
   >
     <h2>{{ title }}</h2>
 
-    <!-- @slot slot for content inside container -->
-    <slot name="default" />
+    <slot />
   </article>
 </template>
 
-<script>
-/**
- * A styled container for an entire block of content. Use for all releases, streaming embeds, etc.
- * @example albums, soundcloud embed links.
- */
-export default {
-  name: 'ContentContainer',
-  props: {
-    /**
-     * The title of the content block.
-     * Utilized for the article heading text and aria-attributes.
-     */
-    title: { type: String, required: true },
-
-    /**
-     * The scroll position of the user on the y-axis of the viewport.
-     */
-    scrollPosition: { type: Number, default: 0 },
-  },
-  emits: ['visible'],
-  data() {
-    return {
-      isVisible: false,
-    }
-  },
-  watch: {
-    scrollPosition() {
-      this.determineIfVisible()
-    },
-    isVisible(value) {
-      if (value) {
-        this.$emit('visible', this.title)
-      }
-    },
-  },
-  mounted() {
-    this.determineIfVisible()
-  },
-
-  methods: {
-    determineIfVisible() {
-      // TODO Intersection Observer
-      const container = this.$refs.userContent.getBoundingClientRect()
-      const windowHeight = window.innerHeight || document.documentElement.clientHeight
-      const { top } = container
-      const { bottom } = container
-      this.isVisible = top <= windowHeight / 2 && bottom > windowHeight / 2
-    },
-  },
-}
+<script setup>
+defineProps({
+  /** Heading text, also used as the article id for in-page links. */
+  title: { type: String, required: true },
+})
 </script>
 
 <style lang="scss" scoped>

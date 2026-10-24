@@ -24,8 +24,10 @@ exports[`./App.stories.js > Renders the Default story the same as its snapshot 1
             id="xrgb-container"
           >
             <svg
+              aria-label="xRGB"
               data-v-1aff4d7a=""
               id="Layer_1"
+              role="img"
               version="1.1"
               viewBox="0 0 624 202.8"
               x="0px"
@@ -176,7 +178,7 @@ exports[`./App.stories.js > Renders the Default story the same as its snapshot 1
                   data-v-38b7e236=""
                   href="#main"
                 >
-                   Skip to main content 
+                  Skip to main content
                 </a>
               </li>
               
@@ -297,8 +299,10 @@ exports[`./App.stories.js > Renders the Scrolling story the same as its snapshot
             id="xrgb-container"
           >
             <svg
+              aria-label="xRGB"
               data-v-1aff4d7a=""
               id="Layer_1"
+              role="img"
               version="1.1"
               viewBox="0 0 624 202.8"
               x="0px"
@@ -449,7 +453,7 @@ exports[`./App.stories.js > Renders the Scrolling story the same as its snapshot
                   data-v-38b7e236=""
                   href="#main"
                 >
-                   Skip to main content 
+                  Skip to main content
                 </a>
               </li>
               
@@ -608,7 +612,6 @@ exports[`./components/ContentContainer/ContentContainer.stories.js > Renders the
     >
       Example Title
     </h2>
-    <!-- @slot slot for content inside container -->
     
     
   </article>
@@ -695,129 +698,6 @@ exports[`./components/ReleaseCard.stories.js > Renders the Default story the sam
           
         </ul>
       </div>
-      <div
-        class="loading"
-        data-v-b79048ce=""
-      />
-      <picture
-        data-v-b79048ce=""
-      >
-        
-        <source
-          data-v-b79048ce=""
-          sizes="(max-width: 60rem) 90vw, 480px"
-          srcset="/@imagetools/b0a1d1bf502aca6eae70545b7b9441ad638fa0a2 480w, /@imagetools/3b25101021dc4be17187b710b3005daa319dada5 960w"
-          type="image/avif"
-        />
-        <source
-          data-v-b79048ce=""
-          sizes="(max-width: 60rem) 90vw, 480px"
-          srcset="/@imagetools/8360674e105bee9a81f1bf550e83350190402c73 480w, /@imagetools/bd834cb887eedcaae71905325651ee43cccdfa64 960w"
-          type="image/webp"
-        />
-        <source
-          data-v-b79048ce=""
-          sizes="(max-width: 60rem) 90vw, 480px"
-          srcset="/@imagetools/f895b81a7e897975d308b2b3bfd6af044163e51b 480w, /@imagetools/e08aa58342d30abf1fb79acfd12897d16626fd96 960w"
-          type="image/jpeg"
-        />
-        
-        <img
-          alt="Refraction Cover Art"
-          data-v-b79048ce=""
-          loading="lazy"
-          src="/@imagetools/e08aa58342d30abf1fb79acfd12897d16626fd96"
-        />
-      </picture>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`./components/ReleaseCard.stories.js > Renders the Loading story the same as its snapshot 1`] = `
-<div>
-  <div
-    class="release"
-    data-v-b79048ce=""
-  >
-    <h3
-      data-v-b79048ce=""
-    >
-      Refraction
-    </h3>
-    <div
-      class="cover"
-      data-v-b79048ce=""
-    >
-      <div
-        class="stream-links overlay release-stream-links overlay-release"
-        data-v-1f3db36c=""
-        data-v-b79048ce=""
-      >
-        <!--v-if-->
-        <ul
-          data-v-1f3db36c=""
-        >
-          
-          <li
-            data-v-1f3db36c=""
-          >
-            <a
-              class="stream-link"
-              data-v-1ae68a9e=""
-              data-v-1f3db36c=""
-              href="https://open.spotify.com"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <div
-                class="link-content"
-                data-v-1ae68a9e=""
-              >
-                <div
-                  class="streaming-icon"
-                  data-v-1ae68a9e=""
-                >
-                  <img
-                    alt=""
-                    data-v-1ae68a9e=""
-                    src="file:///src/assets/streaming/spotify.png"
-                  />
-                </div>
-                <!-- @slot The link text -->
-                
-                Spotify
-                
-              </div>
-              <div
-                class="icon-container"
-                data-v-1ae68a9e=""
-              >
-                <svg
-                  aria-hidden="true"
-                  class="svg-inline--fa fa-up-right-from-square external-link-icon"
-                  data-icon="up-right-from-square"
-                  data-prefix="fas"
-                  data-v-1ae68a9e=""
-                  role="img"
-                  viewBox="0 0 512 512"
-                >
-                  <path
-                    class=""
-                    d="M290.4 19.8C295.4 7.8 307.1 0 320 0L480 0c17.7 0 32 14.3 32 32l0 160c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9L400 157.3 246.6 310.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L354.7 112 297.4 54.6c-9.2-9.2-11.9-22.9-6.9-34.9zM0 176c0-44.2 35.8-80 80-80l80 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-80 0c-8.8 0-16 7.2-16 16l0 256c0 8.8 7.2 16 16 16l256 0c8.8 0 16-7.2 16-16l0-80c0-17.7 14.3-32 32-32s32 14.3 32 32l0 80c0 44.2-35.8 80-80 80L80 512c-44.2 0-80-35.8-80-80L0 176z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      <div
-        class="loading"
-        data-v-b79048ce=""
-      />
       <picture
         data-v-b79048ce=""
       >
@@ -1151,10 +1031,6 @@ exports[`./components/ReleaseList.stories.js > Renders the Default story the sam
               
             </ul>
           </div>
-          <div
-            class="loading"
-            data-v-b79048ce=""
-          />
           <picture
             data-v-b79048ce=""
           >
@@ -1477,8 +1353,10 @@ exports[`./components/icons/AnimatedIcon.stories.js > Renders the Default story 
     id="xrgb-container"
   >
     <svg
+      aria-label="xRGB"
       data-v-1aff4d7a=""
       id="Layer_1"
+      role="img"
       version="1.1"
       viewBox="0 0 624 202.8"
       x="0px"
@@ -1637,8 +1515,10 @@ exports[`./components/layout/TheNavigationHeader.stories.js > Renders the Defaul
           id="xrgb-container"
         >
           <svg
+            aria-label="xRGB"
             data-v-1aff4d7a=""
             id="Layer_1"
+            role="img"
             version="1.1"
             viewBox="0 0 624 202.8"
             x="0px"
@@ -1789,10 +1669,32 @@ exports[`./components/layout/TheNavigationHeader.stories.js > Renders the Defaul
                 data-v-38b7e236=""
                 href="#main"
               >
-                 Skip to main content 
+                Skip to main content
               </a>
             </li>
             
+            <li
+              data-v-38b7e236=""
+            >
+              <a
+                class=""
+                data-v-38b7e236=""
+                href="/"
+              >
+                home
+              </a>
+            </li>
+            <li
+              data-v-38b7e236=""
+            >
+              <a
+                class=""
+                data-v-38b7e236=""
+                href="/soundpacks"
+              >
+                soundpacks
+              </a>
+            </li>
             
           </ul>
         </nav>
@@ -1969,7 +1871,6 @@ exports[`./views/TheSoundpacksView.stories.js > Renders the Default story the sa
             >
               <span
                 data-v-99c37bfc=""
-                id="basic-button-text"
               >
                 
                  Download 

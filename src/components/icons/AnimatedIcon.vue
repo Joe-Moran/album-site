@@ -1,16 +1,14 @@
 <template>
   <div id="xrgb-container">
-    <Xrgb />
+    <XrgbLogo
+      role="img"
+      aria-label="xRGB"
+    />
   </div>
 </template>
 
-<script>
-import Xrgb from '@/assets/xrgb-logo.svg'
-
-export default {
-  name: 'AnimatedIcon',
-  components: { Xrgb },
-}
+<script setup>
+import XrgbLogo from '@/assets/xrgb-logo.svg'
 </script>
 
 <style lang="scss" scoped>

@@ -7,5 +7,5 @@ export default {
 }
 
 export const Default = {
-  args: { title: 'Example Title', scrollPosition: 20 },
+  args: { title: 'Example Title' },
 }

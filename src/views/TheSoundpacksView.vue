@@ -1,7 +1,7 @@
 <template>
   <div class="the-soundpacks-view">
     <div
-      v-for="(soundpack, index) in $options.soundpacks"
+      v-for="(soundpack, index) in soundpacks"
       :key="index"
       class="soundpack"
     >
@@ -10,14 +10,14 @@
         <div class="soundpack-introduction-cover-image">
           <picture>
             <source
-              v-for="(srcset, format) in $options.soundpackCoverImage.sources"
+              v-for="(srcset, format) in soundpackCoverImage.sources"
               :key="format"
               :type="`image/${format}`"
               :srcset="srcset"
               sizes="(max-width: 37.5rem) 90vw, 321px"
             />
             <img
-              :src="$options.soundpackCoverImage.img.src"
+              :src="soundpackCoverImage.img.src"
               alt="A blurred face, flooded with red and blue hues split down the middle.
             Text reads Refraction Sound Pack."
             />
@@ -115,31 +115,13 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import soundpackCoverImage from '@/assets/refraction sound pack.jpg?w=400;800&format=avif;webp;jpg&as=picture'
 import ButtonLink from '@/components/ButtonLink.vue'
 import soundpacks from '@/data/soundpack'
 
-/**
- * The soundpacks view, where users can download soundpacks.
- */
-export default {
-  name: 'TheSoundpacksView',
-  components: { ButtonLink },
-  props: {},
-  /**
-   * this.$options.soundpacks
-   */
-  soundpacks,
-  soundpackCoverImage,
-  data() {
-    return {}
-  },
-  methods: {
-    formatPatchCount(count) {
-      return `${count} ${count > 1 ? 'patches' : 'patch'}`
-    },
-  },
+function formatPatchCount(count) {
+  return `${count} ${count > 1 ? 'patches' : 'patch'}`
 }
 </script>
 

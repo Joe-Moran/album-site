@@ -2,22 +2,13 @@
 to: "src/<%= path %>/<%= name %>.vue"
 ---
 <template>
-
+  <div></div>
 </template>
 
-<script>
-export default {
-  name: '<%=name%>',
-  components: {},
-  props: {},
-  data() {
-    return {
+<script setup>
+defineProps({})
 
-    };
-  },
-};
+defineEmits([])
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

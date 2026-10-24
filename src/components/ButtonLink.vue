@@ -3,21 +3,9 @@
     target="_blank"
     rel="noopener noreferrer"
   >
-    <span id="basic-button-text"><slot /></span>
+    <span><slot /></span>
   </a>
 </template>
-
-<script>
-/**
- * A link that looks like a button, but slightly different?
- */
-export default {
-  name: 'ButtonLink',
-  components: {},
-
-  iconDimension: 32,
-}
-</script>
 
 <style lang="scss" scoped>
 @use '@/sass/global' as *;

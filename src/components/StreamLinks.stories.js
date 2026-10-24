@@ -15,7 +15,6 @@ export const Default = {
       { ...spotifyLink, link: `${spotifyLink.link}/3` },
     ],
     overlay: false,
-    releasePath: 'release/refraction',
     style: 'margin: 20px',
   },
 }
