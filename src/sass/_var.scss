@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $blue-primary: #00aeef;
 $blue-tertiary: #0631a2c7;
 
@@ -31,4 +33,4 @@ $font-family-list: "Source Sans Pro", sans-serif;
 $paragraph-line-height: 1.125rem;
 
 $bullet-size: .5rem;
-$bullet-margin-y: ($paragraph-line-height - $bullet-size) / 2;
+$bullet-margin-y: math.div($paragraph-line-height - $bullet-size, 2);

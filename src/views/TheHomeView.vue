@@ -1,6 +1,6 @@
 <template>
-  <!-- TODO: aria-labeledby=side nav link text -->
   <div class="home">
+    <!-- TODO: aria-labeledby=side nav link text -->
     <ContentContainer
       v-for="section in $options.homeSection"
       :key="section.path"

@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Storyshots Animated Icon Default 1`] = `
-<div
-  id="xrgb-container"
->
-  <!---->
-</div>
-`;

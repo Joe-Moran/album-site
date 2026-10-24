@@ -21,5 +21,5 @@ export default {
  */
 
 /**
- * @typedef { import('vue/types/umd').Component } Component
+ * @typedef { import('vue').Component } Component
  */

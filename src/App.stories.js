@@ -1,32 +1,12 @@
-import { action } from '@storybook/addon-actions';
 import App from '@/App.vue';
 
 export default {
   title: 'App',
-  excludeStories: /.*Data$/,
+  component: App,
 };
 
-export const actionsData = {
-  onClick: action('link click'),
+export const Default = {};
+
+export const Scrolling = {
+  args: { isScrolling: true },
 };
-
-const template = '<app />';
-const templateScrolling = "<app :isScrolling='true' />";
-
-export const Default = () => ({
-  components: {
-    App,
-  },
-  template,
-  props: {},
-  methods: actionsData,
-});
-
-export const Scrolling = () => ({
-  components: {
-    App,
-  },
-  template: templateScrolling,
-  props: {},
-  methods: actionsData,
-});

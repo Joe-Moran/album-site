@@ -12,11 +12,10 @@
         class="release-stream-links overlay-release"
         :release-path="releasePath"
         reduce
-        @click="listenClick = false"
       />
       <div class="loading" />
       <img
-        :src="require('../assets/' + releaseAssetsPath + '/' + coverPath)"
+        :src="coverImageSource"
         :alt="coverImageAlt"
         @load="$emit('load', true)"
       >
@@ -41,6 +40,7 @@ export default {
     type: { type: String, required: true },
     releasePath: { type: String, required: true },
   },
+  emits: ['load'],
   data() {
     return {
       listenClick: false,
@@ -56,6 +56,9 @@ export default {
     },
     showStreaming() {
       return (this.listenClick && this.isMobile) || !this.isMobile;
+    },
+    coverImageSource() {
+      return new URL(`../assets/${this.releaseAssetsPath}/${this.coverPath}`, import.meta.url).href;
     },
     coverImageAlt() {
       return `${this.title} Cover Art`;

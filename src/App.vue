@@ -6,9 +6,11 @@
     />
 
     <main id="main">
-      <transition name="fade">
-        <router-view />
-      </transition>
+      <router-view v-slot="{ Component }">
+        <transition name="fade">
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </main>
   </div>
 </template>
@@ -66,9 +68,8 @@ html {
   transition: opacity 0.5s;
 }
 
-.fade-enter,
-.fade-leave-to,
-.fade-leave-active /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
 

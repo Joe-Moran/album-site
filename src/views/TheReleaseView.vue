@@ -11,7 +11,6 @@
         :overlay="false"
         show-feature
         name="links"
-        @click="listenClick = false"
       >
         <div>{{ release.feature }}</div>
       </StreamLinks>

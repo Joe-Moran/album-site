@@ -1,49 +1,17 @@
-import {
-  action,
-} from '@storybook/addon-actions';
-
+import { fn } from 'storybook/test';
 import Link from './Link.vue';
 
 export default {
   title: 'Link',
-  excludeStories: /.*Data$/,
+  component: Link,
+  args: {
+    link: { path: 'latest', label: 'The Latest' },
+    onClick: fn(),
+  },
 };
 
-export const actionsData = {
-  onClick: action('link click'),
+export const Default = {};
+
+export const Selected = {
+  args: { selected: true },
 };
-
-const linkTemplate = "<Link :link='linkObj' @click='onClick'></Link>";
-const linkSelectedTemplate = "<Link :link='linkObj' selected @click='onClick'></Link>";
-
-export const Default = () => ({
-  components: {
-    Link,
-  },
-  template: linkTemplate,
-  props: {
-    linkObj: {
-      default: () => ({
-        path: 'latest',
-        label: 'The Latest',
-      }),
-    },
-  },
-  methods: actionsData,
-});
-
-export const Selected = () => ({
-  components: {
-    Link,
-  },
-  template: linkSelectedTemplate,
-  props: {
-    linkObj: {
-      default: () => ({
-        path: 'latest',
-        label: 'The Latest',
-      }),
-    },
-  },
-  methods: actionsData,
-});

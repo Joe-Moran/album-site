@@ -16,7 +16,7 @@ describe.skip('ContentContainer.vue', () => {
     * Setup
     */
   beforeEach(() => {
-    wrapper = render(ContentContainer, { propsData: defaultProps, slots: {} });
+    wrapper = render(ContentContainer, { props: defaultProps, slots: {} });
     contentContainer = wrapper.getBy(); // FILL IN HERE
   });
 

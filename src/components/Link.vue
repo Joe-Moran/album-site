@@ -1,8 +1,7 @@
 <template>
-  <div :class="{ selected: selected }">
+  <div :class="{ selected }">
     <router-link
-      :to="'#' + link.path"
-      append
+      :to="{ hash: `#${link.path}` }"
     >
       {{ link.label }}
     </router-link>

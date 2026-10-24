@@ -11,6 +11,9 @@ on:
   pull_request:
     branches: [ master ]
 
+permissions:
+  contents: read
+
 jobs:
   build:
 
@@ -18,12 +21,12 @@ jobs:
 
     steps:
     - name: checkout current repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
-    - name: Use Node.js 14.x
-      uses: actions/setup-node@v2
+    - name: Use Node.js 22.x
+      uses: actions/setup-node@v4
       with:
-        node-version: 14.x
+        node-version: 22.x
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present

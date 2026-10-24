@@ -6,9 +6,10 @@
       :key="link.href"
       :href="link.href"
       target="_blank"
+      rel="noopener noreferrer"
     >
       <img
-        :src="require(`../assets/social-media/${link.logoPath}`)"
+        :src="logoSource(link.logoPath)"
         :alt="link.label"
       >
     </a>
@@ -20,6 +21,11 @@ export default {
   name: 'SocialLinks',
   props: {
     links: { type: Array, required: true },
+  },
+  methods: {
+    logoSource(logoPath) {
+      return new URL(`../assets/social-media/${logoPath}`, import.meta.url).href;
+    },
   },
 };
 </script>

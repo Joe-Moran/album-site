@@ -1,36 +1,17 @@
 import StreamLinks from './StreamLinks.vue';
 
+const spotifyLink = { icon: 'spotify.png', title: 'Spotify', link: 'https://open.spotify.com' };
+
 export default {
   title: 'Stream Links',
-  excludeStories: /.*Data$/,
+  component: StreamLinks,
 };
 
-const template = "<StreamLinks :links='linkData' style='margin: 20px' open> </StreamLinks>";
-
-export const Default = () => ({
-  components: {
-    StreamLinks,
+export const Default = {
+  args: {
+    links: [spotifyLink, { ...spotifyLink, link: `${spotifyLink.link}/2` }, { ...spotifyLink, link: `${spotifyLink.link}/3` }],
+    overlay: false,
+    releasePath: 'release/refraction',
+    style: 'margin: 20px',
   },
-  template,
-  data() {
-    return {
-      linkData: [
-        {
-          iconPath: 'Icon awesome-spotify.png',
-          title: 'Spotify',
-          link: 'joe.com',
-        },
-        {
-          iconPath: 'Icon awesome-spotify.png',
-          title: 'Spotify',
-          link: 'joe.com',
-        },
-        {
-          iconPath: 'Icon awesome-spotify.png',
-          title: 'Spotify',
-          link: 'joe.com',
-        },
-      ],
-    };
-  },
-});
+};

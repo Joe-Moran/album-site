@@ -5,7 +5,7 @@ const TheSoundpacksView = () => import('@/views/TheSoundpacksView.vue');
  * The home page route.
  */
 const home = {
-  path: '',
+  path: '/',
   name: 'home',
   component: TheHomeView,
 };

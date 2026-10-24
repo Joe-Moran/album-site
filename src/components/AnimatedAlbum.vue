@@ -6,8 +6,8 @@
     >
       <MeImage
         v-show="
-          (!isMobile && index === section) ||
-            (isMobile && index === gyroSection)
+          (!isMobile && index === section)
+            || (isMobile && index === gyroSection)
         "
         :image-source="image"
       />

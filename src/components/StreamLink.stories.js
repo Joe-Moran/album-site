@@ -1,32 +1,21 @@
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import StreamLink from './StreamLink.vue';
 
-/**
- * Setup
- */
 export default {
   title: 'Links/StreamLink',
   id: 'stream-link',
   component: StreamLink,
-  subcomponents: { FontAwesomeIcon },
-  argTypes: {},
+  render: (args) => ({
+    components: { StreamLink },
+    setup() {
+      return { args };
+    },
+    template: '<StreamLink v-bind="args">Spotify</StreamLink>',
+  }),
 };
 
-/**
- * Template
- */
-const Template = (args, { argTypes }) => ({
-  components: { StreamLink },
-  props: Object.keys(argTypes),
-  template: '<StreamLink> v-bind="$props"></StreamLink>',
-});
-
-/**
- * Stories
- */
-export const streamLink = Template.bind({});
-streamLink.args = {
-  icon: '',
-  title: 'Youtube',
-  link: 'youtube.com',
+export const streamLink = {
+  args: {
+    icon: 'spotify.png',
+    href: 'https://open.spotify.com',
+  },
 };

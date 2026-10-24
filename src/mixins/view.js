@@ -5,6 +5,7 @@ export default {
       default: 0,
     },
   },
+  emits: ['newContent'],
   data() {
     return {
       visibleContent: null,

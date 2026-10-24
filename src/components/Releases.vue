@@ -11,7 +11,7 @@
         :cover-path="release.coverPath"
         :streaming="release.streaming"
         :type="release.type"
-        :release-path="release.path ? 'release' + release.path : null"
+        :release-path="release.path ? `release${release.path}` : null"
         @load="release.loading = false"
       />
     </li>
@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import Release from './Release.vue';
 import releases from '@/data/release';
+import Release from './Release.vue';
 
 export default {
   name: 'Releases',

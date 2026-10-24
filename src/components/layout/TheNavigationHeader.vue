@@ -12,11 +12,11 @@
               >Skip to main content</a>
             </li>
             <li
-              v-for="{name} in navigationLinks"
+              v-for="{ name } in navigationLinks"
               :key="name"
             >
               <router-link
-                :to="{name}"
+                :to="{ name }"
               >
                 {{ name }}
               </router-link>
@@ -85,7 +85,7 @@ export default {
   .xrgb-logo {
     display: flex;
 
-    ::v-deep svg {
+    :deep(svg) {
       max-height: 1.875rem;
     }
   }

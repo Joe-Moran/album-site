@@ -3,7 +3,7 @@
     <div class="image-container">
       <img
         id="me"
-        :src="require('../assets/me.png')"
+        :src="$options.mePhoto"
       >
     </div>
     <p>
@@ -17,7 +17,9 @@
 </template>
 
 <script>
-export default { name: 'About' };
+import mePhoto from '../assets/me.png';
+
+export default { name: 'About', mePhoto };
 </script>
 
 <style scoped lang="scss">
