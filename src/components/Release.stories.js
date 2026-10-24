@@ -7,7 +7,7 @@ export default {
   args: {
     title: 'Refraction',
     coverPath: 'Refraction.jpg',
-    streaming: [{ icon: '' }],
+    streaming: [{ icon: 'spotify.png', title: 'Spotify', link: 'https://open.spotify.com' }],
     type: 'album',
     releasePath: 'release/refraction',
     loading: false,

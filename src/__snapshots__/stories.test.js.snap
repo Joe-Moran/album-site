@@ -910,6 +910,7 @@ exports[`./components/Release.stories.js > Renders the Default story the same as
               class="stream-link"
               data-v-1ae68a9e=""
               data-v-1f3db36c=""
+              href="https://open.spotify.com"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -924,12 +925,12 @@ exports[`./components/Release.stories.js > Renders the Default story the same as
                   <img
                     alt=""
                     data-v-1ae68a9e=""
-                    src="file:///Users/joemoran/Development/album-site/src/components/undefined"
+                    src="file:///src/assets/streaming/spotify.png"
                   />
                 </div>
                 <!-- @slot The link text -->
                 
-                
+                Spotify
                 
               </div>
               <div
@@ -1003,6 +1004,7 @@ exports[`./components/Release.stories.js > Renders the Loading story the same as
               class="stream-link"
               data-v-1ae68a9e=""
               data-v-1f3db36c=""
+              href="https://open.spotify.com"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -1017,12 +1019,12 @@ exports[`./components/Release.stories.js > Renders the Loading story the same as
                   <img
                     alt=""
                     data-v-1ae68a9e=""
-                    src="file:///Users/joemoran/Development/album-site/src/components/undefined"
+                    src="file:///src/assets/streaming/spotify.png"
                   />
                 </div>
                 <!-- @slot The link text -->
                 
-                
+                Spotify
                 
               </div>
               <div
