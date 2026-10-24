@@ -1,31 +1,32 @@
-import { render } from '@testing-library/vue';
-import ContentContainer from '@/components/ContentContainer/ContentContainer.vue';
+import { render } from '@testing-library/vue'
+
+import ContentContainer from '@/components/ContentContainer/ContentContainer.vue'
 
 /**
  * @todo
  */
 describe.skip('ContentContainer.vue', () => {
   /**
-    * Variables
-    */
-  const defaultProps = {};
-  let wrapper;
-  let contentContainer;
+   * Variables
+   */
+  const defaultProps = {}
+  let wrapper
+  let contentContainer
 
   /**
-    * Setup
-    */
+   * Setup
+   */
   beforeEach(() => {
-    wrapper = render(ContentContainer, { props: defaultProps, slots: {} });
-    contentContainer = wrapper.getBy(); // FILL IN HERE
-  });
+    wrapper = render(ContentContainer, { props: defaultProps, slots: {} })
+    contentContainer = wrapper.getBy() // FILL IN HERE
+  })
 
   afterEach(() => {
-    wrapper.unmount();
-    contentContainer = null;
-  });
+    wrapper.unmount()
+    contentContainer = null
+  })
 
   it('Renders', () => {
-    expect(contentContainer).toBeInTheDocument();
-  });
-});
+    expect(contentContainer).toBeInTheDocument()
+  })
+})

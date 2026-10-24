@@ -12,14 +12,16 @@
             :src="$options.soundpackCoverImage"
             alt="A blurred face, flooded with red and blue hues split down the middle.
             Text reads Refraction Sound Pack."
-          >
+          />
         </div>
         <div class="soundpack-introduction-summary-and-links">
           <div class="soundpack-introduction-summary">
+            <!-- prettier-ignore -->
             <p>
               Synth leads, sounds, and textures designed for my album
               <i class="italic">Refraction</i>.
             </p>
+            <!-- prettier-ignore -->
             <p>
               Requires <strong class="bold">Prophet REV2</strong>,
               <strong class="bold">Omnisphere 2</strong>,
@@ -57,9 +59,7 @@
                 class="soundpack-device-patch"
               >
                 <div class="soundpack-device-patch-content">
-                  <p>
-                    {{ patch.category }} - {{ formatPatchCount(patch.patchCount) }}
-                  </p>
+                  <p>{{ patch.category }} - {{ formatPatchCount(patch.patchCount) }}</p>
                   <p
                     v-if="patch.description"
                     class="soundpack-device-patch-description"
@@ -107,9 +107,9 @@
 </template>
 
 <script>
-import soundpacks from '@/data/soundpack';
-import ButtonLink from '@/components/ButtonLink.vue';
-import soundpackCoverImage from '@/assets/refraction sound pack.jpg';
+import soundpackCoverImage from '@/assets/refraction sound pack.jpg'
+import ButtonLink from '@/components/ButtonLink.vue'
+import soundpacks from '@/data/soundpack'
 
 /**
  * The soundpacks view, where users can download soundpacks.
@@ -124,23 +124,21 @@ export default {
   soundpacks,
   soundpackCoverImage,
   data() {
-    return {
-
-    };
+    return {}
   },
   methods: {
     formatPatchCount(count) {
-      return `${count} ${count > 1 ? 'patches' : 'patch'}`;
+      return `${count} ${count > 1 ? 'patches' : 'patch'}`
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "@/sass/global";
+@import '@/sass/global';
 
 .the-soundpacks-view {
-  color: white;
+  color: #fff;
 
   h1 {
     margin-bottom: 3.5rem;
@@ -186,7 +184,7 @@ export default {
 
   &:hover,
   &:focus {
-    color: white;
+    color: #fff;
   }
 }
 
@@ -229,5 +227,4 @@ export default {
     max-width: 70ch;
   }
 }
-
 </style>

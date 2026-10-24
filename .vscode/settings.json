@@ -1,0 +1,22 @@
+{
+  "cssrem.rootFontSize": 16, // allows for dynamic font-size using `rem` values for screen-reader magnification
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "editor.renderFinalNewline": "on",
+  "editor.rulers": [120],
+  "editor.tabSize": 2,
+  "files.exclude": {
+    "node_modules": true
+  },
+  "stylelint.packageManager": "npm",
+  "stylelint.validate": ["vue", "scss"],
+
+  "prettier.useEditorConfig": true,
+  "testing.automaticallyOpenPeekView": "never",
+  "todo-tree.tree.scanMode": "workspace only"
+}

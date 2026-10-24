@@ -34,50 +34,50 @@ export default {
   data() {
     return {
       isVisible: false,
-    };
+    }
   },
   watch: {
     scrollPosition() {
-      this.determineIfVisible();
+      this.determineIfVisible()
     },
     isVisible(value) {
       if (value) {
-        this.$emit('visible', this.title);
+        this.$emit('visible', this.title)
       }
     },
+  },
+  mounted() {
+    this.determineIfVisible()
   },
 
   methods: {
     determineIfVisible() {
       // TODO Intersection Observer
-      const container = this.$refs.userContent.getBoundingClientRect();
-      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-      const { top } = container;
-      const { bottom } = container;
-      this.isVisible = top <= windowHeight / 2 && bottom > windowHeight / 2;
+      const container = this.$refs.userContent.getBoundingClientRect()
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight
+      const { top } = container
+      const { bottom } = container
+      this.isVisible = top <= windowHeight / 2 && bottom > windowHeight / 2
     },
   },
-  mounted() {
-    this.determineIfVisible();
-  },
-};
+}
 </script>
 
 <style lang="scss" scoped>
 @import '@/sass/global';
 
 .content-container {
-  margin-bottom: 4rem;
   padding: 1.2rem;
+  margin-bottom: 4rem;
 }
 
 h2 {
+  padding: 0.2rem 0;
   margin-bottom: 3.5rem;
-  font-family: 'Lato', sans-serif;
+  font-family: Lato, sans-serif;
+  font-size: 2rem;
   color: #e1e1e1;
   text-transform: capitalize;
-  font-size: 2rem;
   border-bottom: $red-primary solid;
-  padding: 0.2rem 0;
 }
 </style>

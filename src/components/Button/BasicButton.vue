@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 /**
  * A very basic button, styled specifically for this site.
  */
@@ -19,11 +18,11 @@ export default {
     appendColor: { type: String, default: 'orange' },
   },
   iconDimension: 32,
-};
+}
 </script>
 
 <style lang="scss" scoped>
-  @import "@/sass/global";
+@import '@/sass/global';
 
 $icon-margin: 0.9375rem;
 
@@ -39,7 +38,7 @@ button {
   font-family: $font-family-heading;
   font-size: 1.25rem;
   font-weight: bold;
-  line-height: 1.5rem;
+  line-height: 1.2;
   color: $red-primary;
   text-transform: uppercase;
   background: transparent;
@@ -47,5 +46,4 @@ button {
   border-radius: 0.3125rem;
   transition: box-shadow ease-in-out 400ms;
 }
-
 </style>

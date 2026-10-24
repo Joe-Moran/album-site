@@ -1,5 +1,4 @@
 export default {
-
   /**
    * Builds a SoundpackDevice.
    *
@@ -8,9 +7,9 @@ export default {
    * @returns {SoundpackDevice}
    */
   build(title, patches) {
-    return { title, patches };
+    return { title, patches }
   },
-};
+}
 
 /**
  * @typedef {object} SoundpackDevice A device (plugin, hardware synthesizer, etc.)

@@ -1,3 +1,5 @@
-"*.{js,jsx,vue,html}":
-  - "eslint --fix"
-  - "vitest related --run"
+'*.{js,jsx,vue,html}':
+  - 'npm run lint:eslint:file'
+  - 'npm run lint:style:file'
+  - 'npm run format:prettier:file'
+  - 'npm run test:file'

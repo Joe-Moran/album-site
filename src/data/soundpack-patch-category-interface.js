@@ -7,9 +7,9 @@ export default {
    * @returns {PatchCategory}
    */
   build(category, patchCount = 1, description = null) {
-    return { category, patchCount, description };
+    return { category, patchCount, description }
   },
-};
+}
 
 /**
  * @typedef PatchCategory A category, or grouping, of patches with additional details

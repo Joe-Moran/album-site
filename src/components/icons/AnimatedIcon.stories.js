@@ -1,8 +1,8 @@
-import AnimatedIcon from './AnimatedIcon.vue';
+import AnimatedIcon from './AnimatedIcon.vue'
 
 export default {
   title: 'Animated Icon',
   component: AnimatedIcon,
-};
+}
 
-export const Default = {};
+export const Default = {}

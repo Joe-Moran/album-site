@@ -11,7 +11,7 @@
       <img
         :src="logoSource(link.logoPath)"
         :alt="link.label"
-      >
+      />
     </a>
   </div>
 </template>
@@ -24,14 +24,13 @@ export default {
   },
   methods: {
     logoSource(logoPath) {
-      return new URL(`../assets/social-media/${logoPath}`, import.meta.url).href;
+      return new URL(`../assets/social-media/${logoPath}`, import.meta.url).href
     },
   },
-};
+}
 </script>
 
 <style scoped lang="scss">
-
 .social-links {
   display: flex;
   align-items: center;
@@ -39,8 +38,8 @@ export default {
 
 a {
   display: block;
-  padding: .3125rem;
   width: 1.5rem;
+  padding: 0.3125rem;
 }
 
 img {
@@ -49,8 +48,8 @@ img {
 }
 
 img:hover {
-  filter: blur(0.5px);
   opacity: 1;
+  filter: blur(0.5px);
   transform: rotate(-34deg);
 }
 </style>

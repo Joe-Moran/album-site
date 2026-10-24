@@ -7,4 +7,4 @@ export default {
   md: 960,
   lg: 1264,
   xl: 1904,
-};
+}

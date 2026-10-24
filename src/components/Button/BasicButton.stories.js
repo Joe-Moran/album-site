@@ -1,4 +1,4 @@
-import BasicButton from './BasicButton.vue';
+import BasicButton from './BasicButton.vue'
 
 export default {
   title: 'Components/Basic Button',
@@ -6,12 +6,13 @@ export default {
   render: (args) => ({
     components: { BasicButton },
     setup() {
-      return { args };
+      return { args }
     },
-    template: '<BasicButton :prepend-icon="args.prependIcon" :append-icon="args.appendIcon">{{ args.text }}</BasicButton>',
+    template:
+      '<BasicButton :prepend-icon="args.prependIcon" :append-icon="args.appendIcon">{{ args.text }}</BasicButton>',
   }),
-};
+}
 
 export const Primary = {
   args: { text: 'Button' },
-};
+}

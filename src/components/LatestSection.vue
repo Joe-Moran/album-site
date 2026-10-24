@@ -1,14 +1,21 @@
 <template>
   <div class="latest">
-    <iframe style=" width: 100%; height: 120px;border: 0;" src="https://bandcamp.com/EmbeddedPlayer/track=1548797469/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://xrgb.bandcamp.com/track/prequinox-drive">Prequinox Drive by xRGB</a></iframe>
+    <iframe
+      title="Prequinox Drive by xRGB on Bandcamp"
+      style="width: 100%; height: 120px; border: 0"
+      src="https://bandcamp.com/EmbeddedPlayer/track=1548797469/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+      seamless
+    >
+      <a href="https://xrgb.bandcamp.com/track/prequinox-drive">Prequinox Drive by xRGB</a>
+    </iframe>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Latest',
+  name: 'LatestSection',
   components: {},
-};
+}
 </script>
 
 <style lang="scss" scoped>

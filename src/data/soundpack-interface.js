@@ -10,10 +10,13 @@ export default {
    */
   build(title, demoPlayerEmbedPath, devices, note) {
     return {
-      title, demoPlayerEmbedPath, devices, note,
-    };
+      title,
+      demoPlayerEmbedPath,
+      devices,
+      note,
+    }
   },
-};
+}
 
 /**
  * The data for a single soundpack.

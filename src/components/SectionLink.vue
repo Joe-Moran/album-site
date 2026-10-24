@@ -1,8 +1,6 @@
 <template>
   <div :class="{ selected }">
-    <router-link
-      :to="{ hash: `#${link.path}` }"
-    >
+    <router-link :to="{ hash: `#${link.path}` }">
       {{ link.label }}
     </router-link>
   </div>
@@ -10,24 +8,24 @@
 
 <script>
 export default {
-  name: 'Link',
+  name: 'SectionLink',
   props: {
     link: { type: Object, required: true },
     selected: { type: Boolean, required: false },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../sass/global";
+@import '../sass/global';
 
 $max: 240px;
 
 a {
   position: relative;
-  font-family: "Consolas" sans-serif;
+  font-family: Consolas, sans-serif;
   font-size: 1.375rem;
-  color: white;
+  color: #fff;
   text-decoration: none;
   transition: color 350ms ease-in-out;
 
@@ -44,7 +42,7 @@ a {
   display: block;
   width: 132%;
   height: 20pt;
-  content: " ";
+  content: ' ';
   background: #0631a2c7;
   animation: fade 200ms ease-in-out;
 }
