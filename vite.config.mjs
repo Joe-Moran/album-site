@@ -9,7 +9,18 @@ import svgLoader from 'vite-svg-loader'
 
 const markdownFields = new Set(['summary', 'note', 'text'])
 
-function renderMarkdownFields(data) {
+function transformContentField(key, value) {
+  if (value instanceof Date) {
+    return value.toISOString().slice(0, 10)
+  }
+  if (markdownFields.has(key) && typeof value === 'string') {
+    return marked.parse(value)
+  }
+
+  return value
+}
+
+function transformContent(data) {
   if (Array.isArray(data)) {
     return data
   }
@@ -17,9 +28,7 @@ function renderMarkdownFields(data) {
   return Object.fromEntries(
     Object.entries(data).map(([key, value]) => [
       key,
-      markdownFields.has(key) && typeof value === 'string'
-        ? marked.parse(value)
-        : value,
+      transformContentField(key, value),
     ])
   )
 }
@@ -29,7 +38,7 @@ export default defineConfig({
     vue(),
     svgLoader({ defaultImport: 'component', svgo: false }),
     imagetools({ include: /\.(jpe?g|png|webp|avif)\?(.+&)?as=picture(&|$)/ }),
-    yaml({ transform: renderMarkdownFields }),
+    yaml({ transform: transformContent }),
   ],
   resolve: {
     alias: {

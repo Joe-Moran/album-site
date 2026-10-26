@@ -20,6 +20,8 @@ content:
     filename: '{primary}.yml'
     view:
       primary: title
+      sort: releaseDate
+      order: desc
     fields:
       - name: title
         label: Title
@@ -31,6 +33,12 @@ content:
         required: true
         options:
           values: [album, single]
+      - name: releaseDate
+        label: Release date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
       - name: cover
         label: Cover image
         type: image
