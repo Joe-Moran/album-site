@@ -28,6 +28,7 @@ defineProps({
 .releases {
   display: flex;
   flex-wrap: wrap;
+  row-gap: 40px;
   justify-content: space-around;
   padding: 0;
 
