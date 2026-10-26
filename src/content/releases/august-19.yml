@@ -1,0 +1,10 @@
+title: August 19
+type: single
+cover: /images/August 19 Cover.jpg
+streaming:
+  - service: spotify
+    url: https://open.spotify.com/album/4ZYl00c2HEUv7hPLEmFkeq?si=pOahyrKtT5WxeaCE5IdJxg
+  - service: googlePlay
+    url: https://play.google.com/music/m/Byanps25qf6k7nrzv7sl3puw6dy?t=August_19_-_xRGB
+  - service: appleMusic
+    url: https://music.apple.com/us/album/august-19/1518419353?i=1518419354

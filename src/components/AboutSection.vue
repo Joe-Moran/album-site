@@ -3,7 +3,7 @@
     <div class="image-container">
       <picture>
         <source
-          v-for="(srcset, format) in mePhoto.sources"
+          v-for="(srcset, format) in photo.sources"
           :key="format"
           :type="`image/${format}`"
           :srcset="srcset"
@@ -12,22 +12,25 @@
         <img
           id="me"
           loading="lazy"
-          :src="mePhoto.img.src"
-          alt="xRGB"
+          :src="photo.img.src"
+          :alt="photoAlt"
         />
       </picture>
     </div>
-    <p>
-      xRGB is a MI-based multi-instrumentalist. Refraction is his debut album, and the result of
-      years of adequate agonizing. 11 sonic journal entries without the crutch of vocals. A restless
-      mixtape from a bedroom humanoid aching to get on a stage. Yes…HUMAN. More playing. Less
-      spacebar. More strumming. Less laptop.
-    </p>
+    <div
+      class="about-text"
+      v-html="text"
+    />
   </div>
 </template>
 
 <script setup>
-import mePhoto from '@/assets/me.png?w=640;1166&format=avif;webp;jpg&as=picture'
+defineProps({
+  photo: { type: Object, required: true },
+  photoAlt: { type: String, required: true },
+  /** Rendered HTML from the Markdown in about.yml. */
+  text: { type: String, required: true },
+})
 </script>
 
 <style scoped lang="scss">
@@ -46,10 +49,18 @@ import mePhoto from '@/assets/me.png?w=640;1166&format=avif;webp;jpg&as=picture'
   flex: 3 0 21.875rem;
 }
 
-p {
+.about-text {
   flex: 1 0 40ch;
   padding: 0 1rem;
-  margin: 0;
   color: #fff;
+
+  :deep(p) {
+    max-width: 70ch;
+    margin: 0;
+  }
+
+  :deep(p + p) {
+    margin-top: 1rem;
+  }
 }
 </style>

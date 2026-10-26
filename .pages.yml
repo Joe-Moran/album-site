@@ -1,0 +1,194 @@
+media:
+  input: src/assets/images
+  output: /images
+  categories: [image]
+
+content:
+  - name: releases
+    label: Releases
+    type: collection
+    path: src/content/releases
+    format: yaml
+    filename: '{primary}.yml'
+    view:
+      primary: title
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: type
+        label: Type
+        type: select
+        required: true
+        options:
+          values: [album, single]
+      - name: cover
+        label: Cover image
+        type: image
+        required: true
+      - name: streaming
+        label: Streaming links
+        type: object
+        list: true
+        fields:
+          - name: service
+            label: Service
+            type: select
+            required: true
+            options:
+              values: [bandcamp, spotify, appleMusic, soundcloud, googlePlay]
+          - name: url
+            label: Link
+            type: string
+            required: true
+
+  - name: soundpacks
+    label: Soundpacks
+    type: collection
+    path: src/content/soundpacks
+    format: yaml
+    filename: '{primary}.yml'
+    view:
+      primary: title
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: cover
+        label: Cover image
+        type: image
+        required: true
+      - name: coverAlt
+        label: Cover image description
+        type: string
+        required: true
+      - name: summary
+        label: Summary
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+      - name: download
+        label: Download file (in public/)
+        type: string
+        required: true
+      - name: devices
+        label: Devices
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Device
+            type: string
+            required: true
+          - name: patches
+            label: Patch categories
+            type: object
+            list: true
+            fields:
+              - name: category
+                label: Category
+                type: string
+                required: true
+              - name: count
+                label: Number of patches
+                type: number
+                required: true
+              - name: description
+                label: Description
+                type: string
+      - name: demos
+        label: Demo players
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Heading
+            type: string
+            required: true
+          - name: playerTitle
+            label: Player description (for screen readers)
+            type: string
+            required: true
+          - name: embedUrl
+            label: Embed URL
+            type: string
+            required: true
+      - name: note
+        label: Note from the author
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+
+  - name: latest
+    label: Latest
+    type: file
+    path: src/content/latest.yml
+    format: yaml
+    fields:
+      - name: title
+        label: Player description (for screen readers)
+        type: string
+        required: true
+      - name: embedUrl
+        label: Embed URL
+        type: string
+        required: true
+      - name: height
+        label: Player height (px)
+        type: number
+        required: true
+      - name: link
+        label: Fallback link
+        type: object
+        fields:
+          - name: label
+            label: Text
+            type: string
+            required: true
+          - name: url
+            label: URL
+            type: string
+            required: true
+
+  - name: about
+    label: About
+    type: file
+    path: src/content/about.yml
+    format: yaml
+    fields:
+      - name: photo
+        label: Photo
+        type: image
+        required: true
+      - name: photoAlt
+        label: Photo description
+        type: string
+        required: true
+      - name: text
+        label: Text
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+
+  - name: social-links
+    label: Social links
+    type: file
+    path: src/content/social-links.yml
+    format: yaml
+    list: true
+    fields:
+      - name: platform
+        label: Platform
+        type: select
+        required: true
+        options:
+          values: [bandcamp, soundcloud, instagram]
+      - name: url
+        label: URL
+        type: string
+        required: true

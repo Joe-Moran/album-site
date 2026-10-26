@@ -1,0 +1,10 @@
+title: Joint Pain
+type: single
+cover: /images/Joint Pain.jpg
+streaming:
+  - service: spotify
+    url: https://open.spotify.com/album/5XkVKJc6tfB2PUfm206PLX?si=jqMiRtauTUOmgZJ6Csv91g
+  - service: googlePlay
+    url: https://play.google.com/music/m/B43wgzroiq7h5z2i4dh5r3r24my?t=Joint_Pain_-_xRGB
+  - service: appleMusic
+    url: https://music.apple.com/us/album/joint-pain/1517331040?i=1517331044

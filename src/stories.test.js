@@ -4,6 +4,8 @@ import { createMemoryHistory, createRouter } from 'vue-router'
 
 import routes from './routing/routes'
 
+vi.mock('@/content', () => import('@/content/__fixtures__/content'))
+
 const storyModules = import.meta.glob('./**/*.stories.js', { eager: true })
 
 function createStoryRouter() {

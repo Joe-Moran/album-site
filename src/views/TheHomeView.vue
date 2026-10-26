@@ -16,10 +16,12 @@
 
 <script setup>
 import ContentContainer from '@/components/ContentContainer/ContentContainer.vue'
-import homeSections from '@/data/home/home-section'
-import releases from '@/data/release'
+import { getAbout, getLatest, getReleases } from '@/content'
+import homeSections from '@/routing/home-sections'
 
 const sectionProps = {
-  music: { releases: releases.albums },
+  latest: getLatest(),
+  music: { releases: getReleases().filter((release) => release.type === 'album') },
+  about: getAbout(),
 }
 </script>

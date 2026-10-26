@@ -1,6 +1,6 @@
 import SocialLinks from './SocialLinks.vue'
 
-import xrgbSocialLinks from '@/data/links-social-media'
+import { getSocialLinks } from '@/content'
 
 export default {
   title: 'Social Links',
@@ -8,5 +8,5 @@ export default {
 }
 
 export const Default = {
-  args: { links: xrgbSocialLinks },
+  args: { links: getSocialLinks() },
 }

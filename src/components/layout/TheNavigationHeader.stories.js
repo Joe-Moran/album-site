@@ -1,6 +1,6 @@
 import TheNavigationHeader from './TheNavigationHeader.vue'
 
-import xrgbSocialLinks from '@/data/links-social-media'
+import { getSocialLinks } from '@/content'
 import routes from '@/routing/routes'
 
 export default {
@@ -12,6 +12,6 @@ export default {
 export const Default = {
   args: {
     navigationLinks: Object.values(routes),
-    socialLinks: xrgbSocialLinks,
+    socialLinks: getSocialLinks(),
   },
 }

@@ -3,7 +3,7 @@
     <TheNavigationHeader
       class="header"
       :navigation-links="navigationLinks"
-      :social-links="xrgbSocialLinks"
+      :social-links="socialLinks"
     />
 
     <main id="main">
@@ -18,10 +18,11 @@
 
 <script setup>
 import TheNavigationHeader from './components/layout/TheNavigationHeader.vue'
-import xrgbSocialLinks from './data/links-social-media'
+import { getSocialLinks } from './content'
 import routes from './routing/routes'
 
 const navigationLinks = Object.values(routes)
+const socialLinks = getSocialLinks()
 </script>
 
 <style lang="scss">

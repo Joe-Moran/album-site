@@ -1,8 +1,8 @@
 <template>
   <div class="the-soundpacks-view">
     <div
-      v-for="(soundpack, index) in soundpacks"
-      :key="index"
+      v-for="soundpack in soundpacks"
+      :key="soundpack.title"
       class="soundpack"
     >
       <h1>{{ soundpack.title }}</h1>
@@ -10,37 +10,27 @@
         <div class="soundpack-introduction-cover-image">
           <picture>
             <source
-              v-for="(srcset, format) in soundpackCoverImage.sources"
+              v-for="(srcset, format) in soundpack.cover.sources"
               :key="format"
               :type="`image/${format}`"
               :srcset="srcset"
               sizes="(max-width: 37.5rem) 90vw, 321px"
             />
             <img
-              :src="soundpackCoverImage.img.src"
-              alt="A blurred face, flooded with red and blue hues split down the middle.
-            Text reads Refraction Sound Pack."
+              :src="soundpack.cover.img.src"
+              :alt="soundpack.coverAlt"
             />
           </picture>
         </div>
         <div class="soundpack-introduction-summary-and-links">
-          <div class="soundpack-introduction-summary">
-            <!-- prettier-ignore -->
-            <p>
-              Synth leads, sounds, and textures designed for my album
-              <i class="italic">Refraction</i>.
-            </p>
-            <!-- prettier-ignore -->
-            <p>
-              Requires <strong class="bold">Prophet REV2</strong>,
-              <strong class="bold">Omnisphere 2</strong>,
-              and/or <strong class="bold">Ableton Live</strong>.
-            </p>
-          </div>
+          <div
+            class="soundpack-introduction-summary"
+            v-html="soundpack.summary"
+          />
           <div class="soundpack-introduction-links">
             <ButtonLink
-              href="/Refraction Sound Pack.zip"
-              download="/Refraction Sound Pack.zip"
+              :href="soundpack.download"
+              :download="soundpack.download"
               class="download-button"
             >
               Download
@@ -53,8 +43,8 @@
         <h2>Details</h2>
         <div class="soundpack-devices">
           <article
-            v-for="(device, deviceIndex) in soundpack.devices"
-            :key="deviceIndex"
+            v-for="device in soundpack.devices"
+            :key="device.title"
             class="soundpack-device"
           >
             <h3 class="soundpack-device-title">
@@ -68,7 +58,7 @@
                 class="soundpack-device-patch"
               >
                 <div class="soundpack-device-patch-content">
-                  <p>{{ patch.category }} - {{ formatPatchCount(patch.patchCount) }}</p>
+                  <p>{{ patch.category }} - {{ formatPatchCount(patch.count) }}</p>
                   <p
                     v-if="patch.description"
                     class="soundpack-device-patch-description"
@@ -83,42 +73,37 @@
       </div>
       <div class="soundpack-demos">
         <h2>Demos</h2>
-        <h3>Prophet REV 2 Patches</h3>
-        <iframe
-          title="Soundcloud Player for Prophet REV 2 patches"
-          width="100%"
-          height="300"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1436441497&color=%237e4395&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-        />
-        <h3>Omnisphere Patches</h3>
-        <iframe
-          title="Soundcloud Player for Onnisphere patches"
-          width="100%"
-          height="300"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1276519099&color=%237e4395&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-        />
+        <template
+          v-for="demo in soundpack.demos"
+          :key="demo.embedUrl"
+        >
+          <h3>{{ demo.title }}</h3>
+          <iframe
+            :title="demo.playerTitle"
+            width="100%"
+            height="300"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            :src="demo.embedUrl"
+          />
+        </template>
       </div>
       <div class="soundpack-author-note">
         <h2>A Note From The Author</h2>
-        <div
-          class="soundpack-author-note-content"
-          v-html="soundpack.note"
-        />
+        <div class="soundpack-author-note-content">
+          <div v-html="soundpack.note" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import soundpackCoverImage from '@/assets/refraction sound pack.jpg?w=400;800&format=avif;webp;jpg&as=picture'
 import ButtonLink from '@/components/ButtonLink.vue'
-import soundpacks from '@/data/soundpack'
+import { getSoundpacks } from '@/content'
+
+const soundpacks = getSoundpacks()
 
 function formatPatchCount(count) {
   return `${count} ${count > 1 ? 'patches' : 'patch'}`
