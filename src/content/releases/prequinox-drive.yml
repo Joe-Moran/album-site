@@ -1,0 +1,12 @@
+title: Prequinox Drive
+type: single
+cover: /images/Cover art - Prequinox Drive.webp
+streaming:
+  - service: bandcamp
+    url: https://xrgb.bandcamp.com/track/prequinox-drive
+  - service: appleMusic
+    url: https://music.apple.com/us/album/prequinox-drive/1765863124?i=1765863126
+  - service: spotify
+    url: https://open.spotify.com/track/6fOBLVaen6D8ZCM8hx5cDp?si=2e802b5dbfdd4605
+  - service: googlePlay
+    url: https://music.youtube.com/watch?v=G93bQzrbbxY&si=8YhOh8o92YlCDvXD
