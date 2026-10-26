@@ -1,10 +1,11 @@
 import { getReleases } from './'
 
-it('Lists every album before any single', () => {
-  const types = getReleases().map((release) => release.type)
-  const albumsThenSingles = [
-    ...types.filter((type) => type === 'album'),
-    ...types.filter((type) => type === 'single'),
-  ]
-  expect(types).toEqual(albumsThenSingles)
+it('Lists releases newest first', () => {
+  const releaseDates = getReleases().map((release) => release.releaseDate)
+  expect(releaseDates).toEqual(releaseDates.toSorted().toReversed())
+})
+
+it('Loads release dates as YYYY-MM-DD strings', () => {
+  const releaseDates = getReleases().map((release) => release.releaseDate)
+  expect(releaseDates.every((releaseDate) => /^\d{4}-\d{2}-\d{2}$/.test(releaseDate))).toBe(true)
 })

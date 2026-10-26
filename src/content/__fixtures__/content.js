@@ -11,6 +11,7 @@ export function getReleases() {
     {
       title: 'Sample Album',
       type: 'album',
+      releaseDate: '2020-06-23',
       cover: samplePicture,
       streaming: [
         { icon: 'spotify.png', title: 'Spotify', link: 'https://open.spotify.com/album/sample' },
@@ -20,6 +21,7 @@ export function getReleases() {
     {
       title: 'Sample Single',
       type: 'single',
+      releaseDate: '2024-08-30',
       cover: samplePicture,
       streaming: [
         { icon: 'spotify.png', title: 'Spotify', link: 'https://open.spotify.com/track/sample' },

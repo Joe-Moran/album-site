@@ -3,6 +3,7 @@ import { releaseSchema } from './schema'
 const validRelease = {
   title: 'Refraction',
   type: 'album',
+  releaseDate: '2020-06-23',
   cover: '/images/Refraction.jpg',
   streaming: [{ service: 'spotify', url: 'https://open.spotify.com/album/example' }],
 }
@@ -42,4 +43,14 @@ it('Accepts a WebP cover', () => {
 
 it('Rejects a cover format the build cannot resize', () => {
   expect(issuePaths({ ...validRelease, cover: '/images/cover.gif' })).toEqual(['cover'])
+})
+
+it('Rejects a release date written in another format', () => {
+  expect(issuePaths({ ...validRelease, releaseDate: '23/06/2020' })).toEqual(['releaseDate'])
+})
+
+it('Rejects a release without a release date', () => {
+  const releaseWithoutDate = { ...validRelease }
+  delete releaseWithoutDate.releaseDate
+  expect(issuePaths(releaseWithoutDate)).toEqual(['releaseDate'])
 })

@@ -14,6 +14,7 @@ const imagePath = z
 export const releaseSchema = z.strictObject({
   title: text,
   type: z.enum(['album', 'single']),
+  releaseDate: z.iso.date('Use a YYYY-MM-DD release date, e.g. 2020-06-23'),
   cover: imagePath,
   streaming: z
     .array(
