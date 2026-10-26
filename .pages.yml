@@ -53,7 +53,7 @@ content:
             type: select
             required: true
             options:
-              values: [bandcamp, spotify, appleMusic, soundcloud, googlePlay]
+              values: [bandcamp, spotify, appleMusic, soundcloud, youtubeMusic]
           - name: url
             label: Link
             type: string

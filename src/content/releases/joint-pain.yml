@@ -5,7 +5,7 @@ cover: /images/Joint Pain.jpg
 streaming:
   - service: spotify
     url: https://open.spotify.com/album/5XkVKJc6tfB2PUfm206PLX?si=jqMiRtauTUOmgZJ6Csv91g
-  - service: googlePlay
-    url: https://play.google.com/music/m/B43wgzroiq7h5z2i4dh5r3r24my?t=Joint_Pain_-_xRGB
+  - service: youtubeMusic
+    url: https://music.youtube.com/playlist?list=OLAK5uy_kHRXkcIN0_37Z7_r6LSbC6h-zfBsYYq2w&si=_KOxQfDJPu5m0nP4
   - service: appleMusic
     url: https://music.apple.com/us/album/joint-pain/1517331040?i=1517331044

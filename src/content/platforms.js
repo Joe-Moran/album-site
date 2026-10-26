@@ -3,7 +3,7 @@ export const streamingServices = {
   bandcamp: { icon: 'bandcamp.png', title: 'Bandcamp' },
   spotify: { icon: 'spotify.png', title: 'Spotify' },
   appleMusic: { icon: 'applemusic.png', title: 'Apple Music' },
-  googlePlay: { icon: 'googleplay.png', title: 'Google Play Music' },
+  youtubeMusic: { icon: 'youtube-music.webp', title: 'Youtube Music' },
 }
 
 export const socialPlatforms = {
