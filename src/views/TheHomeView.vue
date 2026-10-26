@@ -21,7 +21,7 @@ import homeSections from '@/routing/home-sections'
 
 const sectionProps = {
   latest: getLatest(),
-  music: { releases: getReleases().filter((release) => release.type === 'album') },
+  music: { releases: getReleases() },
   about: getAbout(),
 }
 </script>

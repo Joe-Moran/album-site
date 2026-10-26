@@ -6,17 +6,23 @@ import socialLinks from './social-links.yml'
 
 const releaseFiles = import.meta.glob('./releases/*.yml', { eager: true, import: 'default' })
 const soundpackFiles = import.meta.glob('./soundpacks/*.yml', { eager: true, import: 'default' })
+const releaseTypeOrder = ['album', 'single']
 
 export function getReleases() {
-  return Object.values(releaseFiles).map((release) => ({
-    title: release.title,
-    type: release.type,
-    cover: pictureFor(release.cover),
-    streaming: release.streaming.map(({ service, url }) => ({
-      ...streamingServices[service],
-      link: url,
-    })),
-  }))
+  return Object.values(releaseFiles)
+    .toSorted(
+      (first, second) =>
+        releaseTypeOrder.indexOf(first.type) - releaseTypeOrder.indexOf(second.type)
+    )
+    .map((release) => ({
+      title: release.title,
+      type: release.type,
+      cover: pictureFor(release.cover),
+      streaming: release.streaming.map(({ service, url }) => ({
+        ...streamingServices[service],
+        link: url,
+      })),
+    }))
 }
 
 export function getSoundpacks() {
