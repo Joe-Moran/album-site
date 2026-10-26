@@ -7,9 +7,8 @@
     >
       <ReleaseCard
         :title="release.title"
-        :cover-path="release.coverPath"
+        :cover="release.cover"
         :streaming="release.streaming"
-        :type="release.type"
       />
     </li>
   </ul>

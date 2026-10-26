@@ -1,0 +1,6 @@
+- platform: bandcamp
+  url: https://xrgb.bandcamp.com/
+- platform: soundcloud
+  url: https://www.soundcloud.com/xrgbmusic
+- platform: instagram
+  url: https://www.instagram.com/xrgb_music

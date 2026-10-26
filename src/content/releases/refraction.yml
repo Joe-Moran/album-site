@@ -1,0 +1,14 @@
+title: Refraction
+type: album
+cover: /images/Refraction.jpg
+streaming:
+  - service: bandcamp
+    url: https://xrgb.bandcamp.com/album/refraction
+  - service: spotify
+    url: https://open.spotify.com/album/79mhGijQ34QP9qMnd5060T?si=dqX4gOdXRYK_P6V9Uhb02Q
+  - service: googlePlay
+    url: https://music.youtube.com/playlist?list=OLAK5uy_lS7C76SoLN6ZReXH3WkeUFwIQrbmrDLNo&feature=share
+  - service: appleMusic
+    url: https://music.apple.com/us/album/refraction/1518269881?uo=4
+  - service: soundcloud
+    url: https://soundcloud.com/xrgbmusic/sets/refraction

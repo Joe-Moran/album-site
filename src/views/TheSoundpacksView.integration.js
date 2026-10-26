@@ -2,6 +2,8 @@ import { render } from '@testing-library/vue'
 
 import TheSoundpacksView from './TheSoundpacksView.vue'
 
+vi.mock('@/content', () => import('@/content/__fixtures__/content'))
+
 it('Renders device path count text with singular version of "patch" when patch count = 1', () => {
   const { getAllByText } = render(TheSoundpacksView, {})
   expect(getAllByText(/1 patch/i).length).toBeGreaterThanOrEqual(1)

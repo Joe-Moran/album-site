@@ -1,15 +1,24 @@
 <template>
   <div class="latest">
     <iframe
-      title="Prequinox Drive by xRGB on Bandcamp"
-      style="width: 100%; height: 120px; border: 0"
-      src="https://bandcamp.com/EmbeddedPlayer/track=1548797469/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+      :title="title"
+      :style="{ width: '100%', height: `${height}px`, border: 0 }"
+      :src="embedUrl"
       seamless
     >
-      <a href="https://xrgb.bandcamp.com/track/prequinox-drive">Prequinox Drive by xRGB</a>
+      <a :href="link.url">{{ link.label }}</a>
     </iframe>
   </div>
 </template>
+
+<script setup>
+defineProps({
+  title: { type: String, required: true },
+  embedUrl: { type: String, required: true },
+  height: { type: Number, required: true },
+  link: { type: Object, required: true },
+})
+</script>
 
 <style lang="scss" scoped>
 @use '@/sass/global' as *;

@@ -17,7 +17,7 @@
       >
         <picture>
           <source
-            v-for="(srcset, format) in coverPicture.sources"
+            v-for="(srcset, format) in cover.sources"
             :key="format"
             :type="`image/${format}`"
             :srcset="srcset"
@@ -25,14 +25,14 @@
           />
           <img
             loading="lazy"
-            :src="coverPicture.img.src"
+            :src="cover.img.src"
             :alt="coverImageAlt"
           />
         </picture>
       </button>
       <picture v-else>
         <source
-          v-for="(srcset, format) in coverPicture.sources"
+          v-for="(srcset, format) in cover.sources"
           :key="format"
           :type="`image/${format}`"
           :srcset="srcset"
@@ -40,7 +40,7 @@
         />
         <img
           loading="lazy"
-          :src="coverPicture.img.src"
+          :src="cover.img.src"
           :alt="coverImageAlt"
         />
       </picture>
@@ -56,28 +56,17 @@ import StreamLinks from './StreamLinks.vue'
 import { useMediaQuery } from '@/composables/useMediaQuery'
 import globals from '@/globals'
 
-const coverPictures = import.meta.glob('../assets/{albums,singles}/*.jpg', {
-  eager: true,
-  import: 'default',
-  query: { w: '480;960', format: 'avif;webp;jpg', as: 'picture' },
-})
-
 const props = defineProps({
   title: { type: String, required: true },
-  coverPath: { type: String, required: true },
+  /** Responsive picture from vite-imagetools: { sources, img }. */
+  cover: { type: Object, required: true },
   streaming: { type: Array, required: true },
-  type: { type: String, required: true },
 })
 
 const isMobile = useMediaQuery(`(width < ${globals.md}px)`)
 const isStreamingRequested = ref(false)
 
 const showStreaming = computed(() => !isMobile.value || isStreamingRequested.value)
-const coverPicture = computed(() => {
-  const assetDirectory = props.type === 'album' ? 'albums' : 'singles'
-
-  return coverPictures[`../assets/${assetDirectory}/${props.coverPath}`]
-})
 const coverImageAlt = computed(() => `${props.title} Cover Art`)
 
 function toggleStreaming() {

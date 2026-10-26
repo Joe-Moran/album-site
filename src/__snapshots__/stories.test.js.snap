@@ -230,20 +230,7 @@ exports[`./App.stories.js > Renders the Default story the same as its snapshot 1
           </a>
           <a
             data-v-fb245ac0=""
-            href="https://www.soundcloud.com/xrgbmusic"
-            id="soundcloud"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <img
-              alt="soundcloud"
-              data-v-fb245ac0=""
-              src="file:///src/assets/social-media/Icon%20awesome-soundcloud@2x.png"
-            />
-          </a>
-          <a
-            data-v-fb245ac0=""
-            href="https://www.instagram.com/xrgb_music"
+            href="https://www.instagram.com/sample"
             id="instagram"
             rel="noopener noreferrer"
             target="_blank"
@@ -505,20 +492,7 @@ exports[`./App.stories.js > Renders the Scrolling story the same as its snapshot
           </a>
           <a
             data-v-fb245ac0=""
-            href="https://www.soundcloud.com/xrgbmusic"
-            id="soundcloud"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <img
-              alt="soundcloud"
-              data-v-fb245ac0=""
-              src="file:///src/assets/social-media/Icon%20awesome-soundcloud@2x.png"
-            />
-          </a>
-          <a
-            data-v-fb245ac0=""
-            href="https://www.instagram.com/xrgb_music"
+            href="https://www.instagram.com/sample"
             id="instagram"
             rel="noopener noreferrer"
             target="_blank"
@@ -566,36 +540,35 @@ exports[`./components/AboutSection.stories.js > Renders the Primary story the sa
         <source
           data-v-ba907332=""
           sizes="(max-width: 60rem) 90vw, 614px"
-          srcset="/@imagetools/c96058042ca0e78f56e206ebd61c63d6341e43fd 640w, /@imagetools/6fb89cec3878a95178116c27a9c2fdae1b412dec 1166w"
+          srcset="/sample-480.avif 480w, /sample-960.avif 960w"
           type="image/avif"
         />
         <source
           data-v-ba907332=""
           sizes="(max-width: 60rem) 90vw, 614px"
-          srcset="/@imagetools/2c03477e4e128e3bf6ec0a647ae4de0dbfe4b0ec 640w, /@imagetools/0c026b75a2f8e8efe4a75b7a659272a805b4bdb4 1166w"
+          srcset="/sample-480.webp 480w, /sample-960.webp 960w"
           type="image/webp"
-        />
-        <source
-          data-v-ba907332=""
-          sizes="(max-width: 60rem) 90vw, 614px"
-          srcset="/@imagetools/e024c9b5c097cdfe986553c6e75512e8e84bafc8 640w, /@imagetools/143d71054256194fab6d830b4c166f5602e7f5f5 1166w"
-          type="image/jpeg"
         />
         
         <img
-          alt="xRGB"
+          alt="Sample photo"
           data-v-ba907332=""
           id="me"
           loading="lazy"
-          src="/@imagetools/143d71054256194fab6d830b4c166f5602e7f5f5"
+          src="/sample-960.jpg"
         />
       </picture>
     </div>
-    <p
+    <div
+      class="about-text"
       data-v-ba907332=""
     >
-       xRGB is a MI-based multi-instrumentalist. Refraction is his debut album, and the result of years of adequate agonizing. 11 sonic journal entries without the crutch of vocals. A restless mixtape from a bedroom humanoid aching to get on a stage. Yes…HUMAN. More playing. Less spacebar. More strumming. Less laptop. 
-    </p>
+      <p>
+        Sample about text.
+      </p>
+      
+
+    </div>
   </div>
 </div>
 `;
@@ -627,7 +600,7 @@ exports[`./components/ReleaseCard.stories.js > Renders the Default story the sam
     <h3
       data-v-b79048ce=""
     >
-      Refraction
+      Sample Album
     </h3>
     <div
       class="cover"
@@ -650,7 +623,7 @@ exports[`./components/ReleaseCard.stories.js > Renders the Default story the sam
               class="stream-link"
               data-v-1ae68a9e=""
               data-v-1f3db36c=""
-              href="https://open.spotify.com"
+              href="https://open.spotify.com/album/sample"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -705,27 +678,21 @@ exports[`./components/ReleaseCard.stories.js > Renders the Default story the sam
         <source
           data-v-b79048ce=""
           sizes="(max-width: 60rem) 90vw, 480px"
-          srcset="/@imagetools/b0a1d1bf502aca6eae70545b7b9441ad638fa0a2 480w, /@imagetools/3b25101021dc4be17187b710b3005daa319dada5 960w"
+          srcset="/sample-480.avif 480w, /sample-960.avif 960w"
           type="image/avif"
         />
         <source
           data-v-b79048ce=""
           sizes="(max-width: 60rem) 90vw, 480px"
-          srcset="/@imagetools/8360674e105bee9a81f1bf550e83350190402c73 480w, /@imagetools/bd834cb887eedcaae71905325651ee43cccdfa64 960w"
+          srcset="/sample-480.webp 480w, /sample-960.webp 960w"
           type="image/webp"
-        />
-        <source
-          data-v-b79048ce=""
-          sizes="(max-width: 60rem) 90vw, 480px"
-          srcset="/@imagetools/f895b81a7e897975d308b2b3bfd6af044163e51b 480w, /@imagetools/e08aa58342d30abf1fb79acfd12897d16626fd96 960w"
-          type="image/jpeg"
         />
         
         <img
-          alt="Refraction Cover Art"
+          alt="Sample Album Cover Art"
           data-v-b79048ce=""
           loading="lazy"
-          src="/@imagetools/e08aa58342d30abf1fb79acfd12897d16626fd96"
+          src="/sample-960.jpg"
         />
       </picture>
     </div>
@@ -752,7 +719,7 @@ exports[`./components/ReleaseList.stories.js > Renders the Default story the sam
         <h3
           data-v-b79048ce=""
         >
-          Refraction
+          Sample Album
         </h3>
         <div
           class="cover"
@@ -775,59 +742,7 @@ exports[`./components/ReleaseList.stories.js > Renders the Default story the sam
                   class="stream-link"
                   data-v-1ae68a9e=""
                   data-v-1f3db36c=""
-                  href="https://xrgb.bandcamp.com/album/refraction"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <div
-                    class="link-content"
-                    data-v-1ae68a9e=""
-                  >
-                    <div
-                      class="streaming-icon"
-                      data-v-1ae68a9e=""
-                    >
-                      <img
-                        alt=""
-                        data-v-1ae68a9e=""
-                        src="file:///src/assets/streaming/bandcamp.png"
-                      />
-                    </div>
-                    <!-- @slot The link text -->
-                    
-                    Bandcamp
-                    
-                  </div>
-                  <div
-                    class="icon-container"
-                    data-v-1ae68a9e=""
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="svg-inline--fa fa-up-right-from-square external-link-icon"
-                      data-icon="up-right-from-square"
-                      data-prefix="fas"
-                      data-v-1ae68a9e=""
-                      role="img"
-                      viewBox="0 0 512 512"
-                    >
-                      <path
-                        class=""
-                        d="M290.4 19.8C295.4 7.8 307.1 0 320 0L480 0c17.7 0 32 14.3 32 32l0 160c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9L400 157.3 246.6 310.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L354.7 112 297.4 54.6c-9.2-9.2-11.9-22.9-6.9-34.9zM0 176c0-44.2 35.8-80 80-80l80 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-80 0c-8.8 0-16 7.2-16 16l0 256c0 8.8 7.2 16 16 16l256 0c8.8 0 16-7.2 16-16l0-80c0-17.7 14.3-32 32-32s32 14.3 32 32l0 80c0 44.2-35.8 80-80 80L80 512c-44.2 0-80-35.8-80-80L0 176z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </div>
-                </a>
-              </li>
-              <li
-                data-v-1f3db36c=""
-              >
-                <a
-                  class="stream-link"
-                  data-v-1ae68a9e=""
-                  data-v-1f3db36c=""
-                  href="https://open.spotify.com/album/79mhGijQ34QP9qMnd5060T?si=dqX4gOdXRYK_P6V9Uhb02Q"
+                  href="https://open.spotify.com/album/sample"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -879,7 +794,7 @@ exports[`./components/ReleaseList.stories.js > Renders the Default story the sam
                   class="stream-link"
                   data-v-1ae68a9e=""
                   data-v-1f3db36c=""
-                  href="https://music.youtube.com/playlist?list=OLAK5uy_lS7C76SoLN6ZReXH3WkeUFwIQrbmrDLNo&feature=share"
+                  href="https://xrgb.bandcamp.com/album/sample"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -894,116 +809,12 @@ exports[`./components/ReleaseList.stories.js > Renders the Default story the sam
                       <img
                         alt=""
                         data-v-1ae68a9e=""
-                        src="file:///src/assets/streaming/googleplay.png"
+                        src="file:///src/assets/streaming/bandcamp.png"
                       />
                     </div>
                     <!-- @slot The link text -->
                     
-                    Google Play Music
-                    
-                  </div>
-                  <div
-                    class="icon-container"
-                    data-v-1ae68a9e=""
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="svg-inline--fa fa-up-right-from-square external-link-icon"
-                      data-icon="up-right-from-square"
-                      data-prefix="fas"
-                      data-v-1ae68a9e=""
-                      role="img"
-                      viewBox="0 0 512 512"
-                    >
-                      <path
-                        class=""
-                        d="M290.4 19.8C295.4 7.8 307.1 0 320 0L480 0c17.7 0 32 14.3 32 32l0 160c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9L400 157.3 246.6 310.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L354.7 112 297.4 54.6c-9.2-9.2-11.9-22.9-6.9-34.9zM0 176c0-44.2 35.8-80 80-80l80 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-80 0c-8.8 0-16 7.2-16 16l0 256c0 8.8 7.2 16 16 16l256 0c8.8 0 16-7.2 16-16l0-80c0-17.7 14.3-32 32-32s32 14.3 32 32l0 80c0 44.2-35.8 80-80 80L80 512c-44.2 0-80-35.8-80-80L0 176z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </div>
-                </a>
-              </li>
-              <li
-                data-v-1f3db36c=""
-              >
-                <a
-                  class="stream-link"
-                  data-v-1ae68a9e=""
-                  data-v-1f3db36c=""
-                  href="https://music.apple.com/us/album/refraction/1518269881?uo=4"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <div
-                    class="link-content"
-                    data-v-1ae68a9e=""
-                  >
-                    <div
-                      class="streaming-icon"
-                      data-v-1ae68a9e=""
-                    >
-                      <img
-                        alt=""
-                        data-v-1ae68a9e=""
-                        src="file:///src/assets/streaming/applemusic.png"
-                      />
-                    </div>
-                    <!-- @slot The link text -->
-                    
-                    Apple Music
-                    
-                  </div>
-                  <div
-                    class="icon-container"
-                    data-v-1ae68a9e=""
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="svg-inline--fa fa-up-right-from-square external-link-icon"
-                      data-icon="up-right-from-square"
-                      data-prefix="fas"
-                      data-v-1ae68a9e=""
-                      role="img"
-                      viewBox="0 0 512 512"
-                    >
-                      <path
-                        class=""
-                        d="M290.4 19.8C295.4 7.8 307.1 0 320 0L480 0c17.7 0 32 14.3 32 32l0 160c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9L400 157.3 246.6 310.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L354.7 112 297.4 54.6c-9.2-9.2-11.9-22.9-6.9-34.9zM0 176c0-44.2 35.8-80 80-80l80 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-80 0c-8.8 0-16 7.2-16 16l0 256c0 8.8 7.2 16 16 16l256 0c8.8 0 16-7.2 16-16l0-80c0-17.7 14.3-32 32-32s32 14.3 32 32l0 80c0 44.2-35.8 80-80 80L80 512c-44.2 0-80-35.8-80-80L0 176z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </div>
-                </a>
-              </li>
-              <li
-                data-v-1f3db36c=""
-              >
-                <a
-                  class="stream-link"
-                  data-v-1ae68a9e=""
-                  data-v-1f3db36c=""
-                  href="https://soundcloud.com/xrgbmusic/sets/refraction"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <div
-                    class="link-content"
-                    data-v-1ae68a9e=""
-                  >
-                    <div
-                      class="streaming-icon"
-                      data-v-1ae68a9e=""
-                    >
-                      <img
-                        alt=""
-                        data-v-1ae68a9e=""
-                        src="file:///src/assets/streaming/soundcloud.png"
-                      />
-                    </div>
-                    <!-- @slot The link text -->
-                    
-                    Soundcloud
+                    Bandcamp
                     
                   </div>
                   <div
@@ -1038,27 +849,21 @@ exports[`./components/ReleaseList.stories.js > Renders the Default story the sam
             <source
               data-v-b79048ce=""
               sizes="(max-width: 60rem) 90vw, 480px"
-              srcset="/@imagetools/b0a1d1bf502aca6eae70545b7b9441ad638fa0a2 480w, /@imagetools/3b25101021dc4be17187b710b3005daa319dada5 960w"
+              srcset="/sample-480.avif 480w, /sample-960.avif 960w"
               type="image/avif"
             />
             <source
               data-v-b79048ce=""
               sizes="(max-width: 60rem) 90vw, 480px"
-              srcset="/@imagetools/8360674e105bee9a81f1bf550e83350190402c73 480w, /@imagetools/bd834cb887eedcaae71905325651ee43cccdfa64 960w"
+              srcset="/sample-480.webp 480w, /sample-960.webp 960w"
               type="image/webp"
-            />
-            <source
-              data-v-b79048ce=""
-              sizes="(max-width: 60rem) 90vw, 480px"
-              srcset="/@imagetools/f895b81a7e897975d308b2b3bfd6af044163e51b 480w, /@imagetools/e08aa58342d30abf1fb79acfd12897d16626fd96 960w"
-              type="image/jpeg"
             />
             
             <img
-              alt="Refraction Cover Art"
+              alt="Sample Album Cover Art"
               data-v-b79048ce=""
               loading="lazy"
-              src="/@imagetools/e08aa58342d30abf1fb79acfd12897d16626fd96"
+              src="/sample-960.jpg"
             />
           </picture>
         </div>
@@ -1091,20 +896,7 @@ exports[`./components/SocialLinks.stories.js > Renders the Default story the sam
     </a>
     <a
       data-v-fb245ac0=""
-      href="https://www.soundcloud.com/xrgbmusic"
-      id="soundcloud"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <img
-        alt="soundcloud"
-        data-v-fb245ac0=""
-        src="file:///src/assets/social-media/Icon%20awesome-soundcloud@2x.png"
-      />
-    </a>
-    <a
-      data-v-fb245ac0=""
-      href="https://www.instagram.com/xrgb_music"
+      href="https://www.instagram.com/sample"
       id="instagram"
       rel="noopener noreferrer"
       target="_blank"
@@ -1721,20 +1513,7 @@ exports[`./components/layout/TheNavigationHeader.stories.js > Renders the Defaul
         </a>
         <a
           data-v-fb245ac0=""
-          href="https://www.soundcloud.com/xrgbmusic"
-          id="soundcloud"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <img
-            alt="soundcloud"
-            data-v-fb245ac0=""
-            src="file:///src/assets/social-media/Icon%20awesome-soundcloud@2x.png"
-          />
-        </a>
-        <a
-          data-v-fb245ac0=""
-          href="https://www.instagram.com/xrgb_music"
+          href="https://www.instagram.com/sample"
           id="instagram"
           rel="noopener noreferrer"
           target="_blank"
@@ -1766,7 +1545,7 @@ exports[`./views/TheSoundpacksView.stories.js > Renders the Default story the sa
       <h1
         data-v-d291a6fe=""
       >
-        Refraction Soundpack
+        Sample Soundpack
       </h1>
       <div
         class="soundpack-introduction"
@@ -1783,27 +1562,20 @@ exports[`./views/TheSoundpacksView.stories.js > Renders the Default story the sa
             <source
               data-v-d291a6fe=""
               sizes="(max-width: 37.5rem) 90vw, 321px"
-              srcset="/@imagetools/5e7c24692f2ba6fe8aad9003620bda295f28faf9 400w, /@imagetools/c35bc10d93cbfde5d060733312acc19ff06191bb 800w"
+              srcset="/sample-480.avif 480w, /sample-960.avif 960w"
               type="image/avif"
             />
             <source
               data-v-d291a6fe=""
               sizes="(max-width: 37.5rem) 90vw, 321px"
-              srcset="/@imagetools/efa89f7b0434b2f81d7fb5ec82602a2e2243d78f 400w, /@imagetools/0ae3ca0c5ae8cbd9a55018b20d864d14751d2857 800w"
+              srcset="/sample-480.webp 480w, /sample-960.webp 960w"
               type="image/webp"
-            />
-            <source
-              data-v-d291a6fe=""
-              sizes="(max-width: 37.5rem) 90vw, 321px"
-              srcset="/@imagetools/f2ea62800dbc74fe3a6560ab819db616c4314db7 400w, /@imagetools/bd71fe2810db823fdc60d4e6662bca388031ccd3 800w"
-              type="image/jpeg"
             />
             
             <img
-              alt="A blurred face, flooded with red and blue hues split down the middle.
-            Text reads Refraction Sound Pack."
+              alt="Sample soundpack cover"
               data-v-d291a6fe=""
-              src="/@imagetools/bd71fe2810db823fdc60d4e6662bca388031ccd3"
+              src="/sample-960.jpg"
             />
           </picture>
         </div>
@@ -1815,46 +1587,15 @@ exports[`./views/TheSoundpacksView.stories.js > Renders the Default story the sa
             class="soundpack-introduction-summary"
             data-v-d291a6fe=""
           >
-            <!-- prettier-ignore -->
-            <p
-              data-v-d291a6fe=""
-            >
-               Synth leads, sounds, and textures designed for my album 
-              <i
-                class="italic"
-                data-v-d291a6fe=""
-              >
-                Refraction
-              </i>
-              . 
+            <p>
+              Sounds from a 
+              <em>
+                sample
+              </em>
+               album.
             </p>
-            <!-- prettier-ignore -->
-            <p
-              data-v-d291a6fe=""
-            >
-               Requires 
-              <strong
-                class="bold"
-                data-v-d291a6fe=""
-              >
-                Prophet REV2
-              </strong>
-              , 
-              <strong
-                class="bold"
-                data-v-d291a6fe=""
-              >
-                Omnisphere 2
-              </strong>
-              , and/or 
-              <strong
-                class="bold"
-                data-v-d291a6fe=""
-              >
-                Ableton Live
-              </strong>
-              . 
-            </p>
+            
+
           </div>
           <div
             class="soundpack-introduction-links"
@@ -1864,8 +1605,8 @@ exports[`./views/TheSoundpacksView.stories.js > Renders the Default story the sa
               class="download-button"
               data-v-99c37bfc=""
               data-v-d291a6fe=""
-              download="/Refraction Sound Pack.zip"
-              href="/Refraction Sound Pack.zip"
+              download="/sample.zip"
+              href="/sample.zip"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -1902,7 +1643,7 @@ exports[`./views/TheSoundpacksView.stories.js > Renders the Default story the sa
               class="soundpack-device-title"
               data-v-d291a6fe=""
             >
-              Omnisphere Patches
+              Sample Synth Patches
             </h3>
             <ul
               class="soundpack-device-patches"
@@ -1920,7 +1661,7 @@ exports[`./views/TheSoundpacksView.stories.js > Renders the Default story the sa
                   <p
                     data-v-d291a6fe=""
                   >
-                    Synth Bass - 1 patch
+                    Pads - 1 patch
                   </p>
                   <!--v-if-->
                 </div>
@@ -1936,210 +1677,13 @@ exports[`./views/TheSoundpacksView.stories.js > Renders the Default story the sa
                   <p
                     data-v-d291a6fe=""
                   >
-                    Pads - 3 patches
-                  </p>
-                  <!--v-if-->
-                </div>
-              </li>
-              <li
-                class="soundpack-device-patch"
-                data-v-d291a6fe=""
-              >
-                <div
-                  class="soundpack-device-patch-content"
-                  data-v-d291a6fe=""
-                >
-                  <p
-                    data-v-d291a6fe=""
-                  >
-                    Leads - 2 patches
-                  </p>
-                  <!--v-if-->
-                </div>
-              </li>
-              <li
-                class="soundpack-device-patch"
-                data-v-d291a6fe=""
-              >
-                <div
-                  class="soundpack-device-patch-content"
-                  data-v-d291a6fe=""
-                >
-                  <p
-                    data-v-d291a6fe=""
-                  >
-                    Multi-use - 5 patches
+                    Leads - 3 patches
                   </p>
                   <p
                     class="soundpack-device-patch-description"
                     data-v-d291a6fe=""
                   >
-                    Rhythmic, FX, noise, etc.
-                  </p>
-                </div>
-              </li>
-              
-            </ul>
-          </article>
-          <article
-            class="soundpack-device"
-            data-v-d291a6fe=""
-          >
-            <h3
-              class="soundpack-device-title"
-              data-v-d291a6fe=""
-            >
-              Prophet REV2 Patches
-            </h3>
-            <ul
-              class="soundpack-device-patches"
-              data-v-d291a6fe=""
-            >
-              
-              <li
-                class="soundpack-device-patch"
-                data-v-d291a6fe=""
-              >
-                <div
-                  class="soundpack-device-patch-content"
-                  data-v-d291a6fe=""
-                >
-                  <p
-                    data-v-d291a6fe=""
-                  >
-                    Leads - 2 patches
-                  </p>
-                  <!--v-if-->
-                </div>
-              </li>
-              <li
-                class="soundpack-device-patch"
-                data-v-d291a6fe=""
-              >
-                <div
-                  class="soundpack-device-patch-content"
-                  data-v-d291a6fe=""
-                >
-                  <p
-                    data-v-d291a6fe=""
-                  >
-                    Pads - 2 patches
-                  </p>
-                  <!--v-if-->
-                </div>
-              </li>
-              <li
-                class="soundpack-device-patch"
-                data-v-d291a6fe=""
-              >
-                <div
-                  class="soundpack-device-patch-content"
-                  data-v-d291a6fe=""
-                >
-                  <p
-                    data-v-d291a6fe=""
-                  >
-                    Multi-use - 2 patches
-                  </p>
-                  <p
-                    class="soundpack-device-patch-description"
-                    data-v-d291a6fe=""
-                  >
-                    FX and some sweet polyphonic shit
-                  </p>
-                </div>
-              </li>
-              
-            </ul>
-          </article>
-          <article
-            class="soundpack-device"
-            data-v-d291a6fe=""
-          >
-            <h3
-              class="soundpack-device-title"
-              data-v-d291a6fe=""
-            >
-              Ableton Presets
-            </h3>
-            <ul
-              class="soundpack-device-patches"
-              data-v-d291a6fe=""
-            >
-              
-              <li
-                class="soundpack-device-patch"
-                data-v-d291a6fe=""
-              >
-                <div
-                  class="soundpack-device-patch-content"
-                  data-v-d291a6fe=""
-                >
-                  <p
-                    data-v-d291a6fe=""
-                  >
-                    Audio Effects - 4 patches
-                  </p>
-                  <!--v-if-->
-                </div>
-              </li>
-              
-            </ul>
-          </article>
-          <article
-            class="soundpack-device"
-            data-v-d291a6fe=""
-          >
-            <h3
-              class="soundpack-device-title"
-              data-v-d291a6fe=""
-            >
-              Audio Samples
-            </h3>
-            <ul
-              class="soundpack-device-patches"
-              data-v-d291a6fe=""
-            >
-              
-              <li
-                class="soundpack-device-patch"
-                data-v-d291a6fe=""
-              >
-                <div
-                  class="soundpack-device-patch-content"
-                  data-v-d291a6fe=""
-                >
-                  <p
-                    data-v-d291a6fe=""
-                  >
-                    Tunes - 4 patches
-                  </p>
-                  <p
-                    class="soundpack-device-patch-description"
-                    data-v-d291a6fe=""
-                  >
-                    Music samples from old PSA videos
-                  </p>
-                </div>
-              </li>
-              <li
-                class="soundpack-device-patch"
-                data-v-d291a6fe=""
-              >
-                <div
-                  class="soundpack-device-patch-content"
-                  data-v-d291a6fe=""
-                >
-                  <p
-                    data-v-d291a6fe=""
-                  >
-                    Voices - 6 patches
-                  </p>
-                  <p
-                    class="soundpack-device-patch-description"
-                    data-v-d291a6fe=""
-                  >
-                    Voice samples from old PSA videos—mostly regarding drugs
+                    Bright and loud
                   </p>
                 </div>
               </li>
@@ -2158,10 +1702,12 @@ exports[`./views/TheSoundpacksView.stories.js > Renders the Default story the sa
         >
           Demos
         </h2>
+        
+        
         <h3
           data-v-d291a6fe=""
         >
-          Prophet REV 2 Patches
+          Sample Demo
         </h3>
         <iframe
           allow="autoplay"
@@ -2169,25 +1715,12 @@ exports[`./views/TheSoundpacksView.stories.js > Renders the Default story the sa
           frameborder="no"
           height="300"
           scrolling="no"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1436441497&color=%237e4395&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-          title="Soundcloud Player for Prophet REV 2 patches"
+          src="https://w.soundcloud.com/player/?url=sample"
+          title="Player for sample demo"
           width="100%"
         />
-        <h3
-          data-v-d291a6fe=""
-        >
-          Omnisphere Patches
-        </h3>
-        <iframe
-          allow="autoplay"
-          data-v-d291a6fe=""
-          frameborder="no"
-          height="300"
-          scrolling="no"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1276519099&color=%237e4395&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-          title="Soundcloud Player for Onnisphere patches"
-          width="100%"
-        />
+        
+        
       </div>
       <div
         class="soundpack-author-note"
@@ -2202,28 +1735,14 @@ exports[`./views/TheSoundpacksView.stories.js > Renders the Default story the sa
           class="soundpack-author-note-content"
           data-v-d291a6fe=""
         >
-          <div>
+          <div
+            data-v-d291a6fe=""
+          >
             <p>
-              Howdy!
+              Thanks for listening!
             </p>
-             
-            <p>
-              Thank you so much for your support and love and whatever else you've been secretly sending me without my knowing. 
-            </p>
-             
-            <p>
-              Sound design is a huge part of my creative process, so I felt I needed to share some of my sounds with you, the artist. I hope you gain inspiration within these files, but if you find the sounds uninspiring, dull, or pointless, then hell yeah! Sometimes it requires a hell of a picky ear to translate or find inspiration for a sound or song, so I'm happy knowing I can help you sound less shitty than some of my worst songs ever. 
-            </p>
-             
-            <p>
-              I hope you are writing some sick fucking jams and have as much fun as I did while writing my album Refraction.
-            </p>
-             
-            <p>
-              Thanks for listening! 
-              <br />
-              Love, xRGB
-            </p>
+            
+
           </div>
         </div>
       </div>
