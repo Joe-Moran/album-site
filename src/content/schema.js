@@ -6,7 +6,10 @@ const text = z.string().trim().min(1)
 const httpsUrl = z.url({ protocol: /^https$/ })
 const imagePath = z
   .string()
-  .regex(/^\/?images\/[^/]+\.(jpe?g|png)$/i, 'Use an image from /images, e.g. /images/cover.jpg')
+  .regex(
+    /^\/?images\/[^/]+\.(jpe?g|png|webp|avif)$/i,
+    'Use a JPEG, PNG, WebP, or AVIF image from /images, e.g. /images/cover.jpg'
+  )
 
 export const releaseSchema = z.strictObject({
   title: text,

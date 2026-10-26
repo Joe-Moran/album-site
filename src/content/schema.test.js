@@ -35,3 +35,11 @@ it('Rejects a cover outside the images folder', () => {
 it('Rejects a misspelled field name', () => {
   expect(issuePaths({ ...validRelease, titel: 'Typo' })).toEqual([''])
 })
+
+it('Accepts a WebP cover', () => {
+  expect(issuePaths({ ...validRelease, cover: '/images/Cover art - Sample.webp' })).toEqual([])
+})
+
+it('Rejects a cover format the build cannot resize', () => {
+  expect(issuePaths({ ...validRelease, cover: '/images/cover.gif' })).toEqual(['cover'])
+})
