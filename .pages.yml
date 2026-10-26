@@ -1,7 +1,15 @@
+settings:
+  commit:
+    templates:
+      create: 'chore(content): add {path}'
+      update: 'chore(content): update {path}'
+      delete: 'chore(content): delete {path}'
+      rename: 'chore(content): rename {oldFilename} to {newFilename}'
+
 media:
   input: src/assets/images
   output: /images
-  categories: [image]
+  extensions: [jpg, jpeg, png, webp, avif]
 
 content:
   - name: releases

@@ -28,7 +28,7 @@ export default defineConfig({
   plugins: [
     vue(),
     svgLoader({ defaultImport: 'component', svgo: false }),
-    imagetools({ include: /\.(jpe?g|png)\?(.+&)?as=picture(&|$)/ }),
+    imagetools({ include: /\.(jpe?g|png|webp|avif)\?(.+&)?as=picture(&|$)/ }),
     yaml({ transform: renderMarkdownFields }),
   ],
   resolve: {
